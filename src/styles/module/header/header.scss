@@ -1,6 +1,7 @@
 .header {
    position: relative;
    background: purple;
+   overflow: hidden;
 
    // .header__bg
 
@@ -13,16 +14,36 @@
    &__text-block{
       position: relative;
       z-index: 2;
+      @include media-breakpoint-down(xl) {
+         margin-left: 1.5rem;
+         max-width: 54rem;
+      }
 
       // .header .text-block
 
-      .text-block__title{
-         font-family: Gilroy;
-         font-style: normal;
-         font-weight: 900;
-         font-size: 38px;
-         line-height: 47px;
-         color: #000000;
+      .text-block{
+         &__title{
+            font-family: Gilroy;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 38px;
+            line-height: 47px;
+            color: #000000;
+            @include media-breakpoint-down(md) {
+               font-size: 36px;
+            }
+         }
+         // .text-block__text
+
+         &__text {
+            margin: 4rem 0;
+         }
+
+         // .text-block__btn
+
+         &__btn {
+
+         }
       }
    }
 
@@ -40,14 +61,73 @@
    // .header__aside
 
    &__aside {
-      background: rgba(1, 3, 9, 0.79)
+      background: rgba(1, 3, 9, 0.79);
+      color: white;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      z-index: 3;
+      width: 33.88%;
+      display: flex;
+      // align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      @include media-breakpoint-down(xl) { 
+         position: static;
+         width: 100%;
+         padding: 5rem 0;
+         background: #171717;
+      }
+
+      // .header__aside-col
+
+      &-col{
+         &:first-child{
+            margin-top: 11rem;
+            @include media-breakpoint-down(xl) {
+               margin-top: 0;
+            }
+         }
+      }
+   }
+
+   .spec .col-1{
+         border: 1px solid red;
    }
 
    // .header__stat
 
    &__stat {
+      color: white;
+      text-align: center;
+      margin: 4rem 0;
+      @include media-breakpoint-down(xl) {
+         max-width: 17.4rem;
+         margin-left: auto;
+         margin-right: auto;
+      }
+
+      .stat{
+         // .stat__num
+
+         &__num {
+            font-size: 42px;
+            line-height: 51px;
+            letter-spacing: 0.005rem;
+            margin-bottom: 1rem;
+         }
+
+         // .stat__title
+
+         &__title {
+            font-size: 14px;
+            line-height: 159.7%;
+         }
+      }
    }
 }
+
 
 .text-block {
 
@@ -64,22 +144,5 @@
    // .text-block__btn
 
    &__btn {
-   }
-}
-.btn {
-}
-.btn--big {
-}
-
-.stat {
-
-   // .stat__num
-
-   &__num {
-   }
-
-   // .stat__title
-
-   &__title {
    }
 }

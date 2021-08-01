@@ -1,11 +1,15 @@
 @import 'basic/mixins';
 @import 'basic/reset.css';
 
+@import '../fonts/roboto/stylesheet.css';
+@import '../fonts/gilroy/stylesheet.css';
+
 html{
    font-size: 65.2%;
 }
 
 $grid-gutter-width: 2.4rem;
+$spacer: 1.6rem;
 // $container-padding-x: 50px;
 
 // Optional Bootstrap components here
@@ -19,6 +23,10 @@ p{
    line-height: 168.18%;
 }
 
+// components that can be overritten
+@import 'module/stat/stat';
+
 @import 'module/ibg/ibg.css';
 @import 'module/header/header';
+@import 'module/btn/btn';
 
