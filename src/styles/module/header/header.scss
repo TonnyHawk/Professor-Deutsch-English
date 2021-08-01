@@ -1,0 +1,85 @@
+.header {
+   position: relative;
+   background: purple;
+
+   // .header__bg
+
+   &__bg{
+      @include layer;
+      z-index: 1;
+      background: gainsboro;
+   }
+
+   &__text-block{
+      position: relative;
+      z-index: 2;
+
+      // .header .text-block
+
+      .text-block__title{
+         font-family: Gilroy;
+         font-style: normal;
+         font-weight: 900;
+         font-size: 38px;
+         line-height: 47px;
+         color: #000000;
+      }
+   }
+
+   // .header__offer
+
+   &__offer {
+      background: white;
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+   }
+
+   // .header__aside
+
+   &__aside {
+      background: rgba(1, 3, 9, 0.79)
+   }
+
+   // .header__stat
+
+   &__stat {
+   }
+}
+
+.text-block {
+
+   // .text-block__title
+
+   &__title {
+   }
+
+   // .text-block__text
+
+   &__text {
+   }
+
+   // .text-block__btn
+
+   &__btn {
+   }
+}
+.btn {
+}
+.btn--big {
+}
+
+.stat {
+
+   // .stat__num
+
+   &__num {
+   }
+
+   // .stat__title
+
+   &__title {
+   }
+}

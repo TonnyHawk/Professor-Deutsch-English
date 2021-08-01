@@ -1,0 +1,24 @@
+@import 'basic/mixins';
+@import 'basic/reset.css';
+
+html{
+   font-size: 65.2%;
+}
+
+$grid-gutter-width: 2.4rem;
+// $container-padding-x: 50px;
+
+// Optional Bootstrap components here
+@import '../../node_modules/bootstrap/scss/bootstrap-grid';
+
+p{
+   font-family: 'Roboto';
+   font-style: normal;
+   font-weight: normal;
+   font-size: 1.8rem;
+   line-height: 168.18%;
+}
+
+@import 'module/ibg/ibg.css';
+@import 'module/header/header';
+
