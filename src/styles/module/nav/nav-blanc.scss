@@ -7,9 +7,10 @@
    width: 100%;
    z-index: 500;
    background: transparent;
-   @include media-breakpoint-down(lg){
-      @include perfect-center;
-   }
+   display: none;
+   // @include media-breakpoint-down(lg){
+   //    @include perfect-center;
+   // }
 
    // .nav__container
 

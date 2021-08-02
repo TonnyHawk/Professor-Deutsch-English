@@ -14,9 +14,7 @@
    &__text-block{
       position: relative;
       z-index: 2;
-      @include media-breakpoint-down(xl) {
-         max-width: 54rem;
-      }
+      max-width: 60rem;
 
       // .header .text-block
 
@@ -36,6 +34,7 @@
 
          &__text {
             margin: 4rem 0;
+            max-width: 50rem;
          }
 
          // .text-block__btn
@@ -73,7 +72,11 @@
       // align-items: center;
       justify-content: center;
       flex-direction: column;
-      @include media-breakpoint-down(xl) { 
+      @include media-breakpoint-down(xl) {
+         width: 36.88%;
+         padding: 0 2rem;
+      }
+      @include media-breakpoint-down(lg) {
          position: static;
          width: 100%;
          padding: 5rem 0;
@@ -85,7 +88,7 @@
       &-col{
          &:first-child{
             margin-top: 11rem;
-            @include media-breakpoint-down(xl) {
+            @include media-breakpoint-down(lg) {
                margin-top: 0;
             }
          }
