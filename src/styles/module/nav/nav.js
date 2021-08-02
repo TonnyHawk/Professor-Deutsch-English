@@ -2,6 +2,7 @@ $(document).ready(function(){
    function Nav(id){
       this.id = "#"+id;
       this.itemsOnBreakpoint = [];
+      this.ifExpandMenuHasAClickListener = false;
 
 
       this.transportItem = (item)=>{ // transports last menu-item to expand menu
@@ -104,7 +105,7 @@ $(document).ready(function(){
          this.AddClickFunctionality();
       };
 
-      this.AddClickFunctionality = (elName) =>{// adding a click functionality to buttons
+      this.AddClickFunctionality = (elName) =>{ // adding a click functionality to buttons
          let navId = this.id; 
 
          $(this.id+" .nav__btn").click(function(){
@@ -113,7 +114,19 @@ $(document).ready(function(){
          });
 
          $(this.id+" .nav__expand-btn").click(function(){
-            $(navId+" .nav__expand-menu").toggleClass('show');
+            // $(navId+" .nav__expand-menu").toggleClass('show');
+            $(navId+" .nav__expand-menu").fadeToggle('fast');
+
+            $(this.id+" .nav__menu-item_expand .nav__link").click(function(){ // this item is not exist when the page is loaded that's why i add this handler after this item apears on the page.
+               $(navId+" .nav__expand-menu").fadeToggle('fast');
+            })
+         });
+
+         $(this.id+" .nav__menu-item").click(function(){
+            $(this.id+" .nav__menu-item").each(function(){
+               $(this).removeClass('is-active');
+            })
+            $(this).addClass('is-active');
          });
 
       };
@@ -122,7 +135,11 @@ $(document).ready(function(){
    }
 
       let topmenu = new Nav('topmenu');
-      topmenu.setItemsOnBreakpoint(4, 1200);
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+         topmenu.setItemsOnBreakpoint(3, 1200);
+      } else{
+         topmenu.setItemsOnBreakpoint(4, 1200);
+      }
       topmenu.setItemsOnBreakpoint(null, 992);
       topmenu.adaptize();
 

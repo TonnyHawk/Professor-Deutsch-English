@@ -107,7 +107,7 @@
       margin: 4rem auto;
       max-width: 16rem;
       @include media-breakpoint-down(xl) {
-         max-width: 17.4rem;
+         max-width: 13.4rem;
       }
       @include media-breakpoint-up(lg) {
          margin: 6.5vh auto;
@@ -150,4 +150,10 @@
 
    &__btn {
    }
+}
+
+.phone-stack{
+   background: blue;
+    border-radius: 9px;
+    padding: 20px;
 }
