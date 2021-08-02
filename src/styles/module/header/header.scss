@@ -109,6 +109,9 @@
       @include media-breakpoint-down(xl) {
          max-width: 17.4rem;
       }
+      @include media-breakpoint-up(lg) {
+         margin: 6.5vh auto;
+      }
 
       .stat{
          // .stat__num
