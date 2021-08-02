@@ -13,7 +13,10 @@ $spacer: 1.6rem;
 // $container-padding-x: 50px;
 
 // Optional Bootstrap components here
+
 @import '../../node_modules/bootstrap/scss/bootstrap-grid';
+// @import '../../node_modules/bootstrap/scss/bootstrap-utilities.scss';
+@import '../../node_modules/bootstrap/scss/containers';
 
 p{
    font-family: 'Roboto';
@@ -29,4 +32,6 @@ p{
 @import 'module/ibg/ibg.css';
 @import 'module/header/header';
 @import 'module/btn/btn';
+@import 'module/hamburger/hamburger.scss';
+@import 'module/nav/nav-blanc';
 

@@ -8,14 +8,13 @@
    &__bg{
       @include layer;
       z-index: 1;
-      background: gainsboro;
+      // background: gainsboro;
    }
 
    &__text-block{
       position: relative;
       z-index: 2;
       @include media-breakpoint-down(xl) {
-         margin-left: 1.5rem;
          max-width: 54rem;
       }
 
@@ -56,6 +55,7 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
+      padding-top: 7rem;
    }
 
    // .header__aside
@@ -101,11 +101,10 @@
    &__stat {
       color: white;
       text-align: center;
-      margin: 4rem 0;
+      margin: 4rem auto;
+      max-width: 16rem;
       @include media-breakpoint-down(xl) {
          max-width: 17.4rem;
-         margin-left: auto;
-         margin-right: auto;
       }
 
       .stat{
