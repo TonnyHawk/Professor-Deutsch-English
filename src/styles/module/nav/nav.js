@@ -107,6 +107,7 @@ $(document).ready(function(){
 
       this.AddClickFunctionality = (elName) =>{ // adding a click functionality to buttons
          let navId = this.id; 
+         let ifExpandMenuHasAClickListener = this.ifExpandMenuHasAClickListener;
 
          $(this.id+" .nav__btn").click(function(){
             $(navId).toggleClass('nav_is-open');
@@ -117,9 +118,12 @@ $(document).ready(function(){
             // $(navId+" .nav__expand-menu").toggleClass('show');
             $(navId+" .nav__expand-menu").fadeToggle('fast');
 
-            $(this.id+" .nav__menu-item_expand .nav__link").click(function(){ // this item is not exist when the page is loaded that's why i add this handler after this item apears on the page.
-               $(navId+" .nav__expand-menu").fadeToggle('fast');
-            })
+            if(!ifExpandMenuHasAClickListener){
+               $(this.id+" .nav__menu-item_expand .nav__link").click(function(){ // this item is not exist when the page is loaded that's why i add this handler after this item apears on the page.
+                  $(navId+" .nav__expand-menu").fadeToggle('fast');
+               })
+               ifExpandMenuHasAClickListener = true;
+            }
          });
 
          $(this.id+" .nav__menu-item").click(function(){
