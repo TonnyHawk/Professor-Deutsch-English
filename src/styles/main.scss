@@ -34,6 +34,24 @@ p{
    line-height: 168.18%;
 }
 
+h1{
+   font-family: Gilroy;
+   font-style: normal;
+   font-weight: 900;
+   font-size: 35px;
+   line-height: 44px;
+   text-align: center;
+   letter-spacing: 0.03em;
+   margin-bottom: 5rem;
+   
+   color: #000000;
+
+   @include media-breakpoint-up(md) {
+      font-size: 48px;
+      line-height: 60px;
+   }
+}
+
 h2{
    font-family: Gilroy;
    font-style: normal;
@@ -44,6 +62,27 @@ h2{
    color: #000000;
 }
 
+@mixin colorfull-border($border-width, $border-radius){
+   .colorfull-border{
+      position: relative;
+      &__content{
+      }
+      &__border{
+         position: absolute;
+         width: calc(100% + #{$border-width} * 2);
+         height: calc(100% + #{$border-width} * 2);
+         background: linear-gradient(180deg, #A53FA7 0%, rgba(233, 14, 119, 0.72) 100%);
+         top: -0.1rem;
+         left: -0.1rem;
+         border-radius: $border-radius;
+      }
+   }
+}
+
+
+
+
+
 // components that can be overritten
 @import 'module/stat/stat';
 
@@ -53,5 +92,7 @@ h2{
 @import 'module/hamburger/hamburger.scss';
 @import 'module/nav/nav-blanc';
 
+@import 'sections/section/section';
 @import 'sections/about-us/about-us';
+@import 'sections/why-we/why-we';
 

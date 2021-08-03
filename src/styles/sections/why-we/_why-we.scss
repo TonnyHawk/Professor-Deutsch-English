@@ -1,0 +1,104 @@
+.why-we {
+
+   // .why-we__cards
+
+   &__cards {
+   }
+
+   // .why-we__card
+
+   &__card {
+      background: #F2F5FF;
+      border-radius: 2.4rem;
+      padding: 5rem 3rem;
+      position: relative;
+      margin-bottom: 6rem;
+      &:after{
+         z-index: -1;
+      }
+      
+
+      .card {
+
+         // .card__img
+      
+         &__img {
+            width: 6.2rem;
+            margin-left: 2.1rem;
+            margin-bottom: 3.5rem;
+         }
+      
+         // .card__title
+      
+         &__title {
+            font-family: Gilroy;
+            font-weight: bold;
+            font-size: 1.9rem;
+            line-height: 2.3rem;
+            margin-bottom: 1.5rem;
+            
+            color: #333046;
+         }
+      
+         // .card__text
+      
+         &__text {
+            font-family: Roboto;
+            font-weight: normal;
+            font-size: 1.5rem;
+            line-height: 166.68%;
+            
+            color: #000000;
+         }
+      
+         // .card__top-icon
+      
+         &__top-icon {
+            $icon-width: 6rem;
+            $border-width: 0.1rem;
+            $icon-top: $icon-width / 2 * -1;
+            $border-radius: 100%;
+
+            position: absolute;
+            top: $icon-top;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            .colorfull-border{
+               position: relative;
+               &__content{
+                  @include square($icon-width);
+                  @include perfect-center;
+                  background: white;
+                  border-radius: $border-radius;
+                  z-index: 2;
+                  position: relative;
+
+                  img{
+                     width: 1.8rem;
+                  }
+               }
+               &__border{
+                  z-index: 1;
+                  @include square(calc(100% + #{$border-width} * 2));
+                  position: absolute;
+
+                  background: linear-gradient(180deg, #A53FA7 0%, rgba(233, 14, 119, 0.72) 100%);
+                  top: -$border-width;
+                  left: -$border-width;
+                  border-radius: $border-radius;
+               }
+            }
+         }
+      }
+   }
+}
+.section {
+
+   // .section__title
+
+   &__title {
+   }
+}
