@@ -34,6 +34,16 @@ p{
    line-height: 168.18%;
 }
 
+h2{
+   font-family: Gilroy;
+   font-style: normal;
+   font-weight: 800;
+   font-size: 3.6rem;
+   line-height: 4.9rem;
+   
+   color: #000000;
+}
+
 // components that can be overritten
 @import 'module/stat/stat';
 
@@ -42,4 +52,6 @@ p{
 @import 'module/btn/btn';
 @import 'module/hamburger/hamburger.scss';
 @import 'module/nav/nav-blanc';
+
+@import 'sections/about-us/about-us';
 
