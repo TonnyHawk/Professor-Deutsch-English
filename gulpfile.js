@@ -5,16 +5,17 @@ let {src, dest, watch, series, parallel} = require('gulp'),
    cleanCSS = require('gulp-clean-css'),
    rename = require('gulp-rename'),
    browserSync = require('browser-sync').create(),
-   autoprefixer = require('gulp-autoprefixer');
+   autoprefixer = require('gulp-autoprefixer'),
+   fileInclude = require('gulp-file-include');
 
 let path = {
    projFold: './src',
    distFold: './dist',
    styles: '/styles',
    css: '/css',
-   scssEntry: '/main.scss'
+   scssEntry: '/main.scss',
+   html: '/html'
 }
-
 
 function server(){
    browserSync.init({
@@ -22,7 +23,7 @@ function server(){
   });
 
   watch(path.projFold + path.styles + "/**/*.scss", css);
-  watch(path.projFold + "/index.html").on('change', browserSync.reload);
+  watch(path.projFold + path.html + "/*.html").on('change', series(html, browserSync.reload));
 }
 
 function css(){
@@ -37,7 +38,14 @@ function css(){
          .pipe(browserSync.stream());
 }
 
-let go = series(css, server)
+function html(){
+   return src(path.projFold + path.html + '/index.html')
+         .pipe(fileInclude())
+         .pipe(dest('./src/'))
+         // .pipe(browserSync.reload())
+}
+
+let go = series(css, html, server)
 
 exports.default = go;
 
