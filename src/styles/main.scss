@@ -62,18 +62,46 @@ h2{
    color: #000000;
 }
 
-@mixin colorfull-border($border-width, $border-radius){
+// @mixin colorfull-border($border-width, $border-radius){
+//    .colorfull-border{
+//       position: relative;
+//       &__content{
+//       }
+//       &__border{
+//          position: absolute;
+//          width: calc(100% + #{$border-width} * 2);
+//          height: calc(100% + #{$border-width} * 2);
+//          background: linear-gradient(180deg, #A53FA7 0%, rgba(233, 14, 119, 0.72) 100%);
+//          top: -0.1rem;
+//          left: -0.1rem;
+//          border-radius: $border-radius;
+//       }
+//    }
+// }
+
+@mixin colorfull-border($elem-width, $border-width, $border-radius, $main-z-index){
    .colorfull-border{
       position: relative;
       &__content{
+         @include square($elem-width);
+         @include perfect-center;
+         background: white;
+         border-radius: $border-radius;
+         z-index: $main-z-index;
+         position: relative;
+   
+         img{
+            width: 1.8rem;
+         }
       }
       &__border{
+         z-index: $main-z-index - 1;
+         @include square(calc(100% + #{$border-width} * 2));
          position: absolute;
-         width: calc(100% + #{$border-width} * 2);
-         height: calc(100% + #{$border-width} * 2);
+   
          background: linear-gradient(180deg, #A53FA7 0%, rgba(233, 14, 119, 0.72) 100%);
-         top: -0.1rem;
-         left: -0.1rem;
+         top: -$border-width;
+         left: -$border-width;
          border-radius: $border-radius;
       }
    }
