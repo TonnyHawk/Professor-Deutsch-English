@@ -4,7 +4,7 @@
 @import '../fonts/roboto/stylesheet.css';
 @import '../fonts/gilroy/stylesheet.css';
 
-html{
+html {
    font-size: 65.2%;
 }
 
@@ -26,39 +26,79 @@ $xxl: 1400px;
 // @import '../../node_modules/bootstrap/scss/bootstrap-utilities.scss';
 @import '../../node_modules/bootstrap/scss/containers';
 
-p{
-   font-family: 'Roboto';
+p {
+
+   font-family: Roboto;
    font-style: normal;
    font-weight: normal;
-   font-size: 1.8rem;
+   font-size: 1.5rem;
    line-height: 168.18%;
+
+   @include media-breakpoint-up(md) {
+      font-size: 1.8rem;
+   }
+
+   color: #000000;
 }
 
-h1{
+h1 {
    font-family: Gilroy;
    font-style: normal;
    font-weight: 900;
    font-size: 35px;
    line-height: 44px;
-   text-align: center;
    letter-spacing: 0.03em;
    margin-bottom: 5rem;
-   
+   max-width: 41.9rem;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+
    color: #000000;
 
    @include media-breakpoint-up(md) {
       font-size: 48px;
       line-height: 60px;
+      max-width: 53rem;
+      margin-left: auto;
+      margin-right: auto;
    }
 }
 
-h2{
+h2 {
    font-family: Gilroy;
    font-style: normal;
    font-weight: 800;
    font-size: 3.6rem;
    line-height: 4.9rem;
-   
+   text-align: center;
+
+   color: #000000;
+}
+
+h3 {
+   font-family: Gilroy;
+   font-style: normal;
+   font-weight: 800;
+   font-size: 2.6rem;
+   line-height: 3.5rem;
+   text-align: center;
+
+   color: #000000;
+
+   @include media-breakpoint-up(md) {
+      font-size: 3rem;
+      line-height: 3.7rem;
+   }
+}
+
+h5 {
+   font-family: Gilroy;
+   font-style: normal;
+   font-weight: 800;
+   font-size: 23px;
+   line-height: 28px;
+
    color: #000000;
 }
 
@@ -79,26 +119,28 @@ h2{
 //    }
 // }
 
-@mixin colorfull-border($elem-width, $border-width, $border-radius, $main-z-index){
-   .colorfull-border{
+@mixin colorfull-border($elem-width, $border-width, $border-radius, $main-z-index) {
+   .colorfull-border {
       position: relative;
-      &__content{
+
+      &__content {
          @include square($elem-width);
          @include perfect-center;
          background: white;
          border-radius: $border-radius;
          z-index: $main-z-index;
          position: relative;
-   
-         img{
+
+         img {
             width: 1.8rem;
          }
       }
-      &__border{
+
+      &__border {
          z-index: $main-z-index - 1;
          @include square(calc(100% + #{$border-width} * 2));
          position: absolute;
-   
+
          background: linear-gradient(180deg, #A53FA7 0%, rgba(233, 14, 119, 0.72) 100%);
          top: -$border-width;
          left: -$border-width;
@@ -119,8 +161,8 @@ h2{
 @import 'module/btn/btn';
 @import 'module/hamburger/hamburger.scss';
 @import 'module/nav/nav-blanc';
+@import 'module/card/card';
 
 @import 'sections/section/section';
 @import 'sections/about-us/about-us';
 @import 'sections/why-we/why-we';
-

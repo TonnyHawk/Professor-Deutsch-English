@@ -1,55 +1,74 @@
 .why-we {
 
+   .section__title {
+      margin-bottom: 10rem;
+      max-width: 37rem;
+
+      @include media-breakpoint-up(md) {
+         max-width: 55rem;
+      }
+
+      @include media-breakpoint-up(xl) {
+         margin-bottom: 13.7rem;
+      }
+   }
+
    // .why-we__cards
 
-   &__cards {
-   }
+   &__cards {}
 
    // .why-we__card
 
    &__card {
-      background: #F2F5FF;
-      border-radius: 2.4rem;
-      padding: 5rem 3rem;
-      position: relative;
-      margin-bottom: 6rem;
-      
+      $mb: 6rem;
+      margin-bottom: $mb;
+      max-width: 31.2rem;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include media-breakpoint-up(md) {
+         $mb: 7rem;
+         height: calc(100% - #{$mb});
+         margin-bottom: $mb;
+         max-width: 29.5rem;
+      }
+
 
       .card {
 
          // .card__img
-      
+
          &__img {
             width: 6.2rem;
             margin-left: 2.1rem;
             margin-bottom: 3.5rem;
          }
-      
+
          // .card__title
-      
+
          &__title {
             font-family: Gilroy;
             font-weight: bold;
             font-size: 1.9rem;
             line-height: 2.3rem;
             margin-bottom: 1.5rem;
-            
+
             color: #333046;
          }
-      
+
          // .card__text
-      
+
          &__text {
             font-family: Roboto;
             font-weight: normal;
             font-size: 1.5rem;
             line-height: 166.68%;
-            
+
             color: #000000;
          }
-      
+
          // .card__top-icon
-      
+
          &__top-icon {
             $elem-width: 6rem;
             $border-width: 0.1rem;
@@ -63,41 +82,82 @@
             justify-content: center;
             width: 100%;
 
+            @include media-breakpoint-up(md) {
+               $elem-width: 7rem;
+            }
+
             @include colorfull-border($elem-width, $border-width, $border-radius, 2);
 
-            // .colorfull-border{
-            //    position: relative;
-            //    &__content{
-            //       @include square($elem-width);
-            //       @include perfect-center;
-            //       background: white;
-            //       border-radius: $border-radius;
-            //       z-index: 2;
-            //       position: relative;
-
-            //       img{
-            //          width: 1.8rem;
-            //       }
-            //    }
-            //    &__border{
-            //       z-index: 1;
-            //       @include square(calc(100% + #{$border-width} * 2));
-            //       position: absolute;
-
-            //       background: linear-gradient(180deg, #A53FA7 0%, rgba(233, 14, 119, 0.72) 100%);
-            //       top: -$border-width;
-            //       left: -$border-width;
-            //       border-radius: $border-radius;
-            //    }
-            // }
+            .colorfull-border {
+               &__content {
+                  img {
+                     @include media-breakpoint-up(md) {
+                        width: 2.3rem;
+                     }
+                  }
+               }
+            }
          }
       }
    }
+
+
+   // .why-we__special-card
+
+   &__special-card {
+      &>.card__title {
+         margin-bottom: 2.5rem !important;
+         max-width: 42.8rem;
+         @include media-breakpoint-up(md) {
+            max-width: 42.5rem;
+            margin-bottom: 2.5rem !important;
+         }
+         @include media-breakpoint-up(lg) {
+            max-width: 49.3rem;
+            margin-bottom: 7.5rem!important;
+         }
+      }
+
+      .card {
+         background: #CCD8FF;
+         border: 1px solid #CECECE;
+         margin: 2rem auto;
+         max-width: 38rem;
+         @include media-breakpoint-up(md) {
+            width: 90%;
+            margin: 3rem auto;
+         }
+         @include media-breakpoint-up(lg) {
+            margin: 0 auto;
+            max-width: 41.5rem;
+            padding: 4.5rem 3.3rem;
+         }
+
+         // .card__img
+
+         &__img {}
+
+         // .card__title
+
+         &__title {
+            color: #333046;
+            margin-bottom: 1.5rem;
+            text-align: center;
+         }
+
+         // .card__text
+
+         &__text {
+            text-align: center;
+         }
+      }
+
+   }
 }
+
 .section {
 
    // .section__title
 
-   &__title {
-   }
+   &__title {}
 }
