@@ -1,0 +1,111 @@
+#courses {
+   .highlight {
+      background: linear-gradient(131.61deg, #6A89FB 24.64%, #B418AF 72.99%, #F94F4F 113.91%);
+      padding: 5rem 0;
+      $color: white !important;
+      @include media-breakpoint-up(xl){
+         padding: {
+            top: 5.5rem;
+            bottom: 6.4rem;
+         }
+      }
+
+      // .highlight__title
+
+      &__title {
+         color: $color;
+         text-align: left;
+         margin-bottom: 3.5rem;
+      }
+
+      // .highlight__features
+
+      &__features {
+         margin-bottom: 4.5rem;
+      }
+
+      // .highlight__feature
+
+      &__feature {
+         margin: 1.5rem 0;
+
+         .flag {
+            display: flex;
+            @include media-breakpoint-up(md){
+               flex-direction: column;
+               text-align: center;
+            }
+            @include media-breakpoint-up(xl){
+               flex-direction: row;
+               text-align: left;
+               align-items: flex-start;
+            }
+
+            // .flag__img
+
+            &__img {
+               img {
+                  width: 4rem;
+               }
+               margin-right: 2rem;
+               @include media-breakpoint-up(md){
+                  margin: 1.5rem 0;
+               }
+               @include media-breakpoint-up(xl){
+                  margin: 0 2rem 0 0;
+               }
+            }
+
+            // .flag__text-block
+
+            &__text-block {
+               max-width: 20rem;
+               margin: 0 auto;
+            }
+
+            // .flag__text
+
+            &__text {
+               color: $color;
+               font-family: Gilroy;
+               font-style: normal;
+               font-weight: bold;
+               font-size: 1.6rem;
+               line-height: 152.5%;
+            }
+         }
+      }
+
+      // .highlight__text
+
+      &__text {
+         color: $color;
+         margin-bottom: 4.5rem;
+         @include media-breakpoint-up(md){
+            line-height: 186%!important;
+         }
+         @include media-breakpoint-up(lx){
+            line-height: 168.18%!important;
+         }
+      }
+
+      // .highlight__button
+
+      &__button {}
+
+      // .highlight__info
+
+      &__info {
+         @include media-breakpoint-up(xl){
+            padding-right: 2rem;
+         }
+      }
+
+      &__photo {
+         margin-bottom: 3rem;
+         width: 100%;
+      }
+   }
+}
+
+.section {}
