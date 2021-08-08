@@ -9,69 +9,78 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
    <link rel="stylesheet" href="css/main.css">
    <title>Школа іноземних мов Professor Deutsch & English</title>
+   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 
 <body>
-   <section class="section" id="courses">
-      <div class="highlight">
-         <div class="container">
-            <h2 class="highlight__title">Розмовний клуб</h2>
-            <div class="row">
-               <div class="col-12 col-xl-6 order-xl-2">
-                  <img class="highlight__photo" src="img/courses/highlight/photo.jpg" />
-               </div>
-               <div class="col-12 col-xl-6">
-                  <div class="highlight__info">
-                     <div class="highlight__features row">
-                        <div class="col-12 col-md-4 col-xl-6">
-                           <div class="highlight__feature">
-                              <div class="flag">
-                                 <div class="flag__img">
-                                    <img src="img/courses/features/1.svg" alt="">
-                                 </div>
-                                 <div class="flag__text-block">
-                                    <p class="flag__text">Подолання мовного бар’єру</p>
-                                 </div>
-                              </div>
-                           </div>
+   <section class="section" id="students">
+      <div class="container">
+         <h1 class="section__title">Результати наших учнів</h1>
+
+
+         <div class="container-fluid">
+            <div class="profile">
+               <div class="row">
+                  <div class="col-12 col-lg-6 col-xl-4">
+                     <div class="profile__photo">
+                        <img src="img/students/1.jpg" alt="">
+                     </div>
+                  </div>
+                  <div class="col-12 col-lg-6 col-xl-5">
+                     <div class="profile__info">
+                        <div class="profile__title">
+                           <h2>Дмитрук Олександра</h2>
                         </div>
-                        <div class="col-12 col-md-4 col-xl-6">
-                           <div class="highlight__feature">
-                              <div class="flag">
-                                 <div class="flag__img">
-                                    <img src="img/courses/features/2.svg" alt="">
+                        <div class="d-flex justify-content-between align-items-center">
+                           <div class="profile__badges">
+                              <div class="profile__badge badge">
+                                 <div class="badge__main">
+                                    <p class="badge__text">Початкова німецька</p>
                                  </div>
-                                 <div class="flag__text-block">
-                                    <p class="flag__text">Живе спілкування з носіями мов</p>
+                                 <div class="badge__aside">
+                                    <p class="badge__text">А2</p>
                                  </div>
                               </div>
                            </div>
+                           <p class="profile__sertificates-toggler btn d-xl-none">сертифікати</p>
                         </div>
-                        <div class="col-12 col-md-4 col-xl-6">
-                           <div class="highlight__feature">
-                              <div class="flag">
-                                 <div class="flag__img">
-                                    <img src="img/courses/features/3.svg" alt="">
-                                 </div>
-                                 <div class="flag__text-block">
-                                    <p class="flag__text">Безпосередня підготовка до здачі сертифікатів</p>
-                                 </div>
-                              </div>
-                           </div>
+                        <div class="profile__paragrafs">
+                           <p class="profile__text">Коли я прийшла в школу “Professor Deutsch & English” я не вміла навіть
+                              читати,
+                              але за пів року інтенсивних занять з Андрієм Ростиславовичем я вивчила німецьку достатньо щоб
+                              успішно
+                              здати екзамен на А2. </p>
+                           <p class="profile__text">Тепер я можу правильно читати, знаю основи граматики і навіть можу
+                              спілкуватись
+                              з німцями. Найголовніше, те що тепер я можу продовжити своє навчання в країні мрії</p>
                         </div>
                      </div>
-                     <p class="highlight__text">Окрема увага приділяється розвитку навичок говоріння, для чого ми
-                        проводимо
-                        німецькомовний розмовний клуб, на якому навчаємо наших учнів безбар’єрному спілкуванню німецькою
-                        мовою,
-                        розкриваючи секрети подолання мовних бар’єрів. Наші учні починають говорити німецькою мовою вже
-                        від першого
-                        заняття, з кожним разом удосконалюючи свої знання.</p>
-                     <div class="highlight__button btn btn--big">Записатись на урок</div>
+                  </div>
+                  <div class="d-none d-xl-block col-xl-2 offset-xl-1 px-0">
+                     <div class="profile__certificates certificates">
+                        <p class="certificates__title">Сертифікати</p>
+                        <div class="certificates__item">
+                           <div class="certificates__photo">
+                              <img src="img/students/anastasia-zav/certificates/1.jpg" alt="">
+                           </div>
+                           <p class="certificates__name">TestDaF A2</p>
+                        </div>
+                        <div class="certificates__item">
+                           <div class="certificates__photo">
+                              <img src="img/students/anastasia-zav/certificates/2.jpg" alt="">
+                           </div>
+                           <p class="certificates__name">IELTS C1</p>
+                        </div>
+                        <div class="certificates__footer">
+                           <strong class="btn">Показати всі</strong>
+                        </div>
+                     </div>
                   </div>
                </div>
             </div>
          </div>
+
+
 
       </div>
    </section>
@@ -81,6 +90,31 @@
    <script src="js/vendors/jquery.min.js"></script>
    <script src="styles/module/ibg/ibg.js"></script>
    <script src="styles/module/nav/nav.js"></script>
+   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+   <script>
+      const swiper = new Swiper('.swiper-container', {
+         // Optional parameters
+         direction: 'horizontal',
+         loop: true,
+         slidesPerView: 3,
+
+         // If we need pagination
+         pagination: {
+            el: '.swiper-pagination',
+         },
+
+         // Navigation arrows
+         navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+         },
+
+         // And if we need scrollbar
+         scrollbar: {
+            el: '.swiper-scrollbar',
+         },
+      });
+   </script>
 </body>
 
 </html>

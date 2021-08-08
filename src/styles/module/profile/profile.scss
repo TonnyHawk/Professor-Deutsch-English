@@ -1,0 +1,60 @@
+.profile {
+
+   // .profile__photo
+
+   &__photo {
+      margin-bottom: 2.5rem;
+      img{
+         width: 100%;
+      }
+
+   }
+
+   // .profile__info
+
+   &__info {
+      @include media-breakpoint-up(lg){
+         margin-left: 2.5rem;
+      }
+   }
+
+   // .profile__title
+
+   &__title {
+      margin-bottom: 3rem;
+   }
+
+   // .profile__badges
+
+   &__badges {
+      display: flex;
+   }
+
+   // .profile__badge
+
+   &__badge {
+      margin-right: 1.8rem;
+   }
+
+   &__sertificates-toggler{
+      width: max-content;
+    height: 4.5rem;
+   }
+
+   // .profile__paragrafs
+
+   &__paragrafs {
+      margin-top: 3rem;
+   }
+
+   // .profile__text
+
+   &__text {
+      margin-bottom: 2.5rem;
+   }
+
+   // .profile__certificates
+
+   &__certificates {
+   }
+}

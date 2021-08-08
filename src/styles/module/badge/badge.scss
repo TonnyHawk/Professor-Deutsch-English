@@ -1,0 +1,35 @@
+.badge {
+   display: flex;
+   padding: 0.8rem 1.5rem;
+   @include border;
+   justify-content: space-between;
+   max-width: max-content;
+   flex: 1 1;
+
+   // .badge__main
+
+   &__main {
+      margin-right: 0.5rem;
+      align-items: center;
+      display: flex;
+   }
+
+   // .badge__text
+
+   &__text {
+      font-family: Gilroy;
+      font-size: 1.8rem;
+      line-height: 2.1rem;
+   }
+
+   // .badge__aside
+
+   &__aside {
+      @include perfect-center;
+      padding: 0 0.8rem;
+
+      .badge__text{
+         font-weight: bold;
+      }
+   }
+}
