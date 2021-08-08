@@ -1,7 +1,7 @@
 .badge {
    display: flex;
    padding: 0.8rem 1.5rem;
-   @include border;
+   @include border(0.1rem);
    justify-content: space-between;
    max-width: max-content;
    flex: 1 1;

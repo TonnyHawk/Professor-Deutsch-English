@@ -181,9 +181,9 @@ line-height: 2.8rem;
 //    }
 // }
 
-@mixin border{
+@mixin border($width){
    border-radius: 0.9rem;
-   border: 1px solid black;
+   border: $width solid black;
 }
 
 
@@ -201,6 +201,7 @@ line-height: 2.8rem;
 @import 'module/badge/badge';
 @import 'module/profile/profile';
 @import 'module/certificates/certificates';
+@import 'module/double-num/double-num';
 
 @import 'sections/section/section';
 @import 'sections/about-us/about-us';

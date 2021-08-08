@@ -1,0 +1,26 @@
+.double-num {
+   display: flex;
+   align-items: center;
+
+   // .double-num__current
+
+   &__current {
+      font-family: Gilroy;
+      font-weight: 600;
+      font-size: 2.4rem;
+      line-height: 2.9rem;
+      color: #1F1F1F;
+      margin-right: 0.7rem;
+   }
+
+   // .double-num__all
+
+   &__all {
+      font-family: Gilroy;
+      font-size: 1.8rem;
+      line-height: 2.1rem;
+      font-weight: normal;
+
+      color: #1F1F1F;
+   }
+}

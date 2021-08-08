@@ -1,11 +1,12 @@
-#students{
-   .section{
-      &__title{
+#students {
+   .section {
+      &__title {
          text-align: center;
          margin-bottom: 5rem;
          margin: 0 auto 5rem;
          max-width: 33.3rem;
-         @include media-breakpoint-up(lg){
+
+         @include media-breakpoint-up(lg) {
             margin: 0 0 7.5rem;
             max-width: 60rem;
             text-align: left;
@@ -13,3 +14,120 @@
       }
    }
 }
+
+.slider {
+
+   // .slider__header
+
+   &__header {}
+
+   // .slider__filters
+
+   &__filters {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4rem;
+   }
+
+   // .slider__filter
+
+   &__filter {
+      font-family: Gilroy;
+      font-weight: 500;
+      font-size: 1.8rem;
+      line-height: 2.1rem;
+      margin: 0 1.5rem;
+      cursor: pointer;
+
+      &:first-child {
+         margin-left: 0;
+      }
+
+      &.is-active {
+         display: block;
+         padding: 0.5rem 2.5rem;
+         @include border(0.1rem);
+         font-weight: 600;
+         color: $red;
+      }
+   }
+
+   // .slider__body
+
+   &__body {}
+
+   // .slider__footer
+
+   &__footer {}
+
+   // .slider__preview-slider
+
+   &__preview-slider {}
+
+   // .slider__controlls
+
+   &__controlls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-items: center;
+   }
+
+   // .slider__slide-nums
+
+   &__slide-nums {
+      margin-bottom: 0.4rem;
+   }
+
+   // .slider__slide-arrows
+
+   &__slide-arrows {
+      display: flex;
+      cursor: pointer;
+   }
+
+   // .slider__slide-arrow
+
+   &__slide-arrow {
+      &:first-child {
+         margin-right: 3rem;
+         // position: relative;
+         // top: 8px;
+         padding-top: 0.8rem;
+         padding: 1.1rem 0 0.3rem;
+      }
+      &:last-child{
+         padding: 0.3rem;
+      }
+
+      path {
+         stroke: #818181;
+         transition: 0.2s;
+      }
+
+      &:hover {
+         path {
+            stroke: black;
+         }
+      }
+   }
+
+   // .slider__slide-arrow--prev
+
+   &__slide-arrow--prev {}
+
+   // .slider__slide-arrow--next
+
+   &__slide-arrow--next {}
+}
+
+.swiper-container {}
+
+.main-slider {}
+
+.swiper-wrapper {}
+
+.swiper-slide {}
+
+
+.preview-slider {}
