@@ -1,0 +1,83 @@
+.preloader {
+   @include layer;
+   z-index: 600;
+   position: fixed;
+
+
+   // .preloader__bg
+
+   &__bg {
+      @include layer;
+      z-index: 601;
+   }
+
+   // .preloader__main
+
+   &__main {
+      z-index: 602;
+      @include layer;
+      // background: rgba(0, 0, 0, 0.47);
+      background: #2C0E6D;
+      @include perfect-center;
+      color: white;
+      flex-direction: column;
+      text-align: center;
+
+   }
+
+   // .preloader__pretitle
+
+   &__pretitle {
+      font-family: Gilroy;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 3rem;
+      line-height: 132.9%;
+      @include media-breakpoint-up(lg){
+         font-size: 6.5rem;
+      }
+   }
+
+   &__title {
+      font-family: Gilroy;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 3.5rem;
+      line-height: 132.9%;
+
+      letter-spacing: 0.04rem;
+      text-transform: capitalize;
+      @include media-breakpoint-up(lg){
+         font-size: 7.2rem;
+      }
+
+   }
+
+   // .preloader__icon
+
+   &__icon {
+      margin: 4rem 0;
+      @include media-breakpoint-up(lg){
+         margin: 7.5rem;
+      }
+      img {
+         width: auto;
+      }
+   }
+
+   // .preloader__aftertext
+
+   &__aftertext {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 2rem;
+      line-height: 3.7rem;
+      /* identical to box height */
+
+      text-transform: lowercase;
+      @include media-breakpoint-up(lg){
+         font-size: 3.2rem;
+      }
+   }
+}

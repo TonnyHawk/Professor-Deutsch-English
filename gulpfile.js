@@ -23,8 +23,8 @@ function server(){
   });
 
   watch(path.projFold + path.styles + "/**/*.scss", css);
-//   watch(path.projFold + path.html + "/*.html").on('change', series(html, browserSync.reload));
-  watch([path.projFold + '/index.html']).on('change', browserSync.reload);
+  watch(path.projFold + path.html + "/*.html").on('change', series(html, browserSync.reload));
+//   watch([path.projFold + '/index.html']).on('change', browserSync.reload);
 }
 
 function css(){
@@ -46,8 +46,8 @@ function html(){
          // .pipe(browserSync.reload())
 }
 
-// let go = series(css, html, server)
-let go = series(css, server)
+let go = series(css, html, server)
+// let go = series(css, server)
 
 exports.default = go;
 

@@ -126,11 +126,13 @@ $(document).ready(function(){
             }
          });
 
-         $(this.id+" .nav__menu-item").click(function(){
+         $(this.id+" .nav__menu-item .nav__link").click(function(){
             $(this.id+" .nav__menu-item").each(function(){
                $(this).removeClass('is-active');
             })
-            $(this).addClass('is-active');
+            $(this).parent('.nav__menu-item').addClass('is-active');
+            $(this).parents('.nav').removeClass('nav_is-open');
+            $(this).parents('.nav').find('.hamburger').removeClass("is-active");
          });
 
       };

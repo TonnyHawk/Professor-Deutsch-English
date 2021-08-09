@@ -15,6 +15,8 @@
       position: relative;
       z-index: 2;
       max-width: 60rem;
+      color: white;
+      text-shadow: 0 0 2px black;
 
       // .header .text-block
 
@@ -25,7 +27,6 @@
             font-weight: 900;
             font-size: 38px;
             line-height: 47px;
-            color: #000000;
             @include media-breakpoint-down(md) {
                font-size: 36px;
             }
@@ -40,7 +41,7 @@
          // .text-block__btn
 
          &__btn {
-
+            color: black;
          }
       }
    }

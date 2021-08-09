@@ -14,22 +14,76 @@
 
 <body>
 
-   <!-- @@include('_topmenu.html')
+   @@include('_topmenu.html')
    @@include('_header.html')
-   @@include('_about-us.html') -->
-   <!-- @@include('_why-we.html') -->
-   <!-- @@include('_students.html') -->
-   @@include('_courses.html') 
+   @@include('_about-us.html')
+   @@include('_why-we.html')
+   @@include('_students.html')
+   @@include('_courses.html')
+   @@include('_teachers.html')
+   @@include('_news.html')
+   @@include('_consultation.html')
+   @@include('_footer.html')
 
-   
+   <div class="preloader" id="preloader">
+      <div class="preloader__bg ibg">
+         <img src="img/preloader/bg.png" alt="">
+      </div>
+      <div class="preloader__main">
+         <p class="preloader__pretitle">Professor</p>
+         <p class="preloader__title">Deutsch & English</p>
+         <div class="preloader__icon">
+            <img src="img/preloader/icon.png" alt="">
+         </div>
+         <p class="preloader__aftertext">Школа іноземних мов</p>
+      </div>
+   </div>
+
+
 
 
    <script src="js/vendors/jquery.min.js"></script>
    <script src="styles/module/ibg/ibg.js"></script>
    <script src="styles/module/nav/nav.js"></script>
+   <script src="js/vendors/smoothScroll.js"></script>
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
    <script>
-      const swiper = new Swiper('#students .main-slider', {
+          window.onload = function(){
+        //hide the preloader
+        setTimeout(function(){
+         document.querySelector("#preloader").style.display = "none";
+         document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
+        }, 2000);
+    }
+   </script>
+
+   <script>
+      let prevScrollPos = window.pageYOffset;
+      window.addEventListener('scroll', function () {
+         // hiding menu on scroll down
+         let currentScrollPos = window.pageYOffset;
+         if (prevScrollPos > currentScrollPos) {
+            $(".nav").removeClass('hide');
+         } else {
+            $(".nav").addClass('hide');
+         }
+
+         prevScrollPos = currentScrollPos;
+         // end
+
+         if (window.pageYOffset > 0) {
+            $('.nav').addClass('is-sticked')
+         } else {
+            if ($('.nav').hasClass('is-sticked')) {
+               $('.nav').removeClass('is-sticked')
+            }
+         }
+      })
+   </script>
+
+   <script>
+      const studentsMain = new Swiper('#students .main-slider', {
          // Optional parameters
          direction: 'horizontal',
          loop: false,
@@ -62,7 +116,7 @@
       });
 
 
-      const slider = new Swiper('#students .preview-slider .swiper-container', {
+      const studentsView = new Swiper('#students .preview-slider .swiper-container', {
          // Optional parameters
          direction: 'horizontal',
          loop: true,
@@ -88,10 +142,104 @@
          },
       });
 
-      slider.on('slideChangeTransitionEnd', function () {
-         let index_currentSlide = slider.realIndex;
-         let currentSlide = slider.slides[index_currentSlide]
-         swiper.slideTo(index_currentSlide, 1000, false);
+      studentsMain.on('slideChangeTransitionEnd', function () {
+         let index_currentSlide = studentsView.realIndex;
+         let currentSlide = studentsView.slides[index_currentSlide]
+         studentsView.slideTo(index_currentSlide, 1000, false);
+      });
+
+
+      //courses
+
+      // const coursesMain = new Swiper('#courses .swiper-container', {
+      //    // Optional parameters
+      //    direction: 'horizontal',
+      //    loop: false,
+      //    slidesPerView: 'auto',
+      //    freeMode: true,
+
+      //    breakpoints: {
+      //       768: {
+      //          slidesPerView: 2,
+      //       },
+      //       1200: {
+      //          slidesPerView: 3,
+      //       }
+      //    },
+
+      //    // Navigation arrows
+      //    // navigation: {
+      //    //    nextEl: '#courses .slider__slide-arrow--next',
+      //    //    prevEl: '#courses .slider__slide-arrow--prev',
+      //    // },
+      // });
+   </script>
+
+   <!-- teachers -->
+   <script>
+            const teachersMain = new Swiper('#teachers .main-slider', {
+         // Optional parameters
+         direction: 'horizontal',
+         loop: false,
+         slidesPerView: 'auto',
+         effect: 'fade',
+         fadeEffect: {
+            crossFade: true
+         },
+         allowTouchMove: false,
+         runCallbacksOnInit: true,
+         onInit: function (sw) {
+            alert()
+            let current = document.querySelector('#teachers .double-num__current');
+            let all = document.querySelector('#teachers .double-num__all');
+            current.innerHTML = (sw.activeIndex + 1);
+            all.innerHTML = '/ ' + sw.slides.length;
+         },
+         onSlideChangeEnd: function (sw) {
+            console.log('changed');
+            let current = document.querySelector('#teachers .double-num__current');
+            current.innerHTML = (sw.activeIndex + 1);
+         },
+
+
+         // Navigation arrows
+         navigation: {
+            nextEl: '#teachers .slider__slide-arrow--next',
+            prevEl: '#teachers .slider__slide-arrow--prev',
+         },
+      });
+
+
+      const teachersView = new Swiper('#teachers .preview-slider .swiper-container', {
+         // Optional parameters
+         direction: 'horizontal',
+         loop: true,
+         // speed: 1000,
+         slidesPerView: 'auto',
+
+         breakpoints: {
+            768: {
+               slidesPerView: 3,
+            },
+            1024: {
+               slidesPerView: 4,
+            },
+            1200: {
+               slidesPerView: 5,
+            }
+         },
+
+         // Navigation arrows
+         navigation: {
+            nextEl: '#teachers .slider__slide-arrow--next',
+            prevEl: '#teachers .slider__slide-arrow--prev',
+         },
+      });
+
+      teachersMain.on('slideChangeTransitionEnd', function () {
+         let index_currentSlide = teacherssView.realIndex;
+         let currentSlide = teachersView.slides[index_currentSlide]
+         teachersView.slideTo(index_currentSlide, 1000, false);
       });
    </script>
 </body>

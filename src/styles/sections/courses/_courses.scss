@@ -3,6 +3,7 @@
       background: linear-gradient(131.61deg, #6A89FB 24.64%, #B418AF 72.99%, #F94F4F 113.91%);
       padding: 5rem 0;
       $color: white !important;
+      margin-top: 6.5rem;
       @include media-breakpoint-up(xl){
          padding: {
             top: 5.5rem;

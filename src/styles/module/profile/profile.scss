@@ -43,7 +43,7 @@
    // .profile__stat
 
    &__stat {
-      flex: 1 0 50%;
+      flex: 1 0 calc(50% - 3rem);
       display: flex;
       justify-content: center;
       @include media-breakpoint-up(md){
