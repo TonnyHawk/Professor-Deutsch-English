@@ -1,8 +1,9 @@
 .card {
+   position: relative;
    background: #F2F5FF;
    border-radius: 2.4rem;
    padding: 5rem 3rem;
-   position: relative;
+   border: 1px solid gainsboro;
 
    // .card__img
 
@@ -47,4 +48,5 @@
          }
       }
    }
+
 }

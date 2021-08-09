@@ -1,4 +1,10 @@
 #about-us{
+   padding-top: 6rem;
+   padding-bottom: 6rem;
+   @include media-breakpoint-up(lg){
+      padding-top: 13rem;
+      padding-bottom: 6.5rem;
+   }
    .section {
 
       // .section__pretitle

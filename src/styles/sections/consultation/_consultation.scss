@@ -1,0 +1,90 @@
+#consultation {
+   background: #fbfbfb;
+   .section {
+      &__description {
+         margin-bottom: 5rem;
+      }
+      &__photo{
+         margin-bottom: 7rem;
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         @include media-breakpoint-up(lg){
+            padding: 0 2rem;
+            margin-bottom: 0;
+         }
+      }
+      &__text-block{
+         max-width: 61rem;
+         text-align: center;
+         margin: 0 auto;
+         @include media-breakpoint-up(lg){
+            text-align: left;
+            margin-left: 0;
+         }
+      }
+   }
+
+   img{
+      width: 90%;
+      max-width: 47.5rem;
+   }
+
+   .form {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      @include media-breakpoint-up(lg){
+         justify-content: flex-start;
+      }
+
+      &__container{
+         width: 100%;
+         max-width: 41rem;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         @include media-breakpoint-up(lg){
+            align-items: flex-start;
+         }
+      }
+
+      input[type='text'] {
+         display: block;
+         width: 100%;
+         padding: 2.5rem;
+         border-radius: 0.9rem;
+         border: 1px solid gainsboro;
+         margin-bottom: 3rem;
+         font-size: 1.5rem;
+         font-family: roboto;
+
+         // &::-webkit-input-placeholder {
+         //    color: #c0392b;
+         // }
+
+         // &::-moz-placeholder {
+         //    color: #c0392b;
+         // }
+
+         // /* Firefox 19+ */
+         // &:-moz-placeholder {
+         //    color: #c0392b;
+         // }
+
+         // /* Firefox 18- */
+         // &:-ms-input-placeholder {
+         //    color: #c0392b;
+         // }
+      }
+   }
+
+   .btn--light {
+      border-color: gainsboro;
+      width: max-content;
+      background: $yellow;
+
+      &:hover {
+      }
+   }
+}

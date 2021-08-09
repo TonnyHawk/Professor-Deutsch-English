@@ -4,7 +4,8 @@
 
    &__photo {
       margin-bottom: 2.5rem;
-      img{
+
+      img {
          width: 100%;
       }
 
@@ -13,7 +14,7 @@
    // .profile__info
 
    &__info {
-      @include media-breakpoint-up(lg){
+      @include media-breakpoint-up(lg) {
          margin-left: 2.5rem;
       }
    }
@@ -30,15 +31,57 @@
       display: flex;
    }
 
+   // .profile__stats
+
+   &__stats {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+      gap: 2rem 3rem;
+   }
+
+   // .profile__stat
+
+   &__stat {
+      flex: 1 0 50%;
+      display: flex;
+      justify-content: center;
+      @include media-breakpoint-up(md){
+         flex: 0 auto;
+         // margin-right: 3rem;
+      }
+
+      .stat {
+         &__num {
+            font-family: Gilroy;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 4.8rem;
+            line-height: 159.68%;
+         }
+
+         &__title {
+            font-family: Gilroy;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 1.4rem;
+            line-height: 159.68%;
+            
+            letter-spacing: 0.07rem;
+            max-width: 10.2rem;
+         }
+      }
+   }
+
    // .profile__badge
 
    &__badge {
       margin-right: 1.8rem;
    }
 
-   &__sertificates-toggler{
+   &__sertificates-toggler {
       width: max-content;
-    height: 4.5rem;
+      height: 4.5rem;
    }
 
    // .profile__paragrafs
@@ -55,6 +98,5 @@
 
    // .profile__certificates
 
-   &__certificates {
-   }
+   &__certificates {}
 }

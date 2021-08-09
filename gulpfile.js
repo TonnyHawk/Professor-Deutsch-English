@@ -24,7 +24,7 @@ function server(){
 
   watch(path.projFold + path.styles + "/**/*.scss", css);
 //   watch(path.projFold + path.html + "/*.html").on('change', series(html, browserSync.reload));
-  watch(path.projFold + "/index.html").on('change', browserSync.reload);
+  watch([path.projFold + '/index.html']).on('change', browserSync.reload);
 }
 
 function css(){
@@ -36,7 +36,7 @@ function css(){
          .pipe(autoprefixer())
          .pipe(sourcemaps.write())
          .pipe(dest('./src/css/'))
-         .pipe(browserSync.stream());
+         .pipe(browserSync.stream())
 }
 
 function html(){

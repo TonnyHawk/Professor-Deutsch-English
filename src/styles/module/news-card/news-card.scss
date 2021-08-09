@@ -1,0 +1,60 @@
+.news-card {
+   width: 100%;
+   margin-bottom: 5rem;
+
+   // .news-card__photo
+
+   &__photo {
+      width: 100%;
+      padding-top: 63%;
+      border-radius: 1.2rem;
+   }
+
+   // .news-card__tags
+
+   &__tags {
+      display: flex;
+      align-items: center;
+      margin: 1.8rem 0;
+   }
+
+   // .news-card__tag-item
+
+   &__tag-item{
+      margin-right: 1.1rem;
+   }
+
+   // .news-card__tag
+
+   &__tag {
+      display: block;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 159.68%;
+
+      color: #231769;
+      padding: 0.5rem 1.5rem;
+      background: #CCD8FF;
+      border-radius: 0.6rem;
+
+   }
+
+   // .news-card__date
+
+   &__date {
+      font-family: Roboto;
+      font-size: 1.2rem;
+   }
+
+   // .news-card__title
+
+   &__title {
+      font-family: Gilroy;
+      font-weight: 800;
+      font-size: 2.5rem;
+line-height: 3.1rem;
+color: #130735;
+   }
+}

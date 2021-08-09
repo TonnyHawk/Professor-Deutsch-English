@@ -107,19 +107,6 @@
       }
    }
 
-   .section {
-
-      // .section__title
-   
-      &__title {
-      }
-   
-      // .section__more-btn
-   
-      &__more-btn {
-      }
-   }
-
    .slider {
 
       // .slider__header
@@ -140,55 +127,164 @@
       // .slider__filters
    
       &__filters {
-         display: flex;
-         flex-wrap: nowrap;
-         overflow: auto;
-         align-items: center;
       }
    
       // .slider__filter
    
       &__filter {
-         display: block;
-         font-family: 'Roboto';
-         font-style: normal;
-         font-size: 1.6rem;
-         line-height: 159.68%;
-         border-radius: 0.9rem;
-         padding: 1.5rem 1.8rem;
          margin-right: 6.3rem;
-         flex-shrink: 0;
-         max-width: 23rem;
-
-         &.is-active{
-            border: 1px solid black;
-            font-weight: bold;
-         }
       }
    
       // .slider__body
    
       &__body {
-         display: none;
+      }
+   }
+
+
+   .card {
+      $inter-item-margin: 4rem;
+      border-radius: 9px;
+      padding: 4rem 3rem;
+      width: max-content;
+   
+      // .card__title
+   
+      &__title {
+         font-family: Gilroy;
+         font-weight: bold;
+         font-size: 2rem;
+         line-height: 159.68%;
+         margin-bottom: $inter-item-margin;
+      }
+   
+      // .card__item
+   
+      &__item {
+         margin-bottom: $inter-item-margin;
+      }
+   
+      // .card__feature
+   
+      &__feature {
+   
+         .feature {
+   
+            &__icon {
+               margin-right: 1.5rem;
+            }
+   
+            &__text {}
+         }
+      }
+   
+      // .card__description
+   
+      &__description {
+         font-family: Roboto;
+         font-size: 1.2rem;
+         line-height: 159.68%;
+         margin-top: 1.1rem;
+      }
+   
+      // .card__progress
+   
+      &__progress {
+         .progress {
+   
+            // .progress__head
+   
+            &__head {
+               margin-bottom: 1.1rem;
+            }
+   
+            // .progress__title
+   
+            &__title {
+               font-family: Roboto;
+               font-size: 1.3rem;
+               line-height: 159.68%;
+            }
+   
+            // .progress__nums
+   
+            &__nums {
+               font-family: Roboto;
+   
+               .double-num {
+   
+                  // .double-num__current
+   
+                  &__current {
+                     font-size: 1.4rem;
+                     line-height: 159.68%;
+                     margin-right: 0;
+                  }
+   
+                  // .double-num__dash
+   
+                  &__dash {
+                     font-size: 1.4rem;
+                     line-height: 159.68%;
+                     margin: 0 0.2rem;
+                  }
+   
+                  // .double-num__all
+   
+                  &__all {
+                     font-size: 1.1rem;
+                     line-height: 159.68%;
+                  }
+               }
+            }
+   
+            // .progress__body
+   
+            &__body {
+               width: 100%;
+            }
+   
+            // .progress__bg-line
+   
+            &__bg-line {
+               height: 2.7rem;
+               background: #CACCD1;
+            }
+   
+            // .progress__main-line
+   
+            &__main-line {
+               background: #262626;
+               width: 60%;
+            }
+         }
+      }
+   
+      // .card__price
+   
+      &__price {
+         font-family: Roboto;
+         font-size: 1.5rem;
+         line-height: 159.68%;
+      }
+   
+      // .card__button
+   
+      &__button {
+         margin-top: $inter-item-margin;
+      }
+   }
+
+   .swiper-slide {
+      width: max-content;
+      padding-right: 3.5rem;
+      @include media-breakpoint-up(md){
+         width: auto;
+         padding-right: 0;
       }
    }
 }
 
-
-.is-active {
-}
-.flag {
-
-   // .flag__img
-
-   &__img {
-   }
-
-   // .flag__text
-
-   &__text {
-   }
-}
 .swiper-container {
 }
 .swiper-wrapper {

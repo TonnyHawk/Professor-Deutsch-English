@@ -3,6 +3,9 @@
    .section__title {
       margin-bottom: 10rem;
       max-width: 37rem;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
 
       @include media-breakpoint-up(md) {
          max-width: 55rem;
@@ -25,6 +28,7 @@
       max-width: 31.2rem;
       margin-left: auto;
       margin-right: auto;
+      border: 1px solid gainsboro;
 
       @include media-breakpoint-up(md) {
          $mb: 7rem;
@@ -89,6 +93,12 @@
             @include colorfull-border($elem-width, $border-width, $border-radius, 2);
 
             .colorfull-border {
+               @include square($elem-width);
+               border: 1px solid gainsboro;
+               background: white;
+               border-radius: 100%;
+               @include perfect-center;
+
                &__content {
                   img {
                      @include media-breakpoint-up(md) {
@@ -108,13 +118,15 @@
       &>.card__title {
          margin-bottom: 2.5rem !important;
          max-width: 42.8rem;
+
          @include media-breakpoint-up(md) {
             max-width: 42.5rem;
             margin-bottom: 2.5rem !important;
          }
+
          @include media-breakpoint-up(lg) {
             max-width: 49.3rem;
-            margin-bottom: 7.5rem!important;
+            margin-bottom: 7.5rem !important;
          }
       }
 
@@ -123,10 +135,12 @@
          border: 1px solid #CECECE;
          margin: 2rem auto;
          max-width: 38rem;
+
          @include media-breakpoint-up(md) {
             width: 90%;
             margin: 3rem auto;
          }
+
          @include media-breakpoint-up(lg) {
             margin: 0 auto;
             max-width: 41.5rem;
@@ -153,11 +167,6 @@
       }
 
    }
-}
 
-.section {
 
-   // .section__title
-
-   &__title {}
 }
