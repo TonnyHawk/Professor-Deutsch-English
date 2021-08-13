@@ -1,0 +1,120 @@
+.tab {
+
+   // .tab__header
+
+   &__header {
+      display: flex;
+      overflow: auto;
+      width: 100%;
+   }
+
+   // .tab__name
+
+   &__name {
+
+      display: block;
+      width: max-content;
+      padding: 2rem 0rem 3rem;
+      margin-right: 4rem;
+      flex: 0 0 auto;
+
+
+      // .tab__name_is-active
+
+      &_is-active {
+         @extend .tab__name;
+         padding: 2rem 3rem 3rem;
+         background: white;
+         box-shadow: 0px 4px 17px 6px rgba(154, 154, 154, 0.25);
+         border-radius: 10px 10px 0px 0px;
+      }
+   }
+
+   // .tab__name-text
+
+   &__name-text {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 27px;
+      line-height: 32px;
+   }
+
+   // .tab__body
+
+   &__body {}
+
+   // .tab__aside
+
+   &__aside {}
+
+   // .tab__aside-item
+
+   &__aside-item {}
+
+   // .tab__feature
+
+   &__feature {}
+
+   // .tab__info-block
+
+   &__info-block {}
+
+   // .tab__main
+
+   &__main {}
+
+   // .tab__col
+
+   &__col {}
+}
+
+.feature {
+
+   // .feature__icon
+
+   &__icon {}
+
+   // .feature__text
+
+   &__text {
+
+      // .feature__text_link
+
+      &_link {}
+   }
+}
+
+.info-block {
+
+   // .info-block__title
+
+   &__title {}
+
+   // .info-block__list
+
+   &__list {}
+
+   // .info-block__list-item
+
+   &__list-item {}
+
+   // .info-block__text
+
+   &__text {}
+
+   // .info-block__footer
+
+   &__footer {}
+}
+
+.read-more {
+
+   // .read-more__text
+
+   &__text {}
+
+   // .read-more__icon
+
+   &__icon {}
+}

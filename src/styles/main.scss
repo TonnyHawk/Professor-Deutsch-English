@@ -10,7 +10,7 @@ html {
    color: black;
    width: 100vw;
    max-width: 100vw;
-   overflow: hidden;
+   // overflow: hidden;
 }
 
 // body {
@@ -188,6 +188,7 @@ a {
 @import 'module/progress/progress';
 @import 'module/news-card/news-card';
 @import 'module/preloader/preloader';
+@import 'module/tab/tab';
 
 @import 'sections/section/section';
 @import 'sections/about-us/about-us';
