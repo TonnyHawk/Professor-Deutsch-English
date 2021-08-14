@@ -6,6 +6,23 @@
       display: flex;
       overflow: auto;
       width: 100%;
+      padding: 2rem;
+      gap: 5.5rem;
+      position: relative;
+      z-index: -1;
+      @include media-breakpoint-up(md){
+         justify-content: space-between;
+         width: 82%;
+      }
+   }
+
+   // .tab__header-container
+
+   &__header-container {
+      @include media-breakpoint-up(md){
+         display: flex;
+         justify-content: center;
+      }
    }
 
    // .tab__name
@@ -15,7 +32,6 @@
       display: block;
       width: max-content;
       padding: 2rem 0rem 3rem;
-      margin-right: 4rem;
       flex: 0 0 auto;
 
 
@@ -25,8 +41,8 @@
          @extend .tab__name;
          padding: 2rem 3rem 3rem;
          background: white;
-         box-shadow: 0px 4px 17px 6px rgba(154, 154, 154, 0.25);
-         border-radius: 10px 10px 0px 0px;
+         box-shadow: 0px 0.4rem 1.7rem 0.6rem rgba(154, 154, 154, 0.25);
+         border-radius: 1rem 1rem 0 0;
       }
    }
 
@@ -36,85 +52,238 @@
       font-family: Roboto;
       font-style: normal;
       font-weight: 500;
-      font-size: 27px;
-      line-height: 32px;
+      font-size: 2.7rem;
+      line-height: 3.2rem;
    }
 
    // .tab__body
 
-   &__body {}
+   &__body {
+      box-shadow: 0px 0.4rem 1.7rem 0.6rem rgba(154, 154, 154, 0.25);
+      border-radius: 1rem;
+      padding: 3rem 3rem 5rem;
+      position: relative;
+      z-index: 2;
+      top: -2rem;
+      background: white;
+      @include media-breakpoint-up(md){
+         display: flex;
+         padding: 4.5rem;
+         gap: 9%;
+      }
+   }
 
    // .tab__aside
 
-   &__aside {}
+   &__aside {
+      max-width: 25rem;
+      margin-bottom: 6rem;
+      @include media-breakpoint-up(md){
+         margin-right: 0;
+         margin-bottom: 0;
+         max-width: 28.5rem;
+         flex: 1 1 50%;
+      }
 
-   // .tab__aside-item
+      .info-block {
 
-   &__aside-item {}
+         // .info-block__title
+
+         &__title {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.7rem;
+            line-height: 168.18%;
+            margin-bottom: 1.5rem;
+            @include media-breakpoint-up(md){
+               font-size: 2rem;
+            }
+         }
+
+         // .info-block__list
+
+         &__list {}
+
+         // .info-block__list-item
+
+         &__list-item {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.5rem;
+            line-height: 168.18%;
+            display: flex;
+            align-items: center;
+            @include media-breakpoint-up(md){
+               font-size: 1.7rem;
+            }
+
+            &:before {
+               content: '';
+               display: block;
+               order: -1;
+               margin: 0 1.2rem;
+               @include square(0.4rem);
+               background: black;
+               border-radius: 100%;
+               @include media-breakpoint-up(md){
+                  margin: 0 1.7rem;
+               }
+            }
+         }
+
+         // .info-block__text
+
+         &__text {}
+
+         // .info-block__footer
+
+         &__footer {}
+      }
+
+      .btn--big {
+         width: 100%;
+      }
+
+      // .tab__aside-item
+
+      &-item {
+         margin-bottom: 5rem;
+
+         &:last-child {
+            margin-bottom: 0;
+         }
+      }
+   }
 
    // .tab__feature
 
-   &__feature {}
+   &__feature {
+      .feature {
+         align-items: center;
+         margin-bottom: 1.5rem;
+
+         // .feature__icon
+
+         &__icon {
+            margin-right: 2rem;
+
+            img {
+               width: 2.8rem;
+            }
+         }
+
+         // .feature__text
+
+         &__text {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.5rem;
+            line-height: 168.18%;
+            @include media-breakpoint-up(md){
+               font-size: 1.7rem;
+            }
+
+            // .feature__text_link
+
+            &_link {
+               @extend .feature__text;
+               text-decoration: underline;
+            }
+         }
+      }
+   }
 
    // .tab__info-block
 
-   &__info-block {}
+   &__info-block {
+      .info-block {
+
+         // .info-block__title
+
+         &__title {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.8rem;
+            line-height: 168.18%;
+            margin-bottom: 2rem;
+         }
+
+         // .info-block__list
+
+         &__list {}
+
+         // .info-block__list-item
+
+         &__list-item {}
+
+         // .info-block__text
+
+         &__text {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.5rem;
+            line-height: 168.18%;
+            margin-bottom: 2rem;
+
+            &:last-child {
+               margin-bottom: 0;
+            }
+         }
+
+         // .info-block__footer
+
+         &__footer {
+            margin-top: 2.5rem;
+         }
+      }
+   }
 
    // .tab__main
 
-   &__main {}
+   &__main {
+      @include media-breakpoint-up(md){
+         flex: 1 1 50%;
+      }
+      @include media-breakpoint-up(xl){
+         display: flex;
+         gap: 3%;
+      }
+   }
 
    // .tab__col
 
-   &__col {}
-}
-
-.feature {
-
-   // .feature__icon
-
-   &__icon {}
-
-   // .feature__text
-
-   &__text {
-
-      // .feature__text_link
-
-      &_link {}
+   &__col {
+      margin-bottom: 5rem;
+      &:last-child{margin-bottom: 0;}
+      flex: 1 0 50%;
+      max-width: 33rem;
    }
 }
 
-.info-block {
-
-   // .info-block__title
-
-   &__title {}
-
-   // .info-block__list
-
-   &__list {}
-
-   // .info-block__list-item
-
-   &__list-item {}
-
-   // .info-block__text
-
-   &__text {}
-
-   // .info-block__footer
-
-   &__footer {}
-}
-
 .read-more {
+   display: flex;
+   align-items: center;
 
    // .read-more__text
 
-   &__text {}
+   &__text {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+   }
 
    // .read-more__icon
 
-   &__icon {}
+   &__icon {
+      font-size: 1.1rem;
+      margin-left: 1.5rem;
+      font-weight: bold;
+   }
 }
