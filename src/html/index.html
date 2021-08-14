@@ -75,43 +75,86 @@
       })
    </script>
 
-   <!-- custom readmore -->
+   <!-- courses readmore -->
    <script>
+      let lenght = 2;
+      // $('.has-readmore').each(function () { // choosing a block
+      //    let paragraphsLenght = 0;
+      //    let paragraphs = $(this).find('p'); // elements inside our main one
+      //    let croppedHeight = 0; // how tall well be an element when we crop it to those 'lenght' num of paragraphs
+      //    $(paragraphs).each(element => { // counting the number of p elements inside our block
+      //       paragraphsLenght++
+      //    });
+      //    if (paragraphsLenght >
+      //       lenght
+      //       ) { // we don't need to crop anything when there is less elements in our block then we want to leave anyway
+      //       for (let i = 0; i <
+      //          lenght; i++
+      //          ) { // counting the height of our block after cutting other elements besides this 'lenght' num of elemnts
+      //          croppedHeight += $(paragraphs).eq(i).height();
+      //       }
+      //       $(this).css({
+      //          'height': croppedHeight,
+      //          'overflow': 'hidden'
+      //       });
+      //       $(this).parent().append(
+      //          '<div class="info-block__read-more read-more"><p class="read-more__text">Читати більше</p><div class="read-more__icon"><i class="bi bi-chevron-down"></i></div></div>'
+      //       );
+      //    }
+      // })
 
       (function ($) {
 
-         $.fn.myReadmore = function (options) {
+         $.fn.readmore = function (options) {
 
             $(this).find('.has-readmore').each(function () { // choosing a block
                let paragraphsLenght = 0;
                let paragraphs = $(this).find('p'); // elements inside our main one
-               let croppedHeight =
-               0; // how tall well be an element when we crop it to those 'lenght' num of paragraphs
+               let croppedHeight = 0; // how tall well be an element when we crop it to those 'lenght' num of paragraphs
                $(paragraphs).each(element => { // counting the number of p elements inside our block
                   paragraphsLenght++
                });
-               if (paragraphsLenght >
-                  lenght
-               ) { // we don't need to crop anything when there is less elements in our block then we want to leave anyway
-                  for (let i = 0; i <
-                     lenght; i++
-                  ) { // counting the height of our block after cutting other elements besides this 'lenght' num of elemnts
+               if (paragraphsLenght > options.num) { // we don't need to crop anything when there is less elements in our block then we want to leave anyway
+                  for (let i = 0; i < options.num; i++) { // counting the height of our block after cutting other elements besides this 'lenght' num of elemnts
                      croppedHeight += $(paragraphs).eq(i).height();
                   }
                   $(this).css({
                      'height': croppedHeight,
                      'overflow': 'hidden'
                   });
-                  $(this).parent().append(
-                     '<div class="info-block__read-more read-more"><p class="read-more__text">Читати більше</p><div class="read-more__icon"><i class="bi bi-chevron-down"></i></div></div>'
-                  );
+                  // adding buttons 'more' and 'less'
+                  $(this).parent().append( // toggler 'more'
+                     '<div class="info-block__read-more read-more read-more_more"><p class="read-more__text">Читати більше</p><div class="read-more__icon"><i class="bi bi-chevron-down"></i></div></div>'
+                  )
+                  $(this).parent().find('.read-more_more').click(function(){
+                     let blockHeight = 0;
+                     $(paragraphs).each(function(){ // block height is the sum of height of all paragraphs
+                        blockHeight += $(this).height()
+                     })
+                     console.log(blockHeight);
+                     $(this).parent().find('.has-readmore').animate({'height': blockHeight});
+                     $(this).parent().find('.read-more_less').css('display', 'flex');
+                     $(this).css('display', 'none');
+                  });
+                  $(this).parent().append( // toggler 'less'
+                  '<div class="info-block__read-more read-more read-more_less" style="display: none;"><p class="read-more__text">Приховати</p><div class="read-more__icon"><i class="bi bi-chevron-up"></i></div></div>'
+                  )
+                  $(this).parent().find('.read-more_less').click(function(){
+                     $(this).parent().find('.has-readmore').animate({'height': croppedHeight});
+                     $(this).css('display', 'none');
+                     $(this).parent().find('.read-more_more').css('display', 'flex');
+                  });
+               
                }
             })
          };
 
       }(jQuery));
 
-      $('#courses .tab__main').myReadmore({lenght: 2});
+      $('#courses .tab__main').readmore({num: 2});
+
+   </script>
+   <script>
    </script>
 
    <!-- <script>
