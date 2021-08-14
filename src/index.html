@@ -12,8 +12,8 @@
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -28,19 +28,19 @@
    <div class="tab">
       <div class="tab__header-container container-md px-0 px-md-3">
          <div class="tab__header">
-            <div class="tab__name_is-active">
+            <div class="tab__name is-active" data-target='a1'>
                <p class="tab__name-text">A1</p>
             </div>
-            <div class="tab__name">
+            <div class="tab__name" data-target='a2'>
                <p class="tab__name-text">A2</p>
             </div>
-            <div class="tab__name">
+            <div class="tab__name" data-target='b1'>
                <p class="tab__name-text">B1</p>
             </div>
-            <div class="tab__name">
+            <div class="tab__name" data-target='b2'>
                <p class="tab__name-text">B2</p>
             </div>
-            <div class="tab__name">
+            <div class="tab__name" data-target='c1'>
                <p class="tab__name-text">C1</p>
             </div>
          </div>
@@ -48,7 +48,109 @@
       <div class="container-md g-0 g-md-3">
          <div class="row g-0">
             <div class="col-12">
-               <div class="tab__body">
+               <div class="tab__body is-visible" data-name='a1'>
+                  <div class="tab__aside">
+                     <!-- <div class="tab__aside-item">
+                        <p class="tab__text">По завершенні курсу навчання учень спроможний скласти міжнародний іспит рівня А1 (Goethe-Zertifikat A1, ÖSD-Zertifikat A1)  </p>
+                     </div> -->
+                     <div class="tab__aside-item">
+                        <div class="tab__feature">
+                           <div class="feature">
+                              <div class="feature__icon"><img src="img/icons/bricks.svg" alt=""></div>
+                              <p class="feature__text">Складається з 12 основних блоків</p>
+                           </div>
+                           <div class="feature">
+                              <div class="feature__icon"><img src="img/icons/clock.svg" alt=""></div>
+                              <p class="feature__text">Тривалість - 80 акад. годин</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab__aside-item">
+                        <div class="tab__info-block info-block">
+                           <p class="info-block__title">Розвиток</p>
+                           <ul class="info-block__list">
+                              <li class="info-block__list-item">Усного, писемного мовлення</li>
+                              <li class="info-block__list-item">Навичок слухання та читання</li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="tab__aside-item">
+                        <div class="tab__feature">
+                           <div class="feature">
+                              <div class="feature__icon"><img src="img/icons/book.svg" alt=""></div>
+                              <a class="feature__text_link">Навчальні підручники</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab__aside-item">
+                        <p class="btn btn--big">Записатись</p>
+                     </div>
+                  </div>
+                  <div class="tab__main">
+                     <div class="tab__col">
+                        <div class="tab__info-block info-block">
+                           <p class="info-block__title">Розмовні теми / Konversation:</p>
+                           <div class="info-block__body has-readmore">
+                              <p class="info-block__text">1. Знайомство. Представлення себе / Begrüßen und verabschieden,
+                                 sich vorstellen, über Namen, Herkunft und Sprachen sprechen.
+                              </p>
+                              <p class="info-block__text">2. Формулювання питань про найпростіші побутові ситуації /
+                                 fragen, wie es jemandem geht, was man trinken möchte, Telefonnummer und Adresse sagen.
+                              </p>
+                              <p class="info-block__text">3. Формулювання питань про ціни, проста комунікація на вулиці і в
+                                 магазинах, опис предметів, розуміння простих оголошень / über Preise sprechen,
+                                 Verkaufsgespräche führen, Gegenstände beschreiben, Kleinanzeigen verstehen.
+                              </p>
+                              <p class="info-block__text">4. Час і годинник. Робочий день / Wie spät ist es? Uhrzeiten,
+                                 Tageszeiten angeben, über den Tagesablauf sprechen, sich verabreden.
+                              </p>
+                              <p class="info-block__text">5. В супермаркеті. Вміння вести розмову з продавцем, писати
+                                 рецепти / Einkaufsdialoge verstehen, einen Einkaufszettel schreiben, Kochrezepte
+                                 verstehen.
+                              </p>
+                              <p class="info-block__text">6. Сімейне життя / über die Familie sprechen, über Geburtstage
+                                 sprechen, über Vergangenes sprechen.
+                              </p>
+                              <p class="info-block__text">7. Орієнтація в місті / Ortsangaben machen, nach dem Weg fragen,
+                                 Hinweise zum Weg geben, eine neue Arbeitsstelle antreten.
+                              </p>
+                              <p class="info-block__text">8. Опис квартир і будинків, пошук житла, розуміння оголошень з
+                                 оренди приміщень, вміння виражати бажання і можливості / Wohnungsanzeigen verstehen, über
+                                 die Wohnungssuche sprechen, sich über die Wohnung informieren, Wünsche und Möglichkeiten
+                                 ausdrücken.
+                              </p>
+                              <p class="info-block__text">9. Опис власної біографії. Запит інформації / Einen Lebenslauf
+                                 verstehen und präsentieren, über eigene Person sprechen, persönliche Informationen
+                                 erfragen.
+                              </p>
+                              <p class="info-block__text">10. Місце роботи / über Arbeit und Beruf sprechen, sagen, was
+                                 einem gefällt, berufliche Telefongespräche verstehen.
+                              </p>
+                              <p class="info-block__text">11. Здоров'я і відвідини лікаря / Körperteile benennen, Gespräche
+                                 beim Arzt führen, über Fitness sprechen, Gesundheitsprobleme beschreiben, Termine
+                                 vereinbaren.
+                              </p>
+                              <p class="info-block__text">12. Час на вихідних. Бронювання подорожей, запит інформацій і
+                                 готелі, купівля квитків, розмова про погоду, розуміння оголошень / eine Reise buchen,
+                                 Hotelinformationen erfragen, Fahrkarten kaufen, über das Wetter sprechen, Anzeigen
+                                 verstehen.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab__col">
+                        <div class="tab__info-block info-block">
+                           <p class="info-block__title">Граматичні теми / Grammatik:</p>
+                           <div class="info-block__body">
+                              <p class="info-block__text">1. Алфавіт. Прості розповідні речення. Питальні речення з
+                                 питальним словом. Питальні слова. Теперішній час / Alphabet. Aussagesätze und W-Fragen.
+                                 Fragewörter. Präsens.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="tab__body" data-name='a2'>
                   <div class="tab__aside">
                      <div class="tab__aside-item">
                         <div class="tab__feature">
@@ -120,7 +222,7 @@
    </div>
 
 
-   <!-- <div class="highlight">
+   <div class="highlight">
       <div class="container">
          <h2 class="highlight__title">Розмовний клуб</h2>
          <div class="row">
@@ -180,7 +282,7 @@
          </div>
       </div>
 
-   </div> -->
+   </div>
 </section>
 
    <div class="preloader" id="preloader">
@@ -205,6 +307,51 @@
    <script src="styles/module/nav/nav.js"></script>
    <script src="js/vendors/smoothScroll.js"></script>
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+   <!-- <script src="js/vendors/readmore.min.js"></script> -->
+
+   <!-- courses tabs -->
+   <script>
+      $('.tab__name').click(function () {
+         $('.tab__name').each(function () {
+            $(this).removeClass('is-active');
+         })
+         $(this).addClass('is-active');
+
+         let tabName = $(this).find('.tab__name-text').text().toLowerCase();
+         $('.tab__body').each(function () {
+            let attr = $(this).attr('data-name');
+            if (attr == tabName) {
+               $(this).addClass('is-visible')
+            } else {
+               $(this).removeClass('is-visible')
+            }
+         })
+      })
+   </script>
+
+   <!-- courses readmore -->
+   <script>
+      let lenght = 2;
+      let croppedHeight = 0;
+      let paragraphs = $('.has-readmore').find('p');
+      let paragraphsLenght = 0;
+      $(paragraphs).each(element => {
+         paragraphsLenght++
+      });
+      if (paragraphsLenght > lenght) {
+         for (let i = 0; i < lenght; i++) {
+            croppedHeight += $(paragraphs).eq(i).height();
+            console.log($(paragraphs).eq(i).height());
+         }
+         $('.has-readmore').css({
+            'height': croppedHeight,
+            'overflow': 'hidden'
+         });
+         $('.has-readmore').parent().append(
+            '<div class="info-block__read-more read-more"><p class="read-more__text">Читати більше</p><div class="read-more__icon"><i class="bi bi-chevron-down"></i></div></div>'
+         );
+      }
+   </script>
 
    <!-- <script>
           window.onload = function(){
@@ -215,7 +362,7 @@
         }, 2000);
     }
    </script> -->
-<!-- 
+   <!-- 
    <script>
       let prevScrollPos = window.pageYOffset;
       window.addEventListener('scroll', function () {
