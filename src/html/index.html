@@ -21,15 +21,15 @@
    <!-- @@include('_topmenu.html')
    @@include('_header.html')
    @@include('_about-us.html')
-   @@include('_why-we.html')
+   @@include('_why-we.html') -->
    @@include('_students.html')
-   @@include('_courses.html')
-   @@include('_teachers.html')
-   @@include('_news.html')
-   @@include('_consultation.html')
+   <!-- @@include('_courses.html') -->
+   <!-- @@include('_teachers.html') -->
+   <!-- @@include('_news.html') -->
+   <!-- @@include('_consultation.html')
    @@include('_footer.html') -->
 
-   @@include('_courses.html')
+   <!-- @@include('_students.html') -->
 
    <div class="preloader" id="preloader">
       <div class="preloader__bg ibg">
@@ -45,6 +45,15 @@
       </div>
    </div>
 
+   <div class="popup" id="popup">
+      <div class="popup__container">
+         <div class="popup__body">
+            <div class="popup__icon"><img src="img/icons/success.svg" alt=""></div>
+            <div class="popup__text">Дякую, ми зателефонуємо вам якнайшвидше!</div>
+         </div>
+      </div>
+   </div>
+
 
 
 
@@ -53,11 +62,52 @@
    <script src="styles/module/nav/nav.js"></script>
    <script src="js/vendors/smoothScroll.js"></script>
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+   <script src="js/vendors/slick/slick.js"></script>
    <!-- <script src="js/vendors/readmore.min.js"></script> -->
+
+   <script>
+      $('#students .slide__photos-slider').slick({
+         arrow: true,
+         variableWidth: true,
+         centerMode: true,
+         mobileFirst: true,
+         asNavFor: '#students .slide__texts-slider',
+         appendArrows: $('#students .slider__controlls'),
+         prevArrow: '<div class="slider__arrow-left"><img src="img/icons/slider-arrow-left.svg" alt=""></div>',
+         nextArrow: '<div class="slider__arrow-right"><img src="img/icons/slider-arrow-right.svg" alt=""></div>',
+         responsive: [{
+            breakpoint: 992,
+            settings: {
+               centerMode: false,
+            }
+         }]
+      });
+
+      $('#students .slide__texts-slider').slick({
+         arrows: false,
+         asNavFor: '#students .slide__photos-slider',
+         mobileFirst: true,
+         responsive: [{
+            breakpoint: 992,
+            settings: {
+               fade: true,
+            }
+         }]
+      });
+   </script>
+
+   <script>
+      function submitConsultation() {
+         $('#popup').fadeIn()
+         setTimeout(function () {
+            $('#popup').fadeOut()
+         }, 3000)
+         return false;
+      }
+   </script>
 
    <!-- courses readmore -->
    <script>
-
       (function ($) {
 
          $.fn.readmore = function (options) {
@@ -65,58 +115,71 @@
             $(this).find('.has-readmore').each(function () { // choosing a block
                let paragraphsLenght = 0;
                let paragraphs = $(this).find('p'); // elements inside our main one
-               let croppedHeight = 0; // how tall well be an element when we crop it to those 'lenght' num of paragraphs
+               let croppedHeight =
+                  0; // how tall well be an element when we crop it to those 'lenght' num of paragraphs
                $(paragraphs).each(element => { // counting the number of p elements inside our block
                   paragraphsLenght++
                });
-               if (paragraphsLenght > options.num) { // we don't need to crop anything when there is less elements in our block then we want to leave anyway
-                  for (let i = 0; i < options.num; i++) { // counting the height of our block after cutting other elements besides this 'lenght' num of elemnts
-                     croppedHeight += $(paragraphs).eq(i).outerHeight() + parseInt($(paragraphs).eq(i).css('margin-bottom'));
+               if (paragraphsLenght > options
+                  .num
+               ) { // we don't need to crop anything when there is less elements in our block then we want to leave anyway
+                  for (let i = 0; i < options
+                     .num; i++
+                  ) { // counting the height of our block after cutting other elements besides this 'lenght' num of elemnts
+                     croppedHeight += $(paragraphs).eq(i).outerHeight() + parseInt($(paragraphs).eq(i).css(
+                        'margin-bottom'));
                   }
                   $(this).css({
                      'height': croppedHeight,
                      'overflow': 'hidden'
                   });
 
-                  if($(this).parent().find('.read-more').length !== 0){ // if there is read-more buttons already and we want to refresh
-                     $(this).parent().find('.read-more').each(function(){
+                  if ($(this).parent().find('.read-more').length !==
+                     0) { // if there is read-more buttons already and we want to refresh
+                     $(this).parent().find('.read-more').each(function () {
                         $(this).remove();
                      })
                   }
-                  
-                     // adding buttons 'more' and 'less'
-                     $(this).parent().append( // toggler 'more'
-                        '<div class="info-block__read-more read-more read-more_more"><p class="read-more__text">Читати більше</p><div class="read-more__icon"><i class="bi bi-chevron-down"></i></div></div>'
-                     )
-                     $(this).parent().find('.read-more_more').click(function(){
-                        let blockHeight = 0;
-                        $(paragraphs).each(function(){ // block height is the sum of height of all paragraphs
+
+                  // adding buttons 'more' and 'less'
+                  $(this).parent().append( // toggler 'more'
+                     '<div class="info-block__read-more read-more read-more_more"><p class="read-more__text">Читати більше</p><div class="read-more__icon"><i class="bi bi-chevron-down"></i></div></div>'
+                  )
+                  $(this).parent().find('.read-more_more').click(function () {
+                     let blockHeight = 0;
+                     $(paragraphs).each(
+                        function () { // block height is the sum of height of all paragraphs
                            blockHeight += $(this).height()
                         })
-                        console.log(blockHeight);
-                        $(this).parent().find('.has-readmore').animate({'height': blockHeight});
-                        $(this).parent().find('.read-more_less').css('display', 'flex');
-                        $(this).css('display', 'none');
+                     console.log(blockHeight);
+                     $(this).parent().find('.has-readmore').animate({
+                        'height': blockHeight
                      });
-                     $(this).parent().append( // toggler 'less'
+                     $(this).parent().find('.read-more_less').css('display', 'flex');
+                     $(this).css('display', 'none');
+                  });
+                  $(this).parent().append( // toggler 'less'
                      '<div class="info-block__read-more read-more read-more_less" style="display: none;"><p class="read-more__text">Приховати</p><div class="read-more__icon"><i class="bi bi-chevron-up"></i></div></div>'
-                     )
-                     $(this).parent().find('.read-more_less').click(function(){
-                        $(this).parent().find('.has-readmore').animate({'height': croppedHeight});
-                        $(this).css('display', 'none');
-                        $(this).parent().find('.read-more_more').css('display', 'flex');
+                  )
+                  $(this).parent().find('.read-more_less').click(function () {
+                     $(this).parent().find('.has-readmore').animate({
+                        'height': croppedHeight
                      });
-                  
+                     $(this).css('display', 'none');
+                     $(this).parent().find('.read-more_more').css('display', 'flex');
+                  });
+
                }
-               
-               
+
+
             })
          };
 
       }(jQuery));
 
-      $('#courses .tab__main').readmore({num: 3});
-
+      $('#courses .tab__main').readmore({
+         num: 3
+      });
    </script>
    <!-- courses tabs -->
    <script>
@@ -131,7 +194,9 @@
             let attr = $(this).attr('data-name');
             if (attr == tabName) {
                $(this).addClass('is-visible')
-               $(this).find('.tab__main').readmore({num: 3});
+               $(this).find('.tab__main').readmore({
+                  num: 3
+               });
             } else {
                $(this).removeClass('is-visible')
             }
@@ -139,16 +204,6 @@
       })
    </script>
 
-   <!-- <script>
-          window.onload = function(){
-        //hide the preloader
-        setTimeout(function(){
-         document.querySelector("#preloader").style.display = "none";
-         document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
-        }, 2000);
-    }
-   </script> -->
-   <!-- 
    <script>
       let prevScrollPos = window.pageYOffset;
       window.addEventListener('scroll', function () {
@@ -172,6 +227,17 @@
          }
       })
    </script>
+
+   <!-- <script>
+          window.onload = function(){
+        //hide the preloader
+        setTimeout(function(){
+         document.querySelector("#preloader").style.display = "none";
+         document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
+        }, 2000);
+    }
+   </script> -->
+   <!-- 
 
    <script>
       const studentsMain = new Swiper('#students .main-slider', {

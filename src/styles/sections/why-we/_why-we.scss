@@ -8,11 +8,12 @@
       margin-right: auto;
 
       @include media-breakpoint-up(md) {
-         max-width: 40rem;
+         max-width: 53rem;
       }
 
       @include media-breakpoint-up(xl) {
          margin-bottom: 13.7rem;
+         max-width: 57rem;
       }
    }
 

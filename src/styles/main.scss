@@ -167,6 +167,52 @@ a {
    }
 }
 
+.popup {
+   @include layer;
+   position: fixed;
+   z-index: 1000;
+   display: none;
+
+   // .popup__icon
+
+   &__icon {
+      @include square(7.5rem);
+      @include perfect-center;
+   }
+
+   // .popup__text
+
+   &__text {
+      font-family: Roboto;
+      font-size: 1.8rem;
+    margin-top: 3rem;
+    max-width: 27rem;
+    text-align: center;
+    line-height: 3rem;
+   }
+
+   &__body{
+      height: 30rem;
+      max-width: 40rem;
+      width: 100%;
+      padding: 2rem;
+      border-radius: 2rem;
+      box-shadow: 0px 0.4rem 1.7rem 0.6rem rgba(154, 154, 154, 0.25);
+      background: white;
+      @include perfect-center;
+      flex-direction: column;
+      position: relative;
+      z-index: 2;
+   }
+
+   &__container{
+      @include perfect-center;
+      @include layer;
+      z-index: 1;
+   }
+}
+
+
 
 // components that can be overritten
 @import 'module/stat/stat';
@@ -178,11 +224,8 @@ a {
 @import 'module/nav/nav-blanc';
 @import 'module/card/card';
 @import 'module/highlight/highlight';
-@import 'module/badge/badge';
-@import 'module/profile/profile';
 @import 'module/certificates/certificates';
 @import 'module/double-num/double-num';
-@import 'module/slider/slider';
 @import 'module/more-btn/more-btn';
 @import 'module/feature/feature';
 @import 'module/progress/progress';
@@ -194,9 +237,8 @@ a {
 @import 'sections/about-us/about-us';
 @import 'sections/why-we/why-we';
 @import 'sections/courses/courses';
-@import 'sections/students/students';
-@import 'sections/teachers/teachers';
 @import 'sections/consultation/consultation';
 @import 'sections/footer/footer';
+@import 'sections/students/students';
 
 @import 'sections/section/section';
