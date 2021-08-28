@@ -21,9 +21,9 @@
    @@include('_header.html')
    @@include('_about-us.html')
    @@include('_why-we.html') -->
-   @@include('_students.html')
+   <!-- @@include('_students.html') -->
    <!-- @@include('_courses.html') -->
-   <!-- @@include('_teachers.html') -->
+   @@include('_teachers.html')
    <!-- @@include('_news.html') -->
    <!-- @@include('_consultation.html')
    @@include('_footer.html') -->
@@ -63,22 +63,23 @@
    <script src="js/vendors/slick/slick.js"></script>
 
    <script src="js/my/readmore.js"></script>
-
    <script>
-      $('#students .slide__texts-slider').on('init', function (event, slick) { // adding readmore with some delay to properly calculate the heights of cropped elements
+
+      let sectionId = '#teachers';
+      $(sectionId + ' .slide__texts-slider').on('init', function (event, slick) { // adding readmore with some delay to properly calculate the heights of cropped elements
          setTimeout(function(){
-            $('#students').readmore({
+            $(sectionId).readmore({
             num: 1
          });
          }, 200)
       });
-      $('#students .slide__photos-slider').slick({
+      $(sectionId + ' .slide__photos-slider').slick({
          arrow: true,
          variableWidth: true,
          centerMode: true,
          mobileFirst: true,
-         asNavFor: '#students .slide__texts-slider',
-         appendArrows: $('#students .slider__controlls'),
+         asNavFor: sectionId + ' .slide__texts-slider',
+         appendArrows: $(sectionId + ' .slider__controlls'),
          prevArrow: '<div class="slider__arrow-left"><img src="img/icons/slider-arrow-left.svg" alt=""></div>',
          nextArrow: '<div class="slider__arrow-right"><img src="img/icons/slider-arrow-right.svg" alt=""></div>',
          responsive: [{
@@ -89,9 +90,50 @@
          }]
       });
 
-      $('#students .slide__texts-slider').slick({
+      $(sectionId + ' .slide__texts-slider').slick({
          arrows: false,
-         asNavFor: '#students .slide__photos-slider',
+         asNavFor: sectionId + ' .slide__photos-slider',
+         mobileFirst: true,
+         responsive: [{
+            breakpoint: 992,
+            settings: {
+               fade: true,
+            }
+         }]
+      });
+   </script>
+
+
+   <!-- students slider -->
+   <script>
+      let sectionId = '#students';
+      $(sectionId + ' .slide__texts-slider').on('init', function (event, slick) { // adding readmore with some delay to properly calculate the heights of cropped elements
+         setTimeout(function(){
+            $(sectionId).readmore({
+            num: 1
+         });
+         }, 200)
+      });
+      $(sectionId + ' .slide__photos-slider').slick({
+         arrow: true,
+         variableWidth: true,
+         centerMode: true,
+         mobileFirst: true,
+         asNavFor: sectionId + ' .slide__texts-slider',
+         appendArrows: $(sectionId + ' .slider__controlls'),
+         prevArrow: '<div class="slider__arrow-left"><img src="img/icons/slider-arrow-left.svg" alt=""></div>',
+         nextArrow: '<div class="slider__arrow-right"><img src="img/icons/slider-arrow-right.svg" alt=""></div>',
+         responsive: [{
+            breakpoint: 992,
+            settings: {
+               centerMode: false,
+            }
+         }]
+      });
+
+      $(sectionId + ' .slide__texts-slider').slick({
+         arrows: false,
+         asNavFor: sectionId + ' .slide__photos-slider',
          mobileFirst: true,
          responsive: [{
             breakpoint: 992,

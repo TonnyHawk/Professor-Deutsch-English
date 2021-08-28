@@ -18,8 +18,10 @@
 <body>
 
    
-   <section class="section" id="students">
-   <h1 class="section__title">Результати наших учнів</h1>
+   
+   
+   <section class="section" id="teachers">
+   <h1 class="section__title">З вами працюватимуть професіонали</h1>
    <div class="slider">
       <div class="slider__slide slide">
          <div class="slide__photos-slider">
@@ -37,8 +39,8 @@
 
          <div class="slide__texts-slider">
             <div>
-               <h2 class="slide__title">Дмитрук Олександра</h2>
-               <div class="slide__row">
+               <h2 class="slide__title slide__item">Дмитрук Олександра</h2>
+               <div class="slide__row slide__item">
                   <div class="slide__badges">
                      <div class="badge">
                         <div class="badge__main">
@@ -51,6 +53,24 @@
                   </div>
                   <p class="slide__action btn">Сертифікати</p>
                </div>
+               <div class="slide__stats slide__item">
+                  <div class="slide__stat stat">
+                     <p class="stat__num">20+</p>
+                     <p class="stat__title">Років досвіду</p>
+                  </div>
+                  <div class="slide__stat stat">
+                     <p class="stat__num">100</p>
+                     <p class="stat__title">Наукових праць</p>
+                  </div>
+                  <div class="slide__stat stat">
+                     <p class="stat__num">100%</p>
+                     <p class="stat__title">Результат складання іспитів</p>
+                  </div>
+                  <div class="slide__stat stat">
+                     <p class="stat__num">100%</p>
+                     <p class="stat__title">Результат складання іспитів</p>
+                  </div>
+               </div>
                <div class="slide__paragraphs has-readmore">
                   <p class="slide__text">Коли я прийшла в школу “Professor Deutsch & English” я не вміла навіть
                      читати, але за пів року інтенсивних занять з Андрієм Ростиславовичем я вивчила німецьку
@@ -62,8 +82,8 @@
                </div>
             </div>
             <div>
-               <h2 class="slide__title">Жук Олег</h2>
-               <div class="slide__row">
+               <h2 class="slide__title slide__item">Жук Олег</h2>
+               <div class="slide__row slide__item">
                   <div class="slide__badges">
                      <div class="badge">
                         <div class="badge__main">
@@ -99,8 +119,6 @@
       </div>
    </div>
 </section>
-   
-   
    
    
 
@@ -139,22 +157,23 @@
    <script src="js/vendors/slick/slick.js"></script>
 
    <script src="js/my/readmore.js"></script>
-
    <script>
-      $('#students .slide__texts-slider').on('init', function (event, slick) { // adding readmore with some delay to properly calculate the heights of cropped elements
+
+      let sectionId = '#teachers';
+      $(sectionId + ' .slide__texts-slider').on('init', function (event, slick) { // adding readmore with some delay to properly calculate the heights of cropped elements
          setTimeout(function(){
-            $('#students').readmore({
+            $(sectionId).readmore({
             num: 1
          });
          }, 200)
       });
-      $('#students .slide__photos-slider').slick({
+      $(sectionId + ' .slide__photos-slider').slick({
          arrow: true,
          variableWidth: true,
          centerMode: true,
          mobileFirst: true,
-         asNavFor: '#students .slide__texts-slider',
-         appendArrows: $('#students .slider__controlls'),
+         asNavFor: sectionId + ' .slide__texts-slider',
+         appendArrows: $(sectionId + ' .slider__controlls'),
          prevArrow: '<div class="slider__arrow-left"><img src="img/icons/slider-arrow-left.svg" alt=""></div>',
          nextArrow: '<div class="slider__arrow-right"><img src="img/icons/slider-arrow-right.svg" alt=""></div>',
          responsive: [{
@@ -165,9 +184,50 @@
          }]
       });
 
-      $('#students .slide__texts-slider').slick({
+      $(sectionId + ' .slide__texts-slider').slick({
          arrows: false,
-         asNavFor: '#students .slide__photos-slider',
+         asNavFor: sectionId + ' .slide__photos-slider',
+         mobileFirst: true,
+         responsive: [{
+            breakpoint: 992,
+            settings: {
+               fade: true,
+            }
+         }]
+      });
+   </script>
+
+
+   <!-- students slider -->
+   <script>
+      let sectionId = '#students';
+      $(sectionId + ' .slide__texts-slider').on('init', function (event, slick) { // adding readmore with some delay to properly calculate the heights of cropped elements
+         setTimeout(function(){
+            $(sectionId).readmore({
+            num: 1
+         });
+         }, 200)
+      });
+      $(sectionId + ' .slide__photos-slider').slick({
+         arrow: true,
+         variableWidth: true,
+         centerMode: true,
+         mobileFirst: true,
+         asNavFor: sectionId + ' .slide__texts-slider',
+         appendArrows: $(sectionId + ' .slider__controlls'),
+         prevArrow: '<div class="slider__arrow-left"><img src="img/icons/slider-arrow-left.svg" alt=""></div>',
+         nextArrow: '<div class="slider__arrow-right"><img src="img/icons/slider-arrow-right.svg" alt=""></div>',
+         responsive: [{
+            breakpoint: 992,
+            settings: {
+               centerMode: false,
+            }
+         }]
+      });
+
+      $(sectionId + ' .slide__texts-slider').slick({
+         arrows: false,
+         asNavFor: sectionId + ' .slide__photos-slider',
          mobileFirst: true,
          responsive: [{
             breakpoint: 992,
