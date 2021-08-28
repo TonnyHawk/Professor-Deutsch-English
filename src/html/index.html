@@ -10,7 +10,6 @@
    <link rel="stylesheet" href="css/main.css">
    <title>Школа іноземних мов Professor Deutsch & English</title>
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
@@ -61,11 +60,18 @@
    <script src="styles/module/ibg/ibg.js"></script>
    <script src="styles/module/nav/nav.js"></script>
    <script src="js/vendors/smoothScroll.js"></script>
-   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
    <script src="js/vendors/slick/slick.js"></script>
-   <!-- <script src="js/vendors/readmore.min.js"></script> -->
+
+   <script src="js/my/readmore.js"></script>
 
    <script>
+      $('#students .slide__texts-slider').on('init', function (event, slick) { // adding readmore with some delay to properly calculate the heights of cropped elements
+         setTimeout(function(){
+            $('#students').readmore({
+            num: 1
+         });
+         }, 200)
+      });
       $('#students .slide__photos-slider').slick({
          arrow: true,
          variableWidth: true,
@@ -108,75 +114,6 @@
 
    <!-- courses readmore -->
    <script>
-      (function ($) {
-
-         $.fn.readmore = function (options) {
-
-            $(this).find('.has-readmore').each(function () { // choosing a block
-               let paragraphsLenght = 0;
-               let paragraphs = $(this).find('p'); // elements inside our main one
-               let croppedHeight =
-                  0; // how tall well be an element when we crop it to those 'lenght' num of paragraphs
-               $(paragraphs).each(element => { // counting the number of p elements inside our block
-                  paragraphsLenght++
-               });
-               if (paragraphsLenght > options
-                  .num
-               ) { // we don't need to crop anything when there is less elements in our block then we want to leave anyway
-                  for (let i = 0; i < options
-                     .num; i++
-                  ) { // counting the height of our block after cutting other elements besides this 'lenght' num of elemnts
-                     croppedHeight += $(paragraphs).eq(i).outerHeight() + parseInt($(paragraphs).eq(i).css(
-                        'margin-bottom'));
-                  }
-                  $(this).css({
-                     'height': croppedHeight,
-                     'overflow': 'hidden'
-                  });
-
-                  if ($(this).parent().find('.read-more').length !==
-                     0) { // if there is read-more buttons already and we want to refresh
-                     $(this).parent().find('.read-more').each(function () {
-                        $(this).remove();
-                     })
-                  }
-
-                  // adding buttons 'more' and 'less'
-                  $(this).parent().append( // toggler 'more'
-                     '<div class="info-block__read-more read-more read-more_more"><p class="read-more__text">Читати більше</p><div class="read-more__icon"><i class="bi bi-chevron-down"></i></div></div>'
-                  )
-                  $(this).parent().find('.read-more_more').click(function () {
-                     let blockHeight = 0;
-                     $(paragraphs).each(
-                        function () { // block height is the sum of height of all paragraphs
-                           blockHeight += $(this).height()
-                        })
-                     console.log(blockHeight);
-                     $(this).parent().find('.has-readmore').animate({
-                        'height': blockHeight
-                     });
-                     $(this).parent().find('.read-more_less').css('display', 'flex');
-                     $(this).css('display', 'none');
-                  });
-                  $(this).parent().append( // toggler 'less'
-                     '<div class="info-block__read-more read-more read-more_less" style="display: none;"><p class="read-more__text">Приховати</p><div class="read-more__icon"><i class="bi bi-chevron-up"></i></div></div>'
-                  )
-                  $(this).parent().find('.read-more_less').click(function () {
-                     $(this).parent().find('.has-readmore').animate({
-                        'height': croppedHeight
-                     });
-                     $(this).css('display', 'none');
-                     $(this).parent().find('.read-more_more').css('display', 'flex');
-                  });
-
-               }
-
-
-            })
-         };
-
-      }(jQuery));
-
       $('#courses .tab__main').readmore({
          num: 3
       });
@@ -236,168 +173,6 @@
          document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
         }, 2000);
     }
-   </script> -->
-   <!-- 
-
-   <script>
-      const studentsMain = new Swiper('#students .main-slider', {
-         // Optional parameters
-         direction: 'horizontal',
-         loop: false,
-         slidesPerView: 'auto',
-         effect: 'fade',
-         fadeEffect: {
-            crossFade: true
-         },
-         allowTouchMove: false,
-         runCallbacksOnInit: true,
-         onInit: function (sw) {
-            alert()
-            let current = document.querySelector('#students .double-num__current');
-            let all = document.querySelector('#students .double-num__all');
-            current.innerHTML = (sw.activeIndex + 1);
-            all.innerHTML = '/ ' + sw.slides.length;
-         },
-         onSlideChangeEnd: function (sw) {
-            console.log('changed');
-            let current = document.querySelector('#students .double-num__current');
-            current.innerHTML = (sw.activeIndex + 1);
-         },
-
-
-         // Navigation arrows
-         navigation: {
-            nextEl: '#students .slider__slide-arrow--next',
-            prevEl: '#students .slider__slide-arrow--prev',
-         },
-      });
-
-
-      const studentsView = new Swiper('#students .preview-slider .swiper-container', {
-         // Optional parameters
-         direction: 'horizontal',
-         loop: true,
-         // speed: 1000,
-         slidesPerView: 'auto',
-
-         breakpoints: {
-            768: {
-               slidesPerView: 3,
-            },
-            1024: {
-               slidesPerView: 4,
-            },
-            1200: {
-               slidesPerView: 5,
-            }
-         },
-
-         // Navigation arrows
-         navigation: {
-            nextEl: '#students .slider__slide-arrow--next',
-            prevEl: '#students .slider__slide-arrow--prev',
-         },
-      });
-
-      studentsMain.on('slideChangeTransitionEnd', function () {
-         let index_currentSlide = studentsView.realIndex;
-         let currentSlide = studentsView.slides[index_currentSlide]
-         studentsView.slideTo(index_currentSlide, 1000, false);
-      });
-
-
-      //courses
-
-      // const coursesMain = new Swiper('#courses .swiper-container', {
-      //    // Optional parameters
-      //    direction: 'horizontal',
-      //    loop: false,
-      //    slidesPerView: 'auto',
-      //    freeMode: true,
-
-      //    breakpoints: {
-      //       768: {
-      //          slidesPerView: 2,
-      //       },
-      //       1200: {
-      //          slidesPerView: 3,
-      //       }
-      //    },
-
-      //    // Navigation arrows
-      //    // navigation: {
-      //    //    nextEl: '#courses .slider__slide-arrow--next',
-      //    //    prevEl: '#courses .slider__slide-arrow--prev',
-      //    // },
-      // });
-   </script> -->
-
-   <!-- teachers -->
-   <!-- <script>
-            const teachersMain = new Swiper('#teachers .main-slider', {
-         // Optional parameters
-         direction: 'horizontal',
-         loop: false,
-         slidesPerView: 'auto',
-         effect: 'fade',
-         fadeEffect: {
-            crossFade: true
-         },
-         allowTouchMove: false,
-         runCallbacksOnInit: true,
-         onInit: function (sw) {
-            alert()
-            let current = document.querySelector('#teachers .double-num__current');
-            let all = document.querySelector('#teachers .double-num__all');
-            current.innerHTML = (sw.activeIndex + 1);
-            all.innerHTML = '/ ' + sw.slides.length;
-         },
-         onSlideChangeEnd: function (sw) {
-            console.log('changed');
-            let current = document.querySelector('#teachers .double-num__current');
-            current.innerHTML = (sw.activeIndex + 1);
-         },
-
-
-         // Navigation arrows
-         navigation: {
-            nextEl: '#teachers .slider__slide-arrow--next',
-            prevEl: '#teachers .slider__slide-arrow--prev',
-         },
-      });
-
-
-      const teachersView = new Swiper('#teachers .preview-slider .swiper-container', {
-         // Optional parameters
-         direction: 'horizontal',
-         loop: true,
-         // speed: 1000,
-         slidesPerView: 'auto',
-
-         breakpoints: {
-            768: {
-               slidesPerView: 3,
-            },
-            1024: {
-               slidesPerView: 4,
-            },
-            1200: {
-               slidesPerView: 5,
-            }
-         },
-
-         // Navigation arrows
-         navigation: {
-            nextEl: '#teachers .slider__slide-arrow--next',
-            prevEl: '#teachers .slider__slide-arrow--prev',
-         },
-      });
-
-      teachersMain.on('slideChangeTransitionEnd', function () {
-         let index_currentSlide = teacherssView.realIndex;
-         let currentSlide = teachersView.slides[index_currentSlide]
-         teachersView.slideTo(index_currentSlide, 1000, false);
-      });
    </script> -->
 </body>
 

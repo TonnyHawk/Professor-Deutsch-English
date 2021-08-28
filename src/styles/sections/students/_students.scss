@@ -1,3 +1,23 @@
+#students{
+   .section{
+      &__title{
+         text-align: center;
+         max-width: 30.8rem;
+         margin-left: auto;
+         margin-right: auto;
+         text-align: center;
+         margin-bottom: 7rem;
+         @include media-breakpoint-up(md){
+            max-width: 40rem;
+         }
+         @include media-breakpoint-up(lg){
+            max-width: 55rem;
+            margin-bottom: 12rem;
+         }
+      }
+   }
+}
+
 .section {}
 
 .slider {
@@ -14,7 +34,6 @@
       @include media-breakpoint-up(lg) {
          display: flex;
          gap: 1.5rem;
-
       }
    }
 
@@ -91,7 +110,7 @@
 
    &__texts-slider {
       min-width: 0;
-      margin-top: 4rem;
+      margin-top: 5rem;
       flex: 1 0;
 
       @include media-breakpoint-up(lg) {
@@ -101,11 +120,12 @@
       }
 
       .slick-slide {
-         padding: $container-padding-x;
+         padding: 0 $container-padding-x;
 
          @include media-breakpoint-up(lg) {
             padding: 0;
             margin-right: 4rem;
+            min-width: min-content;
          }
       }
 
