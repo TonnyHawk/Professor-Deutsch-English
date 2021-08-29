@@ -36,6 +36,7 @@ $container-padding-x: 2.5rem;
 @import '../../node_modules/bootstrap/scss/bootstrap-grid';
 @import '../../node_modules/bootstrap/scss/bootstrap-utilities.scss';
 @import '../../node_modules/bootstrap/scss/containers';
+@import '../../node_modules/bootstrap/scss/forms/form-select';
 
 
 
@@ -120,51 +121,6 @@ a {
    }
 }
 
-.popup {
-   @include layer;
-   position: fixed;
-   z-index: 1000;
-   display: none;
-
-   // .popup__icon
-
-   &__icon {
-      @include square(7.5rem);
-      @include perfect-center;
-   }
-
-   // .popup__text
-
-   &__text {
-      font-family: Roboto;
-      font-size: 1.8rem;
-    margin-top: 3rem;
-    max-width: 27rem;
-    text-align: center;
-    line-height: 3rem;
-   }
-
-   &__body{
-      height: 30rem;
-      max-width: 40rem;
-      width: 100%;
-      padding: 2rem;
-      border-radius: 2rem;
-      box-shadow: 0px 0.4rem 1.7rem 0.6rem rgba(154, 154, 154, 0.25);
-      background: white;
-      @include perfect-center;
-      flex-direction: column;
-      position: relative;
-      z-index: 2;
-   }
-
-   &__container{
-      @include perfect-center;
-      @include layer;
-      z-index: 1;
-   }
-}
-
 .read-more{
    cursor: pointer;
    width: max-content;
@@ -192,6 +148,8 @@ a {
 @import 'module/tab/tab';
 @import 'module/slider/slider';
 @import 'module/slide/slide';
+@import 'module/popup/popup';
+@import 'module/field/field';
 
 @import 'sections/section/section';
 @import 'sections/about-us/about-us';
@@ -201,5 +159,6 @@ a {
 @import 'sections/footer/footer';
 @import 'sections/students/students';
 @import 'sections/teachers/teachers';
+
 
 @import 'sections/section/section';

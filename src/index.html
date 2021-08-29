@@ -61,14 +61,54 @@
       </div>
    </div>
 
-   <div class="popup" id="popup">
+   <!-- <div class="popup popup--message" id="popup">
       <div class="popup__container">
          <div class="popup__body">
             <div class="popup__icon"><img src="img/icons/success.svg" alt=""></div>
             <div class="popup__text">Дякую, ми зателефонуємо вам якнайшвидше!</div>
          </div>
       </div>
+   </div> -->
+
+   <div class="popup">
+      <div class="popup__bg-layer">
+         <div class="popup__body">
+            <div class="popup__close-btn">
+               <img src="img/icons/x.svg" alt="">
+            </div>
+            <div class="popup__container">
+               <div class="popup__row">
+                  <div class="popup__col">
+                     <p class="popup__title">Попередній запис</p>
+                     <p class="popup__text">Заповнивши цю форму ви залишаєте нам заявку яку ми розглянемо найближчим часом та зателефонуємо вам</p>
+                     <div class="popup__select field">
+                        <label for="" class="field__label">Запис на</label>
+                        <!-- <select class="field__select" aria-label="Default select example">
+                           <option value="1">Консультація</option>
+                           <option value="2">Two</option>
+                           <option value="3">Three</option>
+                         </select> -->
+                         <select class="field__select form-select" aria-label="Default select example">
+                           <option selected>Консультація</option>
+                           <option value="2">Курс B2</option>
+                           <option value="3">Колективне заняття</option>
+                         </select>
+                     </div>
+                  </div>
+                  <div class="popup__vr-line"></div>
+                  <div class="popup__col">
+                     <form action="" class="popup__form">
+                        <input type="text" class="popup__input" placeholder="Ім’я">
+                        <input type="text" class="popup__input" placeholder="Телефон">
+                        <input type="submit" class="popup__submit btn" value='Відправити'>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
    </div>
+
 
 
 

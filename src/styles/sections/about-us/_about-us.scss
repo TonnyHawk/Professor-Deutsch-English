@@ -1,10 +1,12 @@
 #about-us{
    padding-top: 6rem;
    padding-bottom: 6rem;
+   background: #FAFAFA;
    @include media-breakpoint-up(lg){
       padding-top: 13rem;
       padding-bottom: 6.5rem;
       min-height: 100vh;
+
    }
    .section {
 
@@ -41,6 +43,7 @@
       // .about-us__photo
    
       &__photo {
+         
          @include media-breakpoint-down(lg) {
             margin-bottom: 6rem;
          }
@@ -49,6 +52,7 @@
          }
          img{
             width: 97%;
+            border-radius: 0.9rem;
          }
       }
    }
