@@ -49,7 +49,7 @@
          }
       }
 
-      input[type='text'] {
+      input[type='text'], input[type='tel']{
          display: block;
          width: 100%;
          padding: 2.5rem;
@@ -58,24 +58,6 @@
          margin-bottom: 3rem;
          font-size: 1.5rem;
          font-family: roboto;
-
-         // &::-webkit-input-placeholder {
-         //    color: #c0392b;
-         // }
-
-         // &::-moz-placeholder {
-         //    color: #c0392b;
-         // }
-
-         // /* Firefox 19+ */
-         // &:-moz-placeholder {
-         //    color: #c0392b;
-         // }
-
-         // /* Firefox 18- */
-         // &:-ms-input-placeholder {
-         //    color: #c0392b;
-         // }
       }
    }
 

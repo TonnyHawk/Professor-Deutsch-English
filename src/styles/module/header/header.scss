@@ -5,13 +5,13 @@
 
    // .header__bg
 
-   &__bg{
+   &__bg {
       @include layer;
       z-index: 1;
       // background: gainsboro;
    }
 
-   &__text-block{
+   &__text-block {
       position: relative;
       z-index: 2;
       max-width: 60rem;
@@ -20,17 +20,19 @@
 
       // .header .text-block
 
-      .text-block{
-         &__title{
+      .text-block {
+         &__title {
             font-family: Gilroy;
             font-style: normal;
             font-weight: 900;
             font-size: 38px;
             line-height: 47px;
+
             @include media-breakpoint-down(md) {
                font-size: 36px;
             }
          }
+
          // .text-block__text
 
          &__text {
@@ -73,10 +75,12 @@
       // align-items: center;
       justify-content: center;
       flex-direction: column;
+
       @include media-breakpoint-down(xl) {
          width: 36.88%;
          padding: 0 2rem;
       }
+
       @include media-breakpoint-down(lg) {
          position: static;
          width: 100%;
@@ -86,9 +90,10 @@
 
       // .header__aside-col
 
-      &-col{
-         &:first-child{
+      &-col {
+         &:first-child {
             margin-top: 11rem;
+
             @include media-breakpoint-down(lg) {
                margin-top: 0;
             }
@@ -96,8 +101,20 @@
       }
    }
 
-   .spec .col-1{
-         border: 1px solid red;
+   .spec .col-1 {
+      border: 1px solid red;
+   }
+
+   // .header__aside-row
+
+   &__aside-row {
+      @include media-breakpoint-up(lg) {
+         @media (orientation: portrait) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+         }
+      }
    }
 
    // .header__stat
@@ -107,14 +124,20 @@
       text-align: center;
       margin: 4rem auto;
       max-width: 16rem;
+
       @include media-breakpoint-down(xl) {
          max-width: 13.4rem;
       }
+
       @include media-breakpoint-up(lg) {
          margin: 6.5vh auto;
+
+         @media (orientation: portrait) {
+            margin: 6rem auto;
+         }
       }
 
-      .stat{
+      .stat {
          // .stat__num
 
          &__num {
@@ -139,22 +162,13 @@
 
    // .text-block__title
 
-   &__title {
-   }
+   &__title {}
 
    // .text-block__text
 
-   &__text {
-   }
+   &__text {}
 
    // .text-block__btn
 
-   &__btn {
-   }
-}
-
-.phone-stack{
-   background: blue;
-    border-radius: 9px;
-    padding: 20px;
+   &__btn {}
 }

@@ -18,62 +18,62 @@
          }
       }
    }
-}
 
-.slide {
-   $gap: 2rem;
-
-   // .slide__stats
-
-   &__stats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: $gap;
+   .slide {
+      $gap: 2rem;
+   
+      // .slide__stats
+   
+      &__stats {
+         display: flex;
+         flex-wrap: wrap;
+         gap: $gap;
+      }
+   
+      // .slide__stat
+   
+      &__stat {
+         flex: 1 0 calc(33.3% - #{$gap});
+         @include media-breakpoint-up(md){
+            flex-basis: calc(25% - #{$gap});
+         }
+      }
    }
 
-   // .slide__stat
-
-   &__stat {
-      flex: 1 0 calc(33.3% - #{$gap});
+   .stat {
+      width: max-content;
       @include media-breakpoint-up(md){
-         flex-basis: calc(25% - #{$gap});
+         width: min-content;
       }
-   }
-}
-
-.stat {
-   width: max-content;
-   @include media-breakpoint-up(md){
-      width: min-content;
-   }
-
-   // .stat__num
-
-   &__num {
-      font-family: Gilroy;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 4rem;
-      line-height: 159.68%;
-      @include media-breakpoint-up(lg){
-         font-size: 4.3rem;
+   
+      // .stat__num
+   
+      &__num {
+         font-family: Gilroy;
+         font-style: normal;
+         font-weight: bold;
+         font-size: 4rem;
+         line-height: 159.68%;
+         @include media-breakpoint-up(lg){
+            font-size: 4.3rem;
+         }
       }
-   }
-
-   // .stat__title
-
-   &__title {
-      font-family: Gilroy;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 1.2rem;
-      line-height: 159.68%;
-
-      letter-spacing: 0.07rem;
-      margin-top: 0.5rem;
-
-      @include media-breakpoint-up(lg){
-         font-size: 1.3rem;
+   
+      // .stat__title
+   
+      &__title {
+         font-family: Gilroy;
+         font-style: normal;
+         font-weight: bold;
+         font-size: 1.2rem;
+         line-height: 159.68%;
+   
+         letter-spacing: 0.07rem;
+         margin-top: 0.5rem;
+   
+         @include media-breakpoint-up(lg){
+            font-size: 1.3rem;
+         }
       }
    }
 }

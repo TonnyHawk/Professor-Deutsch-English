@@ -11,9 +11,10 @@
                   методи навання, питання дисципліни у навчання, шляхи досягнення успіхів.</p>
                   <form action="" class="form" onsubmit="return submitConsultation()">
                      <div class="form__container">
-                        <input type="text" placeholder="Ім’я">
-                        <input type="text" placeholder="Номер телефону">
-                        <input type="submit" class="btn btn--light">
+                        <input type="hidden" name='application-to' value='consultation'>
+                        <input type="text" name='applicant_name' placeholder="Ім’я">
+                        <input type="tel" name='applicant_phone' placeholder="Номер телефону">
+                        <input type="submit" class="btn btn--light" value='Відправити'>
                      </div>
                   </form>
             </div>

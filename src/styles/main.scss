@@ -129,6 +129,11 @@ select{
    cursor: pointer;
 }
 
+a[href^=tel], a[href^=mailto]{
+   color: white;
+}
+
+
 
 
 // components that can be overritten
