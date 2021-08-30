@@ -95,6 +95,8 @@
 
    &__menu {
       .menu {
+         display: flex;
+         gap: 2rem;
          &__menu-item {
             font-size: 1.5rem;
             line-height: 159.68%;
@@ -107,6 +109,8 @@
          }
       }
    }
+
+
 
    // .footer__social
 
