@@ -4,6 +4,27 @@
    min-height: 100vh;
    padding: 5rem 0 7rem;
    font-family: roboto;
+
+
+   // .footer__row
+
+   &__row{
+      display: flex;
+      flex-wrap: wrap;
+   }
+
+   // .footer__col
+
+   &__col{
+      flex: 1 0 100%;
+      @include media-breakpoint-up(md){
+         flex-basis: 50%;
+      }
+      @include media-breakpoint-up(lg){
+         flex-basis: auto;
+      }
+   }
+
    // .footer__info
 
    &__info {
@@ -49,7 +70,7 @@
    // .footer__item
 
    &__item {
-      margin-bottom: 6rem;
+      margin-bottom: 8rem;
    }
 
    // .footer__widget
@@ -102,28 +123,3 @@
       }
    }
 }
-
-.container {}
-
-.row {}
-
-.col-12 {}
-
-.col-lg-3 {}
-
-.feature {
-
-   // .feature__img
-
-   &__img {}
-
-   // .feature__text
-
-   &__text {}
-}
-
-.col-lg-2 {}
-
-.offset-lg-1 {}
-
-.d-flex {}
