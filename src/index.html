@@ -786,7 +786,7 @@
 
    <div class="popup" id='popup-application'>
       <div class="popup__bg-layer">
-         <div class="popup__body">
+         <form class="popup__body" action='php/mail.php' method="POST">
             <div class="popup__close-btn" data-action='close-popup'>
                <img src="img/icons/x.svg" alt="">
             </div>
@@ -798,11 +798,6 @@
                         часом та зателефонуємо вам</p>
                      <div class="popup__select field">
                         <label for="" class="field__label">Запис на</label>
-                        <!-- <select class="field__select" aria-label="Default select example">
-                           <option value="1">Консультація</option>
-                           <option value="2">Two</option>
-                           <option value="3">Three</option>
-                         </select> -->
                         <select class="field__select form-select" name='application-to'>
                            <option value='consultation'>Консультація</option>
                            <option value="g a1">Німецька A1</option>
@@ -815,15 +810,13 @@
                   </div>
                   <div class="popup__vr-line"></div>
                   <div class="popup__col">
-                     <form action="" class="popup__form">
-                        <input type="text" class="popup__input" placeholder="Ім’я">
-                        <input type="text" class="popup__input" placeholder="Телефон">
-                        <input type="submit" class="popup__submit btn" value='Відправити'>
-                     </form>
+                     <input type="text" class="popup__input" name='applicant_name' placeholder="Ім’я">
+                     <input type="text" class="popup__input" name='applicant_phone' placeholder="Телефон">
+                     <input type="submit" class="popup__submit btn" value='Відправити'>
                   </div>
                </div>
             </div>
-         </div>
+         </form>
       </div>
    </div>
 
@@ -835,6 +828,7 @@
    <script src="styles/module/nav/nav.js"></script>
    <script src="js/vendors/smoothScroll.js"></script>
    <script src="js/vendors/slick/slick.js"></script>
+   <script src='js/vendors/jQuery-Input-Mask-Phone-Numbers/jquery-input-mask-phone-number.min.js'></script>
 
    <script src="js/my/readmore.js"></script>
 
@@ -843,17 +837,34 @@
       var g_Mode = 'g';
    </script>
 
+   <!-- phone mask -->
+   <script>
+      $('[name="applicant_phone"]').each(function () {
+         $(this).usPhoneFormat({
+            format: '(xxx) xxx-xxxx'
+         });
+      })
+   </script>
+
    <!-- popup -->
    <script>
-      $('[data-action="open-popup"]').each(function(){
-         $(this).click(function(){
+      $('[data-action="open-popup"]').each(function () {
+         $(this).click(function () {
+            
             $('#popup-application').addClass('is-visible');
+
             let applicationTo = g_Mode + ' ' + $(this).parents('.tab__body').attr('data-name');
-            $('#popup-application .field__select[name="application-to"]').find(`option[value='${applicationTo}']`).attr('selected', '')
+            $('#popup-application .field__select[name="application-to"] option').each(function () {
+               if ($(this).attr('value') === applicationTo) {
+                  $(this).attr('selected', '')
+               } else {
+                  $(this).removeAttr('selected')
+               }
+            })
          })
       })
-      $('[data-action="close-popup"]').each(function(){
-         $(this).click(function(){
+      $('[data-action="close-popup"]').each(function () {
+         $(this).click(function () {
             $('#popup-application').removeClass('is-visible');
          })
       })
@@ -861,91 +872,91 @@
 
    <!-- teachers slider -->
    <script>
-(function(){      
-   
-   let sectionId = '#teachers';
-      $(sectionId + ' .slide__texts-slider').on('init', function (event,
-         slick) { // adding readmore with some delay to properly calculate the heights of cropped elements
-         setTimeout(function () {
-            $(sectionId).readmore({
-               num: 1
-            });
-         }, 200)
-      });
-      $(sectionId + ' .slide__photos-slider').slick({
-         arrow: true,
-         variableWidth: true,
-         centerMode: true,
-         mobileFirst: true,
-         asNavFor: sectionId + ' .slide__texts-slider',
-         appendArrows: $(sectionId + ' .slider__controlls'),
-         prevArrow: '<div class="slider__arrow-left"><img src="img/icons/slider-arrow-left.svg" alt=""></div>',
-         nextArrow: '<div class="slider__arrow-right"><img src="img/icons/slider-arrow-right.svg" alt=""></div>',
-         responsive: [{
-            breakpoint: 992,
-            settings: {
-               centerMode: false,
-            }
-         }]
-      });
+      (function () {
 
-      $(sectionId + ' .slide__texts-slider').slick({
-         arrows: false,
-         asNavFor: sectionId + ' .slide__photos-slider',
-         mobileFirst: true,
-         responsive: [{
-            breakpoint: 992,
-            settings: {
-               fade: true,
-            }
-         }]
-      });
-   
-   })()
+         let sectionId = '#teachers';
+         $(sectionId + ' .slide__texts-slider').on('init', function (event,
+            slick) { // adding readmore with some delay to properly calculate the heights of cropped elements
+            setTimeout(function () {
+               $(sectionId).readmore({
+                  num: 1
+               });
+            }, 200)
+         });
+         $(sectionId + ' .slide__photos-slider').slick({
+            arrow: true,
+            variableWidth: true,
+            centerMode: true,
+            mobileFirst: true,
+            asNavFor: sectionId + ' .slide__texts-slider',
+            appendArrows: $(sectionId + ' .slider__controlls'),
+            prevArrow: '<div class="slider__arrow-left"><img src="img/icons/slider-arrow-left.svg" alt=""></div>',
+            nextArrow: '<div class="slider__arrow-right"><img src="img/icons/slider-arrow-right.svg" alt=""></div>',
+            responsive: [{
+               breakpoint: 992,
+               settings: {
+                  centerMode: false,
+               }
+            }]
+         });
+
+         $(sectionId + ' .slide__texts-slider').slick({
+            arrows: false,
+            asNavFor: sectionId + ' .slide__photos-slider',
+            mobileFirst: true,
+            responsive: [{
+               breakpoint: 992,
+               settings: {
+                  fade: true,
+               }
+            }]
+         });
+
+      })()
    </script>
 
 
    <!-- students slider -->
    <script>
-      (function(){    
-      let sectionId = '#students';
-      $(sectionId + ' .slide__texts-slider').on('init', function (event,
-         slick) { // adding readmore with some delay to properly calculate the heights of cropped elements
-         setTimeout(function () {
-            $(sectionId).readmore({
-               num: 1
-            });
-         }, 200)
-      });
-      $(sectionId + ' .slide__photos-slider').slick({
-         arrow: true,
-         variableWidth: true,
-         centerMode: true,
-         mobileFirst: true,
-         asNavFor: sectionId + ' .slide__texts-slider',
-         appendArrows: $(sectionId + ' .slider__controlls'),
-         prevArrow: '<div class="slider__arrow-left"><img src="img/icons/slider-arrow-left.svg" alt=""></div>',
-         nextArrow: '<div class="slider__arrow-right"><img src="img/icons/slider-arrow-right.svg" alt=""></div>',
-         responsive: [{
-            breakpoint: 992,
-            settings: {
-               centerMode: false,
-            }
-         }]
-      });
+      (function () {
+         let sectionId = '#students';
+         $(sectionId + ' .slide__texts-slider').on('init', function (event,
+            slick) { // adding readmore with some delay to properly calculate the heights of cropped elements
+            setTimeout(function () {
+               $(sectionId).readmore({
+                  num: 1
+               });
+            }, 200)
+         });
+         $(sectionId + ' .slide__photos-slider').slick({
+            arrow: true,
+            variableWidth: true,
+            centerMode: true,
+            mobileFirst: true,
+            asNavFor: sectionId + ' .slide__texts-slider',
+            appendArrows: $(sectionId + ' .slider__controlls'),
+            prevArrow: '<div class="slider__arrow-left"><img src="img/icons/slider-arrow-left.svg" alt=""></div>',
+            nextArrow: '<div class="slider__arrow-right"><img src="img/icons/slider-arrow-right.svg" alt=""></div>',
+            responsive: [{
+               breakpoint: 992,
+               settings: {
+                  centerMode: false,
+               }
+            }]
+         });
 
-      $(sectionId + ' .slide__texts-slider').slick({
-         arrows: false,
-         asNavFor: sectionId + ' .slide__photos-slider',
-         mobileFirst: true,
-         responsive: [{
-            breakpoint: 992,
-            settings: {
-               fade: true,
-            }
-         }]
-      });
-   })()
+         $(sectionId + ' .slide__texts-slider').slick({
+            arrows: false,
+            asNavFor: sectionId + ' .slide__photos-slider',
+            mobileFirst: true,
+            responsive: [{
+               breakpoint: 992,
+               settings: {
+                  fade: true,
+               }
+            }]
+         });
+      })()
    </script>
 
    <!-- submit subscription -->

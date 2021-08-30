@@ -2,11 +2,15 @@
    padding-top: 6rem;
    padding-bottom: 6rem;
    background: #FAFAFA;
+   display: flex;
+   align-items: center;
    @include media-breakpoint-up(lg){
       padding-top: 13rem;
       padding-bottom: 6.5rem;
       min-height: 100vh;
-
+      @media (orientation: portrait){
+         min-height: unset;
+      }
    }
    .section {
 
