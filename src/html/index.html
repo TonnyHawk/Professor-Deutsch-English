@@ -22,7 +22,7 @@
    @@include('_about-us.html')
    <!-- @@include('_why-we.html') -->
    <!-- @@include('_students.html') -->
-   <!-- @@include('_courses.html') -->
+   @@include('_courses.html')
    <!-- @@include('_teachers.html') -->
    <!-- @@include('_news.html') -->
    <!-- @@include('_consultation.html')
@@ -53,17 +53,18 @@
       </div>
    </div> -->
 
-   <div class="popup">
+   <div class="popup" id='popup-application'>
       <div class="popup__bg-layer">
          <div class="popup__body">
-            <div class="popup__close-btn">
+            <div class="popup__close-btn" data-action='close-popup'>
                <img src="img/icons/x.svg" alt="">
             </div>
             <div class="popup__container">
                <div class="popup__row">
                   <div class="popup__col">
                      <p class="popup__title">Попередній запис</p>
-                     <p class="popup__text">Заповнивши цю форму ви залишаєте нам заявку яку ми розглянемо найближчим часом та зателефонуємо вам</p>
+                     <p class="popup__text">Заповнивши цю форму ви залишаєте нам заявку яку ми розглянемо найближчим
+                        часом та зателефонуємо вам</p>
                      <div class="popup__select field">
                         <label for="" class="field__label">Запис на</label>
                         <!-- <select class="field__select" aria-label="Default select example">
@@ -71,11 +72,14 @@
                            <option value="2">Two</option>
                            <option value="3">Three</option>
                          </select> -->
-                         <select class="field__select form-select" aria-label="Default select example">
-                           <option selected>Консультація</option>
-                           <option value="2">Курс B2</option>
-                           <option value="3">Колективне заняття</option>
-                         </select>
+                        <select class="field__select form-select" name='application-to'>
+                           <option value='consultation'>Консультація</option>
+                           <option value="g a1">Німецька A1</option>
+                           <option value="g a2">Німецька A2</option>
+                           <option value="g b1">Німецька B1</option>
+                           <option value="g b2">Німецька B2</option>
+                           <option value="g c1">Німецька C1</option>
+                        </select>
                      </div>
                   </div>
                   <div class="popup__vr-line"></div>
@@ -95,7 +99,6 @@
 
 
 
-
    <script src="js/vendors/jquery.min.js"></script>
    <script src="styles/module/ibg/ibg.js"></script>
    <script src="styles/module/nav/nav.js"></script>
@@ -103,14 +106,39 @@
    <script src="js/vendors/slick/slick.js"></script>
 
    <script src="js/my/readmore.js"></script>
-   <script>
 
-      let sectionId = '#teachers';
-      $(sectionId + ' .slide__texts-slider').on('init', function (event, slick) { // adding readmore with some delay to properly calculate the heights of cropped elements
-         setTimeout(function(){
+   <!-- global things -->
+   <script>
+      var g_Mode = 'g';
+   </script>
+
+   <!-- popup -->
+   <script>
+      $('[data-action="open-popup"]').each(function(){
+         $(this).click(function(){
+            $('#popup-application').addClass('is-visible');
+            let applicationTo = g_Mode + ' ' + $(this).parents('.tab__body').attr('data-name');
+            $('#popup-application .field__select[name="application-to"]').find(`option[value='${applicationTo}']`).attr('selected', '')
+         })
+      })
+      $('[data-action="close-popup"]').each(function(){
+         $(this).click(function(){
+            $('#popup-application').removeClass('is-visible');
+         })
+      })
+   </script>
+
+   <!-- teachers slider -->
+   <script>
+(function(){      
+   
+   let sectionId = '#teachers';
+      $(sectionId + ' .slide__texts-slider').on('init', function (event,
+         slick) { // adding readmore with some delay to properly calculate the heights of cropped elements
+         setTimeout(function () {
             $(sectionId).readmore({
-            num: 1
-         });
+               num: 1
+            });
          }, 200)
       });
       $(sectionId + ' .slide__photos-slider').slick({
@@ -141,17 +169,21 @@
             }
          }]
       });
+   
+   })()
    </script>
 
 
    <!-- students slider -->
    <script>
+      (function(){    
       let sectionId = '#students';
-      $(sectionId + ' .slide__texts-slider').on('init', function (event, slick) { // adding readmore with some delay to properly calculate the heights of cropped elements
-         setTimeout(function(){
+      $(sectionId + ' .slide__texts-slider').on('init', function (event,
+         slick) { // adding readmore with some delay to properly calculate the heights of cropped elements
+         setTimeout(function () {
             $(sectionId).readmore({
-            num: 1
-         });
+               num: 1
+            });
          }, 200)
       });
       $(sectionId + ' .slide__photos-slider').slick({
@@ -182,8 +214,10 @@
             }
          }]
       });
+   })()
    </script>
 
+   <!-- submit subscription -->
    <script>
       function submitConsultation() {
          $('#popup').fadeIn()
@@ -223,6 +257,7 @@
       })
    </script>
 
+   <!-- topmenu options during scrolling process -->
    <script>
       let prevScrollPos = window.pageYOffset;
       window.addEventListener('scroll', function () {

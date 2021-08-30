@@ -2,8 +2,9 @@
    @include layer;
    position: fixed;
    z-index: 1000;
-   // display: none;
-   overflow: auto;
+   visibility: hidden;
+   overflow-Y: auto;
+   overflow-x: hidden;
 
    &__bg-layer {
       position: absolute;
@@ -13,6 +14,8 @@
       z-index: 1;
       background: rgba(65, 65, 65, 0.72);
       min-height: 100%;
+      opacity: 0;
+      transition: 0.2s;
 
       @include media-breakpoint-up(md) {
          padding: 10% 0;
@@ -37,6 +40,9 @@
       width: 100%;
       max-width: 60rem;
       margin: 0 auto;
+      opacity: 0;
+      transform: translateY(5rem);
+      transition: 0.4s;
 
       @include media-breakpoint-up(md) {
          border-radius: 1.5rem;
@@ -104,9 +110,6 @@
       }
    }
 
-}
-
-.popup {
 
    // .popup__close-btn
 
@@ -259,4 +262,20 @@
       border: none;
       font-size: 2rem;
    }
+
+   &.is-visible {
+      visibility: visible;
+
+      .popup{
+         &__bg-layer {
+            opacity: 1;
+         }
+   
+         &__body {
+            opacity: 1;
+            transform: unset;
+         }
+      }
+   }
+
 }
