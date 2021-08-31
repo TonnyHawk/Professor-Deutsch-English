@@ -2,11 +2,11 @@ let prevScrollPos = window.pageYOffset;
 window.addEventListener('scroll', function () {
    // hiding menu on scroll down
    let currentScrollPos = window.pageYOffset;
-   if (prevScrollPos > currentScrollPos) {
-      $(".nav").removeClass('hide');
-   } else {
-      $(".nav").addClass('hide');
-   }
+   // if (prevScrollPos > currentScrollPos) {
+   //    $(".nav").removeClass('hide');
+   // } else {
+   //    $(".nav").addClass('hide');
+   // }
 
    prevScrollPos = currentScrollPos;
    // end

@@ -25,7 +25,7 @@
    <nav class="nav" id='topmenu'>
    <div class="nav__wrap">
       <div class="container nav__container">
-         <div class="nav__logo">
+         <div class="nav__logo" data-target='#'>
             <img src="img/icons/logo.svg" alt="">
          </div>
          <div class="nav__btn">
@@ -40,8 +40,8 @@
                <div class="nav__menu-item"><p data-target='#about-us' class="nav__link">Про школу</p></div>
                <div class="nav__menu-item"><p data-target='#students' class="nav__link">Наші учні</p></div>
                <div class="nav__menu-item"><p data-target='#courses' class="nav__link">Курси</p></div>
-               <div class="nav__menu-item"><p data-target='#teachers' class="nav__link">Наша команда</p></div>
-               <div class="nav__menu-item"><p data-target='#news' class="nav__link">Новини</p></div>
+               <div class="nav__menu-item"><p data-target='#teachers' class="nav__link">Вчителі</p></div>
+               <!-- <div class="nav__menu-item"><p data-target='#news' class="nav__link">Новини</p></div> -->
             </div>
          </div>
          <div class="nav__aside">
@@ -918,10 +918,11 @@
                <div class="widget__body">
                   <div class="footer__menu">
                      <div class="menu">
-                        <a href="" class="menu__menu-item">Головна</a>
-                        <a href="" class="menu__menu-item">Про нас</a>
-                        <a href="" class="menu__menu-item">Новини</a>
-                        <a href="" class="menu__menu-item">Курси</a>
+                        <a data-target='#about-us' href="" class="menu__menu-item">Про школу</a>
+                        <a data-target='#students' href="" class="menu__menu-item">Наші учні</a>
+                        <a data-target='#courses' href="" class="menu__menu-item">Курси</a>
+                        <a data-target='#teachers' href="" class="menu__menu-item">Вчителі</a>
+                        <!-- <a data-target='#news' href="" class="menu__menu-item">Новини</a> -->
                      </div>
                   </div>
                </div>
