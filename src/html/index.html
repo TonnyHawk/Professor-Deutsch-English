@@ -98,139 +98,15 @@
 
 
    <script src="js/vendors/jquery.min.js"></script>
-   <script src="styles/module/ibg/ibg.js"></script>
-   <script src="styles/module/nav/nav.js"></script>
-   <script src="js/vendors/smoothScroll.js"></script>
    <script src="js/vendors/slick/slick.js"></script>
-   <script src='js/vendors/jQuery-Input-Mask-Phone-Numbers/jquery-input-mask-phone-number.min.js'></script>
 
    <script src="js/my/readmore.js"></script>
+
+   <script src="js/bundle.js"></script>
 
    <!-- global things -->
    <script>
       var g_Mode = 'g';
-   </script>
-
-   <!-- phone mask -->
-   <script>
-      $('input[type="tel"]').each(function () {
-         $(this).usPhoneFormat({
-            format: '(xxx) xxx-xxxx'
-         });
-      })
-   </script>
-
-   <!-- popup -->
-   <script>
-      $('[data-action="open-popup"]').each(function () {
-         $(this).click(function () {
-
-            $('#popup-application').addClass('is-visible');
-
-            let applicationTo = g_Mode + ' ' + $(this).parents('.tab__body').attr('data-name');
-            $('#popup-application .field__select[name="application-to"] option').each(function () {
-               if ($(this).attr('value') === applicationTo) {
-                  $(this).attr('selected', '')
-               } else {
-                  $(this).removeAttr('selected')
-               }
-            })
-         })
-      })
-      $('[data-action="close-popup"]').each(function () {
-         $(this).click(function () {
-            $('#popup-application').removeClass('is-visible');
-         })
-      })
-   </script>
-
-   <!-- teachers slider -->
-   <script>
-      (function () {
-
-         let sectionId = '#teachers';
-         $(sectionId + ' .slide__texts-slider').on('init', function (event,
-            slick) { // adding readmore with some delay to properly calculate the heights of cropped elements
-            setTimeout(function () {
-               $(sectionId).readmore({
-                  num: 1
-               });
-            }, 200)
-         });
-         $(sectionId + ' .slide__photos-slider').slick({
-            arrow: true,
-            variableWidth: true,
-            centerMode: true,
-            mobileFirst: true,
-            asNavFor: sectionId + ' .slide__texts-slider',
-            appendArrows: $(sectionId + ' .slider__controlls'),
-            prevArrow: '<div class="slider__arrow-left"><img src="img/icons/slider-arrow-left.svg" alt=""></div>',
-            nextArrow: '<div class="slider__arrow-right"><img src="img/icons/slider-arrow-right.svg" alt=""></div>',
-            responsive: [{
-               breakpoint: 992,
-               settings: {
-                  centerMode: false,
-               }
-            }]
-         });
-
-         $(sectionId + ' .slide__texts-slider').slick({
-            arrows: false,
-            asNavFor: sectionId + ' .slide__photos-slider',
-            mobileFirst: true,
-            responsive: [{
-               breakpoint: 992,
-               settings: {
-                  fade: true,
-               }
-            }]
-         });
-
-      })()
-   </script>
-
-
-   <!-- students slider -->
-   <script>
-      (function () {
-         let sectionId = '#students';
-         $(sectionId + ' .slide__texts-slider').on('init', function (event,
-            slick) { // adding readmore with some delay to properly calculate the heights of cropped elements
-            setTimeout(function () {
-               $(sectionId).readmore({
-                  num: 1
-               });
-            }, 200)
-         });
-         $(sectionId + ' .slide__photos-slider').slick({
-            arrow: true,
-            variableWidth: true,
-            centerMode: true,
-            mobileFirst: true,
-            asNavFor: sectionId + ' .slide__texts-slider',
-            appendArrows: $(sectionId + ' .slider__controlls'),
-            prevArrow: '<div class="slider__arrow-left"><img src="img/icons/slider-arrow-left.svg" alt=""></div>',
-            nextArrow: '<div class="slider__arrow-right"><img src="img/icons/slider-arrow-right.svg" alt=""></div>',
-            responsive: [{
-               breakpoint: 992,
-               settings: {
-                  centerMode: false,
-               }
-            }]
-         });
-
-         $(sectionId + ' .slide__texts-slider').slick({
-            arrows: false,
-            asNavFor: sectionId + ' .slide__photos-slider',
-            mobileFirst: true,
-            responsive: [{
-               breakpoint: 992,
-               settings: {
-                  fade: true,
-               }
-            }]
-         });
-      })()
    </script>
 
    <!-- submit subscription -->
@@ -242,63 +118,6 @@
          }, 3000)
          return false;
       }
-   </script>
-
-   <!-- courses tabs -->
-   <script>
-      $(document).ready(function () {
-         $('.tab__name').click(function () {
-            $('.tab__name').each(function () {
-               $(this).removeClass('is-active');
-            })
-            $(this).addClass('is-active');
-
-            let tabName = $(this).find('.tab__name-text').text().toLowerCase();
-            $('.tab__body').each(function () {
-               let attr = $(this).attr('data-name');
-               if (attr == tabName) {
-                  $(this).addClass('is-visible')
-                  $(this).find('.tab__main').readmore({
-                     num: 3
-                  });
-               } else {
-                  $(this).removeClass('is-visible')
-               }
-            })
-         })
-
-         // courses readmore
-         setTimeout(function () {
-            $('#courses .tab__main').readmore({
-               num: 3
-            });
-         }, 500)
-      })
-   </script>
-
-   <!-- topmenu options during scrolling process -->
-   <script>
-      let prevScrollPos = window.pageYOffset;
-      window.addEventListener('scroll', function () {
-         // hiding menu on scroll down
-         let currentScrollPos = window.pageYOffset;
-         if (prevScrollPos > currentScrollPos) {
-            $(".nav").removeClass('hide');
-         } else {
-            $(".nav").addClass('hide');
-         }
-
-         prevScrollPos = currentScrollPos;
-         // end
-
-         if (window.pageYOffset > 0) {
-            $('.nav').addClass('is-sticked')
-         } else {
-            if ($('.nav').hasClass('is-sticked')) {
-               $('.nav').removeClass('is-sticked')
-            }
-         }
-      })
    </script>
 
    <!-- <script>
