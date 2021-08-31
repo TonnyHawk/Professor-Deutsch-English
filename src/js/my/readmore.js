@@ -12,7 +12,6 @@
          if (paragraphsLenght > options.num) { // we don't need to crop anything when there is less elements in our block then we want to leave anyway
             for (let i = 0; i < options.num; i++) { // counting the height of our block after cutting other elements besides this 'lenght' num of elemnts
                croppedHeight += $(paragraphs).eq(i).outerHeight() + parseInt($(paragraphs).eq(i).css('margin-bottom'));
-               console.log($(paragraphs).eq(i).height());
             }
             $(this).css({
                'height': croppedHeight,
@@ -36,7 +35,6 @@
                      // blockHeight += $(this).height()
                      blockHeight += $(this).outerHeight() + parseInt($(this).css('margin-bottom'))
                   })
-               console.log(blockHeight);
                $(this).parent().find('.has-readmore').animate({
                   'height': blockHeight
                });
