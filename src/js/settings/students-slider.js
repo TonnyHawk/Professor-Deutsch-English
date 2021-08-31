@@ -8,7 +8,7 @@
       }, 200)
    });
    $(sectionId + ' .slide__photos-slider').slick({
-      arrow: true,
+      arrows: true,
       variableWidth: true,
       centerMode: true,
       mobileFirst: true,

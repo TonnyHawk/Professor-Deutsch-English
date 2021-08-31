@@ -1,5 +1,6 @@
 .slider {
    position: relative;
+   z-index: 1;
    @include media-breakpoint-up(lg) {
       width: 75%;
       margin: 0 auto;
