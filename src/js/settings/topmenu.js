@@ -1,3 +1,5 @@
+const MenuSpy = require('menuspy');
+
 let prevScrollPos = window.pageYOffset;
 window.addEventListener('scroll', function () {
    // hiding menu on scroll down
@@ -19,3 +21,25 @@ window.addEventListener('scroll', function () {
       }
    }
 })
+let elm = document.getElementById('topmenu');
+let ms = new MenuSpy(elm,{
+
+   // menu selector
+   menuItemSelector: 'p[data-target]',
+
+   // CSS class for active item
+   activeClass   : 'is-active',
+
+   // amount of space between your menu and the next section to be activated.
+   threshold     : 15,
+
+   // enable or disable browser's hash location change.
+   enableLocationHash: true,
+
+   // timeout to apply browser's hash location.
+   hashTimeout   : 600,
+
+   // called every time a new menu item activates.
+   callback      : null
+   
+});

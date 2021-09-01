@@ -17,9 +17,9 @@
 
    &__col{
       flex: 1 0 100%;
-      @include media-breakpoint-up(md){
-         flex-basis: 50%;
-      }
+      // @include media-breakpoint-up(md){
+      //    flex-basis: 50%;
+      // }
       @include media-breakpoint-up(lg){
          flex-basis: auto;
       }

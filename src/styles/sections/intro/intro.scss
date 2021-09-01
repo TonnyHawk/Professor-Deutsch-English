@@ -5,6 +5,7 @@
    z-index: 700;
    height: 100vh;
    transition: 0.8s;
+   background: #286DD6;
 
    // .intro__title
 
@@ -14,6 +15,7 @@
       font-weight: 800;
       font-size: 3.6rem;
       line-height: 4.4rem;
+      opacity: 0;
 
       letter-spacing: 0.145rem;
       text-transform: uppercase;
@@ -64,14 +66,9 @@
       flex: 1 1 50%;
       @include perfect-center;
       cursor: pointer;
-      transition: 1.4s;
+      transition: 1.4s flex;
       min-width: 0;
       overflow: hidden;
-
-      @include media-breakpoint-up(lg) {
-         // flex: 0 0 auto;
-         // width: 50%;
-      }
 
 
       &:hover {
