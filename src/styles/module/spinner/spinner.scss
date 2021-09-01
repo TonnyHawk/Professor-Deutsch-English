@@ -1,0 +1,27 @@
+@keyframes ldio-tam1aegang {
+   0% { transform: rotate(0deg); }
+   100% { transform: rotate(360deg); }
+ }
+ .ldio-tam1aegang div {
+   @include square(60px);
+   border: 10px solid #ffffff;
+   border-top-color: transparent;
+   border-radius: 50%;
+ }
+ .ldio-tam1aegang div {
+   animation: ldio-tam1aegang 1s linear infinite;
+ }
+ .loadingio-spinner-rolling-c55z9beacq {
+   display: inline-block;
+  //  overflow: hidden;
+ }
+ .ldio-tam1aegang {
+   width: 100%;
+   height: 100%;
+   position: relative;
+   transform: translateZ(0) scale(1);
+   backface-visibility: hidden;
+   transform-origin: 0 0; /* see note above */
+   @include perfect-center;
+ }
+ .ldio-tam1aegang div { box-sizing: content-box; }
