@@ -2,6 +2,8 @@ import anime from 'animejs/lib/anime.es.js';
 
 // loader options
 $(document).ready(function () {
+
+   // appearing
    $('.loader').addClass('is-hidden');
    $('.intro__screen').eq(0).css('top', '-100%');
    $('.intro__screen').eq(1).css('top', '100%');
@@ -21,18 +23,15 @@ $(document).ready(function () {
       duration: 800,
       easing
    });
-   // anime({
-   //    targets: $('.intro__screen')[0],
-   //    top: 0,
-   //    duration: 500,
-   //    delay: 500,
-   //    easing
-   //  });
-   //  anime({
-   //    targets: $('.intro__screen')[1],
-   //    top: 0,
-   //    duration: 500,
-   //    delay: 500,
-   //    easing
-   //  });
+
+   // functionality
+   $('.intro__screen').click(function () {
+      $(this).addClass('is-active');
+      $('.intro__title').fadeOut();
+      setTimeout(function(){
+         $('.intro').addClass('is-hidden');
+         $('html').css('overflow-y', 'auto');
+         window.scrollTo(0, 0);
+      }, 1700)
+   })
 })
