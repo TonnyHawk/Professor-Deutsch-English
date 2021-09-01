@@ -4,6 +4,7 @@
    position: fixed;
    z-index: 700;
    height: 100vh;
+   transition: 0.8s;
 
    // .intro__title
 
@@ -138,5 +139,10 @@
 
    @keyframes bigger-font {
       100% {font-size: 6.6rem;}
+   }
+
+   &.is-hidden{
+      opacity: 0;
+      visibility: hidden;
    }
 }
