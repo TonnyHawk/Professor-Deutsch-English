@@ -11,25 +11,66 @@
       margin-bottom: 5rem;
 
       @include media-breakpoint-up(lg) {
-         margin: 0 0 7.5rem;
+         margin: 0 0 12rem;
       }
    }
 
-   &__header{
+   &__header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      .section__title{
+      position: relative;
+
+      .section__title {
          margin-bottom: 0;
       }
 
       margin-bottom: 5rem;
+
       @include media-breakpoint-up(lg) {
          margin: 0 0 7.5rem;
       }
    }
 
-   &__text-block{
-      
+   &__expand-btn {
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+
+      .feature {
+         &__icon {
+            font-size: 3.3rem;
+            margin-bottom: 0.6rem;
+            position: relative;
+            &:after{
+               content: '';
+               position: absolute;
+               top: -0.8rem;
+               left: -0.8rem;
+               @include square(145%);
+               border-radius: 100%;
+               z-index: -1;
+               transition: 0.4s;
+            }
+         }
+
+         &__text {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.4rem;
+            line-height: 168.18%;
+         }
+      }
+
+      &:hover{
+         .feature {
+            &__icon {
+               &:after{background: #DEDEDE;}
+            }
+         }
+      }
    }
+
+   &__text-block {}
 }

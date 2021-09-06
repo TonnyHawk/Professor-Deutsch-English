@@ -2,6 +2,8 @@
 @import 'module/spinner/spinner';
 @import 'module/loader/loader';
 
+.spinner, .loader{display: none;}
+
 html{
-   overflow: hidden;
+   // overflow: hidden;
 }

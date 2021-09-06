@@ -1,8 +1,13 @@
 #consultation {
    background: #fbfbfb;
+   padding-top: 7rem;
+   padding-bottom: 7rem;
    .section {
       &__description {
          margin-bottom: 5rem;
+         @include media-breakpoint-up(md){
+            margin-bottom: 7rem;
+         }
       }
       &__photo{
          margin-bottom: 7rem;
@@ -22,6 +27,9 @@
             text-align: left;
             margin-left: 0;
          }
+      }
+      &__title{
+         margin-bottom: 3rem;
       }
    }
 

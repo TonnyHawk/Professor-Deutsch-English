@@ -1,162 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+@@include('_head.html')
 
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="format-detection" content="telephone=no">
 
-   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-   <link rel="manifest" href="favicon/site.webmanifest">
-
-   <link rel="stylesheet" href="css/first-loaded.css">
-   <link rel="stylesheet" href="css/main.css">
-   <title>Школа іноземних мов Professor Deutsch & English</title>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-</head>
-
-<body>
-   <div class="loader">
-      <div class="loader__bg"></div>
-      <div class="loader__content">
-         <div class="loader__spinner spinner loadingio-spinner-rolling-c55z9beacq">
-            <div class="ldio-tam1aegang">
-               <div></div>
-            </div>
+<div class="section" id="students">
+   <div class="container">
+      <div class="section__header">
+         <h1 class="section__title">Наші учні</h1>
+         <div class="section__expand-btn feature">
+            <div class="feature__icon"><i class="bi bi-collection"></i></div>
+            <p class="feature__text">Більше</p>
          </div>
       </div>
    </div>
 
-   @@include('_topmenu.html')
-   @@include('_header.html')
-   @@include('_about-us.html')
-   @@include('_why-we.html')
-   @@include('_students.html')
-   @@include('_courses.html')
-   @@include('_teachers.html')
-   <!-- @@include('_news.html') -->
-   @@include('_consultation.html')
-   @@include('_footer.html')
-
-   <!-- @@include('_students.html') -->
-
-
-   <section class="intro" id='intro'>
-      <h1 class="intro__title">professor</h1>
-      <div class="intro__screens">
-         <div class="intro__screen" data-mode='e'>
-            <div class="intro__bg ibg">
-               <img src="img/preloader/a9.jpg" alt="">
+   <div class="sl">
+      <!-- Slider main container -->
+      <div class="sl__main">
+         <div class="sl__slide-unit">
+            <div class="sl__photo multilayer">
+               <img src="img/about-us/1.jpg" alt="" class="multilayer__main">
             </div>
-            <div class="intro__screen-content">
-               <h2 class="intro__screen-title">English</h2>
+            <div class="sl__pop pop">
+               <p class="pop__title">Спільне фото, група B2-C1</p>
+               <p class="pop__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Turpis in eu mi bibendum. Eget egestas purus
+                  viverra
+                  accumsan in nisl nisi scelerisque eu. Rhoncus aenean vel elit scelerisque mauris. Sodales ut
+                  etiam
+                  sit amet.</p>
             </div>
          </div>
-         <div class="intro__screen" data-mode='g'>
-            <div class="intro__bg ibg">
-               <img src="img/preloader/3.jpg" alt="">
+         <div class="sl__slide-unit">
+            <div class="sl__photo multilayer">
+               <img src="img/students/olya-w.jpg" alt="" class="multilayer__main">
             </div>
-            <div class="intro__screen-content">
-               <h2 class="intro__screen-title">Deutsch</h2>
-            </div>
-         </div>
-      </div>
-   </section>
-
-   <!-- <div class="popup popup--message" id="popup">
-      <div class="popup__container">
-         <div class="popup__body">
-            <div class="popup__icon"><img src="img/icons/success.svg" alt=""></div>
-            <div class="popup__text">Дякую, ми зателефонуємо вам якнайшвидше!</div>
-         </div>
-      </div>
-   </div> -->
-
-   <div class="popup" id='popup-application'>
-      <div class="popup__bg-layer">
-         <form class="popup__body" action='php/mail.php' method="POST">
-            <div class="popup__close-btn" data-action='close-popup'>
-               <img src="img/icons/x.svg" alt="">
-            </div>
-            <div class="popup__container">
-               <div class="popup__row">
-                  <div class="popup__col">
-                     <p class="popup__title">Попередній запис</p>
-                     <p class="popup__text">Заповнивши цю форму ви залишаєте нам заявку яку ми розглянемо найближчим
-                        часом та зателефонуємо вам</p>
-                     <div class="popup__select field">
-                        <label for="" class="field__label">Запис на</label>
-                        <select class="field__select form-select" name='application-to'>
-                           <option value='consultation'>Консультація</option>
-                           <option value="g a1">Німецька A1</option>
-                           <option value="g a2">Німецька A2</option>
-                           <option value="g b1">Німецька B1</option>
-                           <option value="g b2">Німецька B2</option>
-                           <option value="g c1">Німецька C1</option>
-                        </select>
+            <div class="sl__pop pop">
+               <p class="pop__title pop__item">Оля Вашенюк</p>
+               <div class="pop__row pop__item">
+                  <div class="pop__badges">
+                     <div class="badge">
+                        <div class="badge__main">
+                           <p class="badge__text">Німецька</p>
+                        </div>
+                        <div class="badge__aside">
+                           <p class="badge__text">С2</p>
+                        </div>
                      </div>
                   </div>
-                  <div class="popup__vr-line"></div>
-                  <div class="popup__col">
-                     <input type="text" class="popup__input" name='applicant_name' placeholder="Ім’я">
-                     <input type="tel" class="popup__input" name='applicant_phone' placeholder="Телефон">
-                     <input type="submit" class="popup__submit btn" value='Відправити'>
-                  </div>
+                  <p class="pop__action btn">Сертифікати</p>
                </div>
+               <p class="pop__text pop__item">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                  eiusmod
+                  tempor
+                  incididunt ut labore et dolore magna aliqua. Turpis in eu mi bibendum. Eget egestas purus
+                  viverra
+                  accumsan in nisl nisi scelerisque eu. Rhoncus aenean vel elit scelerisque mauris. Sodales ut
+                  etiam
+                  sit amet.</p>
             </div>
-         </form>
+         </div>
+      </div>
+      <div class="sl__preview">
+         <div>
+            <div class="sl__prev-item">
+               <img src="img/about-us/1.jpg" alt="">
+            </div>
+         </div>
+         <div>
+            <div class="sl__prev-item">
+               <img src="img/students/olya-w.jpg" alt="">
+            </div>
+         </div>
       </div>
    </div>
 
+</div>
 
+@@include('_scripts.html')
 
-   <!-- global things -->
-   <script>
-      var g_Mode = 'g';
-   </script>
+<body>
 
-
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-   <script src="js/bundle.js"></script>
-
-   <!-- submit subscription -->
-   <script>
-      function submitConsultation() {
-         $('#popup').fadeIn()
-         setTimeout(function () {
-            $('#popup').fadeOut()
-         }, 3000)
-         return false;
-      }
-   </script>
-
-   <script>
-      $('.slide__action').click(function () {
-         alert('Галерея в розробці');
-      })
-      $('.tab .feature__text_link').click(function () {
-         alert('Галерея в розробці');
-      })
-   </script>
-
-   <!-- <script>
-          window.onload = function(){
-        //hide the preloader
-        setTimeout(function(){
-         document.querySelector("#preloader").style.display = "none";
-         document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
-        }, 2000);
-    }
-   </script> -->
 </body>
 
 </html>

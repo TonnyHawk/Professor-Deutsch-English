@@ -166,6 +166,7 @@ a[href^=tel], a[href^=mailto]{
 @import 'module/ibg/ibg.css';
 @import 'module/header/header';
 @import 'module/btn/btn';
+@import 'module/badge/badge';
 @import 'module/hamburger/hamburger.scss';
 @import 'module/nav/nav-blanc';
 @import 'module/card/card';
@@ -181,6 +182,8 @@ a[href^=tel], a[href^=mailto]{
 @import 'module/slide/slide';
 @import 'module/popup/popup';
 @import 'module/field/field';
+@import 'module/sl/sl';
+
 
 @import 'sections/section/section';
 @import 'sections/about-us/about-us';

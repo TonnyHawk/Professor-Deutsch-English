@@ -15,7 +15,7 @@ require('./settings/popup');
 require('./settings/teachers-slider.js');
 
 // students slider
-require('./settings/students-slider')
+require('./settings/students-slider');
 
 // courses tabs
 require('./settings/courses-tabs');
