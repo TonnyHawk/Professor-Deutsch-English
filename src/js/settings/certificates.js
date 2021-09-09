@@ -9,7 +9,3 @@ btns.forEach(elem=>{
       $('#page-books').fadeIn();
    })
 })
-
-$('.page__close-icon').click(function(){
-   $('.page').fadeOut();
-})

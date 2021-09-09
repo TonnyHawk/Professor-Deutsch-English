@@ -290,7 +290,8 @@
          @include media-breakpoint-up(md) {
             $gap: 3.5rem;
          }
-         @include media-breakpoint-up(lg){
+
+         @include media-breakpoint-up(lg) {
             $gap: 5rem;
          }
 
@@ -304,73 +305,73 @@
             flex: 1;
          }
       }
-   }
-}
 
-.gall-item {
+      .gall-item {
 
-   // .gall-item__photo
+         // .gall-item__photo
 
-   &__photo {}
+         &__photo {}
 
-   // .gall-item__img
+         // .gall-item__img
 
-   &__img {
-      height: 15rem;
-      border-radius: 0.5rem;
-      object-fit: cover;
-      min-width: 100%;
-      max-height: 100%;
+         &__img {
+            height: 15rem;
+            border-radius: 0.5rem;
+            object-fit: cover;
+            min-width: 100%;
+            max-height: 100%;
 
-      @include media-breakpoint-up(md) {
-         height: 19rem;
-      }
+            @include media-breakpoint-up(md) {
+               height: 19rem;
+            }
 
-      @include media-breakpoint-up(lg) {
-         height: 23.5rem;
-      }
-   }
+            @include media-breakpoint-up(lg) {
+               height: 23.5rem;
+            }
+         }
 
-   // .gall-item__title
+         // .gall-item__title
 
-   &__title {
-      font-family: Gilroy;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 1.6rem;
-      line-height: 138.5%;
-      margin: 1.5rem 0 0.7rem;
+         &__title {
+            font-family: Gilroy;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1.6rem;
+            line-height: 138.5%;
+            margin: 1.5rem 0 0.7rem;
 
-      @include media-breakpoint-up(md) {
-         font-size: 2rem;
-         line-height: 2.4rem;
-         margin: 1.7rem 0 0.7rem;
-      }
+            @include media-breakpoint-up(md) {
+               font-size: 2rem;
+               line-height: 2.4rem;
+               margin: 1.7rem 0 0.7rem;
+            }
 
-      @include media-breakpoint-up(lg) {
-         font-size: 2.1rem;
-         line-height: 2.9rem;
-         margin: 2rem 0 0.7rem;
-      }
-   }
+            @include media-breakpoint-up(lg) {
+               font-size: 2.1rem;
+               line-height: 2.9rem;
+               margin: 2rem 0 0.7rem;
+            }
+         }
 
-   // .gall-item__descr
+         // .gall-item__descr
 
-   &__descr {
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: 300;
-      font-size: 1.3rem;
-      line-height: 138.5%;
+         &__descr {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 1.3rem;
+            line-height: 138.5%;
 
-      @include media-breakpoint-up(md) {
-         font-size: 1.5rem;
-         line-height: 1.8rem;
-      }
+            @include media-breakpoint-up(md) {
+               font-size: 1.5rem;
+               line-height: 1.8rem;
+            }
 
-      @include media-breakpoint-up(lg) {
-         font-size: 1.5rem;
-         line-height: 2.1rem;
+            @include media-breakpoint-up(lg) {
+               font-size: 1.5rem;
+               line-height: 2.1rem;
+            }
+         }
       }
    }
 }
