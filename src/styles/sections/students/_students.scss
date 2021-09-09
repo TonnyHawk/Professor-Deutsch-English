@@ -1,19 +1,25 @@
 #students {
+   background: #F5F4F7;
+   overflow: hidden;
+
    .section {
-      &__title {
-      }
-      &__header{
+      &__title {}
+
+      &__header {
          margin-bottom: 6rem;
-         @include media-breakpoint-up(md){
+
+         @include media-breakpoint-up(md) {
             margin-bottom: 8rem;
             justify-content: center;
          }
-         @include media-breakpoint-up(lg){
+
+         @include media-breakpoint-up(lg) {
             margin-bottom: 9rem;
          }
       }
-      &__expand-btn{
-         @include media-breakpoint-up(md){
+
+      &__expand-btn {
+         @include media-breakpoint-up(md) {
             position: absolute;
             right: 0;
          }
@@ -35,7 +41,7 @@
    }
 
    .slick-slide {
-      margin: 0 1rem;
+      margin: 0 1.5rem;
 
       @include media-breakpoint-up(md) {
          margin: 0 4rem;
@@ -56,9 +62,15 @@
          }
 
          @include media-breakpoint-up(lg) {
-            padding: 0;
+            padding: 1rem;
             display: flex;
             justify-content: center;
+         }
+      }
+
+      .slick-slide.slick-active {
+         .multilayer {
+            @extend .multilayer.is-active;
          }
       }
    }
@@ -68,15 +80,37 @@
       @include media-breakpoint-up(lg) {
          margin-top: 9rem;
       }
-      .slick-track{
+
+      .slick-track {
          @include media-breakpoint-up(lg) {
             padding-top: 2rem;
             align-items: center;
          }
       }
-      .slick-slide{
+
+      .slick-slide {
+         padding: 1rem 0;
          cursor: pointer;
-         img{
+
+         .multilayer {
+            @include media-breakpoint-up(lg) {}
+
+            &__main {
+               @include media-breakpoint-up(lg) {
+                  transform: none;
+                  transition-delay: unset;
+                  transition-duration: 0.3s;
+               }
+            }
+
+            &:after {
+               @include media-breakpoint-up(lg) {
+                  display: none;
+               }
+            }
+         }
+
+         img {
             @include media-breakpoint-up(lg) {
                border: 3px solid transparent;
                height: 21rem;
@@ -86,6 +120,25 @@
 
          &.slick-current {
             position: relative;
+
+            .multilayer {
+               @extend .multilayer.is-active;
+
+               &__main {
+                  @include media-breakpoint-up(lg) {
+                     transform: none;
+                     transition-delay: unset;
+                     transition-duration: 0.3s;
+                  }
+               }
+
+               &:after {
+                  @include media-breakpoint-up(lg) {
+                     display: none;
+                  }
+               }
+            }
+
             img {
                @include media-breakpoint-up(lg) {
                   border-color: #7D55D1;
@@ -93,12 +146,12 @@
                   opacity: 1;
                }
             }
-   
-            &:after {
+
+            &:before {
                @include media-breakpoint-up(lg) {
                   content: '';
                   position: absolute;
-                  top: -2rem;
+                  top: -1.7rem;
                   left: calc(50% - 2.1rem);
                   border-left: 2.5rem solid transparent;
                   border-right: 2.5rem solid transparent;

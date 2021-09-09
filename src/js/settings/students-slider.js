@@ -23,4 +23,7 @@
    arrows: false,
    asNavFor: sectionId + ' .sl__preview',
    infinite: false,
+   speed: 500,
+   fade: true,
+   cssEase: 'linear'
  });

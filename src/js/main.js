@@ -22,3 +22,7 @@ require('./settings/courses-tabs');
 
 // topmenu options during scrolling process
 require('./settings/topmenu');
+
+require('./settings/certificates');
+
+require('./settings/page-photos');

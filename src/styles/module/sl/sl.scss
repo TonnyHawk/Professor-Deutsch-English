@@ -77,13 +77,6 @@
    }
 }
 
-.multilayer {
-
-   // .multilayer__main
-
-   &__main {}
-}
-
 .pop {
    padding: 3.5rem 4rem;
    background: white;
@@ -161,6 +154,11 @@
       flex: 1 0 100%;
       @include media-breakpoint-up(md){
          flex-basis: auto;
+      }
+
+      .badge{
+         margin-bottom: 1.7rem;
+         &:last-child{margin-bottom: 0;}
       }
    }
 
