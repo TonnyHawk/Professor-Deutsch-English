@@ -36,7 +36,7 @@ eval("/*! MenuSpy v1.3.0 (Jan 31 2018) - http://leocs.me/menuspy/ - Copyright (c
   \************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("__webpack_require__(/*! ../styles/module/ibg/ibg.js */ \"./src/styles/module/ibg/ibg.js\");\r\n__webpack_require__(/*! ../styles/module/nav/nav.js */ \"./src/styles/module/nav/nav.js\");\r\n__webpack_require__(/*! ./vendors/smoothScroll.js */ \"./src/js/vendors/smoothScroll.js\");\r\n__webpack_require__(/*! ./vendors/jQuery-Input-Mask-Phone-Numbers/jquery-input-mask-phone-number.min.js */ \"./src/js/vendors/jQuery-Input-Mask-Phone-Numbers/jquery-input-mask-phone-number.min.js\");\r\n__webpack_require__(/*! ./my/readmore.js */ \"./src/js/my/readmore.js\");\r\n__webpack_require__(/*! ./settings/intro */ \"./src/js/settings/intro.js\");\r\n\r\n// phone mask\r\n__webpack_require__(/*! ./settings/masks */ \"./src/js/settings/masks.js\");\r\n\r\n// popup\r\n__webpack_require__(/*! ./settings/popup */ \"./src/js/settings/popup.js\");\r\n\r\n// teachers slider\r\n__webpack_require__(/*! ./settings/teachers-slider.js */ \"./src/js/settings/teachers-slider.js\");\r\n\r\n// students slider\r\n__webpack_require__(/*! ./settings/students-slider */ \"./src/js/settings/students-slider.js\");\r\n\r\n// courses tabs\r\n__webpack_require__(/*! ./settings/courses-tabs */ \"./src/js/settings/courses-tabs.js\");\r\n\r\n// topmenu options during scrolling process\r\n__webpack_require__(/*! ./settings/topmenu */ \"./src/js/settings/topmenu.js\");\r\n\r\n__webpack_require__(/*! ./settings/certificates */ \"./src/js/settings/certificates.js\");\r\n\r\n__webpack_require__(/*! ./settings/page */ \"./src/js/settings/page.js\");\r\n\r\n__webpack_require__(/*! ./settings/page-photos */ \"./src/js/settings/page-photos.js\");\n\n//# sourceURL=webpack://tak/./src/js/main.js?");
+eval("__webpack_require__(/*! ../styles/module/ibg/ibg.js */ \"./src/styles/module/ibg/ibg.js\");\r\n__webpack_require__(/*! ../styles/module/nav/nav.js */ \"./src/styles/module/nav/nav.js\");\r\n__webpack_require__(/*! ./vendors/smoothScroll.js */ \"./src/js/vendors/smoothScroll.js\");\r\n__webpack_require__(/*! ./vendors/jQuery-Input-Mask-Phone-Numbers/jquery-input-mask-phone-number.min.js */ \"./src/js/vendors/jQuery-Input-Mask-Phone-Numbers/jquery-input-mask-phone-number.min.js\");\r\n__webpack_require__(/*! ./my/readmore.js */ \"./src/js/my/readmore.js\");\r\n__webpack_require__(/*! ./settings/intro */ \"./src/js/settings/intro.js\");\r\n\r\n// phone mask\r\n__webpack_require__(/*! ./settings/masks */ \"./src/js/settings/masks.js\");\r\n\r\n// popup\r\n__webpack_require__(/*! ./settings/popup */ \"./src/js/settings/popup.js\");\r\n\r\n// teachers slider\r\n__webpack_require__(/*! ./settings/teachers-slider.js */ \"./src/js/settings/teachers-slider.js\");\r\n\r\n// students slider\r\n__webpack_require__(/*! ./settings/students-slider */ \"./src/js/settings/students-slider.js\");\r\n\r\n// courses tabs\r\n__webpack_require__(/*! ./settings/courses-tabs */ \"./src/js/settings/courses-tabs.js\");\r\n\r\n// topmenu options during scrolling process\r\n__webpack_require__(/*! ./settings/topmenu */ \"./src/js/settings/topmenu.js\");\r\n\r\n__webpack_require__(/*! ./settings/certificates */ \"./src/js/settings/certificates.js\");\r\n\r\n__webpack_require__(/*! ./settings/page */ \"./src/js/settings/page.js\");\r\n\n\n//# sourceURL=webpack://tak/./src/js/main.js?");
 
 /***/ }),
 
@@ -91,23 +91,13 @@ eval("$('input[type=\"tel\"]').each(function () {\r\n   $(this).usPhoneFormat({\
 
 /***/ }),
 
-/***/ "./src/js/settings/page-photos.js":
-/*!****************************************!*\
-  !*** ./src/js/settings/page-photos.js ***!
-  \****************************************/
-/***/ (() => {
-
-eval("$(\"#students .section__expand-btn\").click(function(){\r\n   $('#page-photos').fadeIn()\r\n})\n\n//# sourceURL=webpack://tak/./src/js/settings/page-photos.js?");
-
-/***/ }),
-
 /***/ "./src/js/settings/page.js":
 /*!*********************************!*\
   !*** ./src/js/settings/page.js ***!
   \*********************************/
 /***/ (() => {
 
-eval("$('.page__close-icon').click(function(){\r\n   $('.page').fadeOut();\r\n})\n\n//# sourceURL=webpack://tak/./src/js/settings/page.js?");
+eval("function openWinPreparation(){\r\n   document.documentElement.style = 'overflow: hidden';\r\n}\r\nfunction closeWinPreparation(){\r\n   document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';\r\n}\r\n\r\n\r\n$('.page__close-icon').click(function(){\r\n   $('.page').fadeOut();\r\n   closeWinPreparation();\r\n})\r\n\r\n$(\"#students .section__expand-btn\").click(function(){\r\n   $('#page-photos').fadeIn()\r\n   openWinPreparation();\r\n})\n\n//# sourceURL=webpack://tak/./src/js/settings/page.js?");
 
 /***/ }),
 

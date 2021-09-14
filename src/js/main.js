@@ -26,5 +26,3 @@ require('./settings/topmenu');
 require('./settings/certificates');
 
 require('./settings/page');
-
-require('./settings/page-photos');
