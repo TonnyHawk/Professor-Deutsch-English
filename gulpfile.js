@@ -5,7 +5,7 @@ let {
    series,
    parallel
 } = require('gulp'),
-   scss = require('gulp-sass'),
+   scss = require('gulp-sass')(require('sass')),
    gmq = require('gulp-group-css-media-queries'),
    sourcemaps = require('gulp-sourcemaps'),
    cleanCSS = require('gulp-clean-css'),

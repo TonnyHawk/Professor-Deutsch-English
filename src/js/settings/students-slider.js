@@ -25,5 +25,20 @@
    infinite: false,
    speed: 500,
    fade: true,
-   cssEase: 'linear'
+   cssEase: 'linear',
+   responsive: [{
+    breakpoint: 992,
+    settings: {
+      adaptiveHeight: false,
+    }
+  }]
  });
+
+
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+
+// ReactDOM.render(
+//     <h1>Hello World</h1>,
+//   document.getElementById('students')
+// );

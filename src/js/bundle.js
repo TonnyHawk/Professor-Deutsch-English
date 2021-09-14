@@ -97,7 +97,7 @@ eval("$('input[type=\"tel\"]').each(function () {\r\n   $(this).usPhoneFormat({\
   \*********************************/
 /***/ (() => {
 
-eval("function openWinPreparation(){\r\n   document.documentElement.style = 'overflow: hidden';\r\n}\r\nfunction closeWinPreparation(){\r\n   document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';\r\n}\r\n\r\n\r\n$('.page__close-icon').click(function(){\r\n   $('.page').fadeOut();\r\n   closeWinPreparation();\r\n})\r\n\r\n$(\"#students .section__expand-btn\").click(function(){\r\n   $('#page-photos').fadeIn()\r\n   openWinPreparation();\r\n})\n\n//# sourceURL=webpack://tak/./src/js/settings/page.js?");
+eval("function openWinPreparation(){\r\n   document.documentElement.style = 'overflow: hidden';\r\n}\r\nfunction closeWinPreparation(){\r\n   document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';\r\n}\r\n\r\n\r\n$('.page__close-icon').click(function(){\r\n   $('.page').fadeOut('fast');\r\n   closeWinPreparation();\r\n})\r\n\r\n$(\"#students .section__expand-btn\").click(function(){\r\n   $('#page-photos').fadeIn('fast');\r\n   openWinPreparation();\r\n})\n\n//# sourceURL=webpack://tak/./src/js/settings/page.js?");
 
 /***/ }),
 
@@ -117,7 +117,7 @@ eval("$('[data-action=\"open-popup\"]').each(function () {\r\n   $(this).click(f
   \********************************************/
 /***/ (() => {
 
-eval(" let sectionId = \"#students\"\r\n\r\n $(sectionId + ' .sl__preview').slick({\r\n   adaptiveHeight: true,\r\n   centerMode: true,\r\n   mobileFirst: true,\r\n   variableWidth: true,\r\n   arrows: false,\r\n   asNavFor: sectionId + ' .sl__main',\r\n   infinite: false,\r\n   responsive: [{\r\n    breakpoint: 992,\r\n    settings: {\r\n      adaptiveHeight: false,\r\n      focusOnSelect: true\r\n    }\r\n  }]\r\n });\r\n\r\n $(sectionId + ' .sl__main').slick({\r\n   adaptiveHeight: true,\r\n   mobileFirst: true,\r\n   arrows: false,\r\n   asNavFor: sectionId + ' .sl__preview',\r\n   infinite: false,\r\n   speed: 500,\r\n   fade: true,\r\n   cssEase: 'linear'\r\n });\n\n//# sourceURL=webpack://tak/./src/js/settings/students-slider.js?");
+eval(" let sectionId = \"#students\"\r\n\r\n $(sectionId + ' .sl__preview').slick({\r\n   adaptiveHeight: true,\r\n   centerMode: true,\r\n   mobileFirst: true,\r\n   variableWidth: true,\r\n   arrows: false,\r\n   asNavFor: sectionId + ' .sl__main',\r\n   infinite: false,\r\n   responsive: [{\r\n    breakpoint: 992,\r\n    settings: {\r\n      adaptiveHeight: false,\r\n      focusOnSelect: true\r\n    }\r\n  }]\r\n });\r\n\r\n $(sectionId + ' .sl__main').slick({\r\n   adaptiveHeight: true,\r\n   mobileFirst: true,\r\n   arrows: false,\r\n   asNavFor: sectionId + ' .sl__preview',\r\n   infinite: false,\r\n   speed: 500,\r\n   fade: true,\r\n   cssEase: 'linear',\r\n   responsive: [{\r\n    breakpoint: 992,\r\n    settings: {\r\n      adaptiveHeight: false,\r\n    }\r\n  }]\r\n });\r\n\r\n\r\n// import React from 'react';\r\n// import ReactDOM from 'react-dom';\r\n\r\n// ReactDOM.render(\r\n//     <h1>Hello World</h1>,\r\n//   document.getElementById('students')\r\n// );\n\n//# sourceURL=webpack://tak/./src/js/settings/students-slider.js?");
 
 /***/ }),
 

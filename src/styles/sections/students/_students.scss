@@ -70,7 +70,13 @@
 
       .slick-slide.slick-active {
          .multilayer {
-            @extend .multilayer.is-active;
+            &__main {
+               transform: translate(-0.5rem, -0.5rem);
+            }
+      
+            &:after {
+               transform: translate(1rem, 1rem);
+            }
          }
       }
    }
@@ -122,9 +128,9 @@
             position: relative;
 
             .multilayer {
-               @extend .multilayer.is-active;
 
                &__main {
+                  transform: translate(-0.5rem, -0.5rem);
                   @include media-breakpoint-up(lg) {
                      transform: none;
                      transition-delay: unset;
@@ -133,6 +139,7 @@
                }
 
                &:after {
+                  transform: translate(1rem, 1rem);
                   @include media-breakpoint-up(lg) {
                      display: none;
                   }

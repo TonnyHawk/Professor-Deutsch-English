@@ -7,11 +7,11 @@ function closeWinPreparation(){
 
 
 $('.page__close-icon').click(function(){
-   $('.page').fadeOut();
+   $('.page').fadeOut('fast');
    closeWinPreparation();
 })
 
 $("#students .section__expand-btn").click(function(){
-   $('#page-photos').fadeIn()
+   $('#page-photos').fadeIn('fast');
    openWinPreparation();
 })
