@@ -195,6 +195,18 @@ a[href^=mailto] {
          transform: translate(1rem, 1rem);
       }
    }
+
+   &.is-disabled{
+      .multilayer {
+         &__main {
+            transform: unset;
+         }
+      }
+
+      &:after {
+         transform: unset;
+      }
+   }
 }
 
 .hover-circled {
@@ -252,6 +264,9 @@ a[href^=mailto] {
 @import 'module/gallery/gallery';
 @import 'module/collection/collection';
 @import 'module/page/page';
+@import 'module/gall/gall';
+@import 'module/talk-buble/talk-buble';
+@import 'module/zoomed/zoomed';
 
 
 @import 'sections/section/section';

@@ -1,0 +1,190 @@
+.zoomed {
+   @include layer;
+   position: absolute;
+   z-index: 3000;
+   overflow-y: auto;
+
+   // .zoomed__inner
+
+   &__inner {
+      position: relative;
+      z-index: 2;
+   }
+
+   // .zoomed__hd
+
+   &__hd {
+      display: flex;
+      justify-content: center;
+      padding: 2rem 0;
+
+      @include media-breakpoint-up(md) {
+         padding: 4rem 0;
+      }
+   }
+
+   // .zoomed__action-icon
+
+   &__action-icon {
+      color: white;
+      font-size: 6rem;
+      cursor: pointer;
+   }
+
+   // .zoomed__action-icon--close
+
+   &__action-icon--close {}
+
+   // .zoomed__bd
+
+   &__bd {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 10rem;
+   }
+
+   // .zoomed__main-content
+
+   &__main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+
+      @include media-breakpoint-up(lg) {
+         flex-direction: row;
+         align-items: flex-start;
+      }
+   }
+
+   // .zoomed__main-photo
+
+   &__main-photo {
+      width: 85%;
+      max-width: 56.5rem;
+
+      img {
+         width: 100%;
+         border-radius: 0.5rem;
+      }
+   }
+
+   .multilayer {
+      @extend .multilayer.is-active;
+   }
+
+   // .zoomed__main-info
+
+   &__main-info {}
+
+   // .zoomed__bg
+
+   &__bg {
+      background: rgba(9, 0, 28, 0.88);
+      @include layer;
+      position: fixed;
+      z-index: 1;
+   }
+
+   &--gallery-photo {
+      .zoomed {
+         &__main-photo {
+            @include media-breakpoint-up(lg) {
+               max-width: 49rem;
+            }
+         }
+
+         &__main-content{
+            @include media-breakpoint-up(lg) {
+               padding: 0 8rem;
+            }
+         }
+
+         &__hd{
+            @include media-breakpoint-up(lg){
+               max-width: calc(1303px);
+               margin-left: auto;
+               margin-right: auto;
+               justify-content: flex-end;
+               width: 100%;
+               padding: {
+                  left: 8rem;
+                  right: 8rem;
+               }
+            }
+         }
+      }
+
+      .talk-buble {
+         width: 95%;
+         max-width: 61rem;
+         margin-top: 9rem;
+         &:after{
+            top: -3.7rem;
+            left: calc(50% - 5rem);
+            @include media-breakpoint-up(lg){
+               top: calc(20% + 2rem);
+               left: -6.8rem;
+               transform: rotate(-90deg);
+            }
+         }
+
+         @include media-breakpoint-up(lg) {
+            margin-top: 0;
+            margin-left: 10rem;
+            max-width: 50rem;
+         }
+
+         &__title {
+            font-size: 2.5rem;
+            line-height: 147.69%;
+
+            @include media-breakpoint-up(md) {
+               font-size: 2.8rem;
+            }
+         }
+
+         // .talk-buble__under-title
+
+         &__under-title {
+            font-size: 1.4rem;
+            line-height: 168.18%;
+            margin-top: 0.8rem;
+
+            @include media-breakpoint-up(md) {
+               font-size: 1.7rem;
+            }
+         }
+
+         // .talk-buble__descr
+
+         &__descr {
+            font-size: 1.5rem;
+            line-height: 172.19%;
+
+            @include media-breakpoint-up(md) {
+               font-size: 1.7rem;
+            }
+         }
+      }
+
+      display: none;
+   }
+   &--single-photo{
+      .zoomed{
+         &__main-photo{
+            max-width: 70rem;
+         }
+
+         &__main-content{
+            width: 100%;
+            justify-content: center
+         }
+      }
+
+      .multilayer{
+         @extend .multilayer.is-disabled;
+      }
+   }
+
+}
