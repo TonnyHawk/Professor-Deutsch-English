@@ -86,6 +86,7 @@
       z-index: 1;
    }
 
+
    &--gallery-photo {
       .zoomed {
          &__main-photo {
@@ -156,21 +157,12 @@
             }
          }
 
-         // .talk-buble__descr
-
-         &__descr {
-            font-size: 1.5rem;
-            line-height: 172.19%;
-
-            @include media-breakpoint-up(md) {
-               font-size: 1.7rem;
-            }
-         }
       }
 
-      display: none;
+      // display: none;
    }
    &--single-photo{
+      display: none;
       .zoomed{
          &__main-photo{
             max-width: 70rem;

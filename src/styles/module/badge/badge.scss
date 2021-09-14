@@ -1,41 +1,78 @@
+// .badge {
+//    display: flex;
+//    border: 0.1rem solid black;
+//    padding: 0.8rem 1.5rem;
+//    border-radius: 0.9rem;
+//    gap: 1.5rem;
+//    justify-content: space-between;
+//    max-width: max-content;
+//    width: 100%;
+
+//    // .badge__main
+
+//    &__main {
+//       .badge__text {
+//          font-family: Gilroy;
+//          font-style: normal;
+//          font-weight: normal;
+//          font-size: 1.8rem;
+//          line-height: 2.1rem;
+//       }
+//    }
+
+//    // .badge__text
+
+//    &__text {}
+
+//    // .badge__aside
+
+//    &__aside {
+//       flex: 1;
+//       @include perfect-center;
+
+//       .badge__text {
+//          font-family: Roboto;
+//          font-style: normal;
+//          font-weight: 500;
+//          font-size: 1.8rem;
+//          line-height: 2.1rem;
+//       }
+//    }
+// }
+
+
 .badge {
    display: flex;
-   border: 0.1rem solid black;
-   padding: 0.8rem 1.5rem;
+   align-items: stretch;
+   border: 0.1rem solid #000000;
    border-radius: 0.9rem;
-   gap: 1.5rem;
+   padding: 1rem 1.5rem;
    justify-content: space-between;
-   max-width: max-content;
-   width: 100%;
+   gap: 1.5rem;
+   max-width: 33rem;
+   width: max-content;
 
-   // .badge__main
+   // .badge__main-text
 
-   &__main {
-      .badge__text {
-         font-family: Gilroy;
-         font-style: normal;
-         font-weight: normal;
-         font-size: 1.8rem;
-         line-height: 2.1rem;
-      }
+   &__main-text {
+      font-family: Gilroy;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 2.1rem;
+      font-size: 1.7rem;
    }
 
-   // .badge__text
+   // .badge__aside-text
 
-   &__text {}
-
-   // .badge__aside
-
-   &__aside {
-      flex: 1;
+   &__aside-text {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 2.1rem;
       @include perfect-center;
-
-      .badge__text {
-         font-family: Roboto;
-         font-style: normal;
-         font-weight: 500;
-         font-size: 1.8rem;
-         line-height: 2.1rem;
+      font-size: 1.7rem;
+      @include media-breakpoint-up(lg){
+         font-size: 1.5rem;
       }
    }
 }

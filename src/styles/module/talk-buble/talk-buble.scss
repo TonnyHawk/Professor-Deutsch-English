@@ -34,13 +34,16 @@
       font-size: 1.4rem;
       line-height: 168.18%;
       margin-top: 0.8rem;
-      @include media-breakpoint-up(md){
+
+      @include media-breakpoint-up(md) {
          font-size: 1.7rem;
       }
-      &-label{
+
+      &-label {
          font-weight: bold;
       }
-      &-main{
+
+      &-main {
          font-weight: 300;
       }
    }
@@ -51,16 +54,48 @@
       font-family: Roboto;
       font-style: normal;
       font-weight: normal;
-      font-size: 1.5rem;
-      line-height: 172.19%;
+      font-size: 1.6rem;
+      line-height: 177.19%;
+   }
 
-      @include media-breakpoint-up(md) {
-         font-size: 1.7rem;
-         line-height: 172.19%;
+   // .talk-buble__pocket
+
+   $pocket-gap: 1.7rem;
+   &__pocket {
+      display: flex;
+      flex-direction: column;
+      gap: $pocket-gap;
+      margin-bottom: 3rem;
+
+      @include media-breakpoint-up(md){
+         flex-direction: row;
+         align-items: center;
+         justify-content: space-between;
+      }
+
+      @include media-breakpoint-up(lg){
+         gap: 5rem;
       }
    }
 
-   &:after{
+   // .talk-buble__badges
+
+   &__badges {
+      display: flex;
+      flex-direction: column;
+      gap: $pocket-gap;
+   }
+
+   // .talk-buble__badge
+
+   &__badge {
+   }
+
+   // .talk-buble__action
+
+   &__action {}
+
+   &:after {
       content: '';
       position: absolute;
       border-bottom: 4rem solid white;
@@ -69,14 +104,15 @@
    }
 
    // where the buble is placed 
-   &--bottom{
-      &:after{
+   &--bottom {
+      &:after {
          top: -3.7rem;
          left: calc(50% - 5rem);
       }
    }
-   &--right{
-      &:after{
+
+   &--right {
+      &:after {
          top: calc(50% - 5rem);
          left: -3.7rem;
          transform: rotate(0deg);
