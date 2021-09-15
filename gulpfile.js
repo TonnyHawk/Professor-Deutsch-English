@@ -18,7 +18,6 @@ const merge = require('merge-stream');
 
 const configs = [
    require('./gulp.config'),
-   require('./gulp.config.firstCss')
 ];
 
 let path = {
@@ -40,17 +39,21 @@ function server() {
    //   watch([path.projFold + '/index.html']).on('change', browserSync.reload);
 }
 
+function watchCss(){
+   watch(path.projFold + path.styles + "/**/*.scss", css);
+}
+
 function css() {
    let tasks = configs.map(config=>{
       return src(config.css.sourcePaths)
-      .pipe(sourcemaps.init())
+      // .pipe(sourcemaps.init())
       .pipe(scss(config.thirdParty.sassOptions))
       .pipe(gmq())
       .pipe(cleanCSS())
       .pipe(autoprefixer())
-      .pipe(sourcemaps.write())
-      .pipe(dest(config.css.exportPath))
-      .pipe(browserSync.stream())
+      // .pipe(sourcemaps.write())
+      .pipe(dest('./dist/css/'))
+      // .pipe(browserSync.stream())
    })
 
    return merge(tasks);
@@ -64,7 +67,7 @@ function html() {
 
 }
 
-let go = series(css, html, server)
-// let go = series(css)
+// let go = series(css, html, server)
+let go = series(css, watchCss)
 
 exports.default = go;

@@ -42,10 +42,31 @@
 
    &__pop {
       margin: 0 auto;
+      @include media-breakpoint-up(md){
+         max-width: 56rem;
+      }
       @include media-breakpoint-up(lg){
          margin: 0 0 0 7rem;
+         max-width: 62rem;
       }
 
+      &:after {
+         content: '';
+         position: absolute;
+         background: white;
+         border-top: 0.1rem solid #DDDDDD;
+         border-left: 0.1rem solid #DDDDDD;
+         transform: rotate(45deg);
+         transform-origin: center;
+         top: -1.6rem;
+         left: calc(50% - 1.5rem);
+         z-index: -1;
+         @include media-breakpoint-up(lg){
+            top: calc(50% - 1.5rem);
+            left: -1.6rem;
+            transform: rotate(-45deg);
+         }
+      }
    }
 
    // .sl__preview

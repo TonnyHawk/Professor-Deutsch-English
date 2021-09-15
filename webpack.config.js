@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV || 'development'
 
@@ -7,18 +8,53 @@ module.exports = (env) => {
    console.log('mode: ', env.production == true ? 'production' : 'development'); // true
    return {
       mode: env.production == true ? 'production' : 'development',
-      entry: './src/js/main.js',
+      entry: {
+         index: './src/js/main.js'
+      },
       output: {
          // options related to how webpack emits results
-         path: path.resolve(__dirname, "src/js/"), // string (default)
+         path: path.resolve(__dirname, "dist"), // string (default)
          // the target directory for all output files
          // must be an absolute path (use the Node.js path module)
-         filename: "bundle.js", // string (default)
          // the filename template for entry chunks
+         filename: 'bundle.[contenthash].js',
       },
       watch: env.production != true,
       externals: {
          jquery: 'jQuery',
-      }
+      },
+      plugins: [
+         new HtmlWebpackPlugin({
+           template: path.join(__dirname, "src", "index.html"),
+           inject: 'body',
+           scriptLoading: 'blocking'
+         }),
+       ],
+       module: {
+         rules: [
+           {
+             test: /\.?js$/,
+             exclude: /node_modules/,
+             use: {
+               loader: "babel-loader",
+               options: {
+                  presets: ['@babel/preset-env', '@babel/preset-react']
+                }
+             }
+           },
+           {
+            test: /\.css$/i,
+            use: ["style-loader", "css-loader"],
+          },
+         ]
+       },
+       devServer: {
+         static: {
+            directory: path.join(__dirname, 'dist'),
+          },
+       },
+       experiments: {
+         topLevelAwait: true,
+       },
    }
 }

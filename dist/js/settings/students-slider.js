@@ -1,37 +1,44 @@
-   let sectionId = '#students';
-   $(sectionId + ' .slide__texts-slider').on('init', function (event,
-      slick) { // adding readmore with some delay to properly calculate the heights of cropped elements
-      setTimeout(function () {
-         $(sectionId).readmore({
-            num: 1
-         });
-      }, 200)
-   });
-   $(sectionId + ' .slide__photos-slider').slick({
-      arrows: true,
-      variableWidth: true,
-      centerMode: true,
-      mobileFirst: true,
-      asNavFor: sectionId + ' .slide__texts-slider',
-      appendArrows: $(sectionId + ' .slider__controlls'),
-      prevArrow: '<div class="slider__arrow-left"><img src="img/icons/slider-arrow-left.svg" alt=""></div>',
-      nextArrow: '<div class="slider__arrow-right"><img src="img/icons/slider-arrow-right.svg" alt=""></div>',
-      responsive: [{
-         breakpoint: 992,
-         settings: {
-            centerMode: false,
-         }
-      }]
-   });
+//  let sectionId = "#students"
 
-   $(sectionId + ' .slide__texts-slider').slick({
-      arrows: false,
-      asNavFor: sectionId + ' .slide__photos-slider',
-      mobileFirst: true,
-      responsive: [{
-         breakpoint: 992,
-         settings: {
-            fade: true,
-         }
-      }]
-   });
+//  $(sectionId + ' .sl__preview').slick({
+//    adaptiveHeight: true,
+//    centerMode: true,
+//    mobileFirst: true,
+//    variableWidth: true,
+//    arrows: false,
+//    asNavFor: sectionId + ' .sl__main',
+//    infinite: false,
+//    responsive: [{
+//     breakpoint: 992,
+//     settings: {
+//       adaptiveHeight: false,
+//       focusOnSelect: true
+//     }
+//   }]
+//  });
+
+//  $(sectionId + ' .sl__main').slick({
+//    adaptiveHeight: true,
+//    mobileFirst: true,
+//    arrows: false,
+//    asNavFor: sectionId + ' .sl__preview',
+//    infinite: false,
+//    speed: 500,
+//    fade: true,
+//    cssEase: 'linear',
+//    responsive: [{
+//     breakpoint: 992,
+//     settings: {
+//       adaptiveHeight: false,
+//     }
+//   }]
+//  });
+
+
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+
+// ReactDOM.render(
+//     <h1>Hello World</h1>,
+//   document.getElementById('students')
+// );

@@ -15,10 +15,14 @@ require('./settings/popup');
 require('./settings/teachers-slider.js');
 
 // students slider
-require('./settings/students-slider')
+require('./settings/students-slider');
 
 // courses tabs
 require('./settings/courses-tabs');
 
 // topmenu options during scrolling process
 require('./settings/topmenu');
+
+require('./settings/certificates');
+
+require('./settings/page');
