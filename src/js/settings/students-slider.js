@@ -44,6 +44,7 @@ import Slider from "react-slick";
 
 
 import { initializeApp } from "firebase/app";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { collection, doc, setDoc, getDoc, getFirestore, addDoc, getDocs,
          query, where, } from "firebase/firestore";
 
@@ -60,6 +61,15 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
+const storage = getStorage(app);
+const storageRef = ref(storage);
+const studentsRef = ref(storage, 'students');
+const olya = ref(studentsRef, 'olya-w/olya-w.jpg');
+let olyaUrl;
+getDownloadURL(olya).then(url=>{
+   olyaUrl = url
+})
+
 
 const q = query(collection(db, "students"));
 let students = [];
@@ -114,7 +124,7 @@ class CustomMainSlide extends Component {
      return (
       <div class="sl__slide-unit" key={student.id}>
       <div class="sl__photo multilayer">
-         <img src="img/students/albina-mar/albina-mar.jpg" alt="" class="multilayer__main"/>
+         <img src={olyaUrl} alt="" class="multilayer__main"/>
       </div>
       <div class="sl__pop talk-buble">
          <div class="talk-buble__header">
