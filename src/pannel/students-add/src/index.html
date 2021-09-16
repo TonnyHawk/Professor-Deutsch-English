@@ -20,55 +20,57 @@
       <div class="row">
          <div class="col">
             <form action="" id='form' class="needs-validation" novalidate>
-               <div class="mb-3">
+               <div class="mb-4">
                   <label for="name" class="form-label">Ім'я учня</label>
                   <input type="text" class="form-control" id="name" name='name' placeholder="" required>
                </div>
                <div class="row">
                   <div class="col-12 col-md-6">
-                     <div class="mb-3">
+                     <div class="mb-4">
                         <label for="photo" class="form-label">Фото</label>
                         <input class="form-control" type="file" id="photo" name='photo' required>
                      </div>
                   </div>
                   <div class="col-12 col-md-6">
-                     <div class="mb-3">
+                     <div class="mb-4">
                         <label for="video" class="form-label">Відео</label>
                         <input class="form-control" type="file" id="video" name='video'>
                      </div>
                   </div>
                </div>
-               <div class="mb-3">
+               <div class="mb-4">
                   <label for="about" class="form-label">Загальне інфо</label>
                   <textarea class="form-control" id="about" name='about' rows="3" required></textarea>
                </div>
-               <div class="mb-3">
+               <div class="mb-5">
                   <label class="form-label mb-2">Professor</label>
                   <div class="row professor-elem" data-name='professor'>
-                     <div class="col-12 my-2">
+                     <div class="col-12">
                         <select class="form-select" aria-label="select example" id="professor" name='professor'>
                            <option value='Deutsch' selected>Deutsch</option>
                            <option value="English">English</option>
                         </select>
                      </div>
                   </div>
-                  <div class="btn btn-success mt-2 mb-5" onclick="duplicate(this)">Додати Школу</div>
-               </div>
-               <div class="mb-3 d-none">
-                  <h4 class="mt-5">Сертифікати</h4>
-                  <div class="row certificate-elem mt-2" data-name='certificate'>
-                     <div class="col-12 col-md-6 my-3">
-                        <input type="text" class="form-control" id="name" name='certificate-name'
-                           placeholder="Назва сертифікату...">
-                     </div>
-                     <div class="col-12 col-md-6">
-                        <input class="form-control" type="file" id="certificates" name='certificate-photo'>
-                     </div>
-                  </div>
-                  <div class="btn btn-success mt-4 mb-5" onclick="duplicate(this)">Додати сертифікат</div>
+                  <div class="btn btn-success mt-3" onclick="duplicate(this)">Додати Школу</div>
                </div>
                <div class="mb-3">
-                  <label for="" class="form-label mb-2">Рівень володіння мовою</label>
+                  <h4 class="mt-5 mb-4">Сертифікати</h4>
+                  <div class="row certificate-elem my-3" data-name='certificate'>
+                     <div class="col-12 col-md-6">
+                        <div class="my-2 my-md-0">
+                           <input type="text" class="form-control" id="name" name='certificate-name'
+                              placeholder="Назва сертифікату...">
+                        </div>
+                     </div>
+                     <div class="col-12 col-md-6">
+                        <div class="my-2 my-md-0"><input class="form-control" type="file" id="certificates" name='certificate-photo'></div>
+                     </div>
+                  </div>
+                  <div class="btn btn-success" onclick="duplicate(this)">Додати сертифікат</div>
+               </div>
+               <div class="mb-3 mt-5">
+                  <h4 class="mt-5 mb-4">Рівень володіння мовою</h4>
                   <div class="row language-elem my-3" data-name='lang-level'>
                      <div class="col">
                         <select class="form-select" aria-label="Default select example" id="lang-type" name='lang-type'>
@@ -87,7 +89,7 @@
                         </select>
                      </div>
                   </div>
-                  <div class="btn btn-success mt-2 mb-5" onclick="duplicate(this)">Додати Мову</div>
+                  <div class="btn btn-success" onclick="duplicate(this)">Додати Мову</div>
                </div>
             </form>
          </div>

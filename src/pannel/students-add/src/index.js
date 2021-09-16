@@ -125,6 +125,7 @@ async function submit(){
     console.log('uploading certificates');
     await prepareCertificates(studentFolderRef, certificates).then(res=>{
       photos.certificates = res
+      console.log(photos.certificates);
     })
 
     // update profile avatar and certificates information
