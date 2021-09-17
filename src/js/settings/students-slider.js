@@ -114,15 +114,21 @@ class SectionStudents extends Component {
    }
 
    toggleGallery(name, state, ...props){
+      // preparation
+      if(name === 'cert' || name === 'stud'){
+         if(state){ // open a modul win
+            document.documentElement.style = 'overflow: hidden';
+         } else{ // close module win
+            document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
+         }
+      }
+      // --------------
+
       switch (name) {
          case 'cert':
-            // preparation
-            if(state){ // open a modul win
-               document.documentElement.style = 'overflow: hidden';
-            } else{ // close module win
-               document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
-            }
-            // --------------
+            this.setState({showBooks: state, booksGalMode: name})
+            break;
+         case 'stud':
             this.setState({showBooks: state, booksGalMode: name})
             break;
          case 'zoom':
@@ -182,7 +188,7 @@ class SectionStudents extends Component {
     })
 
     let {showBooks, selectedStudent, booksGalMode, showZoomed, zoomedItem} = this.state;
-    let booksGal = showBooks ? <BooksGallery student={selectedStudent} mode={booksGalMode} funcs={this}/> : '';
+    let booksGal = showBooks ? <BooksGallery students={students} student={selectedStudent} mode={booksGalMode} funcs={this}/> : '';
     
     return (
        <>
@@ -192,7 +198,7 @@ class SectionStudents extends Component {
          <div class="container">
             <div class="section__header">
                <h1 class="section__title">Наші учні</h1>
-               <div class="section__expand-btn feature hover-circled">
+               <div class="section__expand-btn feature hover-circled" onClick={()=>this.toggleGallery('stud', true)}>
                   <div class="feature__icon hover-circled__icon"><i class="bi bi-collection"></i></div>
                   <p class="feature__text">Більше</p>
                </div>

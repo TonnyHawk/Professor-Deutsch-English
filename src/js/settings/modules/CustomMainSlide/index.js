@@ -10,7 +10,7 @@ class CustomMainSlide extends Component {
 
       student.languages.forEach(elem=>{
          langBadges.push( (
-               <div class="talk-buble__badge badge">
+               <div class="talk-buble__badge badge" key={student.id}>
                   <p class="badge__main-text">{elem.name}</p>
                   <p class="badge__aside-text">{elem.lvl}</p>
                </div>

@@ -3,28 +3,45 @@ import ZoomedGal from '../ZoomedGal/index';
 
 class BooksGallery extends Component {
    render() {
-      const { student, mode, funcs, ...props } = this.props;
+      const { student, mode, students, funcs, ...props } = this.props;
 
-      let winTitle; 
+      let galItems, winTitle, galleryClass;
+
       if(mode === 'cert'){
          winTitle = 'Сертифікати'
+         galleryClass = 'gall--books'
+         galItems = student.certificates.map(elem=>{
+            let title = elem.name;
+            let photo = elem.file;
+            return (
+            <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, photo)}}>
+               <div class="gall-item__photo">
+                  <img src={photo} alt="" class="gall-item__img"/>
+               </div>
+               <p class="gall-item__title">{title}</p>
+            </div>
+            )
+         })
+      } else if(mode === 'stud'){
+         winTitle = 'Галерея'
+         galleryClass = 'gall--photos'
+         galItems = students.map(elem=>{
+            let title = elem.name;
+            let professor = elem.professor;
+            let photo = elem.photo;
+            return (
+            <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
+               <div class="gall-item__photo">
+                  <img src={photo} alt="" class="gall-item__img"/>
+               </div>
+               <p class="gall-item__title">{title}</p>
+               <p class="gall-item__descr">Professor {professor.join(" & ")}</p>
+            </div>
+            )
+         })
       } else{
          winTitle = 'Навчальні матеріали'
       }
-
-      console.log(student);
-      let items = student.certificates.map(elem=>{
-         let title = elem.name;
-         let photo = elem.file;
-         return (
-            <div class="gall__item gall-item" onClick={()=>{funcs.toggleGallery('zoom', true, photo)}}>
-            <div class="gall-item__photo">
-               <img src={photo} alt="" class="gall-item__img"/>
-            </div>
-            <p class="gall-item__title">{title}</p>
-         </div>
-         )
-      })
 
       let zoomedGal = funcs.state.showZoomed ? <ZoomedGal item={funcs.state.zoomedItem} funcs={funcs}/> : '';
       return (
@@ -37,7 +54,7 @@ class BooksGallery extends Component {
                </div>
             </div>
             <div class="page__bd">
-               <div class="gall gall--books">
+               <div class={'gall '+ galleryClass}>
                   <div class="gall__inner">
                      <div class="gall__hd">
                         <div class="gall__filters">
@@ -47,7 +64,7 @@ class BooksGallery extends Component {
                         </div>
                      </div>
                      <div class="gall__bd">
-                        {items}
+                        {galItems}
                      </div>
                   </div>
                </div>
