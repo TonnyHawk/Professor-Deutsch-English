@@ -2,42 +2,9 @@ import React, { Component } from 'react';
 
 class CustomMainSlide extends Component {
    render() {
-   const { student, ...props } = this.props;
+   const { student, funcs, ...props } = this.props;
 
-   // adding lang badges
-   let langBadges = [];
-   if(student.languages){
-
-      student.languages.forEach(elem=>{
-         langBadges.push( (
-               <div class="talk-buble__badge badge" key={student.id}>
-                  <p class="badge__main-text">{elem.name}</p>
-                  <p class="badge__aside-text">{elem.lvl}</p>
-               </div>
-            ))
-      })
-   }
-
-   // adding certificates btn
-   let actionBtn = '';
-   if(student.certificates.length > 0){
-      actionBtn = (
-         <p class="talk-buble__action btn" data-id={student.id} onClick={()=>{props.functions.showCertificates(student)}}>Сертифікати</p>
-      )
-   }
-
-   // forming pocket
-   let pocket = '';
-   if(langBadges.length > 0){
-      pocket = (
-         <div class="talk-buble__pocket">
-            <div class="talk-buble__badges">
-               {langBadges}
-            </div>
-            {actionBtn}
-         </div>
-      )
-   }
+   let pocket = funcs.generatePocket(student);
 
      return (
       <div class="sl__slide-unit" key={student.id}>

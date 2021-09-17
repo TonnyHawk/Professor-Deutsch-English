@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 
 class ZoomedGal extends Component {
    render() {
-
       let {item, funcs} = this.props
 
+      let pocket = funcs.generatePocket(item)
+      
       let addClass, content;
       if(typeof(item) !== 'object'){
          addClass = 'zoomed--single-photo';
@@ -28,19 +29,7 @@ class ZoomedGal extends Component {
                      <p class="talk-buble__under-title-main">Raymond Murphy</p>
                   </div> */}
                </div>
-               <div class="talk-buble__pocket">
-                  <div class="talk-buble__badges">
-                     <div class="talk-buble__badge badge">
-                        <p class="badge__main-text">Початкова німецька</p>
-                        <p class="badge__aside-text">А2</p>
-                     </div>
-                     <div class="talk-buble__badge badge">
-                        <p class="badge__main-text">Англійська</p>
-                        <p class="badge__aside-text">В2</p>
-                     </div>
-                  </div>
-                  <p class="talk-buble__action btn">Сертифікати</p>
-               </div>
+               {pocket}
                <p class="talk-buble__descr">{item.about}</p>
             </div>
             </>

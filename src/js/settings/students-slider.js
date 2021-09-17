@@ -146,6 +146,45 @@ class SectionStudents extends Component {
       this.setState({selectedStudent: student})
    }
 
+   generatePocket(student){
+      // adding lang badges
+      let langBadges = [];
+      if(student.languages){
+
+         student.languages.forEach(elem=>{
+            langBadges.push( (
+                  <div class="talk-buble__badge badge" key={student.id}>
+                     <p class="badge__main-text">{elem.name}</p>
+                     <p class="badge__aside-text">{elem.lvl}</p>
+                  </div>
+               ))
+         })
+      }
+
+      // adding certificates btn
+      let actionBtn = '';
+      if(student.certificates.length > 0){
+         actionBtn = (
+            <p class="talk-buble__action btn" data-id={student.id} onClick={()=>{this.showCertificates(student)}}>Сертифікати</p>
+         )
+      }
+
+      // forming pocket
+      let pocket = '';
+      if(langBadges.length > 0){
+         pocket = (
+            <div class="talk-buble__pocket">
+               <div class="talk-buble__badges">
+                  {langBadges}
+               </div>
+               {actionBtn}
+            </div>
+         )
+      }
+
+      return pocket;
+   }
+
 
   render() {
     const main = {
@@ -181,7 +220,7 @@ class SectionStudents extends Component {
     }
 
     let mainSlides = students.map(elem=>{
-      return <CustomMainSlide student={elem} functions={this} key={elem.id}/>
+      return <CustomMainSlide student={elem} funcs={this} key={elem.id}/>
     })
     let previewSlides = students.map(elem=>{
       return <CustomPreviewSlide student={elem} key={elem.id}/>
