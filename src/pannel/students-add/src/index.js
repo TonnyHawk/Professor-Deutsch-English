@@ -133,6 +133,7 @@ async function submit(){
     profileRef = doc(db, "students", student.id);
     await updateDoc(profileRef, photos).then(()=>{ // when all is done
       alert('Учня додано');
+      
       // clear all fields
       let elemsToBeCleared = ['input', 'textarea'];
       elemsToBeCleared.forEach(elem=>{
@@ -160,9 +161,9 @@ async function prepareCertificates(studentFolderRef, certificates){
       let photo = elem.querySelector("[type='file']").files[0];
       if(name !== ''){
         let photoRef = ref(studentFolderRef, 'certificates/'+photo.name)
-        await uploadBytes(photoRef, photo).then((snapshot) => {
+        await uploadBytes(photoRef, photo).then(async (snapshot) => {
           // console.log('Uploaded a certificate!');
-          getDownloadURL(photoRef).then((downloadURL) => {
+          await getDownloadURL(photoRef).then((downloadURL) => {
             editCerts.push({name, file: downloadURL})
           });
         });
