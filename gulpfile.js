@@ -14,6 +14,9 @@ let {
    autoprefixer = require('gulp-autoprefixer'),
    fileInclude = require('gulp-file-include');
 
+   let mode = !process.env.NODE_ENV ? 'build' : process.env.NODE_ENV;
+   console.log(mode)
+
 const merge = require('merge-stream');
 
 const configs = [
@@ -36,38 +39,62 @@ function server() {
 
    watch(path.projFold + path.styles + "/**/*.scss", css);
    watch(path.projFold + path.html + "/*.html").on('change', series(html, browserSync.reload));
-   //   watch([path.projFold + '/index.html']).on('change', browserSync.reload);
 }
 
 function watchCss(){
    watch(path.projFold + path.styles + "/**/*.scss", css);
 }
 
+function watchAll(){
+   watch(path.projFold + path.styles + "/**/*.scss", css);
+   watch(path.projFold + path.html + "/*.html").on('change', html);
+}
+
 function css() {
    let tasks = configs.map(config=>{
-      return src(config.css.sourcePaths)
-      // .pipe(sourcemaps.init())
-      .pipe(scss(config.thirdParty.sassOptions))
+      let pipeline = src(config.css.sourcePaths)
+
+      if(mode !== 'build'){
+         pipeline = pipeline.pipe(sourcemaps.init())
+      }
+
+      pipeline.pipe(scss(config.thirdParty.sassOptions))
       .pipe(gmq())
       .pipe(cleanCSS())
       .pipe(autoprefixer())
-      // .pipe(sourcemaps.write())
-      .pipe(dest('./dist/css/'))
-      // .pipe(browserSync.stream())
+
+      if(mode !== 'build'){
+         pipeline = pipeline.pipe(sourcemaps.write())
+      }
+
+      pipeline.pipe(dest('./dist/css/'))
+
+      if(mode == 'dev'){
+         pipeline = pipeline.pipe(browserSync.stream())
+      }
+
+      return pipeline;
    })
 
    return merge(tasks);
 }
 
 function html() {
-      return src(path.projFold + path.html + '/index.html')
+   let pipeline = src(path.projFold + path.html + '/index.html')
       .pipe(fileInclude())
       .pipe(dest('./src/'))
-   // .pipe(browserSync.reload())
+
+      if(mode == 'dev'){
+         pipeline = pipeline.pipe(browserSync.reload())
+      }
+
+      return pipeline;
+         
 
 }
 
-// let go = series(css, html, server)
-// let go = series(css, html, watchCss)
-
-exports.default = go;
+exports.default = series(css, html);
+exports.dev = series(css, html, server);
+exports.css = series(css, html, watchCss);
+exports.gulpBuildCss = series(css);
+exports.react = series(css, html, watchAll)

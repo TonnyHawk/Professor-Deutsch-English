@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ZoomedGal from '../ZoomedGal/index';
 
 class BooksGallery extends Component {
    render() {
@@ -24,6 +25,8 @@ class BooksGallery extends Component {
          </div>
          )
       })
+
+      let zoomedGal = funcs.state.showZoomed ? <ZoomedGal item={funcs.state.zoomedItem} funcs={funcs}/> : '';
       return (
          <div class="page" id="page-books">
          <div class="page__inner">
@@ -50,6 +53,7 @@ class BooksGallery extends Component {
                </div>
             </div>
          </div>
+         {zoomedGal}
       </div>
       );
    }

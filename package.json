@@ -6,7 +6,12 @@
   "scripts": {
     "build": "npx webpack --env production",
     "dev": "npx webpack",
-    "serve": "webpack serve"
+    "serve": "webpack serve",
+    "front-build": "gulp",
+    "front-dev": "SET NODE_ENV=dev & gulp dev",
+    "front-css": "SET NODE_ENV=dev & gulp css",
+    "front-build-css": "gulp buildCss",
+    "front-react": "gulp react"
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +22,7 @@
     "babel-loader": "^8.2.2",
     "browser-sync": "^2.26.14",
     "css-loader": "^6.2.0",
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-file-include": "^2.3.0",

@@ -116,12 +116,19 @@ class SectionStudents extends Component {
    toggleGallery(name, state, ...props){
       switch (name) {
          case 'cert':
+            // preparation
+            if(state){ // open a modul win
+               document.documentElement.style = 'overflow: hidden';
+            } else{ // close module win
+               document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
+            }
+            // --------------
             this.setState({showBooks: state, booksGalMode: name})
             break;
          case 'zoom':
-            if(!state){
+            if(!state){ // close
                this.setState({showZoomed: state, zoomedItem: ''})
-            } else{
+            } else{ // open
                this.setState({showZoomed: state, zoomedItem: props[0]})
             }
             break;
@@ -176,11 +183,11 @@ class SectionStudents extends Component {
 
     let {showBooks, selectedStudent, booksGalMode, showZoomed, zoomedItem} = this.state;
     let booksGal = showBooks ? <BooksGallery student={selectedStudent} mode={booksGalMode} funcs={this}/> : '';
-    let zoomedGal = showZoomed ? <ZoomedGal item={zoomedItem} funcs={this}/> : '';
+    
     return (
        <>
          {booksGal}
-         {zoomedGal}
+         
 
          <div class="container">
             <div class="section__header">

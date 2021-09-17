@@ -79,7 +79,7 @@
             $elem-width: 6rem;
             $border-width: 0.1rem;
             $border-radius: 100%;
-            $icon-top: $elem-width / 2 * -1;
+            $icon-top: $elem-width * 0.5 * -1;
 
             position: absolute;
             top: $icon-top;

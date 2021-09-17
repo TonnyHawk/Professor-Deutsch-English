@@ -1,5 +1,5 @@
 @import 'basic/mixins';
-@import 'basic/reset.css';
+@import 'basic/reset';
 @import 'basic/colors';
 
 @import '../fonts/roboto/stylesheet.css';
@@ -240,7 +240,7 @@ a[href^=mailto] {
 // components that can be overritten
 @import 'module/stat/stat';
 
-@import 'module/ibg/ibg.css';
+@import 'module/ibg/ibg';
 @import 'module/header/header';
 @import 'module/btn/btn';
 @import 'module/talk-buble/talk-buble';
