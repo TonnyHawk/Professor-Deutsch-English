@@ -4,8 +4,9 @@ class ZoomedGal extends Component {
    render() {
       let {item, funcs} = this.props
 
-      let pocket = funcs.generatePocket(item)
-      
+      // let pocket = funcs.generatePocket(item)
+      let pocket = '';
+
       let addClass, content;
       if(typeof(item) !== 'object'){
          addClass = 'zoomed--single-photo';
