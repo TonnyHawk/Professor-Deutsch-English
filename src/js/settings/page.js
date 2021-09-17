@@ -6,12 +6,17 @@ function closeWinPreparation(){
 }
 
 
-$('.page__close-icon').click(function(){
-   $('.page').fadeOut('fast');
-   closeWinPreparation();
-})
+// $('.page__close-icon').click(function(){
+//    $('.page').fadeOut('fast');
+//    closeWinPreparation();
+// })
 
 $("#students .section__expand-btn").click(function(){
    $('#page-photos').fadeIn('fast');
    openWinPreparation();
 })
+
+// $("#students .talk-buble__action").click(function(){
+//    $('#page-photos').fadeIn('fast');
+//    openWinPreparation();
+// })

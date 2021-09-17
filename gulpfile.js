@@ -68,6 +68,6 @@ function html() {
 }
 
 // let go = series(css, html, server)
-let go = series(css, watchCss)
+// let go = series(css, html, watchCss)
 
 exports.default = go;

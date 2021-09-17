@@ -63,12 +63,8 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 const storage = getStorage(app);
 const storageRef = ref(storage);
+
 const studentsRef = ref(storage, 'students');
-const olya = ref(studentsRef, 'olya-w/olya-w.jpg');
-let olyaUrl;
-getDownloadURL(olya).then(url=>{
-   olyaUrl = url
-})
 
 
 const q = query(collection(db, "students"));
@@ -80,82 +76,62 @@ querySnapshot.forEach((doc) => {
   students.push({
      name: doc.data().name,
      about: doc.data().about,
-     photo: doc.data().photo,
+     photo: doc.data().avatar,
      video: doc.data().video,
-     level: doc.data().level,
+     languages: doc.data().language,
      professor: doc.data().professor,
-     id: doc.data().id
+     id: doc.data().id,
+     certificates: doc.data().certificates,
   })
 });
 
 
-
-
-class CustomMainSlide extends Component {
-   render() {
-   const { student, ...props } = this.props;
-
-   // adding lang badges
-   let langBadges = [];
-   if(student.level){
-      for(let key in student.level){
-         langBadges.push( (
-               <div class="talk-buble__badge badge">
-                  <p class="badge__main-text">{key}</p>
-                  <p class="badge__aside-text">{student.level[key]}</p>
-               </div>
-            ))
-      }
-   }
-
-   // forming pocket
-   let pocket = '';
-   if(langBadges.length > 0){
-      pocket = (
-         <div class="talk-buble__pocket">
-            <div class="talk-buble__badges">
-               {langBadges}
-            </div>
-            <p class="talk-buble__action btn">Сертифікати</p>
-         </div>
-      )
-   }
-
-     return (
-      <div class="sl__slide-unit" key={student.id}>
-      <div class="sl__photo multilayer">
-         <img src={olyaUrl} alt="" class="multilayer__main"/>
-      </div>
-      <div class="sl__pop talk-buble">
-         <div class="talk-buble__header">
-            <p class="talk-buble__title">{student.name}</p>
-         </div>
-        {pocket}
-         <p class="talk-buble__descr">{student.about}</p>
-      </div>
-   </div>
-     );
-   }
- }
+import BooksGallery from './modules/BooksGallery';
+import CustomPreviewSlide from './modules/CustomPreviewSlide/index.js';
+import CustomMainSlide from './modules/CustomMainSlide/index.js';
+import ZoomedGal from './modules/ZoomedGal/index';
 
 
 class SectionStudents extends Component {
    constructor(props) {
       super(props);
       this.state = {
-        nav1: null,
-        nav2: null
+         nav1: null,
+         nav2: null,
+         showBooks: false,
+         selectedStudent: [],
+         booksGalMode: '',
+         showZoomed: false,
+         zoomedItem: ''
       };
     }
-
-    componentDidMount() {
+   
+   componentDidMount() {
       this.setState({
         nav1: this.slider1,
         nav2: this.slider2
       });
+   }
 
+   toggleGallery(name, state, ...props){
+      switch (name) {
+         case 'cert':
+            this.setState({showBooks: state, booksGalMode: name})
+            break;
+         case 'zoom':
+            if(!state){
+               this.setState({showZoomed: state, zoomedItem: ''})
+            } else{
+               this.setState({showZoomed: state, zoomedItem: props[0]})
+            }
+            break;
+      }
+   }
 
-    }
+   showCertificates(student){
+      this.toggleGallery('cert', true)
+      this.setState({selectedStudent: student})
+   }
 
 
   render() {
@@ -164,8 +140,8 @@ class SectionStudents extends Component {
           arrows: false,
           infinite: false,
           speed: 500,
-          fade: true,
-          cssEase: 'linear',
+         //  fade: true,
+         //  cssEase: 'linear',
           responsive: [{
              breakpoint: 992,
              settings: {
@@ -192,10 +168,20 @@ class SectionStudents extends Component {
     }
 
     let mainSlides = students.map(elem=>{
-      return <CustomMainSlide student={elem} key={elem.id}/>
+      return <CustomMainSlide student={elem} functions={this} key={elem.id}/>
     })
+    let previewSlides = students.map(elem=>{
+      return <CustomPreviewSlide student={elem} key={elem.id}/>
+    })
+
+    let {showBooks, selectedStudent, booksGalMode, showZoomed, zoomedItem} = this.state;
+    let booksGal = showBooks ? <BooksGallery student={selectedStudent} mode={booksGalMode} funcs={this}/> : '';
+    let zoomedGal = showZoomed ? <ZoomedGal item={zoomedItem} funcs={this}/> : '';
     return (
        <>
+         {booksGal}
+         {zoomedGal}
+
          <div class="container">
             <div class="section__header">
                <h1 class="section__title">Наші учні</h1>
@@ -219,9 +205,7 @@ class SectionStudents extends Component {
                className="sl__preview" {...preview}
                asNavFor={this.state.nav1}
                ref={slider => (this.slider2 = slider)}>
-                     <div class="sl__prev-item multilayer">
-                        <img src="img/students/albina-mar/albina-mar.jpg" alt="" class="multilayer__main"/>
-                     </div>
+                  {previewSlides}
             </Slider>
          </div>
 
