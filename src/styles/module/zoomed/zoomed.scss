@@ -1,8 +1,9 @@
 .zoomed {
    @include layer;
-   position: absolute;
+   position: fixed;
    z-index: 3000;
    overflow-y: auto;
+   max-height: 100vh;
 
    // .zoomed__inner
 

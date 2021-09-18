@@ -17,9 +17,9 @@ module.exports = (env) => {
          // the target directory for all output files
          // must be an absolute path (use the Node.js path module)
          // the filename template for entry chunks
-         filename: 'bundle.[contenthash].js',
+         filename: 'js/bundle.js',
       },
-      watch: env.production != true,
+      // watch: env.production != true,
       externals: {
          jquery: 'jQuery',
       },
@@ -27,7 +27,7 @@ module.exports = (env) => {
          new HtmlWebpackPlugin({
            template: path.join(__dirname, "src", "index.html"),
            inject: 'body',
-           scriptLoading: 'blocking'
+           scriptLoading: 'blocking',
          }),
        ],
        module: {
