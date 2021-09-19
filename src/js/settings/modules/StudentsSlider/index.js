@@ -3,11 +3,11 @@ import "slick-carousel/slick/slick.css";
 import React, { Component } from "react";
 import Slider from "react-slick";
 
-import BooksGallery from './modules/BooksGallery';
-import CustomPreviewSlide from './modules/CustomPreviewSlide/index.js';
-import CustomMainSlide from './modules/CustomMainSlide/index.js';
+import BooksGallery from '../BooksGallery';
+import CustomPreviewSlide from '../CustomPreviewSlide/index.js';
+import CustomMainSlide from '../CustomMainSlide/index.js';
 
-class HumanSlider extends Component {
+class StudentsSlider extends Component {
    constructor(props) {
       super(props);
       this.state = {
@@ -18,7 +18,7 @@ class HumanSlider extends Component {
          booksGalMode: '',
          showZoomed: false,
          zoomedItem: '',
-         students: props.humans
+         students: props.students
       };
     }
    
@@ -184,4 +184,4 @@ class HumanSlider extends Component {
   }
 }
 
-export default HumanSlider;
+export default StudentsSlider;

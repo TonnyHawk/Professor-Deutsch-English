@@ -21,6 +21,7 @@ const merge = require('merge-stream');
 
 const configs = [
    require('./gulp.config'),
+   require('./gulp.config.firstCss')
 ];
 
 let path = {
@@ -96,5 +97,5 @@ function html() {
 exports.default = series(css, html);
 exports.dev = series(css, html, server);
 exports.css = series(css, html, watchCss);
-exports.gulpBuildCss = series(css);
+exports.buildCss = series(css);
 exports.react = series(css, html, watchAll)

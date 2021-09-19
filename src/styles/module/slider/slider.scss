@@ -1,6 +1,7 @@
 .slider {
    position: relative;
    z-index: 1;
+   .slick-slider{position: static;}
    @include media-breakpoint-up(lg) {
       width: 75%;
       margin: 0 auto;
@@ -31,15 +32,24 @@
    }
 
    // .slider__arrow-left
-
+   &__arrow-left, &__arrow-right{
+      position: absolute;
+      top: calc(50% - 3.3rem);
+      display: none;
+      @include media-breakpoint-up(lg) {
+         display: flex;
+      }
+   }
    &__arrow-left {
       cursor: pointer;
+      left: -12.5%;
    }
 
    // .slider__arrow-right
 
    &__arrow-right {
       cursor: pointer;
+      right: -12.5%;
    }
 
 }

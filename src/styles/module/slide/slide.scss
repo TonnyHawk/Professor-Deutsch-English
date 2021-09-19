@@ -61,7 +61,8 @@
 
          @include media-breakpoint-up(lg) {
             padding: 0;
-            margin-right: 4rem;
+            padding-left: 0.1rem;
+            // margin-right: 4rem;
             min-width: min-content;
          }
       }

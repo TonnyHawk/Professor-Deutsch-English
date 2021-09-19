@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import React from "react";
-import HumanSlider from './modules/HumanSlider';
+import StudentsSlider from './modules/StudentsSlider';
 
 import { initializeApp } from "firebase/app";
 import { collection, getFirestore, getDocs,
@@ -40,10 +40,7 @@ querySnapshot.forEach((doc) => {
   })
 });
 
-
-
-
 ReactDOM.render(
-    <HumanSlider humans={students}/>,
+    <StudentsSlider students={students}/>,
   document.getElementById('students')
 );
