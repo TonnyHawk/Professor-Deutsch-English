@@ -23,6 +23,7 @@ module.exports = (env) => {
       externals: {
          jquery: 'jQuery',
       },
+      watch: env.production == true ? false : true,
       plugins: [
          new HtmlWebpackPlugin({
            template: path.join(__dirname, "src", "index.html"),

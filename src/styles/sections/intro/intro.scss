@@ -2,11 +2,11 @@
    @include layer;
    @include perfect-center;
    position: fixed;
-   z-index: 4000;
+   z-index: 1500;
    height: 100vh;
    transition: 0.8s;
    background: #286DD6;
-   display: none;
+   // display: none;
 
    // .intro__title
 

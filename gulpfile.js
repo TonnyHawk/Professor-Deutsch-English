@@ -35,7 +35,7 @@ let path = {
 
 function server() {
    browserSync.init({
-      server: "./src"
+      server: "./dist"
    });
 
    watch(path.projFold + path.styles + "/**/*.scss", css);
@@ -83,7 +83,7 @@ function css() {
 function html() {
    let pipeline = src(path.projFold + path.html + '/index.html')
       .pipe(fileInclude())
-      .pipe(dest('./src/'))
+      .pipe(dest('./dist/'))
 
       if(mode == 'dev'){
          pipeline = pipeline.pipe(browserSync.reload())

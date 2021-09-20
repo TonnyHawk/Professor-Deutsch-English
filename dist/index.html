@@ -11,11 +11,11 @@
    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
 
-   <style>
+   <!-- <style>
        @-webkit-keyframes ldio-tam1aegang{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes ldio-tam1aegang{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.ldio-tam1aegang div{height:60px;width:60px;border:10px solid #fff;border-top-color:transparent;border-radius:50%}.ldio-tam1aegang div{-webkit-animation:ldio-tam1aegang 1s linear infinite;animation:ldio-tam1aegang 1s linear infinite}.loadingio-spinner-rolling-c55z9beacq{display:inline-block}.ldio-tam1aegang{width:100%;height:100%;position:relative;transform:translateZ(0) scale(1);-webkit-backface-visibility:hidden;backface-visibility:hidden;transform-origin:0 0;display:flex;align-items:center;justify-content:center}.ldio-tam1aegang div{box-sizing:content-box}.loader{position:absolute;top:0;left:0;width:100%;height:100%;position:fixed;display:flex;align-items:center;justify-content:center;z-index:4002}.loader__bg{position:absolute;top:0;left:0;width:100%;height:100%;background:#286dd6}.loader.is-hidden{display:none}.loader,.spinner{display:none}
-   </style>
+   </style> -->
 
-   <!-- <link rel="stylesheet" href="css/first-loaded.css"> -->
+   <link rel="stylesheet" href="css/first-loaded.css">
    <link rel="stylesheet" href="css/main.css">
    <title>Школа іноземних мов Professor Deutsch & English</title>
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -824,7 +824,7 @@
       <h1 class="section__title text-center">Наші курси</h1>
    </div>
 
-   <div class="tab">
+   <div class="tab" data-selector='tab-german'>
       <div class="tab__header-container container-md px-0 px-md-3">
          <div class="tab__header">
             <div class="tab__name is-active" data-target='a1'>
@@ -1471,6 +1471,354 @@
       </div>
    </div>
 
+   <div class="tab" data-selector='tab-english'>
+      <div class="tab__header-container container-md px-0 px-md-3">
+         <div class="tab__header">
+            <div class="tab__name is-active" data-target='a2'>
+               <p class="tab__name-text">A2</p>
+            </div>
+            <div class="tab__name" data-target='b1'>
+               <p class="tab__name-text">B1</p>
+            </div>
+            <div class="tab__name" data-target='b2'>
+               <p class="tab__name-text">B2</p>
+            </div>
+            <div class="tab__name" data-target='c1'>
+               <p class="tab__name-text">C1</p>
+            </div>
+         </div>
+      </div>
+      <div class="container-md g-0 g-md-3">
+         <div class="row g-0">
+            <div class="col-12">
+               <div class="tab__body is-visible" data-name='a2'>
+                  <div class="tab__aside">
+                     <div class="tab__aside-item">
+                        <div class="tab__info-block info-block">
+                           <p class="info-block__title">Про курс</p>
+                           <p class="info-block__text">По завершенні курсу учень спроможний володіти базовими мовними знаннями з лексики, фонетики та граматики, вести бесіду-діалог згідно з тематикою курсу, граматично правильно висловлювати думку заданої теми у письмовій та усній формах в рамках вказаного рівня.</p>
+                        </div>
+                     </div>
+                     <div class="tab__aside-item">
+                        <div class="tab__feature">
+                           <div class="feature">
+                              <div class="feature__icon"><img src="img/icons/bricks.svg" alt=""></div>
+                              <p class="feature__text">12 основних блоків</p>
+                           </div>
+                           <div class="feature">
+                              <div class="feature__icon"><img src="img/icons/clock.svg" alt=""></div>
+                              <p class="feature__text">80 - 90 академічних годин</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab__aside-item">
+                        <div class="tab__info-block info-block">
+                           <p class="info-block__title">Тренування навичок</p>
+                           <ul class="info-block__list">
+                              <li class="info-block__list-item">Cлухання і читання</li>
+                              <li class="info-block__list-item">Навчання усного та писемного мовлення</li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="tab__aside-item">
+                        <div class="tab__feature">
+                           <div class="feature">
+                              <div class="feature__icon"><img src="img/icons/book.svg" alt=""></div>
+                              <a class="feature__text_link" data-action="see-books">Навчальні підручники</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab__aside-item">
+                        <p data-action='open-popup' class="btn btn--big">Записатись</p>
+                     </div>
+                  </div>
+                  <div class="tab__main">
+                     <div class="tab__col">
+                        <div class="tab__info-block info-block">
+                           <p class="info-block__title">Розмовні теми та письмо / Topics and Writing:</p>
+                           <div class="info-block__body has-readmore">
+                              <p class="info-block__text">1.	Знайомство. Представлення себе. / About myself. All over the world. Діалоги за темами: “Nice to meet you”, “Where are you  from?”, “Speaking on the mobile phone”.  Письмо: Заповнення бланків для студентської візи.</p>
+                              <p class="info-block__text">2.	Відомі особистості. Професії. Почуття та емоції. / Famous people. Professions.  Feelings and emotions. Діалоги за темами: “At  the hotel”, “Instructions”. Письмо: Лист-опис відомої людини, друга.</p>
+                              <p class="info-block__text">3.	Розпорядок дня. Знайомство онлайн. Час по годиннику. / My daily routine. Love online. What’s the time? Діалоги за темами: “Buying a coffee”, “First day in the office”. Письмо: Складання персонального профілю.</p>
+                              <p class="info-block__text">4.	Моя сім’я. Секрети тривалого життя. Інтерв’ю. / My family. The secrets of a long life. Interview. Письмо: Опис-розповідь про мій улюблений день. Здоровий спосіб життя.</p>
+                              <p class="info-block__text">5.	Бути відомим. Соціум, в якому я живу. Погода і погодні умови для відпочинку. / X Factor winners. Noisy neighbours. Weather and seasons. Діалоги за темами: “What are you doing?”, “In a clothes shop”.  Письмо: Пост у Фейсбуці.
+                              </p>
+                              <p class="info-block__text">6.	Мої вподобання. Книги. Музика та музичні інструменти. / My preferences. Reading in English. Music and musical instruments. Письмо: Лист другу.</p>
+                              <p class="info-block__text">7.	У картинній галереї. Приємне проводження часу. / At the Gallery. A night to remember. Діалог за темою: “Getting lost”. Письмо: Приємні спогади.</p>
+                              <p class="info-block__text">8.	Оренда будинку. Інтер’єр. / To rent a house. The interior of a house.  Письмо: Опис будинку/квартири, в якому я живу.</p>
+                              <p class="info-block__text">9.	Їжа. Моя улюблена страва. / Food. My favourite dish. Діалоги за темами: “An invitation to dinner”, “Ordering a meal”. Письмо: Рецепт приготування улюбленої страви.</p>
+                              <p class="info-block__text">Подорожі: переваги та недоліки. / Types of travelling. Advantages and disadvantages of different types of travelling.   Письмо: Лист другу про відпочинок.</p>
+                              <p class="info-block__text">Плани на майбутнє. Інтернет. / What do you want to do? Men, women, and the Internet. Діалоги за темами: “Getting to the airport’, “Going home”. Письмо: Лист-порада.</p>
+                              <p class="info-block__text">12.	 Мої літературні вподобання. Мій улюблений фільм. / My literature preferences. My favourite film. Письмо: Моя улюблена книга/фільм.</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab__col">
+                        <div class="tab__info-block info-block">
+                           <p class="info-block__title">Граматичні теми / Grammar:</p>
+                           <div class="info-block__body has-readmore">
+                              <p class="info-block__text">1.	Теперішній неозначений час дієслова to be (The Present Simple Tense).
+                                 Особові та присвійні займенники. 
+                                 </p>
+                              <p class="info-block__text">2.	Вказівні займенники this, that, these, those. Множина іменників. Вживання прислівників. Прикметники. Утворення наказового способу.</p>
+                              <p class="info-block__text">3.	Утворення та вживання теперішнього неозначеного часу (The Present Simple Tense). Порядок слів у реченні. </p>
+                              <p class="info-block__text">4.	Утворення та вживання присвійного відмінку іменників. Прислівники часу та місця. Прислівники частотності та їх місце у реченні.</p>
+                              <p class="info-block__text">5.	Модальні дієслова can / can’t. Утворення та вживання теперішнього тривалого часу (The Present Continuous Tense). Відмінність між The Present Simple Tense та The Present Continuous Tense.</p>
+                              <p class="info-block__text">6.	Об’єктивний відмінок особових займенників. Порядкові числівники. Використання “like” в англійській мові. </p>
+                              <p class="info-block__text">7.	Минулий неозначений час (The Past Indefinite Tense). Неправильні дієслова (Irregular verbs). Допоміжне дієслово to be.</p>
+                              <p class="info-block__text">8.	Звороти: There is/are; There was/were. Вживання займенників  (some, any). </p>
+                              <p class="info-block__text">9.	Злічувані та незлічувані іменники. Вживання неозначених артиклів	(а, an). Вживання слів	на позначення кількості (many, much, a lot of, few, a few, little, a little, etc.). Ступені порівняння прикметників.</p>
+                              <p class="info-block__text">10.	Ступені порівняння прикметників та прислівників. Утворення прислівників від     прикметників.</p>
+                              <p class="info-block__text">11.	Конструкція to be going to; майбутній неозначений час (The Future Indefinite Tense). Прийменники часу, місця та напряму. Вживання означеного та неозначеного артиклів.</p>
+                              <p class="info-block__text">12.	Утворення та вживання теперішнього доконаного часу (The Present Perfect Tense). Порівняльний аналіз вживання The Present Perfect Tense та Past Indefinite Tense. </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="tab__body" data-name='b1'>
+                  <div class="tab__aside">
+                     <div class="tab__aside-item">
+                        <div class="tab__info-block info-block">
+                           <p class="info-block__title">Про курс</p>
+                           <p class="info-block__text">По завершенні курсу навчання учень спроможний володіти мовними знаннями з лексики та граматики, вести бесіду-діалог згідно з тематикою курсу, граматично правильно висловлювати думку заданої теми у письмовій та усній формах в рамках вказаного рівня; скласти екзамен ЗНО на рівні В1.</p>
+                        </div>
+                     </div>
+                     <div class="tab__aside-item">
+                        <div class="tab__feature">
+                           <div class="feature">
+                              <div class="feature__icon"><img src="img/icons/bricks.svg" alt=""></div>
+                              <p class="feature__text">12 основних блоків</p>
+                           </div>
+                           <div class="feature">
+                              <div class="feature__icon"><img src="img/icons/clock.svg" alt=""></div>
+                              <p class="feature__text">100 академічних годин</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab__aside-item">
+                        <div class="tab__info-block info-block">
+                           <p class="info-block__title">Тренування навичок</p>
+                           <ul class="info-block__list">
+                              <li class="info-block__list-item">Cлухання і читання</li>
+                              <li class="info-block__list-item">Навчання усного та писемного мовлення</li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="tab__aside-item">
+                        <div class="tab__feature">
+                           <div class="feature">
+                              <div class="feature__icon"><img src="img/icons/book.svg" alt=""></div>
+                              <a class="feature__text_link" data-action="see-books">Навчальні підручники</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab__aside-item">
+                        <p data-action='open-popup' class="btn btn--big">Записатись</p>
+                     </div>
+                  </div>
+                  <div class="tab__main">
+                     <div class="tab__col">
+                        <div class="tab__info-block info-block">
+                           <p class="info-block__title">Розмовні теми / Topics:</p>
+                           <div class="info-block__body has-readmore">
+                              <p class="info-block__text">1.	Власна ідентифікація. Складання біографії та мотиваційного листа. / Describing a person. Application form.</p>
+                              <p class="info-block__text">2.	Подорожі та відпочинок. Опис улюбленого фото. / Holiday makers. My favourite photo blog.  </p>
+                              <p class="info-block__text">3.	Плани та мрії. Лист другу про плани на майбутнє. / Plans for the future. Description of the place where you would like to live.</p>
+                              <p class="info-block__text">4.	Родинні стосунки. Конфліктні ситуації. / Parents and Teenagers. Annoying habits. </p>
+                              <p class="info-block__text">5.	Швидкий темп життя. Лист другу про здоровий спосіб життя. / No time for anything. How fast is your life? Healthy lifestyle.</p>
+                              <p class="info-block__text">6.	Емоційний світ. Позитивне мислення. / Feelings and emotions. Are you a positive thinker? </p>
+                              <p class="info-block__text">7.	Вивчення мови за короткий період часу. Офіційний лист-запит. / Learn a language in a month! A transactional letter. </p>
+                              <p class="info-block__text">8.	Вирішення конфліктних ситуацій. Лист з проханням дати пораду. / If something goes wrong. A letter of requesting advice.</p>
+                              <p class="info-block__text">9.	Внутрішні страхи - перепона до успіху. Біографія відомої особистості. / Different kinds of phobias and our success in life. Biography of a famous person. </p>
+                              <p class="info-block__text">Технічний прогрес. Власний вибір. / Technical progress. My own choice.</p>
+                              <p class="info-block__text">11.	 Спорт, як невід’ємна частина у житті. Есе про переваги та недоліки заняття спортом. / Sport, as an integral part of my life. An opinion essay about advantages and disadvantages of going in for sports. </p>
+                              <p class="info-block__text">Новини та плітки. Інформаційний вплив на особистість. / News round the world. The informational role of the media. </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab__col">
+                        <div class="tab__info-block info-block">
+                           <p class="info-block__title">Граматичні теми / Grammar:</p>
+                           <div class="info-block__body has-readmore">
+                              <p class="info-block__text">1.	Утворення та вживання теперішнього неозначеного часу (The Present Simple Tense). Порядок слів у реченні. Утворення та вживання теперішнього тривалого часу (The Present Continuous Tense). Відмінності між The Present Simple Tense та The Present Continuous Tense.</p>
+                              <p class="info-block__text">2.	Утворення та вживання минулого неозначеного часу (The Past Simple Tense). Утворення та вживання минулого тривалого часу (The Past Continuous Tense). Слова-зв’язки. Фразові дієслова.</p>
+                              <p class="info-block__text">3.	 Зворот to be going to. Теперішній тривалий час, домовленості на майбутнє. (The Present Continuous Tense, Future arrangements)</p>
+                              <p class="info-block__text">4.	Утворення та вживання теперішнього доконаного часу (The Present Perfect Tense). Порівняльний аналіз вживання The Present Perfect Tense та Past Indefinite Tense. </p>
+                              <p class="info-block__text">5.	Вищий та найвищий ступені порівняння прикметників. Використання порівняльних конструкцій: as…as / so…as.</p>
+                              <p class="info-block__text">6.	Майбутній час та спонтанні рішення, прогнози на майбутнє, обіцянки, попередження, прохання, сподівання, пропозиції. Особливості використання will та to be going to.</p>
+                              <p class="info-block__text">7.	Безособові форми дієслова: інфінітив та герундій. Модальні дієслова: have to, don’t have to, must, mustn’t.</p>
+                              <p class="info-block__text">8.	Перший тип умовних речень. Присвійні займенники. Прислівники способу дії. </p>
+                              <p class="info-block__text">9.	Другий тип умовних речень. Відмінність між The Present Perfect Tense та Past Indefinite Tense. </p>
+                              <p class="info-block__text">10.	 Пасивний стан дієслова. Основні компоненти речення. Модальне дієслово: might. Зворот: used to.</p>
+                              <p class="info-block__text">11.	 Фразові дієслова. Прислівники: either/neither. Місце прислівників у реченні.</p>
+                              <p class="info-block__text">Минулий доконаний час (The Past Perfect Tense). Непряма мова. Вживання дієслів to say / to tell у непрямій мові.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="tab__body" data-name='b2'>
+                  <div class="tab__aside">
+                     <div class="tab__aside-item">
+                        <div class="tab__info-block info-block">
+                           <p class="info-block__title">Про курс</p>
+                           <p class="info-block__text">По завершенні курсу навчання учень спроможний володіти мовними знаннями з лексики та граматики, граматично правильно висловлювати думку заданої теми у письмовій та усній формах; скласти екзамен ЗНО та міжнародні іспити на рівні В2.</p>
+                        </div>
+                     </div>
+                     <div class="tab__aside-item">
+                        <div class="tab__feature">
+                           <div class="feature">
+                              <div class="feature__icon"><img src="img/icons/bricks.svg" alt=""></div>
+                              <p class="feature__text">10 основних блоків</p>
+                           </div>
+                           <div class="feature">
+                              <div class="feature__icon"><img src="img/icons/clock.svg" alt=""></div>
+                              <p class="feature__text">120 академічних годин</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab__aside-item">
+                        <div class="tab__info-block info-block">
+                           <p class="info-block__title">Тренування навичок</p>
+                           <ul class="info-block__list">
+                              <li class="info-block__list-item">Cлухання і читання</li>
+                              <li class="info-block__list-item">Навчання усного та писемного мовлення</li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="tab__aside-item">
+                        <div class="tab__feature">
+                           <div class="feature">
+                              <div class="feature__icon"><img src="img/icons/book.svg" alt=""></div>
+                              <a class="feature__text_link" data-action="see-books">Навчальні підручники</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab__aside-item">
+                        <p data-action='open-popup' class="btn btn--big">Записатись</p>
+                     </div>
+                  </div>
+                  <div class="tab__main">
+                     <div class="tab__col">
+                        <div class="tab__info-block info-block">
+                           <p class="info-block__title">Розмовні теми / Topics: </p>
+                           <div class="info-block__body has-readmore">
+                              <p class="info-block__text">1.	Мій дім – моя фортеця. Різні форми, стилі, дизайн помешкань. / My Home is my Castle. Dwelling and appliances.</p>
+                              <p class="info-block__text">2.	Родинні стосунки. Сімейний затишок. / Family relationships. Stages in life.</p>
+                              <p class="info-block__text">3.	Подорожі та відпочинок. / Travel broadens the mind. Holidays and holiday equipment. </p>
+                              <p class="info-block__text">4.	Проблеми навколишнього середовища. / Environmental problems. Earth is dearer than gold.</p>
+                              <p class="info-block__text">5.	Буденне життя. Стрес та відпочинок. / Daily routines. Stress and relaxation. </p>
+                              <p class="info-block__text">6.	Новітні технології. / Technology at home. Description of objects.</p>
+                              <p class="info-block__text">7.	Світова торгівля. Шопінг онлайн. / Global shopping. Online shopping. Shopping complaints.</p>
+                              <p class="info-block__text">8.	Здорові звички у харчуванні. Як приготувати улюблену страву. / You are what you eat. Types of food. Ways of cooking.</p>
+                              <p class="info-block__text">9.	Спорт і спортивне спорядження. / Types of sports. Places and equipment.</p>
+                              <p class="info-block__text">10.	 Природні катастрофи. Засоби масової інформації. /  Natural and man-made disasters. The media.</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab__col">
+                        <div class="tab__info-block info-block">
+                           <p class="info-block__title">Grammar</p>
+                           <div class="info-block__body has-readmore">
+                              <p class="info-block__text">1.	Present Tenses (Indefinite, Continuous, Perfect, Perfect Continuous). State verbs. Adverbs of frequency. Phrasal verbs: break, bring.</p>
+                              <p class="info-block__text">2.	Past Tenses (Indefinite, Continuous, Perfect, Perfect Continuous). Phrasal verbs: carry, come.</p>
+                              <p class="info-block__text">3.	Future Tenses (Indefinite, Continuous, Perfect, Perfect Continuous). Phrasal verbs: cut, do.</p>
+                              <p class="info-block__text">4.	The degrees of comparisons, Non-finite forms of the verb. Phrasal verbs: fall, get.</p>
+                              <p class="info-block__text">5.	Non-finite forms of the verb (The Gerund, The Infinitive, The Participle). Modal verbs. Phrasal verbs: give, go.</p>
+                              <p class="info-block__text">6.	The Passive. Relative clauses. Phrasal verbs: hold, keep.</p>
+                              <p class="info-block__text">7.	Reported speech. Causative forms. Phrasal verbs: let, look.</p>
+                              <p class="info-block__text">8.	Countable / uncountable nouns. Quantifiers (some, any, no, (a)little, (a)few). Phrasal verbs: make, put.</p>
+                              <p class="info-block__text">9.	Conditional sentences. Phrasal verbs: run, see, set.</p>
+                              <p class="info-block__text">10.	Discourse markers (Linkers). Quantifiers (either/neither, although, both, none). Phrasal verbs: stand, take, turn.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="tab__body" data-name='c1'>
+                  <div class="tab__aside">
+                     <div class="tab__aside-item">
+                        <div class="tab__info-block info-block">
+                           <p class="info-block__title">Про курс</p>
+                           <p class="info-block__text">По завершенні курсу навчання учень спроможний володіти мовними знаннями з лексики та граматики, граматично правильно висловлювати думку заданої теми у письмовій та усній формах; скласти міжнародні іспити на рівні C1.</p>
+                        </div>
+                     </div>
+                     <div class="tab__aside-item">
+                        <div class="tab__feature">
+                           <div class="feature">
+                              <div class="feature__icon"><img src="img/icons/bricks.svg" alt=""></div>
+                              <p class="feature__text">10 основних блоків</p>
+                           </div>
+                           <div class="feature">
+                              <div class="feature__icon"><img src="img/icons/clock.svg" alt=""></div>
+                              <p class="feature__text">150 академічних годин</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab__aside-item">
+                        <div class="tab__info-block info-block">
+                           <p class="info-block__title">Тренування навичок</p>
+                           <ul class="info-block__list">
+                              <li class="info-block__list-item">Cлухання і читання</li>
+                              <li class="info-block__list-item">Навчання усного та писемного мовлення</li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="tab__aside-item">
+                        <div class="tab__feature">
+                           <div class="feature">
+                              <div class="feature__icon"><img src="img/icons/book.svg" alt=""></div>
+                              <a class="feature__text_link" data-action="see-books">Навчальні підручники</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab__aside-item">
+                        <p data-action='open-popup' class="btn btn--big">Записатись</p>
+                     </div>
+                  </div>
+                  <div class="tab__main">
+                     <div class="tab__col">
+                        <div class="tab__info-block info-block">
+                           <p class="info-block__title">Topics and Vocabulary:</p>
+                           <div class="info-block__body has-readmore">
+                              <p class="info-block__text">1.	Personality. Happy families. Work and family. How to survive living with your parents? Earning a living. </p>
+                              <p class="info-block__text">2.	Specific incidents from your childhood. Happiness is a good health and a bad memory. The history of English. </p>
+                              <p class="info-block__text">3.	A love-hate relationship. Expressing feelings. Historical inaccuracies.</p>
+                              <p class="info-block__text">4.	Describing recent books and films. The best and worst sounds.</p>
+                              <p class="info-block__text">5.	No time for anything. Healthy eating. Stress and relaxation. </p>
+                              <p class="info-block__text">6.	The school of life. Social media or other types of entertainment technology</p>
+                              <p class="info-block__text">7.	Laws and regulations. Safety. Creativity and Art.</p>
+                              <p class="info-block__text">8.	The best medicine. Social prescribing. Our immune system.</p>
+                              <p class="info-block__text">9.	Animal issues. Restaurant meals. </p>
+                              <p class="info-block__text">10.	Sports and entertainment. Olympic sports.  </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab__col">
+                        <div class="tab__info-block info-block">
+                           <p class="info-block__title">Граматичні теми / Grammar:</p>
+                           <div class="info-block__body has-readmore">
+                              <p class="info-block__text">1.	Discourse makers: linkers. Different uses of the verb: to have. Have / have got in idioms and expressions.</p>
+                              <p class="info-block__text">2.	The past: habitual events and specific incidents. Reflexive and reciprocal pronouns.  </p>
+                              <p class="info-block__text">3.	Adverbs and adverbial expressions. </p>
+                              <p class="info-block__text">4.	The Inversion. Modal verbs: requests and suggestions, offers, promises and warnings, logical assumptions.</p>
+                              <p class="info-block__text">5.	The Passive. Passive reporting verbs. Distancing expressions.</p>
+                              <p class="info-block__text">6.	Non-finite forms of the verb. Mixed conditionals. Alternatives to if in conditional sentences. </p>
+                              <p class="info-block__text">7.	Modal verbs: permission, obligation and necessity. State verbs: perception and sensation. </p>
+                              <p class="info-block__text">8.	Different forms of the Gerund and the Infinitive. Expressing future plans and arrangements. </p>
+                              <p class="info-block__text">9.	The Noun: compound and possessive forms. </p>
+                              <p class="info-block__text">10.	Relative clauses. Emphasis. </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
 
    <div class="highlight">
       <div class="container">
@@ -2046,10 +2394,7 @@
 
 
 
-      <!-- global things -->
-   <script>
-      var g_Mode = 'g';
-   </script>
+   
 
 
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
