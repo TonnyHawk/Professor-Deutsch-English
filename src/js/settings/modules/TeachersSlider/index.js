@@ -164,7 +164,7 @@ class TeachersSlider extends Component {
     
     let photoSlides = humans.map(elem=>{
       return (
-         <div>
+         <div key={elem.id}>
          <div class="slide__photo ibg">
             <img src={elem.photo} alt=""/>
          </div>
@@ -174,7 +174,7 @@ class TeachersSlider extends Component {
 
     let textSlides = humans.map(elem=>{
       return (
-         <TextsSlide student={elem} funcs={this}/>
+         <TextsSlide student={elem} funcs={this} key={elem.id}/>
       )
     })
     return (

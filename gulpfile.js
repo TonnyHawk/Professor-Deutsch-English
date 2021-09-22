@@ -83,7 +83,7 @@ function css() {
 function html() {
    let pipeline = src(path.projFold + path.html + '/index.html')
       .pipe(fileInclude())
-      .pipe(dest('./dist/'))
+      .pipe(dest('./src/'))
 
       if(mode == 'dev'){
          pipeline = pipeline.pipe(browserSync.reload())
