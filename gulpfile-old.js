@@ -1,5 +1,11 @@
-let {src, dest, watch, series, parallel} = require('gulp'),
-   scss = require('gulp-sass'),
+let {
+   src,
+   dest,
+   watch,
+   series,
+   parallel
+} = require('gulp'),
+   scss = require('gulp-sass')(require('sass')),
    gmq = require('gulp-group-css-media-queries'),
    sourcemaps = require('gulp-sourcemaps'),
    cleanCSS = require('gulp-clean-css'),
@@ -7,6 +13,16 @@ let {src, dest, watch, series, parallel} = require('gulp'),
    browserSync = require('browser-sync').create(),
    autoprefixer = require('gulp-autoprefixer'),
    fileInclude = require('gulp-file-include');
+
+   let mode = !process.env.NODE_ENV ? 'build' : process.env.NODE_ENV;
+   console.log(mode)
+
+const merge = require('merge-stream');
+
+const configs = [
+   require('./gulp.config'),
+   require('./gulp.config.firstCss')
+];
 
 let path = {
    projFold: './src',
@@ -17,39 +33,71 @@ let path = {
    html: '/html'
 }
 
-function server(){
+function server() {
+   let server = mode === 'dev' ? "./src" : "./dist";
    browserSync.init({
-      server: "./src"
-  });
+      server
+   });
 
-  watch(path.projFold + path.styles + "/**/*.scss", css);
-  watch(path.projFold + path.html + "/*.html").on('change', series(html, browserSync.reload));
-//   watch([path.projFold + '/index.html']).on('change', browserSync.reload);
+   watch(path.projFold + path.styles + "/**/*.scss", css);
+   watch(path.projFold + path.html + "/*.html").on('change', series(html, browserSync.reload));
 }
 
-function css(){
-   return src(path.projFold + path.styles + path.scssEntry)
-         .pipe(sourcemaps.init())
-         .pipe(scss({outputStyle: 'expanded'}))
-         .pipe(gmq())
-         .pipe(cleanCSS())
-         .pipe(autoprefixer())
-         .pipe(sourcemaps.write())
-         .pipe(dest('./src/css/'))
-         .pipe(browserSync.stream())
+function watchCss(){
+   watch(path.projFold + path.styles + "/**/*.scss", css);
 }
 
-function html(){
-   return src(path.projFold + path.html + '/index.html')
-         .pipe(fileInclude())
-         .pipe(dest('./src/'))
-         // .pipe(browserSync.reload())
+function watchAll(){
+   watch(path.projFold + path.styles + "/**/*.scss", css);
+   watch(path.projFold + path.html + "/*.html").on('change', html);
 }
 
-let go = series(css, html, server)
-// let go = series(css, server)
+function css() {
+   let tasks = configs.map(config=>{
+      let pipeline = src(config.css.sourcePaths)
 
-exports.default = go;
+      if(mode !== 'build'){
+         pipeline = pipeline.pipe(sourcemaps.init())
+      }
 
+      pipeline.pipe(scss(config.thirdParty.sassOptions))
+      .pipe(gmq())
+      .pipe(cleanCSS())
+      .pipe(autoprefixer())
 
+      if(mode !== 'build'){
+         pipeline = pipeline.pipe(sourcemaps.write())
+      }
 
+      pipeline.pipe(dest(mode === 'dev' ? './src/css/' : './dist/css/'))
+
+      if(mode == 'dev'){
+         pipeline = pipeline.pipe(browserSync.stream())
+      }
+
+      return pipeline;
+   })
+
+   return merge(tasks);
+}
+
+function html() {
+   let pipeline = src(path.projFold + path.html + '/index.html')
+      .pipe(fileInclude())
+      // .pipe(dest(mode === 'dev' ? './src/' : './dist/'))
+      .pipe(dest('./src/'))
+
+      if(mode == 'dev'){
+         pipeline = pipeline.pipe(browserSync.reload())
+      }
+
+      return pipeline;
+         
+
+}
+
+exports.default = series(css, html);
+exports.dev = series(css, html, server);
+exports.css = series(css, html, watchCss);
+exports.buildCss = series(css);
+exports.react = series(css, html, watchAll)

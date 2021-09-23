@@ -7,6 +7,29 @@ import BooksGallery from '../BooksGallery';
 import CustomPreviewSlide from '../CustomPreviewSlide/index.js';
 import CustomMainSlide from '../CustomMainSlide/index.js';
 
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={'sl__controll sl__controll--next'}
+      onClick={onClick}
+    >
+      <div className="sl__controll-circle">
+      </div>
+    </div>
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={'sl__controll sl__controll--next'}
+      onClick={onClick}
+    />
+  );
+}
+
 class StudentsSlider extends Component {
    constructor(props) {
       super(props);
@@ -21,13 +44,6 @@ class StudentsSlider extends Component {
          students: props.students
       };
     }
-   
-   componentDidMount() {
-      this.setState({
-        nav1: this.slider1,
-        nav2: this.slider2
-      });
-   }
 
    toggleGallery(name, state, ...props){
       // preparation
@@ -105,11 +121,10 @@ class StudentsSlider extends Component {
   render() {
     const main = {
           adaptiveHeight: false,
-          arrows: false,
           infinite: false,
           speed: 500,
-         //  fade: true,
-         //  cssEase: 'linear',
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />,
           responsive: [{
              breakpoint: 992,
              settings: {
@@ -118,31 +133,11 @@ class StudentsSlider extends Component {
           }]
     };
 
-    const preview = {
-       centerMode: true,
-       variableWidth: true,
-       arrows: false,
-       infinite: false,
-       adaptiveHeight: false,
-       focusOnSelect: true,
-       responsive: [{
-          breakpoint: 992,
-          settings: {
-             adaptiveHeight: true,
-             focusOnSelect: false
-          }
-       }],
-      focusOnSelect: true
-    }
-
-    let {showBooks, selectedStudent, booksGalMode, showZoomed, zoomedItem, students} = this.state;
+    let {showBooks, selectedStudent, booksGalMode, students} = this.state;
 
     
     let mainSlides = students.map(elem=>{
       return <CustomMainSlide student={elem} funcs={this} key={elem.id}/>
-    })
-    let previewSlides = students.map(elem=>{
-      return <CustomPreviewSlide student={elem} key={elem.id}/>
     })
 
     let booksGal = showBooks ? <BooksGallery students={students} student={selectedStudent} mode={booksGalMode} funcs={this}/> : '';
@@ -165,17 +160,10 @@ class StudentsSlider extends Component {
          <div class="sl">
             <Slider 
                className="sl__main" {...main}
-               asNavFor={this.state.nav2}
-               ref={slider => (this.slider1 = slider)}>
+               asNavFor={this.state.nav2}>
 
                {mainSlides}
 
-            </Slider>
-            <Slider 
-               className="sl__preview" {...preview}
-               asNavFor={this.state.nav1}
-               ref={slider => (this.slider2 = slider)}>
-                  {previewSlides}
             </Slider>
          </div>
 

@@ -267,6 +267,7 @@ a[href^=mailto] {
 @import 'module/page/page';
 @import 'module/gall/gall';
 @import 'module/zoomed/zoomed';
+@import 'module/video/video';
 
 
 @import 'sections/section/section';
@@ -278,6 +279,7 @@ a[href^=mailto] {
 @import 'sections/students/students';
 @import 'sections/teachers/teachers';
 @import 'sections/intro/intro';
+@import 'sections/certificates/certificates.scss';
 
 
 @import 'sections/section/section';

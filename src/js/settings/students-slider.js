@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import React from "react";
-import StudentsSlider from './modules/StudentsSlider';
+import StudentsSlider from './modules/StudentsSlider/index';
 
 import { initializeApp } from "firebase/app";
 import { collection, getFirestore, getDocs,

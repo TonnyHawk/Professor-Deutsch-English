@@ -34,8 +34,9 @@ let path = {
 }
 
 function server() {
+   let server = mode === 'dev' ? "./src" : "./dist";
    browserSync.init({
-      server: "./dist"
+      server: './dist'
    });
 
    watch(path.projFold + path.styles + "/**/*.scss", css);
@@ -70,9 +71,7 @@ function css() {
 
       pipeline.pipe(dest('./dist/css/'))
 
-      if(mode == 'dev'){
-         pipeline = pipeline.pipe(browserSync.stream())
-      }
+      pipeline = pipeline.pipe(browserSync.stream())
 
       return pipeline;
    })
@@ -83,7 +82,8 @@ function css() {
 function html() {
    let pipeline = src(path.projFold + path.html + '/index.html')
       .pipe(fileInclude())
-      .pipe(dest('./src/'))
+      // .pipe(dest(mode === 'dev' ? './src/' : './dist/'))
+      .pipe(dest('./dist/'))
 
       if(mode == 'dev'){
          pipeline = pipeline.pipe(browserSync.reload())

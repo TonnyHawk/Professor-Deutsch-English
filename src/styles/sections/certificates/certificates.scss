@@ -1,0 +1,36 @@
+.section {
+}
+.certificates {
+
+		// .certificates__cert-group
+
+		&__cert-group {
+         display: flex;
+         align-items: center;
+		}
+
+		// .certificates__cert-group-item
+
+		&__cert-group-item {
+         position: relative;
+         z-index: 1;
+		}
+
+		// .certificates__cert-group-item--main
+
+		&__cert-group-item--main {
+         z-index: 2;
+         position: absolute;
+
+		}
+
+		// .certificates__title
+
+		&__title {
+		}
+
+		// .certificates__my-btn
+
+		&__my-btn {
+		}
+}

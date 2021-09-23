@@ -24,13 +24,13 @@ module.exports = (env) => {
          jquery: 'jQuery',
       },
       watch: env.production == true ? false : true,
-      plugins: [
-         new HtmlWebpackPlugin({
-           template: path.join(__dirname, "src", "index.html"),
-           inject: 'body',
-           scriptLoading: 'blocking',
-         }),
-       ],
+      // plugins: [
+      //    new HtmlWebpackPlugin({
+      //      template: path.join(__dirname, "src", "index.html"),
+      //      inject: 'body',
+      //      scriptLoading: 'blocking',
+      //    }),
+      //  ],
        module: {
          rules: [
            {

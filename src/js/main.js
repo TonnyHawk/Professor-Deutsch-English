@@ -3,7 +3,7 @@ require('../styles/module/nav/nav.js');
 require('./vendors/smoothScroll.js');
 require('./vendors/jQuery-Input-Mask-Phone-Numbers/jquery-input-mask-phone-number.min.js');
 require('./my/readmore.js');
-require('./settings/intro');
+// require('./settings/intro');
 
 // phone mask
 require('./settings/masks');
