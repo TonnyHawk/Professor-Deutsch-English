@@ -11,6 +11,7 @@
    // .sl__slide-unit
 
    &__slide-unit {
+      width: max-content;
       @include media-breakpoint-up(lg){
          display: flex;
          align-items: center;
@@ -23,7 +24,7 @@
    // .sl__photo
 
    &__photo {
-      width: 90%;
+      width: 85vw;
       margin-right: auto;
       margin-left: auto;
       @include media-breakpoint-up(md){
@@ -50,13 +51,21 @@
    // .sl__pop
 
    &__pop {
-      margin: 7rem auto 0;
+      margin: 5rem auto 0;
+      opacity: 0;
+      transform: translateY(-50px);
+      transition: 0.5s 0.6s;
+      width: 90vw;
+      visibility: hidden;
       @include media-breakpoint-up(md){
          max-width: 56rem;
       }
       @include media-breakpoint-up(lg){
          margin: 0 0 0 7rem;
          max-width: 62rem;
+         visibility: visible;
+         opacity: 1;
+         transform: translate(0);
       }
 
       &:after {
@@ -108,9 +117,31 @@
 
    &__controll{
       position: absolute;
+      top: calc(50% - 1.7rem);
+      cursor: pointer;
+      z-index: 2;
+      @include perfect-center;
+      display: none;
+      @include media-breakpoint-up(lg){
+         display: flex;
+      }
+      &-circle{
+         @include square(3.5rem);
+         background: #C4C4C4;
+         border-radius: 100%;
+      }
+      &-icon{
+         position: absolute; 
+         font-size: 1rem;
+         color: white;
+      }
       
-      &--next{}
-      &--prev{}
+      &--next{
+         right: 4%;
+      }
+      &--prev{
+         left: 4%;
+      }
    }
 }
 

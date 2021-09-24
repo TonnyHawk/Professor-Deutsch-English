@@ -5,12 +5,11 @@ class CustomMainSlide extends Component {
    const { student, funcs, ...props } = this.props;
 
    let pocket = funcs.generatePocket(student);
+   let media = funcs.generateMedia(student);
 
      return (
       <div class="sl__slide-unit" key={student.id}>
-      <div class="sl__photo multilayer">
-         <img src={student.photo} alt="" class="multilayer__main"/>
-      </div>
+      {media}
       <div class="sl__pop talk-buble">
          <div class="talk-buble__header">
             <p class="talk-buble__title">{student.name}</p>

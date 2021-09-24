@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import BooksGallery from '../BooksGallery';
 import CustomPreviewSlide from '../CustomPreviewSlide/index.js';
 import CustomMainSlide from '../CustomMainSlide/index.js';
+import Video from '../Video';
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -14,7 +15,9 @@ function SampleNextArrow(props) {
       className={'sl__controll sl__controll--next'}
       onClick={onClick}
     >
-      <div className="sl__controll-circle">
+      <div className="sl__controll-circle"></div>
+      <div className="sl__controll-icon">
+      <img src="img/icons/sl__controll--next.svg" alt="" />
       </div>
     </div>
   );
@@ -24,9 +27,14 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={'sl__controll sl__controll--next'}
+      className={'sl__controll sl__controll--prev'}
       onClick={onClick}
-    />
+    >
+      <div className="sl__controll-circle"></div>
+      <div className="sl__controll-icon">
+         <img src="img/icons/sl__controll--prev.svg" alt="" />
+      </div>
+    </div>
   );
 }
 
@@ -78,6 +86,21 @@ class StudentsSlider extends Component {
       this.setState({selectedStudent: student})
    }
 
+   generateMedia(student){
+      let result = '';
+      if(student.video !== ''){
+         result = <Video student={student}/>
+      } else{
+         result = (
+         <div class="sl__photo multilayer">
+            <img src={student.photo} alt="" class="multilayer__main"/>
+         </div>
+         )
+      }
+
+      return result;
+   }
+
    generatePocket(student){
       // adding lang badges
       let langBadges = [];
@@ -95,11 +118,11 @@ class StudentsSlider extends Component {
 
       // adding certificates btn
       let actionBtn = '';
-      if(student.certificates.length > 0){
-         actionBtn = (
-            <p class="talk-buble__action btn" data-id={student.id} onClick={()=>{this.showCertificates(student)}}>Сертифікати</p>
-         )
-      }
+      // if(student.certificates.length > 0){
+      //    actionBtn = (
+      //       <p class="talk-buble__action btn" data-id={student.id} onClick={()=>{this.showCertificates(student)}}>Сертифікати</p>
+      //    )
+      // }
 
       // forming pocket
       let pocket = '';
@@ -120,7 +143,9 @@ class StudentsSlider extends Component {
 
   render() {
     const main = {
-          adaptiveHeight: false,
+          adaptiveHeight: true,
+          variableWidth: false,
+          centerMode: true,
           infinite: false,
           speed: 500,
           nextArrow: <SampleNextArrow />,
@@ -129,6 +154,7 @@ class StudentsSlider extends Component {
              breakpoint: 992,
              settings: {
                 adaptiveHeight: true,
+                variableWidth: true,
              }
           }]
     };

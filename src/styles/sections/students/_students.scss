@@ -6,10 +6,9 @@
       &__title {}
 
       &__header {
-         margin-bottom: 6rem;
+         margin-bottom: 2rem;
 
          @include media-breakpoint-up(md) {
-            margin-bottom: 8rem;
             justify-content: center;
          }
 
@@ -41,21 +40,26 @@
    }
 
    .slick-slide {
-      margin: 0 1.5rem;
+      // margin: 0 1.5rem;
 
-      @include media-breakpoint-up(md) {
-         margin: 0 4rem;
-      }
+      // @include media-breakpoint-up(md) {
+      //    margin: 0 4rem;
+      // }
 
-      @include media-breakpoint-up(lg) {
-         margin: 0 1.7rem;
+      // @include media-breakpoint-up(lg) {
+      //    margin: 0 1.7rem;
+      // }
+
+      &>div{
+         width: max-content;
       }
    }
 
    // Main slider
    .sl__main {
+      .slick-list{transition: 0.4s;}
       .slick-slide {
-         padding: 6rem 0;
+         padding: 3rem 0;
 
          @include media-breakpoint-up(md) {
             padding: 6.5rem 0;
@@ -66,17 +70,41 @@
             display: flex;
             justify-content: center;
          }
-      }
 
-      .slick-slide.slick-active {
          .multilayer {
             &__main {
-               transform: translate(-0.5rem, -0.5rem);
+               @include media-breakpoint-up(md){
+                  transform: translate(-0.5rem, -0.5rem);
+               }
             }
       
             &:after {
-               transform: translate(1rem, 1rem);
+               @include media-breakpoint-up(md){
+                  transform: translate(1rem, 1rem);
+               }
             }
+         }
+      }
+
+      .slick-slide.slick-active {
+         // .multilayer {
+         //    &__main {
+         //       @include media-breakpoint-up(md){
+         //          transform: translate(-0.5rem, -0.5rem);
+         //       }
+         //    }
+      
+         //    &:after {
+         //       @include media-breakpoint-up(md){
+         //          transform: translate(1rem, 1rem);
+         //       }
+         //    }
+         // }
+
+         .sl__pop{
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
          }
       }
    }
@@ -153,7 +181,7 @@
                   opacity: 1;
                }
             }
-
+            // part of multilayer
             &:before {
                @include media-breakpoint-up(lg) {
                   content: '';

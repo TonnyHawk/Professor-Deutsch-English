@@ -1,11 +1,13 @@
 $duration: 0.3s;
 .video {
-   width: 18rem;
-   height: 29.5rem;
-   border: 1px solid black;
    position: relative;
    transition: $duration;
-   margin: 1rem;
+   @extend .sl__photo;
+   @include media-breakpoint-up(lg){
+      height: auto;
+      width: 35vw;
+      max-width: 45rem;
+   }
 
    // .video__inner
 
@@ -22,6 +24,7 @@ $duration: 0.3s;
       z-index: 3;
       width: 100%;
       opacity: 0;
+      display: none;
    }
 
    // .video__hd
@@ -30,7 +33,8 @@ $duration: 0.3s;
       top: 0;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      // justify-content: space-between;
+      justify-content: flex-end;
       padding: 1.8rem 3rem;
    }
 
@@ -91,6 +95,7 @@ $duration: 0.3s;
       z-index: 2;
       @include perfect-center;
       opacity: 0;
+      transition: 0.3s;
    }
 
    // .video__play-bg
@@ -122,7 +127,6 @@ $duration: 0.3s;
    // .video__player
 
    &__player {
-      object-fit: fill;
       @include square(100%);
    }
 
@@ -195,8 +199,6 @@ $duration: 0.3s;
 }
 .slick-slide.slick-current {
    .video {
-      width: 29rem;
-      height: 42rem;
 
       // .video__inner
 
@@ -208,6 +210,7 @@ $duration: 0.3s;
       &__hd,
       &__ft {
          opacity: 1;
+         display: none;
       }
 
       // .video__hd
@@ -305,6 +308,14 @@ $duration: 0.3s;
       &__controll--prev {
          left: -30px;
          opacity: 1;
+      }
+   }
+}
+
+.video.is-on{
+   .video{
+      &__play{
+         opacity: 0;
       }
    }
 }
