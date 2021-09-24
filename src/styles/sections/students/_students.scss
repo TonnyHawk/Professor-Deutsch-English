@@ -1,6 +1,9 @@
 #students {
    background: #F5F4F7;
    overflow: hidden;
+   @include media-breakpoint-up(lg){
+      padding-bottom: 9.5rem;
+   }
 
    .section {
       &__title {}
@@ -87,25 +90,40 @@
       }
 
       .slick-slide.slick-active {
-         // .multilayer {
-         //    &__main {
-         //       @include media-breakpoint-up(md){
-         //          transform: translate(-0.5rem, -0.5rem);
-         //       }
-         //    }
+         .video {
+
+            &__hd,
+            &__ft {
+               opacity: 1;
+               display: none;
+            }
       
-         //    &:after {
-         //       @include media-breakpoint-up(md){
-         //          transform: translate(1rem, 1rem);
-         //       }
-         //    }
-         // }
+            &__play {
+               opacity: 1;
+            }
+      
+            // .video__controll--next
+      
+            &__controll--next {
+               right: -30px;
+               opacity: 1;
+            }
+      
+            // .video__controll--prev
+      
+            &__controll--prev {
+               left: -30px;
+               opacity: 1;
+            }
+         }
 
          .sl__pop{
             transform: translateY(0);
             opacity: 1;
             visibility: visible;
          }
+
+
       }
    }
 

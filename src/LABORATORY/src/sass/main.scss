@@ -1,311 +1,159 @@
 @import './mixins';
-$duration: 0.3s;
-.video {
-   width: 18rem;
-   height: 29.5rem;
-   border: 1px solid black;
-   position: relative;
-   transition: $duration;
-   margin: 1rem;
+@import '../../../../node_modules/bootstrap/scss/bootstrap-grid';
+@import '../../../../node_modules/bootstrap/scss/bootstrap-utilities.scss';
+@import '../../../../node_modules/bootstrap/scss/containers';
 
-   // .video__inner
+html {
+   font-size: 62.5%;
+}
 
-   &__inner {
-      @include square(100%);
-      z-index: 1;
-   }
-
-   // .video__hd, ft
-
-   &__hd,
-   &__ft {
-      position: absolute;
-      z-index: 3;
-      width: 100%;
-      opacity: 0;
-   }
-
-   // .video__hd
-
-   &__hd {
-      top: 0;
+#certificates {
+   background: #4872DD;
+   padding-top: 13.3rem;
+   min-height: 100vh;
+   @include media-breakpoint-up(md){
+      padding-top: 11.3rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 1.8rem 3rem;
+   }
+   @include media-breakpoint-up(lg){
+      padding: 0;
    }
 
-   // .video__info
+   .certificates {
 
-   &__info {}
+      // .certificates__cert-group
 
-   // .video__title
-
-   &__title {
-      font-family: Gilroy;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 1.5rem;
-      line-height: 1.8rem;
-      letter-spacing: 0.03em;
-
-      color: white;
-      margin-bottom: 0.5rem;
-      text-transform: capitalize;
-   }
-
-   // .video__subtitle
-
-   &__subtitle {
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 1.1rem;
-      line-height: 1.3rem;
-      letter-spacing: 0.03em;
-
-      color: #FFFFFF;
-   }
-
-   // .video__actions
-
-   &__actions {
-      display: flex;
-   }
-
-   // .video__action
-
-   &__action {
-      font-size: 2rem;
-      color: white;
-      cursor: pointer;
-   }
-
-   // .video__action--volume
-
-   &__action--volume {}
-
-   // .video__play
-
-   &__play {
-      @include layer;
-      z-index: 2;
-      @include perfect-center;
-      opacity: 0;
-   }
-
-   // .video__play-bg
-
-   &__play-bg {
-      background: rgba(0, 0, 0, 0.28);
-      @include layer;
-      z-index: 1;
-   }
-
-   // .video__play-btn
-
-   &__play-btn {
-      z-index: 2;
-      font-size: 6rem;
-      color: white;
-   }
-
-   // .video__play-btn--play
-
-   &__play-btn--play {}
-
-   // .video__bd
-
-   &__bd {
-      @include square(100%);
-   }
-
-   // .video__player
-
-   &__player {
-      object-fit: fill;
-      @include square(100%);
-   }
-
-   // .video__ft
-
-   &__ft {
-      padding: 2rem 3rem 3.5rem;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-   }
-
-   // .video__progress
-
-   &__progress {
-      position: relative;
-      width: 100%;
-   }
-
-   // .video__progress-bg
-
-   &__progress-bg {
-      width: 100%;
-      height: 0.3rem;
-      background: rgba(255, 255, 255, 0.56);
-      border-radius: 0.9rem;
-   }
-
-   // .video__progress-main
-
-   &__progress-main {
-      width: 40%;
-      height: 100%;
-      position: absolute;
-      background: #FFFFFF;
-      border-radius: 0.9rem;
-      left: 0;
-      top: 0;
-   }
-
-   // .video__controll
-
-   &__controll {
-      position: absolute;
-      top: 50%;
-      @include square(50px);
-      background: red;
-      transition: $duration;
-   }
-
-   // .video__controll--next
-
-   &__controll--next {
-      right: 0;
-      opacity: 0;
-   }
-
-   // .video__controll--prev
-
-   &__controll--prev {
-      left: 0;
-      opacity: 0;
-   }
-}
-#students{
-   .slick-track{
-      align-items: center;
-      display: flex;
-   }
-}
-.slick-slide.slick-current {
-   .video {
-      width: 29rem;
-      height: 42rem;
-
-      // .video__inner
-
-      &__inner {
+      &__cert-group {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         position: relative;
+         width: 95%;
+         max-width: 52.5rem;
+         margin: 0 auto;
+         @include media-breakpoint-up(md){
+            width: 100%;
+         }
+         @include media-breakpoint-up(lg){
+            max-width: 68rem;
+            margin: 0;
+            width: 80%;
+         }
       }
 
-      // .video__hd, ft
+      // .certificates__cert-group-item
 
-      &__hd,
-      &__ft {
-         opacity: 1;
+      &__cert-group-item {
+         z-index: 1;
+         width: 40%;
+         box-shadow: 0px 4px 23px rgba(0, 0, 0, 0.25);
+         @include media-breakpoint-up(lg){
+            width: 37%;
+            max-width: 21.3rem;
+         }
+
+         img {
+            width: 100%;
+         }
       }
 
-      // .video__hd
+      // .certificates__cert-group-item--main
 
-      &__hd {
+      &__cert-group-item--main {
+         width: 62%;
+         @include media-breakpoint-up(lg){
+            width: 63%;
+            max-width: 36rem;
+         }
       }
 
-      // .video__info
+      &__cert-group-layer {
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         z-index: 2;
+         position: absolute;
+      }
 
-      &__info {}
+      // .certificates__info
 
-      // .video__title
+      &__info{
+         margin: 0 auto;
+         width: max-content;
+         margin-top: 14.5rem;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
+         max-width: 100%;
+         @include media-breakpoint-up(md){
+            margin-top: 16.5rem;
+         }
+         @include media-breakpoint-up(lg){
+            height: 100%;
+            margin-top: 0;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+         }
+      }
+
+      // .certificates__title
 
       &__title {
+         font-family: Gilroy;
+         font-style: normal;
+         font-weight: 900;
+         font-size: 2.8rem;
+         line-height: 3.7rem;
+         letter-spacing: 0.03em;
+
+         color: #FFFFFF;
+         max-width: 28rem;
+         margin-bottom: 4.5rem;
+
+         @include media-breakpoint-up(md) {
+            font-size: 3.5rem;
+            line-height: 4.7rem;
+            max-width: 84%;
+            margin-bottom: 5.5rem;
+         }
+         @include media-breakpoint-up(lg){
+            margin-bottom: 4.5rem;
+            max-width: 100%;
+         }
       }
 
-      // .video__subtitle
+      // .certificates__my-btn
 
-      &__subtitle {
-      }
+      &__my-btn {
 
-      // .video__actions
+         font-family: Gilroy;
+         font-style: normal;
+         font-weight: 900;
+         font-size: 2.1rem;
+         line-height: 2.6rem;
+         text-align: center;
+         letter-spacing: 0.03em;
+         cursor: pointer;
 
-      &__actions {
-      }
+         color: #FFFFFF;
+         padding: 2.5rem 6rem;
+         width: max-content;
+         background: #F09815;
+         border-radius: 0.9rem;
+         transition: 0.4s;
 
-      // .video__action
+         &:hover{
+            background: #f08f00;
+         }
 
-      &__action {
-      }
-
-      // .video__action--volume
-
-      &__action--volume {}
-
-      // .video__play
-
-      &__play {
-         opacity: 1;
-      }
-
-      // .video__play-bg
-
-      &__play-bg {
-      }
-
-      // .video__play-btn
-
-      &__play-btn {
-      }
-
-      // .video__play-btn--play
-
-      &__play-btn--play {}
-
-      // .video__bd
-
-      &__bd {
-      }
-
-      // .video__player
-
-      &__player {
-      }
-
-      // .video__ft
-
-      &__ft {
-      }
-
-      // .video__progress
-
-      &__progress {
-      }
-
-      // .video__progress-bg
-
-      &__progress-bg {
-      }
-
-      // .video__progress-main
-
-      &__progress-main {
-      }
-
-      // .video__controll--next
-
-      &__controll--next {
-         right: -30px;
-         opacity: 1;
-      }
-
-      // .video__controll--prev
-
-      &__controll--prev {
-         left: -30px;
-         opacity: 1;
+         @include media-breakpoint-up(md) {
+            font-size: 2.3rem;
+            line-height: 3rem;
+            padding: 3rem 8.5rem;
+         }
       }
    }
 }
