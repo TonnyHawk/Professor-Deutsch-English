@@ -96,6 +96,7 @@ $duration: 0.3s;
       @include perfect-center;
       opacity: 0;
       transition: 0.3s;
+      cursor: pointer;
    }
 
    // .video__play-bg
@@ -112,6 +113,12 @@ $duration: 0.3s;
       z-index: 2;
       font-size: 6rem;
       color: white;
+      @include media-breakpoint-up(md){
+         font-size: 12rem;
+      }
+      @include media-breakpoint-up(lg){
+         font-size: 7rem;
+      }
    }
 
    // .video__play-btn--play
