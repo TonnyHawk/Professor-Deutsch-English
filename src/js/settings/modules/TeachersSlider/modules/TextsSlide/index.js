@@ -18,9 +18,9 @@ class TextsSlide extends Component {
          <>
             <h2 class="slide__title slide__item">{student.name}</h2>
             {pocket}
-            <div class="slide__stats slide__item">
+            {/* <div class="slide__stats slide__item">
                {stats}
-            </div>
+            </div> */}
             <div class="slide__paragraphs has-readmore">
                <p className='slide__text'>{student.about}</p>
             </div>

@@ -208,7 +208,7 @@ $duration: 0.3s;
 .video.is-on{
    .video{
       &__play{
-         opacity: 0;
+         opacity: 0!important;
       }
    }
 }

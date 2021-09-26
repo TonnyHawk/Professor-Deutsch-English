@@ -1,0 +1,247 @@
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="format-detection" content="telephone=no">
+
+   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+   <link rel="manifest" href="favicon/site.webmanifest">
+
+   <link rel="stylesheet" href="css/first-loaded.css">
+   <link rel="stylesheet" href="css/main.css">
+   <title>Школа іноземних мов Professor Deutsch & English</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+   <style>
+      .zoomed{display:none;}
+      .page{z-index: 1;}
+      .loader{z-index: 2;}
+   </style>
+</head>
+<body>
+   <div class="loader">
+      <div class="loader__bg"></div>
+      <div class="loader__content">
+         <div class="loader__spinner spinner loadingio-spinner-rolling-c55z9beacq">
+            <div class="ldio-tam1aegang">
+               <div></div>
+            </div>
+         </div>
+      </div>
+   </div>
+<div class="page" id="page-books">
+   <div class="page__inner">
+      <div class="page__hd">
+         <p class="page__title">Сертифікати</p>
+         <div class="page__icon page__icon--left page__close-icon">
+            <a href="../index.html"><i class="bi bi-arrow-left"></i></a>
+         </div>
+      </div>
+      <div class="page__bd">
+         <div class='gall gall--books'>
+            <div class="gall__inner">
+               <div class="gall__hd">
+                   <!-- <div class="gall__filters">
+                     <p class="gall__filter is-active bg-active-main">Всі</p>
+                     <p class="gall__filter bg-active-eng">English</p>
+                     <p class="gall__filter bg-active-deu">Deutsch</p>
+                  </div>  -->
+               </div>
+               <div class="gall__bd">
+                  <div class="gall__item gall-item" onclick="zoom('1')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/anna-bog/certificates/1.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Goete B2</p>
+                     <p class="gall-item__descr">Анна Богуцька</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('2')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/anna-bog/certificates/2.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Goete B2</p>
+                     <p class="gall-item__descr">Анна Богуцька</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('3')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/nastya-z/certificates/1.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Goete B2</p>
+                     <p class="gall-item__descr">Анастасія Завальнюк</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('4')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/nastya-z/certificates/2.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Goete B2</p>
+                     <p class="gall-item__descr">Анастасія Завальнюк</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('5')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/sasha-tr/certificates/1.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Goete B2</p>
+                     <p class="gall-item__descr">Олександра Труш</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('6')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/nastya-pr/certificates/1.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Goete B2</p>
+                     <p class="gall-item__descr">Анастасія Прищепа</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('7')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/marina-k/marina-k.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Goete B2</p>
+                     <p class="gall-item__descr">Марина корнійчук</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="zoomed zoomed--single-photo" data-name='1'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-photo multilayer">
+               <img src="../storage/students/anna-bog/certificates/1.jpg" alt="" class="multilayer__main"/>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--single-photo" data-name='2'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-photo multilayer">
+               <img src="../storage/students/anna-bog/certificates/2.jpg" alt="" class="multilayer__main"/>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--single-photo" data-name='3'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-photo multilayer">
+               <img src="../storage/students/nastya-z/certificates/1.jpg" alt="" class="multilayer__main"/>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--single-photo" data-name='4'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-photo multilayer">
+               <img src="../storage/students/nastya-z/certificates/2.jpg" alt="" class="multilayer__main"/>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--single-photo" data-name='5'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-photo multilayer">
+               <img src="../storage/students/sasha-tr/certificates/1.jpg" alt="" class="multilayer__main"/>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--single-photo" data-name='6'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-photo multilayer">
+               <img src="../storage/students/nastya-pr/certificates/1.jpg" alt="" class="multilayer__main"/>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--single-photo" data-name='7'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-photo multilayer">
+               <img src="../storage/students/marina-k/marina-k.jpg" alt="" class="multilayer__main"/>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+</div>
+
+
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+      <script>
+         function closeZoom(){
+            document.querySelectorAll('.zoomed').forEach(elem=>{
+               $(elem).fadeOut('fast');
+            })
+         }
+
+         function zoom(name){
+            $('[data-name="'+name+'"]').fadeIn('fast');
+         }
+      </script>
+
+
+   <script>
+          window.onload = function(){
+        //hide the preloader
+        setTimeout(function(){
+         $(".loader").hide()
+         // document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
+        }, 500);
+    }
+   </script>
+
+
+</body>
+
+</html>

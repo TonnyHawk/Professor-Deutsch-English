@@ -1,0 +1,1012 @@
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="format-detection" content="telephone=no">
+
+   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+   <link rel="manifest" href="favicon/site.webmanifest">
+
+   <link rel="stylesheet" href="css/first-loaded.css">
+   <link rel="stylesheet" href="css/main.css">
+   <title>Школа іноземних мов Professor Deutsch & English</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+   <style>
+      .zoomed{display:none;}
+      .page{z-index: 1;}
+      .loader{z-index: 2;}
+   </style>
+</head>
+<body>
+   <div class="loader">
+      <div class="loader__bg"></div>
+      <div class="loader__content">
+         <div class="loader__spinner spinner loadingio-spinner-rolling-c55z9beacq">
+            <div class="ldio-tam1aegang">
+               <div></div>
+            </div>
+         </div>
+      </div>
+   </div>
+<div class="page" id="page-books">
+   <div class="page__inner">
+      <div class="page__hd">
+         <p class="page__title">Галерея</p>
+         <div class="page__icon page__icon--left page__close-icon">
+            <a href="../index.html"><i class="bi bi-arrow-left"></i></a>
+         </div>
+      </div>
+      <div class="page__bd">
+         <div class='gall gall--photos'>
+            <div class="gall__inner">
+               <div class="gall__hd">
+                   <!-- <div class="gall__filters">
+                     <p class="gall__filter is-active bg-active-main">Всі</p>
+                     <p class="gall__filter bg-active-eng">English</p>
+                     <p class="gall__filter bg-active-deu">Deutsch</p>
+                  </div>  -->
+               </div>
+               <div class="gall__bd">
+                  <div class="gall__item gall-item" onclick="zoom('Альбіна Мартихіна')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/albina-mar/albina-mar.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Альбіна Мартихіна</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Олексіюк Аліна')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/alina-o/alina-o.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Олексіюк Аліна</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Жук Дмитро')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/dima-zh/dima-zh.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Жук Дмитро</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Жагаріна Ія')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/iya-zh/iya-zh.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Жагаріна Ія</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Громадко Маргарита')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/margarita-gr/margarita-gr.JPG' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Громадко Маргарита</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Корнійчук Марина')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/marina-k/marina-k.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Корнійчук Марина</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Мікулік Марта')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/marta-mik/marta-mik.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Мікулік Марта</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Шабо Мія (Czabo Mia)')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/mia-st/mia-st.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Шабо Мія (Czabo Mia)</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Прищепа Анастасія')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/nastya-pr/nastya-pr.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Прищепа Анастасія</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Степанюк Анастасія')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/nastya-st/nastya-st.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Степанюк Анастасія</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Завальнюк Анастасія')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/nastya-z/nastya-z.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Завальнюк Анастасія</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Романів Назар')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/nazar-r/nazar-r.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Романів Назар</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Вашенюк Ольга')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/olya-w/olya-w.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Вашенюк Ольга</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Труш Олександра')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/sasha-tr/sasha-tr.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Труш Олександра</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Шабо Чаба (Czabo Scaba)')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/scaba-sz/scaba-sz.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Шабо Чаба (Czabo Scaba)</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Шеремет Тарас')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/taras-sh/taras-sh.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Шеремет Тарас</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Обштир Власта')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/vlasta-ob/vlasta-ob.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Обштир Власта</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Альбіна Мартихіна')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/albina-mar/albina-mar.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Альбіна Мартихіна</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Альбіна Мартихіна')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/albina-mar/albina-mar.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Альбіна Мартихіна</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Альбіна Мартихіна')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/albina-mar/albina-mar.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Альбіна Мартихіна</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Альбіна Мартихіна')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/albina-mar/albina-mar.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Альбіна Мартихіна</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+                  <div class="gall__item gall-item" onclick="zoom('Альбіна Мартихіна')">
+                     <div class="gall-item__photo">
+                        <img src='../storage/students/albina-mar/albina-mar.jpg' alt="" class="gall-item__img"/>
+                     </div>
+                     <p class="gall-item__title">Альбіна Мартихіна</p>
+                     <p class="gall-item__descr">Professor Deutsch</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Альбіна Мартихіна'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/albina-mar/albina-mar.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Альбіна Мартихіна</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B1</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчалася у школі «Professor Deutsch&English» з 2005 по 2007
+                     рр. Отримала ступінь бакалавра у Тюбінгенському університеті (Німеччина) по спеціальності
+                     «Германістика та Інтернаціональні літератури», на разі – студентка-магістрантка Тюбінгенського
+                     університету (Німеччина) спеціальності «Літературні та культурні теорії». Працює менеджером на фірмі
+                     DKMS у м. Штутґарт (Німеччина).</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Олексіюк Аліна'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/alina-o/alina-o.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Олексіюк Аліна</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B2</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчалася у школі «Professor Deutsch&English» з 2014 по
+                     2015 рр. 2015 р. успішно склала екзамен з німецької мови в Гете-інституті в Києві та отримала
+                     Goethe-Zertifikat рівня B2. Результат ЗНО з німецької мови (2015 р.) – 194. На разі
+                     студентка-магістрантка Київського національного університету імені Тараса Шевченка спеціальності
+                     «Німецька мова та література».</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Жук Дмитро'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/dima-zh/dima-zh.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Жук Дмитро</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B2</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчається у школі «Professor Deutsch&English» з 2018 р.
+                     Наразі – студент Національного університету «Києво-Могилянська академія», спеціальність «Фінанси».</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Жагаріна Ія'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/iya-zh/iya-zh.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Жагаріна Ія</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B2</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчалася у школі «Professor Deutsch&English» з 2017 по
+                     2019 рр. Переможець міської та обласної олімпіад з німецької мови 2018 та 2019 рр. 2018 р. успішно
+                     склала екзамен з німецької мови в Гете-інституті у м. Київ та отримала Goethe-Zertifikat рівня B2.
+                     Студентка Національного медичного університету імені О. О. Богомольця (м. Київ) спеціальності
+                     «Лікарська справа».</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Громадко Маргарита'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/margarita-gr/margarita-gr.JPG" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Громадко Маргарита</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B1</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчалася у школі «Professor Deutsch&English» з
+                     2017 по 2019 рр. На разі – студентка Українського католицького університету, спеціальність «Історія і
+                     археологія».</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Корнійчук Марина'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/marina-k/marina-k.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Корнійчук Марина</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B2</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчалася у школі «Professor Deutsch&English» з 2017
+                     по 2018 рр. 2018 р. успішно склала екзамен з німецької мови в Гете-інституті в Києві та отримала
+                     Goethe-Zertifikat рівня B2. Результат ЗНО з німецької мови (2018 р.) – 194. 2019 р. блискуче склала
+                     екзамен з німецької мови в Гете-інституті в м. Мюнхен (Німеччина) та отримала Goethe-Zertifikat рівня
+                     С1. Закінчила Studienkolleg у м. Гамбург (Німеччина), на разі студентка Гамбурзького університету
+                     (Німеччина) по спеціальності «Медицина».</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Мікулік Марта'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/marta-mik/marta-mik.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Мікулік Марта</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B1</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчалася у школі «Professor Deutsch&English» з 2018 по
+                     2020 рр. 2019 р. успішно склала екзамен з німецької мови в Гете-інституті в Києві та отримала
+                     Goethe-Zertifikat рівня B1. На разі студентка Віденського університету (Австрія) спеціальності
+                     «Психологія».</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Шабо Мія (Czabo Mia)'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/mia-st/mia-st.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Шабо Мія (Czabo Mia)</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B1</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчалася у школі «Professor Deutsch&English» з
+                     2011 по 2013 рр. Переможець міської та обласної олімпіад з німецької мови та міських та обласних
+                     етапів конкурсів МАН з німецької мови 2012 та 2013 рр. Результат ЗНО з німецької мови (2013 р.) – 197.
+                     Закінчила Львівський Національний університет імен Івана Франка за спеціальністю «Німецька мова і
+                     література». Учасниця програми Erasmus+ в університеті м. Ерланген (Німеччина). Приватний підприємець,
+                     власник косметичного салону у м. Будапешт (Угорщина). Продовжує навчатися у школі «Professor
+                     Deutsch&English».</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Прищепа Анастасія'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/nastya-pr/nastya-pr.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Прищепа Анастасія</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B2</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчалася у школі «Professor Deutsch&English» з 2016
+                     по 2020 рр. Переможець міської, обласної та Всеукраїнської олімпіади з німецької мови 2017, 2018, 2019
+                     та 2020 рр. 2018 р. успішно склала екзамен з німецької мови в Гете-інсти навчалася у школі «Professor
+                     Deutsch&English» з 2016 по 2020 рр. туті в Києві та отримала Goethe-Zertifikat рівня B2. Результати
+                     ЗНО (2020 р.) з німецької мови – 197 балів, з англійської – 197 балів. Студентка Національного
+                     університету «Києво-Могилянська академія», спеціальність «Фінанси».</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Степанюк Анастасія'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/nastya-st/nastya-st.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Степанюк Анастасія</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B1</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчалася у школі «Professor Deutsch&English» з
+                     2016 по 2020 рр. 2019 р. успішно склала екзамен з німецької мови в Гете-інституті в Луцьку та отримала
+                     Goethe-Zertifikat рівня B1. Учасниця програми Au-pair та FSJ у м. Штутґарт (Німеччина).</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Завальнюк Анастасія'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/nastya-z/nastya-z.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Завальнюк Анастасія</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge">
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B2</p>
+                        </div>
+                        <div class="talk-buble__badge badge">
+                           <p class="badge__main-text">Англійська</p>
+                           <p class="badge__aside-text">B2</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчалася у школі «Professor Deutsch&English» з
+                     2016 по 2019 рр. Переможець міської, обласної та Всеукраїнської олімпіади з німецької мови 2016, 2017,
+                     2018 та 2019 рр. 2018 р. успішно склала екзамен з німецької мови в Гете-інституті в Києві та отримала
+                     Goethe-Zertifikat рівня B2. Результати ЗНО (2019 р.) з німецької мови – 195 балів, з англійської – 191
+                     бал. На разі студентка Волинського Національного університету імені Лесі Українки спеціальності
+                     Філологія. Мова і література (англійська, німецька), переклад.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Романів Назар'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/nazar-r/nazar-r.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Романів Назар</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B1</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчався у школі «Professor Deutsch&English» з 2014 по
+                     2015 рр. 2015 р. Переможець міської оліміпіади з німецької мови 2015 р. (І місце). Навчався в
+                     Українському католицькому університеті, на разі студент Національного університету водного
+                     господарства та природокористування.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Вашенюк Ольга'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/olya-w/olya-w.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Вашенюк Ольга</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B1</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчалася у школі «Professor Deutsch&English» з 2016 по
+                     2020 рр. Переможець міської олімпіади з німецької мови 2019 р. (ІІІ місце). 2019 р. успішно склала
+                     екзамен з німецької мови в Гете-інституті в Луцьку та отримала Goethe-Zertifikat рівня B1. Студентка
+                     Київського національного університету імені Тараса Шевченка, спеціальність "Соціологія".</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Труш Олександра'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/sasha-tr/sasha-tr.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Труш Олександра</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B2</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчалася у школі «Professor Deutsch&English» з 2015
+                     по 2018 рр. Переможець міської олімпіади з німецької мови 2017 р. 2017 р. успішно склала екзамен з
+                     німецької мови в Гете-інституті в Києві та отримала Goethe-Zertifikat рівня B2. 2019 р. успішно склала
+                     TestDaF у м. Вроцлав (Польща). На разі студентка Університету прикладних технологій у м. Франкфурт-на
+                     Майні (Німеччина).</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Шабо Чаба (Czabo Scaba)'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/scaba-sz/scaba-sz.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Шабо Чаба (Czabo Scaba)</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B1</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчається у школі «Professor Deutsch&English»
+                     з 2019 р. Закінчив Будапештський університет (Угорщина) по спеціальності «Комп`ютерна інженерія».
+                     Учасник програми Erasmus+ в університеті м. Ерланген (Німеччина). На разі працює
+                     інженером-програмістом на фірмі ExxonMobil у м. Будапешт (Угорщина).</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Шеремет Тарас'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/taras-sh/taras-sh.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Шеремет Тарас</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B2</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчався у школі «Professor Deutsch&English» з 2017 по
+                     2018 рр. 2018 р. успішно склав екзамен з німецької мови в Гете-інституті в Києві та отримав
+                     Goethe-Zertifikat рівня B2. 2019 р. блискуче склав екзамен з німецької мови в мовній школі «F&U
+                     Academy of Languages» у Берліні (Німеччина) та отримав сертифікат знань з німецької мови рівня С1.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Обштир Власта'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/vlasta-ob/vlasta-ob.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Обштир Власта</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B1</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчалася у школі «Professor Deutsch&English» з 2019 по
+                     2020 рр. На разі студентка Віденського університету (Австрія) зі спеціальності «Міжнародні
+                     комунікації».</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Альбіна Мартихіна'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/albina-mar/albina-mar.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Альбіна Мартихіна</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B1</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчалася у школі «Professor Deutsch&English» з 2005 по 2007
+                     рр. Отримала ступінь бакалавра у Тюбінгенському університеті (Німеччина) по спеціальності
+                     «Германістика та Інтернаціональні літератури», на разі – студентка-магістрантка Тюбінгенського
+                     університету (Німеччина) спеціальності «Літературні та культурні теорії». Працює менеджером на фірмі
+                     DKMS у м. Штутґарт (Німеччина).</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Альбіна Мартихіна'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/albina-mar/albina-mar.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Альбіна Мартихіна</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B1</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчалася у школі «Professor Deutsch&English» з 2005 по 2007
+                     рр. Отримала ступінь бакалавра у Тюбінгенському університеті (Німеччина) по спеціальності
+                     «Германістика та Інтернаціональні літератури», на разі – студентка-магістрантка Тюбінгенського
+                     університету (Німеччина) спеціальності «Літературні та культурні теорії». Працює менеджером на фірмі
+                     DKMS у м. Штутґарт (Німеччина).</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Альбіна Мартихіна'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/albina-mar/albina-mar.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Альбіна Мартихіна</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B1</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчалася у школі «Professor Deutsch&English» з 2005 по 2007
+                     рр. Отримала ступінь бакалавра у Тюбінгенському університеті (Німеччина) по спеціальності
+                     «Германістика та Інтернаціональні літератури», на разі – студентка-магістрантка Тюбінгенського
+                     університету (Німеччина) спеціальності «Літературні та культурні теорії». Працює менеджером на фірмі
+                     DKMS у м. Штутґарт (Німеччина).</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Альбіна Мартихіна'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/albina-mar/albina-mar.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Альбіна Мартихіна</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B1</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчалася у школі «Professor Deutsch&English» з 2005 по 2007
+                     рр. Отримала ступінь бакалавра у Тюбінгенському університеті (Німеччина) по спеціальності
+                     «Германістика та Інтернаціональні літератури», на разі – студентка-магістрантка Тюбінгенського
+                     університету (Німеччина) спеціальності «Літературні та культурні теорії». Працює менеджером на фірмі
+                     DKMS у м. Штутґарт (Німеччина).</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+   <div class="zoomed zoomed--gallery-photo" data-name='Альбіна Мартихіна'>
+      <div class="zoomed__inner">
+         <div class="zoomed__hd">
+            <div class="zoomed__action-icon zoomed__action-icon--close" onclick="closeZoom()">
+               <i class="bi bi-x"></i>
+            </div>
+         </div>
+         <div class="zoomed__bd">
+            <div class="zoomed__main-content">
+               <div class="zoomed__main-photo multilayer">
+                  <img src="../storage/students/albina-mar/albina-mar.jpg" alt="" class="multilayer__main"/>
+               </div>
+               <div class="zoomed__main-info talk-buble">
+                  <div class="talk-buble__header">
+                     <p class="talk-buble__title">Альбіна Мартихіна</p>
+                  </div>
+                  <div class="talk-buble__pocket">
+                     <div class="talk-buble__badges">
+                        <div class="talk-buble__badge badge" key={student.id}>
+                           <p class="badge__main-text">Німецька</p>
+                           <p class="badge__aside-text">B1</p>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="talk-buble__descr">Навчалася у школі «Professor Deutsch&English» з 2005 по 2007
+                     рр. Отримала ступінь бакалавра у Тюбінгенському університеті (Німеччина) по спеціальності
+                     «Германістика та Інтернаціональні літератури», на разі – студентка-магістрантка Тюбінгенського
+                     університету (Німеччина) спеціальності «Літературні та культурні теорії». Працює менеджером на фірмі
+                     DKMS у м. Штутґарт (Німеччина).</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="zoomed__bg"></div>
+   </div>
+</div>
+
+
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+      <script>
+         function closeZoom(){
+            document.querySelectorAll('.zoomed').forEach(elem=>{
+               $(elem).fadeOut('fast');
+            })
+         }
+
+         function zoom(name){
+            $('[data-name="'+name+'"]').fadeIn('fast');
+         }
+      </script>
+
+
+   <script>
+          window.onload = function(){
+        //hide the preloader
+        setTimeout(function(){
+         $(".loader").hide()
+         // document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
+        }, 500);
+    }
+   </script>
+
+
+</body>
+
+</html>
