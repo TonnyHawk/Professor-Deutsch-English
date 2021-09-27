@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV || 'development'
 
-module.exports = (env) => {
+module.exports = [(env) => {
    console.log('mode: ', env.production == true ? 'production' : 'development'); // true
    return {
       mode: env.production == true ? 'production' : 'development',
@@ -58,4 +58,46 @@ module.exports = (env) => {
          topLevelAwait: true,
        },
    }
-}
+},
+{
+   entry: './src/js/main-addons.js',
+   output: {
+      path: path.resolve(__dirname, "dist"),
+      filename: 'js/addons.js',
+   },
+   externals: {
+      jquery: 'jQuery',
+   },
+},
+{
+   entry: './src/js/main-react-stuff.js',
+   output: {
+      path: path.resolve(__dirname, "dist"),
+      filename: 'js/react-stuff.js',
+   },
+   externals: {
+      jquery: 'jQuery',
+   },
+   module: {
+      rules: [
+        {
+          test: /\.?js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: "babel-loader",
+            options: {
+               presets: ['@babel/preset-env', '@babel/preset-react']
+             }
+          }
+        },
+        {
+         test: /\.css$/i,
+         use: ["style-loader", "css-loader"],
+       },
+      ]
+    },
+    experiments: {
+      topLevelAwait: true,
+    },
+},
+]

@@ -78,7 +78,10 @@
             top: calc(75vh - 13rem);
          }
          @include media-breakpoint-up(lg){
-            top: calc(50vh - 14.65rem);
+            top: calc(50vh - 13rem);
+            left: calc(75vw - 22.5vw);
+         }
+         @include media-breakpoint-up(xl){
             left: calc(75vw - 24.55rem);
          }
       }
@@ -99,16 +102,16 @@
       font-family: Gilroy;
       font-style: normal;
       font-weight: normal;
-      font-size: 2.1rem;
-      line-height: 2.4rem;
+      font-size: 1.9rem;
+      // line-height: 2.4rem;
 
       @include media-breakpoint-up(md) {
-         font-size: 2.9rem;
-         line-height: 3.6rem;
+         font-size: 3.3vw;
+         // line-height: 3.6rem;
       }
 
       @include media-breakpoint-up(lg) {
-         font-size: 3.4rem;
+         font-size: 3rem;
          line-height: 4.3rem;
       }
    }
@@ -125,18 +128,18 @@
 
       letter-spacing: 0.09rem;
       text-transform: uppercase;
-      margin: 1.5rem 0 3rem;
+      margin: 2.1rem 0 3rem;
 
       @include media-breakpoint-up(md) {
-         font-size: 5.7rem;
+         font-size: 8vw;
          line-height: 6.7rem;
-         margin: 3rem 0 5rem;
+         margin: 2.5vw 5vw;
       }
 
       @include media-breakpoint-up(lg) {
          font-size: 7rem;
          line-height: 8.2rem;
-         margin: 3.5rem 0 6.5rem;
+         margin: 3rem 0 5rem;
       }
    }
 
@@ -145,28 +148,27 @@
    &__action {
       font-family: Gilroy;
       font-style: normal;
-      font-weight: 900;
-      font-size: 1.7rem;
+      font-weight: 700;
+      font-size: 1.5rem;
       line-height: 2.2rem;
       text-align: center;
       width: max-content;
       cursor: pointer;
 
-      padding: 2rem 5rem;
+      padding: 1.4rem 2.3rem;
       background: #F09815;
       border: 0.3rem solid #F09815;
       box-sizing: border-box;
       border-radius: 0.9rem;
 
       @include media-breakpoint-up(md) {
-         font-size: 2.2rem;
+         font-size: 2rem;
          line-height: 2.8rem;
-
-         padding: 2.5rem 5.5rem;
+         padding: 1.9rem 4rem;
       }
 
       @include media-breakpoint-up(lg) {
-         padding: 2.5rem 7rem;
+         padding: 2.2rem 5rem;
       }
    }
 
