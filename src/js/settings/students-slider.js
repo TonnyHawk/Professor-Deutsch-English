@@ -49,7 +49,7 @@ if (response.ok) { // если HTTP-статус в диапазоне 200-299
 alert("Ошибка подгрузки студентов (HTTP): " + response.status);
 }
 
-ReactDOM.render(
-    <StudentsSlider students={students}/>,
-  document.getElementById('students')
-);
+// ReactDOM.render(
+//     <StudentsSlider students={students}/>,
+//   document.getElementById('students')
+// );

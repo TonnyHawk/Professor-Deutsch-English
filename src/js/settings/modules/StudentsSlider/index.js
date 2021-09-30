@@ -180,8 +180,8 @@ class StudentsSlider extends Component {
          <div class="container">
             <div class="section__header">
                <h1 class="section__title">Наші учні</h1>
-               <div class="section__expand-btn feature hover-circled" onClick={()=>linkTo()}>
-               {/* <div class="section__expand-btn feature hover-circled" onClick={()=>this.toggleGallery('stud', true)}> */}
+               {/* <div class="section__expand-btn feature hover-circled" onClick={()=>linkTo()}> */}
+               <div class="section__expand-btn feature hover-circled" onClick={()=>this.toggleGallery('stud', true)}>
                   <div class="feature__icon hover-circled__icon"><i class="bi bi-collection"></i></div>
                   <p class="feature__text">Більше</p>
                </div>
