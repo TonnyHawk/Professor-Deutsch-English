@@ -1,9 +1,40 @@
 
-
+<form action="pages/gallery.html" style='display: none' id='link-gallery' method='post'>
+<input type="hidden" name='l'>
+</form>
+<form action="pages/certificates.html" style='display: none' id='link-certificates' method='post'>
+<input type="hidden" name='l'>
+</form>
 
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
+   <script>
+      let loc = document.location.href;
+      var g_Mode = loc[loc.indexOf('l=') + 2]
+      console.log(g_Mode);
+
+      function linkTo(address) {
+         if(address == 'cert'){
+            let formId = "#link-certificates";
+            document.querySelector(formId+" input[name='l']").value = g_Mode;
+            document.querySelector(formId).submit();
+         }
+      }
+
+      if(g_Mode){
+         document.querySelector('.intro').style.display = 'none';
+         if(g_Mode === 'g'){
+            console.log('hiding E');
+            document.querySelector('[data-selector="tab-german"]').style.display = 'block';
+            document.querySelector('[data-selector="tab-english"]').style.display = 'none';
+         } else{
+            console.log('hiding G');
+            document.querySelector('[data-selector="tab-english"]').style.display = 'block';
+            document.querySelector('[data-selector="tab-german"]').style.display = 'none';
+         }
+      }
+   </script>
    <script src="js/bundle.js"></script>
    <script async src="js/addons.js"></script>
    <script async src="js/react-stuff.js"></script>

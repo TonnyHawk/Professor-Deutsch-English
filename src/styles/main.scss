@@ -44,8 +44,11 @@ p {
    font-family: Roboto;
    font-style: normal;
    font-weight: normal;
-   font-size: 1.8rem;
+   font-size: 1.5rem;
    line-height: 168.18%;
+   @include media-breakpoint-up(lg){
+      font-size: 1.8rem;
+   }
 }
 
 h1 {

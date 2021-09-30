@@ -21,7 +21,9 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
 <link rel="stylesheet" href="css/main.css">
 
-
+<!-- <style>
+   .loader, .intro{display: none;}
+</style> -->
    <script>
 
 // import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js';
@@ -37,7 +39,6 @@
 //       };
 
 // var app = initializeApp(firebaseConfig);
-    
     
     </script>
 </head>
@@ -270,7 +271,7 @@
    <div class="container">
       <div class="section__header">
          <h1 class="section__title">Наші учні</h1>
-         <div class="section__expand-btn feature hover-circled">
+         <div class="section__expand-btn feature hover-circled" onclick="linkTo('pages/gallery.html')">
             <div class="feature__icon hover-circled__icon"><i class="bi bi-collection"></i></div>
             <p class="feature__text">Більше</p>
          </div>
@@ -838,7 +839,7 @@
          <div class="col-12 col-lg-5">
             <div class="certificates__info">
                <p class="certificates__title">Наш спільний успіх підтверджено низкою сертифікатів</p>
-               <a href='pages/certificates.html' class="certificates__my-btn">Переглянути всі</a>
+               <p class="certificates__my-btn">Переглянути всі</p>
             </div>
          </div>
       </div>
@@ -2121,17 +2122,17 @@
 
    <section class="intro" id='intro'>
       <div class="intro__screen intro__screen--left ibg" data-intro='g'>
-         <img src="img/preloader/5.jpg" alt="">
+         <img src="img/preloader/a8.jpg" alt="">
       </div>
       <div class="intro__screen intro__screen--right ibg" data-intro='e'>
-         <img src="img/preloader/a9.jpg" alt="">
+         <img src="img/preloader/1.jpg" alt="">
       </div>
-      <div class="intro__info intro__info--first" data-intro='g'>
+      <div class="intro__info intro__info--seccond" data-intro='g'>
         <p class="intro__info-pretitle">Мені цікава</p>
         <p class="intro__info-title">Німецька</p>
         <p class="intro__action intro__action--left" data-mode='g'>Обрати мову</p>
       </div>
-      <div class="intro__info intro__info--seccond" data-intro='e'>
+      <div class="intro__info intro__info--first" data-intro='e'>
         <p class="intro__info-pretitle">Мені цікава</p>
         <p class="intro__info-title">Англійська</p>
         <p class="intro__action intro__action--right" data-mode='e'>Обрати мову</p>
@@ -2355,11 +2356,42 @@
    </div> -->
 
    
-
+<form action="pages/gallery.html" style='display: none' id='link-gallery' method='post'>
+<input type="hidden" name='l'>
+</form>
+<form action="pages/certificates.html" style='display: none' id='link-certificates' method='post'>
+<input type="hidden" name='l'>
+</form>
 
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
+   <script>
+      let loc = document.location.href;
+      var g_Mode = loc[loc.indexOf('l=') + 2]
+      console.log(g_Mode);
+
+      function linkTo(address) {
+         if(address == 'cert'){
+            let formId = "#link-certificates";
+            document.querySelector(formId+" input[name='l']").value = g_Mode;
+            document.querySelector(formId).submit();
+         }
+      }
+
+      if(g_Mode){
+         document.querySelector('.intro').style.display = 'none';
+         if(g_Mode === 'g'){
+            console.log('hiding E');
+            document.querySelector('[data-selector="tab-german"]').style.display = 'block';
+            document.querySelector('[data-selector="tab-english"]').style.display = 'none';
+         } else{
+            console.log('hiding G');
+            document.querySelector('[data-selector="tab-english"]').style.display = 'block';
+            document.querySelector('[data-selector="tab-german"]').style.display = 'none';
+         }
+      }
+   </script>
    <script src="js/bundle.js"></script>
    <script async src="js/addons.js"></script>
    <script async src="js/react-stuff.js"></script>

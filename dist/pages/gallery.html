@@ -38,8 +38,8 @@
    <div class="page__inner">
       <div class="page__hd">
          <p class="page__title">Галерея</p>
-         <div class="page__icon page__icon--left page__close-icon">
-            <a href="../index.html"><i class="bi bi-arrow-left"></i></a>
+         <div class="page__icon page__icon--left page__close-icon" onclick='linkBack()'>
+            <i class="bi bi-arrow-left"></i>
          </div>
       </div>
       <div class="page__bd">
@@ -170,41 +170,6 @@
                         <img src='../storage/students/vlasta-ob/vlasta-ob.jpg' alt="" class="gall-item__img"/>
                      </div>
                      <p class="gall-item__title">Обштир Власта</p>
-                     <p class="gall-item__descr">Professor Deutsch</p>
-                  </div>
-                  <div class="gall__item gall-item" onclick="zoom('Альбіна Мартихіна')">
-                     <div class="gall-item__photo">
-                        <img src='../storage/students/albina-mar/albina-mar.jpg' alt="" class="gall-item__img"/>
-                     </div>
-                     <p class="gall-item__title">Альбіна Мартихіна</p>
-                     <p class="gall-item__descr">Professor Deutsch</p>
-                  </div>
-                  <div class="gall__item gall-item" onclick="zoom('Альбіна Мартихіна')">
-                     <div class="gall-item__photo">
-                        <img src='../storage/students/albina-mar/albina-mar.jpg' alt="" class="gall-item__img"/>
-                     </div>
-                     <p class="gall-item__title">Альбіна Мартихіна</p>
-                     <p class="gall-item__descr">Professor Deutsch</p>
-                  </div>
-                  <div class="gall__item gall-item" onclick="zoom('Альбіна Мартихіна')">
-                     <div class="gall-item__photo">
-                        <img src='../storage/students/albina-mar/albina-mar.jpg' alt="" class="gall-item__img"/>
-                     </div>
-                     <p class="gall-item__title">Альбіна Мартихіна</p>
-                     <p class="gall-item__descr">Professor Deutsch</p>
-                  </div>
-                  <div class="gall__item gall-item" onclick="zoom('Альбіна Мартихіна')">
-                     <div class="gall-item__photo">
-                        <img src='../storage/students/albina-mar/albina-mar.jpg' alt="" class="gall-item__img"/>
-                     </div>
-                     <p class="gall-item__title">Альбіна Мартихіна</p>
-                     <p class="gall-item__descr">Professor Deutsch</p>
-                  </div>
-                  <div class="gall__item gall-item" onclick="zoom('Альбіна Мартихіна')">
-                     <div class="gall-item__photo">
-                        <img src='../storage/students/albina-mar/albina-mar.jpg' alt="" class="gall-item__img"/>
-                     </div>
-                     <p class="gall-item__title">Альбіна Мартихіна</p>
                      <p class="gall-item__descr">Professor Deutsch</p>
                   </div>
                </div>
@@ -1004,6 +969,13 @@
          // document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
         }, 500);
     }
+
+    let loc = document.location.href;
+      let lang = loc[loc.indexOf('l=') + 2]
+
+      function linkBack() {
+         document.location.href = '../index.html?l=' + lang;
+      }
    </script>
 
 
