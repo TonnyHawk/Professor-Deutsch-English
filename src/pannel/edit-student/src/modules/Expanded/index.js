@@ -37,10 +37,10 @@ class Expanded extends Component {
          if(e.target.getAttribute('data-name')){ // if we need to change select pair
                key = e.target.getAttribute('data-name')
                this.setState(state=>{
-                  state[key][index] = {
-                     [name]: value
-                  } 
+                  state[key][index][name] = value
                   return state
+               }, ()=>{
+                  console.log(this.state[key]);
                })
          } else{ // we have a simple select
             this.setState(state=>{
@@ -127,27 +127,27 @@ class Expanded extends Component {
             professor: this.state.professor,
             id: this.state.id
          }
+         console.log(human);
 
-         let formInfo = new FormData(this.form.current)
+         let formInfo = new FormData(this.form.current) // to read info from our form
+         let reqData = new FormData(); // this will be send to the server
          if(formInfo.get('photo').size > 0){ // if we added a new photo to the form
-            human.photo = formInfo.get('photo')
+            let photo = formInfo.get('photo')
+            reqData.set('photo', photo, human.id)
          }
          if(formInfo.get('video').size > 0){ // if we added a new video to the form
-            human.video = formInfo.get('video')
+            let video = formInfo.get('video')
+            reqData.set('video', photo, human.id)
          }
          // alert('data is ready to deploy')
-         // let response = await fetch('http://127.0.0.1:3000/students', {
-         //    method: 'POST',
-         //    headers: {
-         //      'Content-Type': 'application/json;charset=utf-8'
-         //    },
-         //    body: JSON.stringify(human)
-         //  });
 
-          let reqData = new FormData();
-          let photo = formInfo.get('photo')
-          reqData.set('photo', photo, human.id)
-          reqData.set('id', photo, human.id)
+         // for(let key in human){
+         //    if(key !== 'photo' && key !== 'video'){
+         //       reqData.set(key, human[key])
+         //    }
+         // }
+         reqData.set('info', JSON.stringify(human))
+
          let response = await fetch('http://127.0.0.1:3000/students', {
             method: 'POST',
             headers: {
@@ -156,10 +156,10 @@ class Expanded extends Component {
             body: reqData
           });
           
-          let result = await response.text();
+          let result = await response.json();
           console.log(result);
 
-         //  this.props.funcs.deselectHuman()
+          this.props.funcs.deselectHuman()
       }
    }
    render() {

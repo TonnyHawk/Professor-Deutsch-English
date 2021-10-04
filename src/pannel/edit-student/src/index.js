@@ -37,6 +37,14 @@ class App extends Component {
       this.setState({search: e.target.value})
    }
 
+   // updateSingleHuman(newElem){
+   //    let index = humans.indexOf(this.state.selectedHuman)
+   //    this.setState(state=>{
+   //       state.humans[index] = newElem
+   //       return state
+   //    })
+   // }
+
    async loadHumans(){
       let students = await getCollection('s')
       // let teachers = await getCollection('t')
