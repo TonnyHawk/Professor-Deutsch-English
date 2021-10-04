@@ -137,15 +137,10 @@ class Expanded extends Component {
          }
          if(formInfo.get('video').size > 0){ // if we added a new video to the form
             let video = formInfo.get('video')
-            reqData.set('video', photo, human.id)
+            reqData.set('video', video, human.id)
          }
          // alert('data is ready to deploy')
 
-         // for(let key in human){
-         //    if(key !== 'photo' && key !== 'video'){
-         //       reqData.set(key, human[key])
-         //    }
-         // }
          reqData.set('info', JSON.stringify(human))
 
          let response = await fetch('http://127.0.0.1:3000/students', {
@@ -156,7 +151,7 @@ class Expanded extends Component {
             body: reqData
           });
           
-          let result = await response.json();
+          let result = await response.text();
           console.log(result);
 
           this.props.funcs.deselectHuman()
