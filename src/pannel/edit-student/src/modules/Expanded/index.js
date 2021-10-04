@@ -127,17 +127,16 @@ class Expanded extends Component {
             professor: this.state.professor,
             id: this.state.id
          }
-         console.log(human);
 
          let formInfo = new FormData(this.form.current) // to read info from our form
          let reqData = new FormData(); // this will be send to the server
          if(formInfo.get('photo').size > 0){ // if we added a new photo to the form
             let photo = formInfo.get('photo')
-            reqData.set('photo', photo, human.id)
+            reqData.set('photo', photo, 'avatar.jpg')
          }
          if(formInfo.get('video').size > 0){ // if we added a new video to the form
             let video = formInfo.get('video')
-            reqData.set('video', video, human.id)
+            reqData.set('video', video, 'video.mp4')
          }
          // alert('data is ready to deploy')
 
