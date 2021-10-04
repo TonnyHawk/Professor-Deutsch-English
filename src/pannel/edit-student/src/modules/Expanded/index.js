@@ -113,6 +113,23 @@ class Expanded extends Component {
       console.log(this.state)
    }
 
+   async delStudent(){
+      let id = this.state.id
+      let reqData = new FormData()
+      reqData.set('id', id)
+      let response = await fetch('http://127.0.0.1:3000/students/del', {
+         method: 'POST',
+         headers: {
+            encType: 'multipart/form-data'
+          },
+         body: reqData
+       });
+       
+       let result = await response.text();
+       console.log(result);
+
+       this.props.funcs.deselectHuman()
+   }
    async sendData(){
       let validation = this.validate()
       if(!validation.access){
@@ -304,6 +321,7 @@ class Expanded extends Component {
          </div>
          <div class="row">
             <div class="col d-flex justify-content-end">
+               <div class="btn btn-danger btn-lg px-5 py-3 my-5 mx-3" id="submit" onClick={()=>this.delStudent()}>Видалити</div>
                <div class="btn btn-primary btn-lg px-5 py-3 my-5 mx-3" id="submit" onClick={()=>this.sendData()}>Додати</div>
                <div class="btn btn-success my-5 d-none" id="get" onClick={()=>this.showInfo()}>Get Info</div>
             </div>
