@@ -3,22 +3,24 @@ import ZoomedGal from '../ZoomedGal/index';
 
 class BooksGallery extends Component {
    render() {
-      const { student, mode, students, funcs, ...props } = this.props;
+      const { student, mode, students, funcs, certificates, ...props } = this.props;
 
       let galItems, winTitle, galleryClass;
 
       if(mode === 'cert'){
          winTitle = 'Сертифікати'
          galleryClass = 'gall--books'
-         galItems = student.certificates.map(elem=>{
-            let title = elem.name;
-            let photo = elem.file;
+         galItems = certificates.map(elem=>{
+            let title = elem.title;
+            let photo = elem.photo;
+            let owner = elem.owner;
             return (
             <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, photo)}}>
                <div class="gall-item__photo">
                   <img src={photo} alt="" class="gall-item__img"/>
                </div>
                <p class="gall-item__title">{title}</p>
+               <p class="gall-item__subtitle">{owner}</p>
             </div>
             )
          })
