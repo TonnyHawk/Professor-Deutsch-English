@@ -58,9 +58,9 @@ class App extends Component {
 
    filtering(str, arr){
       return arr.filter(elem=>{
-         elem.name = elem.name.toLowerCase()
+         let name = elem.name.toLowerCase()
          str = str.toLowerCase()
-         return elem.name.includes(str)
+         if(name.includes(str)) return elem
       })
    }
 
@@ -85,6 +85,7 @@ class App extends Component {
    }
    async deselectHuman(){
       let humans = await this.loadHumans()
+      console.log(humans);
       this.setState({
          selectedHuman: '',
          expandedPage: {state: false},

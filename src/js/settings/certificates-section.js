@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
    import React from "react";
-   import TeachersSlider from './modules/TeachersSlider';
+   import CertificatesSection from './modules/CertificatesSection';
 
 let students;
   let response = await fetch('http://127.0.0.1:3000/humans');
@@ -13,6 +13,6 @@ let students;
 
    
    ReactDOM.render(
-       <TeachersSlider humans={students}/>,
-     document.getElementById('teachers')
+       <CertificatesSection humans={students}/>,
+     document.getElementById('certificates')
    );

@@ -24,7 +24,7 @@ class Expanded extends Component {
          languages: human.languages,
          professor: human.professor,
          id: human._id,
-         role: 'student',
+         role: human.role,
          required: ['name', 'about']
       }
       this.form = React.createRef()
@@ -98,10 +98,7 @@ class Expanded extends Component {
          access: true,
          targets: []
       };
-      console.log('validation');
          this.state.required.forEach(elem=>{
-            console.log(elem);
-            console.log(this.state[elem]);
             if(this.state[elem] === ''){
                response.access = false
                response.targets.push(elem)
@@ -142,11 +139,13 @@ class Expanded extends Component {
          // data preprocessing
          let name = this.state.name.split(' ').map(elem=>{ // making each first letter a capital
             let newStr = elem;
-            newStr = elem[0].toUpperCase() + elem.slice(1, elem.length);
+            let letterIndex = 0
+            while(!elem[letterIndex].toUpperCase()){
+               letterIndex++
+            }
+            newStr = elem[letterIndex].toUpperCase() + elem.slice(letterIndex+1, elem.length);
             return newStr
          }).join(' ');
-
-         console.log(name);
          let human = {
             name,
             about: this.state.about,

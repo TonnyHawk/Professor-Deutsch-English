@@ -12,7 +12,7 @@
 
    &__slide-unit {
       width: max-content;
-      @include media-breakpoint-up(lg){
+      @include media-breakpoint-up(xl){
          display: flex;
          align-items: center;
          width: 85%;
@@ -57,12 +57,20 @@
       transition: 0.5s 0.6s;
       width: 90vw;
       visibility: hidden;
+      &:first-child{
+         visibility: visible;
+         opacity: 1;
+      }
       @include media-breakpoint-up(md){
          max-width: 56rem;
+         // width: 100%;
+         margin-top: 8rem;
       }
       @include media-breakpoint-up(lg){
-         margin: 0 0 0 7rem;
          max-width: 62rem;
+      }
+      @include media-breakpoint-up(xl){
+         margin: 0 0 0 7rem;
          visibility: visible;
          opacity: 1;
          transform: translate(0);
@@ -79,7 +87,7 @@
          top: -1.6rem;
          left: calc(50% - 1.5rem);
          z-index: -1;
-         @include media-breakpoint-up(lg){
+         @include media-breakpoint-up(xl){
             top: calc(50% - 1.5rem);
             left: -1.6rem;
             transform: rotate(-45deg);
