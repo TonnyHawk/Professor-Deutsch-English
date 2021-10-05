@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 
-function translate(arr){
-   let gloss = {
-         'name': "ім'я",
-         'photo': 'фото',
-         'about': "інформація про людину",
-      }
-   return arr.map(elem=>{
-      return gloss[elem]
-   })
-}
 
 class Expanded extends Component {
    constructor(props){
       super(props);
       let {human} = this.props
+      if(human === ''){
+         human = {
+            name: '',
+            about: '',
+            video: '',
+            photo: '',
+            languages: [{name: 'Німецька', lvl: 'A1'}],
+            professor: ['Deutsch'],
+            role: 'student',
+         }
+      }
       this.state = {
          name: human.name,
          about: human.about,
@@ -23,7 +24,8 @@ class Expanded extends Component {
          languages: human.languages,
          professor: human.professor,
          id: human._id,
-         required: ['name', 'about', 'photo']
+         role: 'student',
+         required: ['name', 'about']
       }
       this.form = React.createRef()
    }
@@ -40,7 +42,7 @@ class Expanded extends Component {
                   state[key][index][name] = value
                   return state
                }, ()=>{
-                  console.log(this.state[key]);
+                  // console.log(this.state[key]);
                })
          } else{ // we have a simple select
             this.setState(state=>{
@@ -96,13 +98,15 @@ class Expanded extends Component {
          access: true,
          targets: []
       };
-
-      this.state.required.forEach(elem=>{
-         if(this.state[elem] === ''){
-            response.access = false
-            response.targets.push(elem)
-         }
-      })
+      console.log('validation');
+         this.state.required.forEach(elem=>{
+            console.log(elem);
+            console.log(this.state[elem]);
+            if(this.state[elem] === ''){
+               response.access = false
+               response.targets.push(elem)
+            }
+         })
     
       this.form.current.classList.add('was-validated')
     
@@ -117,7 +121,7 @@ class Expanded extends Component {
       let id = this.state.id
       let reqData = new FormData()
       reqData.set('id', id)
-      let response = await fetch('http://127.0.0.1:3000/students/del', {
+      let response = await fetch('http://127.0.0.1:3000/humans/del', {
          method: 'POST',
          headers: {
             encType: 'multipart/form-data'
@@ -135,14 +139,23 @@ class Expanded extends Component {
       if(!validation.access){
          alert('Здається ви заповнили форму не до кінця. будь ласка заповніть поля підсвічені червоним')
       } else{
+         // data preprocessing
+         let name = this.state.name.split(' ').map(elem=>{ // making each first letter a capital
+            let newStr = elem;
+            newStr = elem[0].toUpperCase() + elem.slice(1, elem.length);
+            return newStr
+         }).join(' ');
+
+         console.log(name);
          let human = {
-            name: this.state.name,
+            name,
             about: this.state.about,
             video: this.state.video,
             photo: this.state.photo,
             languages: this.state.languages,
             professor: this.state.professor,
-            id: this.state.id
+            id: this.state.id,
+            role: this.state.role
          }
 
          let formInfo = new FormData(this.form.current) // to read info from our form
@@ -159,7 +172,10 @@ class Expanded extends Component {
 
          reqData.set('info', JSON.stringify(human))
 
-         let response = await fetch('http://127.0.0.1:3000/students', {
+         let reqUrl;
+         if(this.props.info.mode === 'edit') reqUrl = 'http://127.0.0.1:3000/humans'
+         else if(this.props.info.mode === 'add') reqUrl = 'http://127.0.0.1:3000/humans/add'
+         let response = await fetch(reqUrl, {
             method: 'POST',
             headers: {
                encType: 'multipart/form-data'
@@ -175,7 +191,7 @@ class Expanded extends Component {
    }
    render() {
       let {human} = this.props
-      let {name, photo, video, about, languages, professor, certificates} = this.state
+      let {name, photo, video, about, languages, professor, certificates, role} = this.state
       let index = 0;
       // creating professor element
       // let professorElem = ''
@@ -270,15 +286,22 @@ class Expanded extends Component {
       <div class="container" ref={c=>this.rootElem = c}>
          <div class="row">
             <div class="col d-flex justify-content-center">
-               <h1 class='my-5'>Редагувати</h1>
+               <h1 class='my-5'>{this.props.info.mode === 'add' ? 'Додати' : 'Редагувати'}</h1>
             </div>
          </div>
          <div class="row">
             <div class="col">
-               <form action="" id='form' class="needs-validation" ref={this.form} novalidate>
+               <form action="" id='form' class="needs-validation" ref={this.form} noValidate>
                   <div class="mb-4">
-                     <label for="name" class="form-label">Ім'я</label>
+                     <label htmlFor="name" class="form-label">Ім'я</label>
                      <input type="text" class="form-control" id="name" name='name' placeholder="" required value={name} onChange={(e)=>this.handleChange(e)}/>
+                  </div>
+                  <div className='mb-4'>
+                     <label htmlFor="role" class="form-label">Роль</label>
+                     <select name="role" id="role" className='form-select' onChange={(e)=>this.handleChange(e)} value={role}>
+                        <option value="teacher">Вчитель</option>
+                        <option value="student">Учень</option>
+                     </select>
                   </div>
                   <div className="row">
                      <div className="col-12 col-md-6">
@@ -291,19 +314,19 @@ class Expanded extends Component {
                   <div class="row">
                      <div class="col-12 col-md-6">
                         <div class="mb-4">
-                           <label for="photo" class="form-label">Фото</label>
+                           <label htmlFor="photo" class="form-label">Фото</label>
                            <input class="form-control" type="file" id="photo" name='photo'/>
                         </div>
                      </div>
                      <div class="col-12 col-md-6">
                         <div class="mb-4">
-                           <label for="video" class="form-label">Відео</label>
+                           <label htmlFor="video" class="form-label">Відео</label>
                            <input class="form-control" type="file" id="video" name='video'/>
                         </div>
                      </div>
                   </div>
                   <div class="mb-4">
-                     <label for="about" class="form-label">Загальне інфо</label>
+                     <label htmlFor="about" class="form-label">Загальне інфо</label>
                      <textarea class="form-control" id="about" name='about' rows="3" value={about} onChange={(e)=>this.handleChange(e)} required></textarea>
                   </div>
                   <div class="mb-5">

@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import Expanded from './modules/Expanded';
 import ReactDOM from 'react-dom';
 
-async function getCollection(type){
+async function getCollection(str=null){
    let add;
-   if(type === "s"){
-      add = 'students'
-   } else if(type === 't'){
-      add = 'teachers'
+   if(str === null){
+      add = 'humans'
    }
    let result;
    let response = await fetch('http://127.0.0.1:3000/'+add);
@@ -30,7 +28,10 @@ class App extends Component {
          search: '',
          humans: [],
          selectedHuman: '',
-         expandedPageState: false
+         expandedPage: {
+            state: false,
+            mode: ''
+         }
       }
    }
    handleChange(e){
@@ -46,9 +47,7 @@ class App extends Component {
    // }
 
    async loadHumans(){
-      let students = await getCollection('s')
-      // let teachers = await getCollection('t')
-      let humans = students
+      let humans = await getCollection()
       return humans
    }
 
@@ -65,24 +64,37 @@ class App extends Component {
       })
    }
 
+   addHuman(){
+      this.setState({
+         selectedHuman: '',
+         expandedPage: {
+            state: true,
+            mode: 'add'
+         }
+      })
+   }
+
    selectHuman(human){
       this.setState({
          selectedHuman: human,
-         expandedPageState: true
+         expandedPage: {
+            state: true,
+            mode: 'edit'
+         }
       })
    }
    async deselectHuman(){
       let humans = await this.loadHumans()
       this.setState({
          selectedHuman: '',
-         expandedPageState: false,
+         expandedPage: {state: false},
          humans
       })
    }
 
 
    render() {
-      let {search, humans, selectedHuman, expandedPageState} = this.state
+      let {search, humans, selectedHuman, expandedPage} = this.state
       humans = this.filtering(search, humans)
       humans = humans.map(human=>{
          return (
@@ -96,7 +108,7 @@ class App extends Component {
          )
       })
 
-      let expandedPage = expandedPageState ? <Expanded human={selectedHuman} funcs={this}/> : '';
+      let expandedPageElem = expandedPage.state ? <Expanded info={expandedPage} human={selectedHuman} funcs={this}/> : '';
       return (
       // <div class="page" id="page-books">
          <div class="page">
@@ -116,6 +128,7 @@ class App extends Component {
                         <p class="gall__filter bg-active-eng">Deutsch</p>
                         <p class="gall__filter bg-active-deu">English</p>
                      </div>
+                     <div className="btn btn-primary btn-lg" onClick={()=>this.addHuman()}>+</div>
                      <div class="input-group gall__search">
                         <div class="input-group-append">
                           <span class="input-group-text" id="basic-addon1">@</span>
@@ -130,7 +143,7 @@ class App extends Component {
                </div>
             </div>
          </div>
-         {expandedPage}
+         {expandedPageElem}
       </div>
       );
    }

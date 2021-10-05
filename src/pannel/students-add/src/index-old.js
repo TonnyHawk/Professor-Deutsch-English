@@ -1,23 +1,3 @@
-import { initializeApp } from "firebase/app";
-import { getStorage, ref, getDownloadURL, uploadBytes } from "firebase/storage";
-import { getFirestore, addDoc, collection, updateDoc, doc } from "firebase/firestore";
-// import {doc, setDoc} from "firebase/firestore";
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBuX8AU5VZ3oFlHaa9YHLHpCeBoDEOQAOY",
-  authDomain: "profde-fbd15.firebaseapp.com",
-  projectId: "profde-fbd15",
-  storageBucket: "profde-fbd15.appspot.com",
-  messagingSenderId: "795515383884",
-  appId: "1:795515383884:web:571c2f96df7185db53c4e9"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore();
-const storage = getStorage(app); 
-
 function validate(){
   let state = true
 
