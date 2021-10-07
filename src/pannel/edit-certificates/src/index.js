@@ -6,11 +6,14 @@ async function getCollection(str=null){
    let add;
    if(str === null){
       add = 'humans'
+   } else if(str === 'cert'){
+      add = 'certificates'
    }
    let result;
    let response = await fetch('http://127.0.0.1:3000/'+add);
    if (response.ok) { // если HTTP-статус в диапазоне 200-299
       result = await response.json();
+      console.log(result);
    } else {
       alert("Ошибка подгрузки "+add+" (HTTP): " + response.status);
    }
@@ -30,6 +33,10 @@ class App extends Component {
          }
       }
    }
+   componentDidCatch(error, info) {
+      console.log(error);
+   }
+   
    handleChange(e){
       this.setState({search: e.target.value})
    }
@@ -43,7 +50,7 @@ class App extends Component {
    // }
 
    async loadHumans(){
-      let humans = await getCollection()
+      let humans = await getCollection('cert')
       return humans
    }
 
@@ -54,7 +61,7 @@ class App extends Component {
 
    filtering(str, arr){
       return arr.filter(elem=>{
-         let name = elem.name.toLowerCase()
+         let name = elem.owner.toLowerCase()
          str = str.toLowerCase()
          if(name.includes(str)) return elem
       })
@@ -100,7 +107,7 @@ class App extends Component {
                <img src={human.photo} alt="" class="gall-item__img" />
             </div>
             <p class="gall-item__title">{human.name}</p>
-            {/* <p class="gall-item__descr">Анна Богуцька</p> */}
+            <p class="gall-item__subtitle">{human.owner}</p>
          </div>
          )
       })
@@ -111,7 +118,7 @@ class App extends Component {
          <div class="page">
          <div class="page__inner">
             <div class="page__hd">
-               <p class="page__title">Учні</p>
+               <p class="page__title">Сертифікати</p>
                {/* <div class="page__icon page__icon--left page__close-icon">
                   <i class="bi bi-arrow-left"></i>
                </div> */}

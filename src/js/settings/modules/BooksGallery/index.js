@@ -11,7 +11,7 @@ class BooksGallery extends Component {
          winTitle = 'Сертифікати'
          galleryClass = 'gall--books'
          galItems = certificates.map(elem=>{
-            let title = elem.title;
+            let title = elem.name;
             let photo = elem.photo;
             let owner = elem.owner;
             return (
@@ -20,7 +20,7 @@ class BooksGallery extends Component {
                   <img src={photo} alt="" class="gall-item__img"/>
                </div>
                <p class="gall-item__title">{title}</p>
-               <p class="gall-item__subtitle">{owner}</p>
+               <p class="gall-item__descr">{owner}</p>
             </div>
             )
          })
