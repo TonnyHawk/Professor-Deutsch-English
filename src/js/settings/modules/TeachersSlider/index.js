@@ -17,17 +17,20 @@ function ibg(){
 
 function SampleNextArrow(props) {
    const { className, style, onClick } = props;
-   return (<div class="slider__arrow-left" onClick={onClick}><img src="img/icons/slider-arrow-left.svg" alt=""/></div>);
+   return (<div className="slider__arrow-left" onClick={onClick}><img src="img/icons/slider-arrow-left.svg" alt=""/></div>);
  }
  
  function SamplePrevArrow(props) {
    const { className, style, onClick } = props;
-   return (<div class="slider__arrow-right" onClick={onClick}><img src="img/icons/slider-arrow-right.svg" alt=""/></div>);
+   return (<div className="slider__arrow-right" onClick={onClick}><img src="img/icons/slider-arrow-right.svg" alt=""/></div>);
  }
 
 class TeachersSlider extends Component {
    constructor(props) {
       super(props);
+      let humans = props.humans.filter(elem=>{
+         return elem.role === 'teacher'
+      })
       this.state = {
          nav1: null,
          nav2: null,
@@ -36,7 +39,7 @@ class TeachersSlider extends Component {
          booksGalMode: '',
          showZoomed: false,
          zoomedItem: '',
-         humans: props.humans
+         humans
       };
     }
    
@@ -88,12 +91,12 @@ class TeachersSlider extends Component {
 
          student.languages.forEach(elem=>{
             langBadges.push( (
-               <div class="badge" key={student.id}>
-                  <div class="badge__main">
-                     <p class="badge__text">{elem.name}</p>
+               <div className="badge" key={student.id}>
+                  <div className="badge__main">
+                     <p className="badge__text">{elem.name}</p>
                   </div>
-                  <div class="badge__aside">
-                     <p class="badge__text">{elem.lvl}</p>
+                  <div className="badge__aside">
+                     <p className="badge__text">{elem.lvl}</p>
                   </div>
                </div>
                ))
@@ -101,22 +104,22 @@ class TeachersSlider extends Component {
       }
 
       // adding certificates btn
-      let actionBtn = '';
-      if(student.certificates.length > 0){
-         actionBtn = (
-            <p class="slide__action btn" data-id={student.id} onClick={()=>{this.showCertificates(student)}}>Сертифікати</p>
-         )
-      }
+      // let actionBtn = '';
+      // if(student.certificates.length > 0){
+      //    actionBtn = (
+      //       <p className="slide__action btn" data-id={student.id} onClick={()=>{this.showCertificates(student)}}>Сертифікати</p>
+      //    )
+      // }
 
       // forming pocket
       let pocket = '';
       if(langBadges.length > 0){
          pocket = (
-            <div class="slide__row slide__item">
-               <div class="slide__badges">
+            <div className="slide__row slide__item">
+               <div className="slide__badges">
                   {langBadges}
                </div>
-               {actionBtn}
+               {/* {actionBtn} */}
             </div>
          )
       }
@@ -163,11 +166,12 @@ class TeachersSlider extends Component {
     let booksGal = showBooks ? <BooksGallery students={humans} student={selectedStudent} mode={booksGalMode} funcs={this}/> : '';
     
     let photoSlides = humans.map(elem=>{
+       console.log(elem);
       return (
          <div key={elem.id}>
-         <div class="slide__photo ibg">
-            <img src={elem.photo} alt=""/>
-         </div>
+            <div className="slide__photo ibg">
+               <img src={elem.photo} alt=""/>
+            </div>
          </div>
       )
     })
@@ -183,9 +187,9 @@ class TeachersSlider extends Component {
          
 
 
-   <h1 class="section__title">З вами працюватимуть професіонали</h1>
-   <div class="slider">
-      <div class="slider__slide slide">
+   <h1 className="section__title">З вами працюватимуть професіонали</h1>
+   <div className="slider">
+      <div className="slider__slide slide">
          <Slider className='slide__photos-slider' {...settingsPhotos} asNavFor={this.state.nav2} ref={slider => (this.slider1 = slider)}>
                {photoSlides}
          </Slider>

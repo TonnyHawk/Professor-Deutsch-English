@@ -1,28 +1,46 @@
 import React, { Component } from 'react';
 
 class TextsSlide extends Component {
-
+   constructor(){
+      super()
+      this.readmore = React.createRef()
+   }
+   componentDidMount() {
+      $(this.readmore.current).readmore({
+         num: 3
+      });
+   }
+   
    render() {
    const { student, funcs, ...props } = this.props;
 
       let pocket = funcs.generatePocket(student);
-      let stats = student.highlights.map(elem=>{
-         return (
-         <div class="slide__stat stat">
-            <p class="stat__num">{elem.num}</p>
-            <p class="stat__title">{elem.descr}</p>
-         </div>
-         )
+      // let stats = student.highlights.map(elem=>{
+      //    return (
+      //    <div className="slide__stat stat">
+      //       <p className="stat__num">{elem.num}</p>
+      //       <p className="stat__title">{elem.descr}</p>
+      //    </div>
+      //    )
+      // })
+      let content = student.about.split('\r\n').filter(elem=>{
+         return elem !== ''
+      }).map((elem, index)=>{
+         elem = elem[0].toUpperCase() + elem.slice(1, elem.length);
+         return (<p className='slide__text' key={index}>{elem}</p>)
       })
       return (
          <>
-            <h2 class="slide__title slide__item">{student.name}</h2>
+            <h2 className="slide__title slide__item">{student.name}</h2>
             {pocket}
-            {/* <div class="slide__stats slide__item">
+            {/* <div className="slide__stats slide__item">
                {stats}
             </div> */}
-            <div class="slide__paragraphs has-readmore">
-               <p className='slide__text'>{student.about}</p>
+            <div className="slide__paragraphs has-readmore" ref={this.readmore}>
+               <div className="has-readmore">
+               {content}
+               </div>
+               
             </div>
          </>
       )

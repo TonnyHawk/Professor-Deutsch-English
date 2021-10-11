@@ -4,27 +4,16 @@ import React, { Component } from 'react';
 class Expanded extends Component {
    constructor(props){
       super(props);
-      let {human} = this.props
-      if(human === ''){
-         human = {
-            name: '',
-            about: '',
-            video: '',
-            photo: '',
-            languages: [{name: 'Німецька', lvl: 'A1'}],
-            professor: ['Deutsch'],
-            role: 'student',
-         }
-      }
+      let {human} = this.props      
       this.state = {
-         name: human.name,
-         about: human.about,
-         video: human.video,
-         photo: human.photo,
-         languages: human.languages,
-         professor: human.professor,
+         name: human.name || '',
+         about: human.about || '',
+         video: human.video || '',
+         photo: human.photo || '',
+         languages: human.languages || [{name: 'Німецька', lvl: 'A1'}],
+         professor: human.professor || ['Deutsch'],
          id: human._id,
-         role: human.role,
+         role: human.role || 'student',
          required: ['name', 'about']
       }
       this.form = React.createRef()
@@ -170,7 +159,7 @@ class Expanded extends Component {
             reqData.set('video', video, 'video.mp4')
          }
          // alert('data is ready to deploy')
-
+         console.log(human);
          reqData.set('info', JSON.stringify(human))
 
          let reqUrl;
