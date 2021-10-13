@@ -67,6 +67,16 @@
          font-size: 1.5rem;
          font-family: roboto;
       }
+
+      select{
+         padding: 2.5rem;
+         font-size: 1.5rem;
+         margin-bottom: 3rem;
+         border-radius: 0.9rem;
+         border: 1px solid gainsboro;
+         width: 100%;
+         font-family: roboto;
+      }
    }
 
    .btn--light {

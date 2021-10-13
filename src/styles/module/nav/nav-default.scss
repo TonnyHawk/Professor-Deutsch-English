@@ -35,28 +35,6 @@
 
    &__menu-item {
       position: relative;
-
-      .nav__link:after{
-         position: absolute;
-         content: '';
-         transition-property: width, opacity;
-         transition-duration: 0.3s;
-         width: 0;
-         opacity: 0;
-         left: 0;
-         height: 2px;
-         background: white;
-         top: calc(100% + 5px);
-      }
-      &.is-active{
-         .nav__link{
-            color: white;
-            &:after{
-               width: 100%;
-               opacity: 1;
-            }
-         }
-      }
    }
 
    // .nav__link

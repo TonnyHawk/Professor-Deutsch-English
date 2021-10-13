@@ -83,7 +83,7 @@ function html() {
    let pipeline = src(path.projFold + path.html + '/index.html')
       .pipe(fileInclude())
       // .pipe(dest(mode === 'dev' ? './src/' : './dist/'))
-      .pipe(dest('./src/'))
+      .pipe(dest('./dist/'))
 
       if(mode == 'dev'){
          pipeline = pipeline.pipe(browserSync.reload())
@@ -94,7 +94,7 @@ function html() {
 
 }
 
-exports.default = series(html);
+exports.default = series(html, css, watchCss);
 exports.dev = series(css, html, server);
 exports.css = series(css, html, watchCss);
 exports.buildCss = series(css);
