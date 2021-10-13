@@ -41,12 +41,22 @@
 
    <!-- submit subscription -->
    <script>
-      function submitConsultation() {
-         $('#popup').fadeIn()
-         setTimeout(function () {
-            $('#popup').fadeOut()
-         }, 3000)
-         return false;
+      async function submitConsultation() {
+         // $('#popup').fadeIn()
+         // setTimeout(function () {
+         //    $('#popup').fadeOut()
+         // }, 3000)
+         console.log('senddata started');
+         let data = new FormData(document.querySelector('#consultation .form'))
+         console.log(data.get('name'));
+         console.log(data.get('phone'));
+         let request = await fetch('http://127.0.0.1:3000/apply', {
+            method: 'POST',
+            body: data
+         })
+         request.then(res=>{
+            console.log(res.json());
+         })
       }
    </script>
 

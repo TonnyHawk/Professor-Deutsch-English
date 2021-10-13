@@ -94,7 +94,7 @@ function html() {
 
 }
 
-exports.default = series(html, css, watchCss);
+exports.default = series(html);
 exports.dev = series(css, html, server);
 exports.css = series(css, html, watchCss);
 exports.buildCss = series(css);
