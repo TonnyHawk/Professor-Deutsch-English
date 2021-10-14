@@ -68,8 +68,8 @@
             top: calc(25vh - 13rem);
          }
          @include media-breakpoint-up(lg){
-            top: calc(50vh - 14.65rem);
-            left: calc(25vw - 20.3rem);
+            top: calc(50vh - 13em);
+            left: calc(25vw - 23rem);
          }
       }
       &--seccond{
@@ -79,11 +79,11 @@
          }
          @include media-breakpoint-up(lg){
             top: calc(50vh - 13rem);
-            left: calc(75vw - 22.5vw);
+            left: calc(75vw - 19.1rem);
          }
-         @include media-breakpoint-up(xl){
-            left: calc(75vw - 24.55rem);
-         }
+         // @include media-breakpoint-up(xl){
+         //    left: calc(75vw - 24.55rem);
+         // }
       }
 
       &.is-active{
