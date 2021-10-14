@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
    import CertificatesSection from './modules/CertificatesSection';
 
 let students;
-  let response = await fetch('http://127.0.0.1:3000/certificates');
+  let response = await fetch(globals.default.serverUrl+'/certificates');
   if (response.ok) { // если HTTP-статус в диапазоне 200-299
     students = await response.json();
     console.log(students);

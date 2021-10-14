@@ -134,7 +134,8 @@
             left: calc(50% - 5rem);
 
             @include media-breakpoint-up(lg) {
-               top: calc(20% + 2rem);
+               // top: calc(20% + 2rem);
+               top: calc(50% - 2.5rem);
                left: -6.8rem;
                transform: rotate(-90deg);
             }

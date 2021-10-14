@@ -44,7 +44,7 @@
 </head>
 
 <body>
-   <!-- <div class="loader">
+   <div class="loader">
       <div class="loader__bg"></div>
       <div class="loader__content">
          <div class="loader__spinner spinner loadingio-spinner-rolling-c55z9beacq">
@@ -53,7 +53,7 @@
             </div>
          </div>
       </div>
-   </div> -->
+   </div>
 
    <nav class="nav" id='topmenu'>
    <div class="nav__wrap">
@@ -912,7 +912,7 @@
                         </div>
                      </div>
                      <div class="tab__aside-item">
-                        <p data-action='open-popup' class="btn btn--big">Записатись</p>
+                        <p data-action='open-popup' class="btn btn--big" data-target="#consultation">Записатись</p>
                      </div>
                   </div>
                   <div class="tab__main">
@@ -1050,7 +1050,7 @@
                         </div>
                      </div>
                      <div class="tab__aside-item">
-                        <p data-action='open-popup' class="btn btn--big">Записатись</p>
+                        <p data-action='open-popup' class="btn btn--big" data-target="#consultation">Записатись</p>
                      </div>
                   </div>
                   <div class="tab__main">
@@ -1171,7 +1171,7 @@
                         </div>
                      </div>
                      <div class="tab__aside-item">
-                        <p data-action='open-popup' class="btn btn--big">Записатись</p>
+                        <p data-action='open-popup' class="btn btn--big" data-target="#consultation">Записатись</p>
                      </div>
                   </div>
                   <div class="tab__main">
@@ -1293,7 +1293,7 @@
                         </div>
                      </div>
                      <div class="tab__aside-item">
-                        <p data-action='open-popup' class="btn btn--big">Записатись</p>
+                        <p data-action='open-popup' class="btn btn--big" data-target="#consultation">Записатись</p>
                      </div>
                   </div>
                   <div class="tab__main">
@@ -1417,7 +1417,7 @@
                         </div>
                      </div>
                      <div class="tab__aside-item">
-                        <p data-action='open-popup' class="btn btn--big">Записатись</p>
+                        <p data-action='open-popup' class="btn btn--big" data-target="#consultation">Записатись</p>
                      </div>
                   </div>
                   <div class="tab__main">
@@ -1556,7 +1556,7 @@
                         </div>
                      </div>
                      <div class="tab__aside-item">
-                        <p data-action='open-popup' class="btn btn--big">Записатись</p>
+                        <p data-action='open-popup' class="btn btn--big" data-target='#consultation'>Записатись</p>
                      </div>
                   </div>
                   <div class="tab__main">
@@ -1641,7 +1641,7 @@
                         </div>
                      </div>
                      <div class="tab__aside-item">
-                        <p data-action='open-popup' class="btn btn--big">Записатись</p>
+                        <p data-action='open-popup' class="btn btn--big" data-target='#consultation'>Записатись</p>
                      </div>
                   </div>
                   <div class="tab__main">
@@ -1723,7 +1723,7 @@
                         </div>
                      </div>
                      <div class="tab__aside-item">
-                        <p data-action='open-popup' class="btn btn--big">Записатись</p>
+                        <p data-action='open-popup' class="btn btn--big" data-target='#consultation'>Записатись</p>
                      </div>
                   </div>
                   <div class="tab__main">
@@ -1801,7 +1801,7 @@
                         </div>
                      </div>
                      <div class="tab__aside-item">
-                        <p data-action='open-popup' class="btn btn--big">Записатись</p>
+                        <p data-action='open-popup' class="btn btn--big" data-target="#consultation">Записатись</p>
                      </div>
                   </div>
                   <div class="tab__main">
@@ -1901,7 +1901,7 @@
                      розкриваючи секрети подолання мовних бар’єрів. Наші учні починають говорити німецькою мовою вже
                      від першого
                      заняття, з кожним разом удосконалюючи свої знання.</p>
-                  <p data-action='open-popup' class="highlight__button btn btn--big">Записатись на урок</p>
+                  <p data-action='open-popup' class="highlight__button btn btn--big" data-target="#consultation">Записатись на урок</p>
                </div>
             </div>
          </div>
@@ -2121,7 +2121,7 @@
 
 
 
-   <!-- <section class="intro" id='intro'>
+   <section class="intro" id='intro'>
       <div class="intro__screen intro__screen--left ibg" data-intro='g'>
          <img src="img/preloader/a8.jpg" alt="">
       </div>
@@ -2139,7 +2139,7 @@
         <p class="intro__action intro__action--right" data-mode='e'>Обрати мову</p>
       </div>
       <div class="intro__layer"></div>
-   </section> -->
+   </section>
 
 
 
@@ -2199,32 +2199,6 @@
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-   <script>
-      let loc = document.location.href;
-      var g_Mode = loc[loc.indexOf('l=') + 2]
-      console.log(g_Mode);
-
-      function linkTo(address) {
-         if(address == 'cert'){
-            let formId = "#link-certificates";
-            document.querySelector(formId+" input[name='l']").value = g_Mode;
-            document.querySelector(formId).submit();
-         }
-      }
-
-      if(g_Mode){
-         document.querySelector('.intro').style.display = 'none';
-         if(g_Mode === 'g'){
-            console.log('hiding E');
-            document.querySelector('[data-selector="tab-german"]').style.display = 'block';
-            document.querySelector('[data-selector="tab-english"]').style.display = 'none';
-         } else{
-            console.log('hiding G');
-            document.querySelector('[data-selector="tab-english"]').style.display = 'block';
-            document.querySelector('[data-selector="tab-german"]').style.display = 'none';
-         }
-      }
-   </script>
    <script src="js/bundle.js"></script>
    <script async src="js/addons.js"></script>
    <script async src="js/react-stuff.js"></script>
