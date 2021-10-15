@@ -97,7 +97,7 @@ class StudentsSlider extends Component {
       } else{
          result = (
          <div class="sl__photo multilayer">
-            <img src={student.photo} alt="" class="multilayer__main"/>
+            <img src={student.photo} srcset={student.photo+'-/progressive/yes/-/quality/lightest/-/blur/100/'} alt="" class="multilayer__main lazyload" data-src={student.photo}/>
          </div>
          )
       }

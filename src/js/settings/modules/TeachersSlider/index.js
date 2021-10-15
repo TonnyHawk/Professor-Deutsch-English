@@ -91,14 +91,10 @@ class TeachersSlider extends Component {
 
          student.languages.forEach(elem=>{
             langBadges.push( (
-               <div className="badge" key={student.id}>
-                  <div className="badge__main">
-                     <p className="badge__text">{elem.name}</p>
-                  </div>
-                  <div className="badge__aside">
-                     <p className="badge__text">{elem.lvl}</p>
-                  </div>
-               </div>
+            <div class="badge" key={student.id}>
+               <p class="badge__main-text">{elem.name}</p>
+               <p class="badge__aside-text">{elem.lvl}</p>
+            </div>
                ))
          })
       }
@@ -170,7 +166,7 @@ class TeachersSlider extends Component {
       return (
          <div key={elem.id}>
             <div className="slide__photo ibg">
-               <img src={elem.photo} alt=""/>
+               <img src={elem.photo} srcset={elem.photo+'-/progressive/yes/-/quality/lightest/-/blur/100/'} className='lazyload' data-srcset={elem.photo} alt=""/>
             </div>
          </div>
       )

@@ -60,6 +60,7 @@
          img{
             width: 97%;
             border-radius: 0.9rem;
+            flex-grow: 0;
             @include media-breakpoint-down(lg) {
                width: 100%;
             }

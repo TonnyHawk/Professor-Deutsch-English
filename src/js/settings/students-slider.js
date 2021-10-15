@@ -7,6 +7,9 @@ let response = await fetch(globals.default.serverUrl+'/humans');
 if (response.ok) { // если HTTP-статус в диапазоне 200-299
   students = await response.json();
   console.log(students);
+  students = students.filter(elem=>{
+    return elem.role === 'student'
+  })
 } else {
 alert("Ошибка подгрузки студентов (HTTP): " + response.status);
 }

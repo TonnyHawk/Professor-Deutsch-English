@@ -8,7 +8,7 @@ async function getCollection(str=null){
       add = 'humans'
    }
    let result;
-   let response = await fetch('http://127.0.0.1:3000/'+add);
+   let response = await fetch('https://testproj-328917.appspot.com/'+add);
    if (response.ok) { // если HTTP-статус в диапазоне 200-299
       result = await response.json();
    } else {
