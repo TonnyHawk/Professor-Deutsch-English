@@ -28,6 +28,7 @@
       height: 50vh;
       width: 100vw;
       left: 0;
+      background-color: #484dd3;
       @include media-breakpoint-up(lg){
          width: 50vw;
          height: 100vh;
@@ -44,6 +45,13 @@
             top: 0;
             left: 50vw;
          }
+      }
+
+      &--fluid{
+         top: 0;
+         left: 0;
+         width: 100%!important;
+         height: 100%!important;
       }
 
       &.is-active{
