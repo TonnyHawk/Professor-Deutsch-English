@@ -17,13 +17,13 @@
       overflow-x: auto;
       width: 100%;
       padding: 2rem;
-      gap: 5.5rem;
+      // gap: 5.5rem;
       position: relative;
 
       @include media-breakpoint-up(md) {
          justify-content: space-between;
          width: 82%;
-         gap: unset;
+         // gap: unset;
       }
 
       @include media-breakpoint-up(lg) {}
@@ -48,9 +48,11 @@
       padding: 2rem 0rem 3rem;
       flex: 1;
       cursor: pointer;
+      margin: 0 2.25rem;
 
       @include media-breakpoint-up(md) {
          padding: 2.5rem 0 3rem;
+         margin: 0;
       }
 
       @include media-breakpoint-up(xl) {
