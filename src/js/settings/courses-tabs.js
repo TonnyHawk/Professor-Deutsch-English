@@ -10,7 +10,7 @@ $(document).ready(function () {
          let attr = $(this).attr('data-name');
          if (attr == tabName) {
             $(this).addClass('is-visible')
-            $(this).find('.tab__main').readmore({
+            $('#courses .tab').readmore({
                num: 3
             });
          } else {
@@ -19,9 +19,17 @@ $(document).ready(function () {
       })
    })
 
+   $(window).resize(function(){
+      $('#courses .tab').each(function(){
+         $(this).readmore({
+            num: 3
+         });
+      })
+   })
+
    // courses readmore
    setTimeout(function () {
-      $('#courses .tab__main').readmore({
+      $('#courses .tab').readmore({
          num: 3
       });
    }, 500)

@@ -10,6 +10,7 @@ class BooksGallery extends Component {
       if(mode === 'cert'){
          winTitle = 'Сертифікати'
          galleryClass = 'gall--books'
+         // innerClass = 'page__inner--books'
          galItems = certificates.map(elem=>{
             let title = elem.name;
             let photo = elem.photo;
@@ -27,6 +28,7 @@ class BooksGallery extends Component {
       } else if(mode === 'stud'){
          winTitle = 'Галерея'
          galleryClass = 'gall--photos'
+         // innerClass = 'page__inner--photos'
          galItems = students.map(elem=>{
             let title = elem.name;
             let professor = elem.professor;
@@ -48,7 +50,7 @@ class BooksGallery extends Component {
       let zoomedGal = funcs.state.showZoomed ? <ZoomedGal item={funcs.state.zoomedItem} funcs={funcs}/> : '';
       return (
          <div class="page" id="page-books">
-         <div class="page__inner">
+         <div class={"page__inner"}>
             <div class="page__hd">
                <p class="page__title">{winTitle}</p>
                <div class="page__icon page__icon--left page__close-icon" onClick={()=>{funcs.toggleGallery('cert', false)}}>

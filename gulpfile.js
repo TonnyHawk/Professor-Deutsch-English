@@ -47,11 +47,6 @@ function watchCss(){
    watch(path.projFold + path.styles + "/**/*.scss", css);
 }
 
-function watchAll(){
-   watch(path.projFold + path.styles + "/**/*.scss", css);
-   watch(path.projFold + path.html + "/*.html").on('change', html);
-}
-
 function css() {
    let tasks = configs.map(config=>{
       let pipeline = src(config.css.sourcePaths)
@@ -94,7 +89,14 @@ function html() {
 
 }
 
-exports.default = series(css);
+function watchAll(){
+   // parallel(watch(path.projFold + path.styles + "/**/*.scss", css),
+   // watch(path.projFold + path.html + "/*.html").on('change', html));
+   watch(path.projFold + path.styles + "/**/*.scss", css);
+   watch(path.projFold + path.html + "/*.html").on('change', html);
+}
+
+exports.default = series(html, css, watchAll);
 exports.dev = series(css, html, server);
 exports.css = series(css, html, watchCss);
 exports.buildCss = series(css);

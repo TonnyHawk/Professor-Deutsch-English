@@ -14,7 +14,11 @@
 
    // .page__inner
 
-   &__inner {}
+   &__inner {
+      max-width: 125rem;
+      margin-left: auto;
+      margin-right: auto;
+   }
 
    // .page__hd
 

@@ -169,7 +169,6 @@ class StudentsSlider extends Component {
     let mainSlides = students.map(elem=>{
       return <CustomMainSlide student={elem} funcs={this} key={elem.id}/>
     })
-
     let booksGal = showBooks ? <BooksGallery students={students} student={selectedStudent} mode={booksGalMode} funcs={this}/> : '';
     
     return (
