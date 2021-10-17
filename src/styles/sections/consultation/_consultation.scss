@@ -12,8 +12,6 @@
       &__photo{
          margin-bottom: 4rem;
          width: 100%;
-         display: flex;
-         justify-content: center;
          @include media-breakpoint-up(lg){
             padding: 0 2rem;
             margin-bottom: 0;
@@ -36,7 +34,9 @@
    img{
       width: 90%;
       max-width: 47.5rem;
-      flex-grow: 0;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
    }
 
    .form {
