@@ -7,7 +7,7 @@ class TextsSlide extends Component {
    }
    componentDidMount() {
       $(this.readmore.current).readmore({
-         num: 3
+         num: 4
       });
    }
    
@@ -32,7 +32,7 @@ class TextsSlide extends Component {
       return (
          <>
             <h2 className="slide__title slide__item">{student.name}</h2>
-            {pocket}
+            {/* {pocket} */}
             {/* <div className="slide__stats slide__item">
                {stats}
             </div> */}
@@ -40,7 +40,6 @@ class TextsSlide extends Component {
                <div className="has-readmore">
                {content}
                </div>
-               
             </div>
          </>
       )

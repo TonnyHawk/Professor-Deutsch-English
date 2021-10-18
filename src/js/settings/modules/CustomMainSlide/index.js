@@ -14,7 +14,7 @@ class CustomMainSlide extends Component {
          <div class="talk-buble__header">
             <p class="talk-buble__title">{student.name}</p>
          </div>
-        {pocket}
+        {/* {pocket} */}
          <p class="talk-buble__descr">{student.about}</p>
       </div>
    </div>

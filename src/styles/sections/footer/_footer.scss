@@ -94,9 +94,12 @@
    &__menu {
       .menu {
          display: flex;
-         gap: 2rem;
+         // gap: 2rem;
          flex-wrap: wrap;
+         margin-left: -1.25rem;
+         margin-right: -1.25rem;
          &__menu-item {
+            margin: 0 1.5rem;
             font-size: 1.5rem;
             line-height: 159.68%;
             color: white;

@@ -11,7 +11,7 @@ $(document).ready(function () {
          if (attr == tabName) {
             $(this).addClass('is-visible')
             $('#courses .tab').readmore({
-               num: 3
+               num: 2
             });
          } else {
             $(this).removeClass('is-visible')
@@ -22,7 +22,7 @@ $(document).ready(function () {
    $(window).resize(function(){
       $('#courses .tab').each(function(){
          $(this).readmore({
-            num: 3
+            num: 2
          });
       })
    })
@@ -30,7 +30,7 @@ $(document).ready(function () {
    // courses readmore
    setTimeout(function () {
       $('#courses .tab').readmore({
-         num: 3
+         num: 2
       });
    }, 500)
 })

@@ -1,7 +1,14 @@
 #courses {
-   .section__title {
-      @include media-breakpoint-up(lg) {
-         margin-bottom: 10rem;
+   padding-bottom: 0;
+   .section{
+      &__title {
+         margin-bottom: 3rem;
+         @include media-breakpoint-up(md){
+            margin-bottom: 2rem;
+         }
+         @include media-breakpoint-up(lg) {
+            margin-bottom: 10rem;
+         }
       }
    }
 
