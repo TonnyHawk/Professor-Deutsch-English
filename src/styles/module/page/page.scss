@@ -5,10 +5,13 @@
    background: #F5F4F7;
    overflow-y: auto;
    overflow-x: hidden;
-   padding: 5.5rem 2rem 8rem;
+   padding: 4rem 2rem 8rem;
 
    @include media-breakpoint-up(md) {
-      padding: 5.5rem 5.5rem 11.5rem;
+      padding: 4rem 5.5rem 11.5rem;
+   }
+   @include media-breakpoint-up(lg){
+      padding-top: 5.5rem;
    }
 
 
@@ -27,10 +30,10 @@
       position: relative;
       align-items: center;
       justify-content: center;
-      margin-bottom: 6.5rem;
+      margin-bottom: 5rem;
 
       @include media-breakpoint-up(md) {
-         margin-bottom: 7.5rem;
+         margin-bottom: 6rem;
       }
 
       @include media-breakpoint-up(lg) {

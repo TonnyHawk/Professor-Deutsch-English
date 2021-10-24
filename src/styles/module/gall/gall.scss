@@ -16,9 +16,8 @@
    // .gall__bd
 
    &__bd {
-      display: flex;
-      flex-wrap: wrap;
       display: grid;
+      width: 100%;
       grid-template-columns: repeat(2, 1fr);
       @include media-breakpoint-up(md){
          grid-template-columns: repeat(3, 1fr);
@@ -225,9 +224,9 @@
 
          &__bd {
             gap: $gap;
-            margin-left: calc(#{-$gap} * 0.5);
-            margin-right: calc(#{-$gap} * 0.5);
-            padding-top: calc(#{$gap} * 0.5);
+            // margin-left: calc(#{-$gap} * 0.5);
+            // margin-right: calc(#{-$gap} * 0.5);
+            // padding-top: calc(#{$gap} * 0.5);
          }
 
          // .gall__item

@@ -1,0 +1,15 @@
+@import 'basic/mixins';
+@import 'basic/reset';
+@import 'basic/colors';
+
+// @import '../fonts/roboto/stylesheet.css';
+// @import '../fonts/gilroy/stylesheet.css';
+
+html{
+   font-size: 62.5%;
+}
+
+@import '../../node_modules/bootstrap/scss/bootstrap-utilities.scss';
+
+@import 'module/page/page';
+@import 'module/gall/gall';

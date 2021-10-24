@@ -64,7 +64,7 @@ function css() {
          pipeline = pipeline.pipe(sourcemaps.write())
       }
 
-      pipeline.pipe(dest('./src/pannel/edit-human/css/'))
+      pipeline.pipe(dest('dist/css/'))
 
       pipeline = pipeline.pipe(browserSync.stream())
 
@@ -96,7 +96,7 @@ function watchAll(){
    watch(path.projFold + path.html + "/*.html").on('change', html);
 }
 
-exports.default = series(css);
+exports.default = series(css, watchCss);
 exports.dev = series(css, html, server);
 exports.css = series(css, html, watchCss);
 exports.buildCss = series(css);
