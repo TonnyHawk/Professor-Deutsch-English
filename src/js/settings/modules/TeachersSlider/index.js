@@ -112,16 +112,26 @@ class TeachersSlider extends Component {
 
       // forming pocket
       let pocket = '';
-      if(langBadges.length > 0){
+      if(actionBtn !== ''){
          pocket = (
             <div className="slide__row slide__item">
-               <div className="slide__badges">
-                  {/* {langBadges} */}
-               </div>
+               {/* <div className="slide__badges">
+                  {langBadges}
+               </div> */}
                {actionBtn}
             </div>
          )
       }
+      // if(langBadges.length > 0){
+      //    pocket = (
+      //       <div className="slide__row slide__item">
+      //          <div className="slide__badges">
+      //             {/* {langBadges} */}
+      //          </div>
+      //          {actionBtn}
+      //       </div>
+      //    )
+      // }
 
       return pocket;
    }
