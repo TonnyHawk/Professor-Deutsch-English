@@ -25,7 +25,25 @@ class BooksGallery extends Component {
             </div>
             )
          })
-      } else if(mode === 'stud'){
+      }else if(mode === 'cert-personal'){
+         winTitle = 'Сертифікати'
+         galleryClass = 'gall--books'
+         // innerClass = 'page__inner--books'
+         galItems = student.certificates.map(elem=>{
+            let title = elem.name;
+            let photo = elem.photo;
+            // let owner = elem.owner;
+            return (
+            <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, photo)}}>
+               <div class="gall-item__photo">
+                  <img src={photo+'-/progressive/yes/-/quality/lightest/-/blur/100/'} alt="" class="gall-item__img lazyload" data-src={photo}/>
+               </div>
+               <p class="gall-item__title">{title}</p>
+               {/* <p class="gall-item__descr">{owner}</p> */}
+            </div>
+            )
+         })
+      }else if(mode === 'stud'){
          winTitle = 'Галерея'
          galleryClass = 'gall--photos'
          // innerClass = 'page__inner--photos'

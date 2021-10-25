@@ -53,7 +53,7 @@ class TeachersSlider extends Component {
 
    toggleGallery(name, state, ...props){
       // preparation
-      if(name === 'cert' || name === 'stud'){
+      if(name === 'cert' || name === 'stud' || name === 'cert-personal'){
          if(state){ // open a modul win
             document.documentElement.style = 'overflow: hidden';
          } else{ // close module win
@@ -63,6 +63,9 @@ class TeachersSlider extends Component {
       // --------------
 
       switch (name) {
+         case 'cert-personal':
+            this.setState({showBooks: state, booksGalMode: name})
+            break;
          case 'cert':
             this.setState({showBooks: state, booksGalMode: name})
             break;
@@ -80,7 +83,7 @@ class TeachersSlider extends Component {
    }
 
    showCertificates(student){
-      this.toggleGallery('cert', true)
+      this.toggleGallery('cert-personal', true)
       this.setState({selectedStudent: student})
    }
 
@@ -100,12 +103,12 @@ class TeachersSlider extends Component {
       }
 
       // adding certificates btn
-      // let actionBtn = '';
-      // if(student.certificates.length > 0){
-      //    actionBtn = (
-      //       <p className="slide__action btn" data-id={student.id} onClick={()=>{this.showCertificates(student)}}>Сертифікати</p>
-      //    )
-      // }
+      let actionBtn = '';
+      if(student.certificates.length > 0){
+         actionBtn = (
+            <p className="slide__action btn" data-id={student.id} onClick={()=>{this.showCertificates(student)}}>Сертифікати</p>
+         )
+      }
 
       // forming pocket
       let pocket = '';
@@ -113,9 +116,9 @@ class TeachersSlider extends Component {
          pocket = (
             <div className="slide__row slide__item">
                <div className="slide__badges">
-                  {langBadges}
+                  {/* {langBadges} */}
                </div>
-               {/* {actionBtn} */}
+               {actionBtn}
             </div>
          )
       }

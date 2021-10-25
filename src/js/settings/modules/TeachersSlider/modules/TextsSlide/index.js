@@ -32,7 +32,7 @@ class TextsSlide extends Component {
       return (
          <>
             <h2 className="slide__title slide__item">{student.name}</h2>
-            {/* {pocket} */}
+            {pocket}
             {/* <div className="slide__stats slide__item">
                {stats}
             </div> */}
