@@ -70,7 +70,7 @@ class BooksGallery extends Component {
             let photo = elem.photo;
             // let owner = elem.owner;
             return (
-            <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
+            <div class="gall__item gall-item" key={elem._id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
                <div class="gall-item__photo">
                   <img src={photo+'-/progressive/yes/-/quality/lightest/-/blur/100/'} alt="" class="gall-item__img lazyload" data-src={photo}/>
                </div>

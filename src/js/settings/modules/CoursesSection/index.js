@@ -33,7 +33,7 @@ class CoursesSection extends Component {
          return state
       })
    }
-   
+
    componentDidMount() {
       $(this.tab.current).readmore({num: 3})
       this.setState(state=>{
@@ -104,6 +104,20 @@ class CoursesSection extends Component {
          return (<p className='info-block__text' key={index}>{elem}</p>)
       })
 
+      let booksLink;
+      if(currentTab.books.length > 0){
+         booksLink = (
+         <div class="tab__aside-item">
+            <div class="tab__feature">
+               <div class="feature">
+                  <div class="feature__icon"><img src="img/icons/book.svg" alt=""/></div>
+                  <a class="feature__text_link" data-action="see-books" onClick={()=>this.toggleGallery('books', true)}>Навчальні підручники</a>
+               </div>
+            </div>
+         </div>
+         )
+      }
+
       return (
          <>
          <div class="tab" data-selector='tab-german' ref={this.tab}>
@@ -144,14 +158,7 @@ class CoursesSection extends Component {
                               </ul>
                            </div>
                         </div>
-                        <div class="tab__aside-item">
-                           <div class="tab__feature">
-                              <div class="feature">
-                                 <div class="feature__icon"><img src="img/icons/book.svg" alt=""/></div>
-                                 <a class="feature__text_link" data-action="see-books" onClick={()=>this.toggleGallery('books', true)}>Навчальні підручники</a>
-                              </div>
-                           </div>
-                        </div>
+                        {booksLink}
                         <div class="tab__aside-item">
                            <p data-action='open-popup' class="btn btn--big" data-target="#consultation">Записатись</p>
                         </div>
