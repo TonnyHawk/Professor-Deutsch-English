@@ -6,3 +6,5 @@ require('./settings/students-slider');
 
 // teachers slider
 require('./settings/certificates-section.js');
+
+require('./settings/courses-section.js');

@@ -79,6 +79,7 @@ module.exports = [(env) => {
    },
    externals: {
       jquery: 'jQuery',
+      $: 'JQuery'
    },
    module: {
       rules: [

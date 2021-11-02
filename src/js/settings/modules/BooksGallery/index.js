@@ -3,7 +3,7 @@ import ZoomedGal from '../ZoomedGal/index';
 
 class BooksGallery extends Component {
    render() {
-      const { student, mode, students, funcs, certificates, ...props } = this.props;
+      const { student, mode, students, funcs, certificates, books, ...props } = this.props;
 
       let galItems, winTitle, galleryClass;
 
@@ -61,8 +61,24 @@ class BooksGallery extends Component {
             </div>
             )
          })
-      } else{
+      } else if(mode === 'books'){
          winTitle = 'Навчальні матеріали'
+         galleryClass = 'gall--books'
+         // innerClass = 'page__inner--books'
+         galItems = books.map(elem=>{
+            let title = elem.name;
+            let photo = elem.photo;
+            // let owner = elem.owner;
+            return (
+            <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
+               <div class="gall-item__photo">
+                  <img src={photo+'-/progressive/yes/-/quality/lightest/-/blur/100/'} alt="" class="gall-item__img lazyload" data-src={photo}/>
+               </div>
+               <p class="gall-item__title">{title}</p>
+               {/* <p class="gall-item__descr">{owner}</p> */}
+            </div>
+            )
+         })
       }
 
       let zoomedGal = funcs.state.showZoomed ? <ZoomedGal item={funcs.state.zoomedItem} funcs={funcs}/> : '';

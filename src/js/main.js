@@ -3,7 +3,5 @@ require('../styles/module/nav/nav.js');
 require('lazysizes');
 require('./my/readmore.js');
 require('./settings/intro');
-// courses tabs
-require('./settings/courses-tabs');
 // topmenu options during scrolling process
 require('./settings/topmenu');
