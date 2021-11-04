@@ -74,8 +74,6 @@ class CoursesSection extends Component {
    
 
    render() {
-      console.log('render mode');
-      console.log(window.g_Mode);
       let {data} = this.props
       let {currentTab} = this.state
       let {showBooks, selectedStudent, booksGalMode, students, currentBooks} = this.state;
