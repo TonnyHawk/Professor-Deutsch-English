@@ -102,12 +102,6 @@ module.exports = [(env) => {
     experiments: {
       topLevelAwait: true,
     },
-    resolve: {
-      extensions: ['', '.js'],
-      alias: {
-        'globals': path.resolve(__dirname, './src/js/my/globals')  // <-- When you build or restart dev-server, you'll get an error if the path to your utils.js file is incorrect.
-      }
-    },
     plugins: [
       new webpack.ProvidePlugin({
         globals: path.resolve(path.join(__dirname, 'src/js/my/globals')),

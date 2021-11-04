@@ -48,27 +48,27 @@ class CertificatesSection extends Component {
       let booksGal = showBooks ? <BooksGallery certificates={certificates} students={students} student={selectedStudent} mode={booksGalMode} funcs={this}/> : '';
       return (
          <>
-      <div class="container-md">
-         <div class="row">
-            <div class="col-12 col-lg-7">
-               <div class="certificates__cert-group">
-                  <div class="certificates__cert-group-item">
+      <div className="container-md">
+         <div className="row">
+            <div className="col-12 col-lg-7">
+               <div className="certificates__cert-group">
+                  <div className="certificates__cert-group-item">
                      <img src="img/certificates-section/ielts.jpg" alt=""/>
                   </div>
-                  <div class="certificates__cert-group-layer">
-                     <div class="certificates__cert-group-item certificates__cert-group-item--main">
+                  <div className="certificates__cert-group-layer">
+                     <div className="certificates__cert-group-item certificates__cert-group-item--main">
                         <img src="img/certificates-section/b2.jpg" alt=""/>
                      </div>
                   </div>
-                  <div class="certificates__cert-group-item">
+                  <div className="certificates__cert-group-item">
                      <img src="img/certificates-section/ielts.jpg" alt=""/>
                   </div>
                </div>
             </div>
-            <div class="col-12 col-lg-5">
-               <div class="certificates__info">
-                  <p class="certificates__title">Наш спільний успіх підтверджено низкою сертифікатів</p>
-                  <p class="certificates__my-btn" onClick={()=>this.toggleGallery('cert', true)}>Переглянути всі</p>
+            <div className="col-12 col-lg-5">
+               <div className="certificates__info">
+                  <p className="certificates__title">Наш спільний успіх підтверджено низкою сертифікатів</p>
+                  <p className="certificates__my-btn" onClick={()=>this.toggleGallery('cert', true)}>Переглянути всі</p>
                </div>
             </div>
          </div>

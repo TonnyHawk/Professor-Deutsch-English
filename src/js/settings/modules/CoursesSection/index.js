@@ -86,8 +86,8 @@ class CoursesSection extends Component {
             activeState = 'is-active'
          }
          return (
-            <div class={"tab__name " + activeState} data-target={elem.name.toLowerCase()} onClick={()=>this.changeTab(index)}>
-               <p class="tab__name-text">{elem.name}</p>
+            <div key={elem._id} className={"tab__name " + activeState} data-target={elem.name.toLowerCase()} onClick={()=>this.changeTab(index)}>
+               <p className="tab__name-text">{elem.name}</p>
             </div>
          )
       })
@@ -107,11 +107,11 @@ class CoursesSection extends Component {
       let booksLink;
       if(currentTab.books.length > 0){
          booksLink = (
-         <div class="tab__aside-item">
-            <div class="tab__feature">
-               <div class="feature">
-                  <div class="feature__icon"><img src="img/icons/book.svg" alt=""/></div>
-                  <a class="feature__text_link" data-action="see-books" onClick={()=>this.toggleGallery('books', true)}>Навчальні підручники</a>
+         <div className="tab__aside-item">
+            <div className="tab__feature">
+               <div className="feature">
+                  <div className="feature__icon"><img src="img/icons/book.svg" alt=""/></div>
+                  <a className="feature__text_link" data-action="see-books" onClick={()=>this.toggleGallery('books', true)}>Навчальні підручники</a>
                </div>
             </div>
          </div>
@@ -120,62 +120,62 @@ class CoursesSection extends Component {
 
       return (
          <>
-      <div class="tab" ref={this.tab}>
-         <div class="tab__header-container container-md px-0 px-md-3">
-            <div class="tab__header">
+      <div className="tab" ref={this.tab}>
+         <div className="tab__header-container container-md px-0 px-md-3">
+            <div className="tab__header">
                {names}
             </div>
          </div>
-         <div class="container-md g-0 g-md-3">
-            <div class="row g-0">
-               <div class="col-12">
-                  <div class="tab__body is-visible" data-name='a1'>
-                     <div class="tab__aside">
-                        <div class="tab__aside-item">
-                           <div class="tab__info-block info-block">
-                              <p class="info-block__title">Про курс</p>
-                              <p class="info-block__text">{currentTab.about}</p>
+         <div className="container-md g-0 g-md-3">
+            <div className="row g-0">
+               <div className="col-12">
+                  <div className="tab__body is-visible" data-name='a1'>
+                     <div className="tab__aside">
+                        <div className="tab__aside-item">
+                           <div className="tab__info-block info-block">
+                              <p className="info-block__title">Про курс</p>
+                              <p className="info-block__text">{currentTab.about}</p>
                            </div>
                         </div>
-                        <div class="tab__aside-item">
-                           <div class="tab__feature">
-                              <div class="feature">
-                                 <div class="feature__icon"><img src="img/icons/bricks.svg" alt=""/></div>
-                                 <p class="feature__text">12 основних блоків</p>
+                        <div className="tab__aside-item">
+                           <div className="tab__feature">
+                              <div className="feature">
+                                 <div className="feature__icon"><img src="img/icons/bricks.svg" alt=""/></div>
+                                 <p className="feature__text">12 основних блоків</p>
                               </div>
-                              <div class="feature">
-                                 <div class="feature__icon"><img src="img/icons/clock.svg" alt=""/></div>
-                                 <p class="feature__text">80 академічних годин</p>
+                              <div className="feature">
+                                 <div className="feature__icon"><img src="img/icons/clock.svg" alt=""/></div>
+                                 <p className="feature__text">80 академічних годин</p>
                               </div>
                            </div>
                         </div>
-                        <div class="tab__aside-item">
-                           <div class="tab__info-block info-block">
-                              <p class="info-block__title">Розвиток</p>
-                              <ul class="info-block__list">
-                                 <li class="info-block__list-item">Усного, писемного мовлення</li>
-                                 <li class="info-block__list-item">Навичок слухання та читання</li>
+                        <div className="tab__aside-item">
+                           <div className="tab__info-block info-block">
+                              <p className="info-block__title">Розвиток</p>
+                              <ul className="info-block__list">
+                                 <li className="info-block__list-item">Усного, писемного мовлення</li>
+                                 <li className="info-block__list-item">Навичок слухання та читання</li>
                               </ul>
                            </div>
                         </div>
                         {booksLink}
-                        <div class="tab__aside-item">
-                           <p data-action='open-popup' class="btn btn--big" data-target="#consultation">Записатись</p>
+                        <div className="tab__aside-item">
+                           <p data-action='open-popup' className="btn btn--big" data-target="#consultation">Записатись</p>
                         </div>
                      </div>
-                     <div class="tab__main">
-                        <div class="tab__col">
-                           <div class="tab__info-block info-block">
-                              <p class="info-block__title">Розмовні теми / Konversation:</p>
-                              <div class="info-block__body has-readmore">
+                     <div className="tab__main">
+                        <div className="tab__col">
+                           <div className="tab__info-block info-block">
+                              <p className="info-block__title">Розмовні теми / Konversation:</p>
+                              <div className="info-block__body has-readmore">
                                  {speakingThemes}
                               </div>
                            </div>
                         </div>
-                        <div class="tab__col">
-                           <div class="tab__info-block info-block">
-                              <p class="info-block__title">Граматичні теми / Grammatik:</p>
-                              <div class="info-block__body has-readmore">
+                        <div className="tab__col">
+                           <div className="tab__info-block info-block">
+                              <p className="info-block__title">Граматичні теми / Grammatik:</p>
+                              <div className="info-block__body has-readmore">
                                  {grammarThemes}
                               </div>
                            </div>

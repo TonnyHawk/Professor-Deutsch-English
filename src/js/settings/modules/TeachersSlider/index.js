@@ -92,9 +92,9 @@ class TeachersSlider extends Component {
       let langBadges = [];
       if(student.languages){
 
-         student.languages.forEach(elem=>{
+         student.languages.forEach((elem, index)=>{
             langBadges.push( (
-            <div class="badge" key={student.id}>
+            <div class="badge" key={index}>
                <p class="badge__main-text">{elem.name}</p>
                <p class="badge__aside-text">{elem.lvl}</p>
             </div>
@@ -178,7 +178,7 @@ class TeachersSlider extends Component {
       return (
          <div key={elem.id}>
             <div className="slide__photo ibg">
-               <img src={elem.photo} srcset={elem.photo+'-/progressive/yes/-/quality/lightest/-/blur/100/'} className='lazyload' data-srcset={elem.photo} alt=""/>
+               <img src={elem.photo} srcSet={elem.photo+'-/progressive/yes/-/quality/lightest/-/blur/100/'} className='lazyload' data-srcset={elem.photo} alt=""/>
             </div>
          </div>
       )
