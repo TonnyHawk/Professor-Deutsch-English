@@ -175,7 +175,6 @@ class TeachersSlider extends Component {
     let booksGal = showBooks ? <BooksGallery students={humans} student={selectedStudent} mode={booksGalMode} funcs={this}/> : '';
     
     let photoSlides = humans.map(elem=>{
-       console.log(elem);
       return (
          <div key={elem.id}>
             <div className="slide__photo ibg">

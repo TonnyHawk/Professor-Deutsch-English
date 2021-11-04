@@ -120,7 +120,7 @@ class CoursesSection extends Component {
 
       return (
          <>
-         <div class="tab" data-selector='tab-german' ref={this.tab}>
+      <div class="tab" ref={this.tab}>
          <div class="tab__header-container container-md px-0 px-md-3">
             <div class="tab__header">
                {names}
