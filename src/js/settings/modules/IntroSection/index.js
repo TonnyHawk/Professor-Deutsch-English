@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {ibg} from '../../../my/globals';
 
 class IntroSection extends Component {
    rootElem = React.createRef()
@@ -15,6 +16,8 @@ class IntroSection extends Component {
             window.scrollTo(0, 0);
          }, 1)
       }
+
+      ibg()
    }
    
    render() {

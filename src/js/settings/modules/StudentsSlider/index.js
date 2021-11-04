@@ -8,9 +8,6 @@ import CustomPreviewSlide from '../CustomPreviewSlide/index.js';
 import CustomMainSlide from '../CustomMainSlide/index.js';
 import Video from '../Video';
 
-function linkTo(){
-   document.location.href='pages/gallery.html';
-}
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -96,8 +93,8 @@ class StudentsSlider extends Component {
          result = <Video student={student}/>
       } else{
          result = (
-         <div class="sl__photo multilayer">
-            <img src={student.photo} srcSet={student.photo+'-/progressive/yes/-/quality/lightest/-/blur/100/'} alt="" class="multilayer__main lazyload" data-srcset={student.photo}/>
+         <div className="sl__photo multilayer">
+            <img src={student.photo} srcSet={student.photo+'-/progressive/yes/-/quality/lightest/-/blur/100/'} alt="" className="multilayer__main lazyload" data-srcset={student.photo}/>
          </div>
          )
       }
@@ -112,9 +109,9 @@ class StudentsSlider extends Component {
 
          student.languages.forEach(elem=>{
             langBadges.push( (
-                  <div class="talk-buble__badge badge" key={student.id}>
-                     <p class="badge__main-text">{elem.name}</p>
-                     <p class="badge__aside-text">{elem.lvl}</p>
+                  <div className="talk-buble__badge badge" key={student.id}>
+                     <p className="badge__main-text">{elem.name}</p>
+                     <p className="badge__aside-text">{elem.lvl}</p>
                   </div>
                ))
          })
@@ -124,7 +121,7 @@ class StudentsSlider extends Component {
       let actionBtn = '';
       // if(student.certificates.length > 0){
       //    actionBtn = (
-      //       <p class="talk-buble__action btn" data-id={student.id} onClick={()=>{this.showCertificates(student)}}>Сертифікати</p>
+      //       <p className="talk-buble__action btn" data-id={student.id} onClick={()=>{this.showCertificates(student)}}>Сертифікати</p>
       //    )
       // }
 
@@ -132,8 +129,8 @@ class StudentsSlider extends Component {
       let pocket = '';
       if(langBadges.length > 0){
          pocket = (
-            <div class="talk-buble__pocket">
-               <div class="talk-buble__badges">
+            <div className="talk-buble__pocket">
+               <div className="talk-buble__badges">
                   {langBadges}
                </div>
                {actionBtn}
@@ -176,18 +173,18 @@ class StudentsSlider extends Component {
          {booksGal}
          
 
-         <div class="container">
-            <div class="section__header">
-               <h1 class="section__title">Наші учні</h1>
-               {/* <div class="section__expand-btn feature hover-circled" onClick={()=>linkTo()}> */}
-               <div class="section__expand-btn feature hover-circled" onClick={()=>this.toggleGallery('stud', true)}>
-                  <div class="feature__icon hover-circled__icon"><i class="bi bi-collection"></i></div>
-                  <p class="feature__text">Більше</p>
+         <div className="container">
+            <div className="section__header">
+               <h1 className="section__title">Наші учні</h1>
+               {/* <div className="section__expand-btn feature hover-circled" onClick={()=>linkTo()}> */}
+               <div className="section__expand-btn feature hover-circled" onClick={()=>this.toggleGallery('stud', true)}>
+                  <div className="feature__icon hover-circled__icon"><i className="bi bi-collection"></i></div>
+                  <p className="feature__text">Більше</p>
                </div>
             </div>
          </div>
 
-         <div class="sl">
+         <div className="sl">
             <Slider 
                className="sl__main" {...main}
                asNavFor={this.state.nav2}>

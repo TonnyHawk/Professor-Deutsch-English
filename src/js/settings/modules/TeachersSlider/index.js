@@ -6,14 +6,7 @@ import Slider from "react-slick";
 import BooksGallery from '../BooksGallery';
 import PhotosSlide from './modules/PhotosSlide';
 import TextsSlide from './modules/TextsSlide';
-
-function ibg(){
-   $.each($('.ibg'), function(index, val) {
-      if($(this).find('img').length>0){
-         $(this).css('background-image','url("'+$(this).find('img').attr('src')+'")');
-      }
-   });
-}
+import {ibg} from '../../../my/globals';
 
 function SampleNextArrow(props) {
    const { className, style, onClick } = props;

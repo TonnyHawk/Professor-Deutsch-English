@@ -8,14 +8,14 @@ class CustomMainSlide extends Component {
    let media = funcs.generateMedia(student);
 
      return (
-      <div class="sl__slide-unit" key={student.id}>
+      <div className="sl__slide-unit" key={student.id}>
       {media}
-      <div class="sl__pop talk-buble">
-         <div class="talk-buble__header">
-            <p class="talk-buble__title">{student.name}</p>
+      <div className="sl__pop talk-buble">
+         <div className="talk-buble__header">
+            <p className="talk-buble__title">{student.name}</p>
          </div>
         {/* {pocket} */}
-         <p class="talk-buble__descr">{student.about}</p>
+         <p className="talk-buble__descr">{student.about}</p>
       </div>
    </div>
      );
