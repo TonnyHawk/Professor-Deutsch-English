@@ -1,5 +1,5 @@
 import anime from 'animejs/lib/anime.es.js';
-
+console.log(window.g_Mode);
 // loader options
 $(document).ready(function () {
 
@@ -11,21 +11,8 @@ $(document).ready(function () {
       // functionality
       $('.intro__action').click(function () {
          // dinozavr udali menya
-         var g_Mode = $(this).attr('data-mode');
-         if(g_Mode === 'g'){
-            console.log('hiding E');
-            $('[data-selector="tab-german"]').show()
-            $('[data-selector="tab-english"]').hide();
-         } else{
-            console.log('hiding G');
-            $('[data-selector="tab-english"]').show();
-            $('[data-selector="tab-german"]').hide()
-         }
+         window.g_Mode = $(this).attr('data-mode');
 
-
-         // $('[data-intro="'+g_Mode+'"').each(function(){
-         //    $(this).addClass('is-active');
-         // })
          setTimeout(function(){
             $('.intro').addClass('is-hidden');
             $('html').css('overflow-y', 'auto');

@@ -5,9 +5,9 @@ class CoursesSection extends Component {
    constructor(props){
       super(props)
       this.state = {
-         data: props.data,
+         data: props.data, // courses info here
          currentTab: props.data[0],
-         books: props.books,
+         books: props.books, // all books
          currentBooks: [],
          showBooks: false,
          selectedStudent: [],
@@ -74,6 +74,8 @@ class CoursesSection extends Component {
    
 
    render() {
+      console.log('render mode');
+      console.log(window.g_Mode);
       let {data} = this.props
       let {currentTab} = this.state
       let {showBooks, selectedStudent, booksGalMode, students, currentBooks} = this.state;
