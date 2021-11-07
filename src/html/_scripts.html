@@ -8,6 +8,14 @@
 
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script>
+      $(document).ready(()=>{
+         setTimeout(function(){
+         document.querySelector("#loader").style.display = "none";
+         // document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
+        }, 2000);
+      })
+   </script>
 
    <script src="js/bundle.js"></script>
    <script async src="js/addons.js"></script>
