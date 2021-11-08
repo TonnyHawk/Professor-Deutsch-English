@@ -86,6 +86,49 @@
       }
    }
 
+   .gall-item{
+      &__title {
+         font-family: Gilroy;
+         font-style: normal;
+         font-weight: 600;
+         font-size: 1.6rem;
+         line-height: 138.5%;
+         margin: 1.5rem 0 0.7rem;
+
+         @include media-breakpoint-up(md) {
+            font-size: 1.7rem;
+            line-height: 2.4rem;
+            margin: 1.7rem 0 0.5rem;
+         }
+
+         @include media-breakpoint-up(lg) {
+            font-size: 2.1rem;
+            line-height: 2.9rem;
+            margin: 2rem 0 0.7rem;
+         }
+      }
+
+      // .gall-item__descr
+
+      &__descr {
+         font-family: Roboto;
+         font-style: normal;
+         font-weight: 300;
+         font-size: 1.3rem;
+         line-height: 138.5%;
+
+         // @include media-breakpoint-up(md) {
+         //    font-size: 1.5rem;
+         //    line-height: 1.8rem;
+         // }
+
+         @include media-breakpoint-up(lg) {
+            font-size: 1.5rem;
+            line-height: 2.1rem;
+         }
+      }
+   }
+
    // gall--books
 
    &--books {
@@ -93,17 +136,14 @@
 
          // .gall__bd
 
-         $gap: 2.2rem;
-
-         @include media-breakpoint-up(md) {
-            $gap: 3.2rem;
-         }
-
          &__bd {
-            margin-left: calc(#{-$gap} * 0.5);
-            margin-right: calc(#{-$gap} * 0.5);
-            padding-top: calc(#{$gap} * 0.5);
-            gap: $gap;
+            gap: 2rem;
+            @include media-breakpoint-up(md) {
+               gap: 4.5rem;
+            }
+            @include media-breakpoint-up(lg) {
+               gap: 5rem;
+            }
             @include media-breakpoint-up(lg){
                justify-content: space-between;
             }
@@ -112,22 +152,14 @@
          // .gall__item
 
          &__item {
-            flex: 1 1 calc(50% - #{$gap});
-            // margin: calc(#{$gap} * 0.5);
-
-            @include media-breakpoint-up(md) {
-               flex-basis: calc(33.3% - #{$gap});
-            }
-
-            @include media-breakpoint-up(xl){
-               flex-basis: calc(25% - #{$gap});
-            }
          }
       }
 
       .gall-item {
          padding: 1.5rem;
          background-color: #E1E1E1;
+         // background-color: white;
+         // border: 1px solid #E1E1E1;
          border-radius: 1rem;
          width: 100%;
          cursor: pointer;
@@ -161,38 +193,6 @@
 
          // .gall-item__title
 
-         &__title {
-            font-family: Gilroy;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 1.6rem;
-            line-height: 138.5%;
-            margin-top: 2.7rem;
-            margin-bottom: 1.7rem;
-
-            @include media-breakpoint-up(md) {
-               font-size: 1.8rem;
-               line-height: 138.5%;
-               margin-top: 2.7rem;
-            }
-
-         }
-
-         // .gall-item__descr
-
-         &__descr {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 300;
-            font-size: 1.3rem;
-            line-height: 138.5%;
-
-            @include media-breakpoint-up(md) {
-               font-size: 1.4rem;
-               line-height: 138.5%;
-            }
-         }
-
          &:hover {
             background: #4865FF;
 
@@ -212,28 +212,20 @@
 
          // .gall__bd
 
-         $gap: 2rem;
-
-         @include media-breakpoint-up(md) {
-            $gap: 3.5rem;
-         }
-
-         @include media-breakpoint-up(lg) {
-            $gap: 5rem;
-         }
-
          &__bd {
-            gap: $gap;
-            // margin-left: calc(#{-$gap} * 0.5);
-            // margin-right: calc(#{-$gap} * 0.5);
-            // padding-top: calc(#{$gap} * 0.5);
+            gap: 2rem;
+            @include media-breakpoint-up(md) {
+               gap: 5rem;
+            }
+            @include media-breakpoint-up(lg) {
+               gap: 5rem;
+            }
          }
 
          // .gall__item
 
          &__item {
             flex: 1;
-            // margin: calc(#{$gap} * 0.5);
          }
       }
 
@@ -246,62 +238,8 @@
          // .gall-item__img
 
          &__img {
-            // height: 15rem;
             border-radius: 0.5rem;
-            // object-fit: cover;
             max-width: 100%;
-            // max-height: 100%;
-
-            // @include media-breakpoint-up(md) {
-            //    height: 19rem;
-            // }
-
-            // @include media-breakpoint-up(lg) {
-            //    height: 23.5rem;
-            // }
-         }
-
-         // .gall-item__title
-
-         &__title {
-            font-family: Gilroy;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 1.6rem;
-            line-height: 138.5%;
-            margin: 1.5rem 0 0.7rem;
-
-            @include media-breakpoint-up(md) {
-               font-size: 2rem;
-               line-height: 2.4rem;
-               margin: 1.7rem 0 0.7rem;
-            }
-
-            @include media-breakpoint-up(lg) {
-               font-size: 2.1rem;
-               line-height: 2.9rem;
-               margin: 2rem 0 0.7rem;
-            }
-         }
-
-         // .gall-item__descr
-
-         &__descr {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 300;
-            font-size: 1.3rem;
-            line-height: 138.5%;
-
-            @include media-breakpoint-up(md) {
-               font-size: 1.5rem;
-               line-height: 1.8rem;
-            }
-
-            @include media-breakpoint-up(lg) {
-               font-size: 1.5rem;
-               line-height: 2.1rem;
-            }
          }
       }
    }
