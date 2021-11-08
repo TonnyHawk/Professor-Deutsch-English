@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BooksGallery from '../BooksGallery';
+import smoothScroll from '../../../vendors/smoothScroll';
 
 class CoursesSection extends Component {
    constructor(props){
@@ -40,6 +41,7 @@ class CoursesSection extends Component {
          state.currentBooks = this.getCurrentBooks(state, 0)
          return state
       })
+      smoothScroll(this.tab.current);
    }
 
    componentDidUpdate(prevProps, prevState) {
