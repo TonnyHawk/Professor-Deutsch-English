@@ -5,6 +5,8 @@
    visibility: hidden;
    overflow-Y: auto;
    overflow-x: hidden;
+   display: flex;
+   align-items: center;
 
    &__bg-layer {
       position: absolute;

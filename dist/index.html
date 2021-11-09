@@ -1140,14 +1140,14 @@
 
 
 
-   <!-- <div class="popup popup--message" id="popup">
+   <div class="popup popup--message" id="popup">
       <div class="popup__container">
          <div class="popup__body">
             <div class="popup__icon"><img src="img/icons/success.svg" alt=""></div>
             <div class="popup__text">Дякую, ми зателефонуємо вам якнайшвидше!</div>
          </div>
       </div>
-   </div> -->
+   </div>
    <!-- 
    <div class="popup" id='popup-application'>
       <div class="popup__bg-layer">
@@ -1186,13 +1186,6 @@
    </div> -->
 
    
-<form action="pages/gallery.html" style='display: none' id='link-gallery' method='post'>
-<input type="hidden" name='l'>
-</form>
-<form action="pages/certificates.html" style='display: none' id='link-certificates' method='post'>
-<input type="hidden" name='l'>
-</form>
-
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
    <script>
       $(document).ready(()=>{
@@ -1210,33 +1203,37 @@
    <!-- submit subscription -->
    <script>
       async function submitConsultation() {
-         // $('#popup').fadeIn()
-         // setTimeout(function () {
-         //    $('#popup').fadeOut()
-         // }, 3000)
          console.log('senddata started');
          let data = new FormData(document.querySelector('#consultation .form'))
          console.log(data.get('name'));
          console.log(data.get('phone'));
-         let request = await fetch('http://127.0.0.1:3000/apply', {
+
+         let response = await fetch('http://91.219.61.167:3000/apply', {
             method: 'POST',
             body: data
          })
-         request.then(res=>{
-            console.log(res.json());
-         })
+
+         if (response.ok) { // если HTTP-статус в диапазоне 200-299
+         // получаем тело ответа (см. про этот метод ниже)
+            let json = await response.json();
+            console.log(json);
+            $(document).ready(function(){
+               // showing the popup
+               // $('#popup').fadeIn();
+               // setTimeout(function () {
+               //    $('#popup').fadeOut()
+               // }, 3000)
+               $('#popup').addClass('is-visible');
+               setTimeout(function () {
+                  $('#popup').removeClass('is-visible')
+               }, 3000)
+            })
+
+         } else {
+            alert("Ошибка отправки заявки: " + response.status);
+         }
       }
    </script>
-
-   <!-- <script>
-          window.onload = function(){
-        //hide the preloader
-        setTimeout(function(){
-         document.querySelector("#preloader").style.display = "none";
-         document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
-        }, 2000);
-    }
-   </script> -->
 
 </body>
 

@@ -162,9 +162,14 @@ class StudentsSlider extends Component {
 
     let {showBooks, selectedStudent, booksGalMode, students} = this.state;
 
+    // consider to show only students
+    students = students.filter(elem=>{
+      if(elem.role === 'student') return elem
+    })
     
+    // generating slides
     let mainSlides = students.map(elem=>{
-      return <CustomMainSlide student={elem} funcs={this} key={elem.id}/>
+       return <CustomMainSlide student={elem} funcs={this} key={elem.id}/>
     })
     let booksGal = showBooks ? <BooksGallery students={students} student={selectedStudent} mode={booksGalMode} funcs={this}/> : '';
     
