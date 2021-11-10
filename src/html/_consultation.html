@@ -9,7 +9,8 @@
                <h1 class="section__title">Безкоштовна консультація</h1>
                <p class="section__description">На першому занятті ми обговорюємо цілі, які хоче досягти кожен учень,
                   методи навання, питання дисципліни у навчання, шляхи досягнення успіхів.</p>
-                  <form action="" class="form" onsubmit="submitConsultation(); return false;">
+                  <!-- <form action="php/mail.php" class="form" onsubmit="submitConsultation(); return false;"> -->
+                     <form action="php/mail.php" class="form" method='post'>
                      <div class="form__container">
                         <input type="hidden" name='application-to' value='consultation'>
                         <input type="text" name='name' placeholder="Ім’я">

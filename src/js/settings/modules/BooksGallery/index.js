@@ -51,6 +51,7 @@ class BooksGallery extends Component {
             let title = elem.name;
             let professor = elem.professor;
             let photo = elem.photo;
+            console.log(photo);
             return (
             <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
                <div class="gall-item__photo">

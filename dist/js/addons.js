@@ -13,9 +13,10 @@
 /*!*******************************!*\
   !*** ./src/js/main-addons.js ***!
   \*******************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__(/*! ./vendors/jQuery-Input-Mask-Phone-Numbers/jquery-input-mask-phone-number.min.js */ \"./src/js/vendors/jQuery-Input-Mask-Phone-Numbers/jquery-input-mask-phone-number.min.js\");\r\n__webpack_require__(/*! ./vendors/smoothScroll.js */ \"./src/js/vendors/smoothScroll.js\");\r\n// phone mask\r\n__webpack_require__(/*! ./settings/masks */ \"./src/js/settings/masks.js\");\n\n//# sourceURL=webpack://tak/./src/js/main-addons.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _vendors_smoothScroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vendors/smoothScroll */ \"./src/js/vendors/smoothScroll.js\");\n__webpack_require__(/*! ./vendors/jQuery-Input-Mask-Phone-Numbers/jquery-input-mask-phone-number.min.js */ \"./src/js/vendors/jQuery-Input-Mask-Phone-Numbers/jquery-input-mask-phone-number.min.js\");\r\n\r\n// require('./vendors/smoothScroll.js');\r\n\r\n$(document).ready(_vendors_smoothScroll__WEBPACK_IMPORTED_MODULE_0__.default)\r\n\r\n// phone mask\r\n__webpack_require__(/*! ./settings/masks */ \"./src/js/settings/masks.js\");\n\n//# sourceURL=webpack://tak/./src/js/main-addons.js?");
 
 /***/ }),
 
@@ -43,9 +44,10 @@ eval("// ==================================================\n// \n// jquery-inpu
 /*!****************************************!*\
   !*** ./src/js/vendors/smoothScroll.js ***!
   \****************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("//smooth scroling for the anchor links\r\n$(document).ready(function(){\r\n\tlet doc_h = $(window).height();\r\n\tlet percents = 10; //distance from element to top after scroll (in percents)\r\n\r\n\t//style for the mobile devices\r\n\t//\r\n\t// if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)){\r\n\t// \tpercents = 7;\r\n\t// }\r\n\r\n\t$('[data-target^=\"#\"]').click(function(){\r\n\t\t//Сохраняем значение атрибута href в переменной:\r\n\t\tlet target = $(this).attr('data-target');\r\n\t\tlet scrollCoord;\r\n\t\tif(target === '#'){\r\n\t\t\tscrollCoord = 0;\r\n\t\t}else{\r\n\t\t\tscrollCoord = $(target).offset().top - percents*doc_h/100;\r\n\t\t}\r\n\t\t$('html, body').animate({scrollTop: scrollCoord}, 400);\r\n\t\treturn false;\r\n\t});\r\n});\n\n//# sourceURL=webpack://tak/./src/js/vendors/smoothScroll.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ smoothScroll)\n/* harmony export */ });\n//smooth scroling for the anchor links\r\nfunction smoothScroll(elem=null){\r\n\tlet doc_h = $(window).height();\r\n\tlet percents = 10; //distance from element to top after scroll (in percents)\r\n\r\n\t//style for the mobile devices\r\n\t//\r\n\t// if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)){\r\n\t// \tpercents = 7;\r\n\t// }\r\n\tlet selector;\r\n\telem !== null ? selector = elem : selector = 'document';\r\n\r\n\t$(elem).find('[data-target^=\"#\"]').click(function(){\r\n\t\t//Сохраняем значение атрибута href в переменной:\r\n\t\tlet target = $(this).attr('data-target');\r\n\t\tlet scrollCoord;\r\n\t\tif(target === '#'){\r\n\t\t\tscrollCoord = 0;\r\n\t\t}else{\r\n\t\t\tscrollCoord = $(target).offset().top - percents*doc_h/100;\r\n\t\t}\r\n\t\t$('html, body').animate({scrollTop: scrollCoord}, 400);\r\n\t\treturn false;\r\n\t});\r\n\r\n}\n\n//# sourceURL=webpack://tak/./src/js/vendors/smoothScroll.js?");
 
 /***/ })
 
@@ -74,6 +76,35 @@ eval("//smooth scroling for the anchor links\r\n$(document).ready(function(){\r\
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
 /******/ 	
 /************************************************************************/
 /******/ 	

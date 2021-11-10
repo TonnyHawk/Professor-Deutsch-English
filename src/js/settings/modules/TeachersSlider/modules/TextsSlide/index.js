@@ -23,12 +23,14 @@ class TextsSlide extends Component {
       //    </div>
       //    )
       // })
-      let content = student.about.split('\r\n').filter(elem=>{
+      let content = student.about.split('\n').filter(elem=>{
          return elem !== ''
       }).map((elem, index)=>{
          elem = elem[0].toUpperCase() + elem.slice(1, elem.length);
          return (<p className='slide__text' key={index}>{elem}</p>)
       })
+      console.log('content');
+      console.log(content);
       return (
          <>
             <h2 className="slide__title slide__item">{student.name}</h2>
