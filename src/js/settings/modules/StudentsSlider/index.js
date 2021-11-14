@@ -89,13 +89,16 @@ class StudentsSlider extends Component {
 
    generateMedia(student){
       let result = '';
-      if(student.video.length > 0){
-         result = <Video student={student}/>
-      } else{
+      let video = student.video.find(elem=>{
+         return elem.professor === this.props.lang
+      })
+      if(typeof video !== 'undefined'){
+         result = <Video student={student} src={video.link}/>
+      }else{
          result = (
-         <div className="sl__photo multilayer">
-            <img src={student.photo} srcSet={student.photo+'-/progressive/yes/-/quality/lightest/-/blur/100/'} alt="" className="multilayer__main lazyload" data-srcset={student.photo}/>
-         </div>
+            <div className="sl__photo multilayer">
+               <img src={student.photo} srcSet={student.photo} alt="" className="multilayer__main lazyload" data-srcset={student.photo}/>
+            </div>
          )
       }
 

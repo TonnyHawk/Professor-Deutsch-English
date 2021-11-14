@@ -80,7 +80,7 @@ async function update(){
 
    // students
    ReactDOM.render(
-      <StudentsSlider students={humans}/>,
+      <StudentsSlider students={humans} lang={store.getState().lang}/>,
       document.getElementById('students')
    );
 
