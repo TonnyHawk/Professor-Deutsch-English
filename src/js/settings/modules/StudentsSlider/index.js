@@ -89,7 +89,7 @@ class StudentsSlider extends Component {
 
    generateMedia(student){
       let result = '';
-      if(student.video !== ''){
+      if(student.video.length > 0){
          result = <Video student={student}/>
       } else{
          result = (

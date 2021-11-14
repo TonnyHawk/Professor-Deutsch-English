@@ -50,7 +50,7 @@ class Video extends Component {
             </div>
             <div className="video__bd">
                <video className="video__player" ref={c => this.video = c}>
-                  <source src={student.video}/>
+                  <source src={student.video[0].link}/>
                 Your browser does not support the video tag.
                 </video>
             </div>
