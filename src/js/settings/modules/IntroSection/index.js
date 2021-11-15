@@ -31,7 +31,7 @@ class IntroSection extends Component {
                <img src="img/preloader/1.jpg" alt="">
             </div> --> */}
             <div className="intro__screen intro__screen--fluid ibg" data-intro='e'>
-               <img src="https://ucarecdn.com/13fb9c04-eaf4-49a6-a2bf-09e05891056b/-/quality/smart_retina/-/exposure/-70/-/preview/" alt=""/>
+               <img src="img/intro/img.jfif" alt=""/>
             </div>
             <div className="intro__info intro__info--seccond" data-intro='g'>
             <p className="intro__info-pretitle">Мені цікава</p>
