@@ -9,6 +9,7 @@
 
       @include media-breakpoint-up(md) {
          max-width: 50rem;
+         margin-bottom: 9rem;
       }
 
       @include media-breakpoint-up(xl) {
@@ -37,6 +38,13 @@
          height: calc(100% - #{$mb});
          margin-bottom: $mb;
          max-width: 29.5rem;
+         width: 90%;
+      }
+      @include media-breakpoint-up(lg){
+         height: max-content;
+      }
+      @include media-breakpoint-up(xl){
+         height: calc(100% - #{$mb});
       }
 
 
@@ -56,7 +64,7 @@
             font-family: Gilroy;
             font-weight: bold;
             font-size: 1.9rem;
-            line-height: 2.3rem;
+            line-height: 2.7rem;
             margin-bottom: 1.5rem;
 
             color: #333046;
@@ -68,7 +76,7 @@
             font-family: Roboto;
             font-weight: normal;
             font-size: 1.5rem;
-            line-height: 166.68%;
+            line-height: 173.68%;
 
             color: #000000;
          }

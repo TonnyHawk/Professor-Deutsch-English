@@ -16,10 +16,8 @@
    <!-- submit subscription -->
    <script>
       async function submitConsultation() {
-         console.log('senddata started');
+         console.log('sending application');
          let data = new FormData(document.querySelector('#consultation .form'))
-         console.log(data.get('name'));
-         console.log(data.get('phone'));
 
          let response = await fetch('http://91.219.61.167:3000/apply', {
             method: 'POST',

@@ -24,8 +24,13 @@
 .btn--big {
    font-size: 2rem;
    font-weight: 900;
-   width: max-content;
+   width: 100%;
+   max-width: max-content;
    padding: 25px 50px;
+   @include media-breakpoint-down(md){
+      line-height: 3rem;
+      font-size: 2.2rem;
+   }
 }
 
 .btn--light {

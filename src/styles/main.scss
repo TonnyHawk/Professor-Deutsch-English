@@ -43,8 +43,11 @@ p {
    font-style: normal;
    font-weight: normal;
    font-size: 1.5rem;
-   line-height: 168.18%;
-   @include media-breakpoint-up(lg){
+   line-height: 184.18%;
+   @include media-breakpoint-up(md){
+      font-size: 1.6rem;
+   }
+   @include media-breakpoint-up(xl){
       font-size: 1.8rem;
    }
 }

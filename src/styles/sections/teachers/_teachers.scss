@@ -1,4 +1,8 @@
 #teachers {
+   @include media-breakpoint-up(lg){
+      padding-top: 8.5rem;
+      padding-bottom: 8.5rem;
+   }
    .section {
       &__title {
          text-align: center;

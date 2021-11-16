@@ -142,11 +142,11 @@ $(document).ready(function(){
 
       let topmenu = new Nav('topmenu');
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-         topmenu.setItemsOnBreakpoint(3, 1200);
+         // topmenu.setItemsOnBreakpoint(3, 1200);
       } else{
-         topmenu.setItemsOnBreakpoint(4, 1200);
+         // topmenu.setItemsOnBreakpoint(4, 1200);
       }
-      topmenu.setItemsOnBreakpoint(null, 992);
-      topmenu.adaptize();
+      // topmenu.setItemsOnBreakpoint(null, 992);
+      // topmenu.adaptize();
 
 });

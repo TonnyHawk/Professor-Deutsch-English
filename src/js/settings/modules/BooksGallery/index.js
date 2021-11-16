@@ -18,7 +18,7 @@ class BooksGallery extends Component {
             return (
             <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, photo)}}>
                <div class="gall-item__photo">
-                  <img src={photo+'-/progressive/yes/-/quality/lightest/-/blur/100/'} alt="" class="gall-item__img lazyload" data-src={photo}/>
+                  <img src={photo} alt="" class="gall-item__img lazyload" data-src={photo}/>
                </div>
                <p class="gall-item__title">{title}</p>
                <p class="gall-item__descr">{owner}</p>
@@ -36,7 +36,7 @@ class BooksGallery extends Component {
             return (
             <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, photo)}}>
                <div class="gall-item__photo">
-                  <img src={photo+'-/progressive/yes/-/quality/lightest/-/blur/100/'} alt="" class="gall-item__img lazyload" data-src={photo}/>
+                  <img src={photo} alt="" class="gall-item__img lazyload" data-src={photo}/>
                </div>
                <p class="gall-item__title">{title}</p>
                {/* <p class="gall-item__descr">{owner}</p> */}
@@ -51,11 +51,10 @@ class BooksGallery extends Component {
             let title = elem.name;
             let professor = elem.professor;
             let photo = elem.photo;
-            console.log(photo);
             return (
             <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
                <div class="gall-item__photo">
-                  <img src={photo} srcset={photo+'-/progressive/yes/-/quality/lightest/-/blur/100/'} alt="" class="gall-item__img lazyload" data-srcset={photo}/>
+                  <img src={photo} srcset={photo} alt="" class="gall-item__img lazyload" data-srcset={photo}/>
                </div>
                <p class="gall-item__title">{title}</p>
                <p class="gall-item__descr">Professor {professor.join(" & ")}</p>
@@ -73,7 +72,7 @@ class BooksGallery extends Component {
             return (
             <div class="gall__item gall-item" key={elem._id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
                <div class="gall-item__photo">
-                  <img src={photo+'-/progressive/yes/-/quality/lightest/-/blur/100/'} alt="" class="gall-item__img lazyload" data-src={photo}/>
+                  <img src={photo} alt="" class="gall-item__img lazyload" data-src={photo}/>
                </div>
                <p class="gall-item__title">{title}</p>
                {/* <p class="gall-item__descr">{owner}</p> */}

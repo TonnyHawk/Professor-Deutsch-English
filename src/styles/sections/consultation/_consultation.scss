@@ -2,16 +2,31 @@
    background: #fbfbfb;
    padding-top: 7rem;
    padding-bottom: 7rem;
+   @include media-breakpoint-up(md){
+      padding-top: 9rem;
+      padding-bottom: 9rem;
+   }
    .section {
       &__description {
          margin-bottom: 5rem;
          @include media-breakpoint-up(md){
             margin-bottom: 7rem;
+            max-width: 44rem;
+            margin-right: auto;
+            margin-left: auto;
+         }
+         @include media-breakpoint-up(lg){
+            max-width: unset;
+            margin-right: 0;
+            margin-left: 0;
          }
       }
       &__photo{
          margin-bottom: 4rem;
          width: 100%;
+         @include media-breakpoint-up(md){
+            margin-bottom: 6rem;
+         }
          @include media-breakpoint-up(lg){
             padding: 0 2rem;
             margin-bottom: 0;

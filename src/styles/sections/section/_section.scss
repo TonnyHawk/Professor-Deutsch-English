@@ -2,6 +2,11 @@
    padding-top: 5rem;
    padding-bottom: 5rem;
 
+   @include media-breakpoint-up(md){
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+   }
+
    @include media-breakpoint-up(lg) {
       padding-top: 6.5em;
       padding-bottom: 6.5rem;

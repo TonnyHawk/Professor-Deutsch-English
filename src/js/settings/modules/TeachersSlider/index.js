@@ -171,7 +171,7 @@ class TeachersSlider extends Component {
       return (
          <div key={elem.id}>
             <div className="slide__photo ibg">
-               <img src={elem.photo} srcSet={elem.photo+'-/progressive/yes/-/quality/lightest/-/blur/100/'} className='lazyload' data-srcset={elem.photo} alt=""/>
+               <img src={elem.photo} srcSet={elem.photo} className='lazyload' data-srcset={elem.photo} alt=""/>
             </div>
          </div>
       )

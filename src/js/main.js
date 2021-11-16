@@ -1,3 +1,6 @@
+// primary page settings
+document.documentElement.style = 'overflow-Y: hidden;';
+
 require('../styles/module/ibg/ibg.js');
 require('../styles/module/nav/nav.js');
 require('lazysizes');

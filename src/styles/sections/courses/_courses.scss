@@ -4,7 +4,7 @@
       &__title {
          margin-bottom: 3rem;
          @include media-breakpoint-up(md){
-            margin-bottom: 2rem;
+            margin-bottom: 4rem;
          }
          @include media-breakpoint-up(lg) {
             margin-bottom: 5rem;
@@ -17,6 +17,10 @@
       padding: 4rem 0 7rem;
       $color: white !important;
       margin-top: 6.5rem;
+
+      @include media-breakpoint-up(md){
+         padding-top: 5rem;
+      }
 
       @include media-breakpoint-up(xl) {
          padding: {
@@ -31,6 +35,9 @@
          color: $color;
          text-align: left;
          margin-bottom: 3.5rem;
+         @include media-breakpoint-up(md){
+            margin-bottom: 4rem;
+         }
       }
 
       // .highlight__features
@@ -107,7 +114,7 @@
          margin-bottom: 4.5rem;
 
          @include media-breakpoint-up(md) {
-            line-height: 186% !important;
+            line-height: 190% !important;
          }
 
          @include media-breakpoint-up(lx) {

@@ -1,12 +1,12 @@
 #about-us{
-   padding-top: 6rem;
+   padding-top: 7rem;
    padding-bottom: 7rem;
    background: #FAFAFA;
    display: flex;
    align-items: center;
    @include media-breakpoint-up(lg){
-      padding-top: 13rem;
-      padding-bottom: 6.5rem;
+      padding-top: 10rem;
+      padding-bottom: 10rem;
       min-height: 100vh;
       @media (orientation: portrait){
          min-height: unset;
@@ -33,6 +33,9 @@
    
       &__title {
          margin: 1.5rem 0 3.5rem;
+         @include media-breakpoint-up(lg){
+            margin: 2.5rem 0 3.5rem;
+         }
       }
    
       // .section__text
