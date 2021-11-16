@@ -1048,12 +1048,12 @@
                <h1 class="section__title">Безкоштовна консультація</h1>
                <p class="section__description">На першому занятті ми обговорюємо цілі, які хоче досягти кожен учень,
                   методи навання, питання дисципліни у навчання, шляхи досягнення успіхів.</p>
-                  <!-- <form action="php/mail.php" class="form" onsubmit="submitConsultation(); return false;"> -->
-                     <form action="php/mail.php" class="form" method='post'>
+                  <form action="php/mail.php" class="form" onsubmit="submitConsultation(); return false;">
+                     <!-- <form action="php/mail.php" class="form" method='post'> -->
                      <div class="form__container">
                         <input type="hidden" name='application-to' value='consultation'>
-                        <input type="text" name='name' placeholder="Ім’я">
-                        <input type="tel" name='phone' placeholder="Номер телефону">
+                        <input type="text" class='has-value' name='name' placeholder="Ім’я">
+                        <input type="tel" class='has-value' name='phone' placeholder="Номер телефону">
                         <input type="submit" class="btn btn--light" value='Відправити'>
                      </div>
                   </form>
@@ -1149,6 +1149,15 @@
          </div>
       </div>
    </div>
+
+   <div class="popup popup--loading" id="popup">
+      <div class="popup__container">
+         <div class="popup__body">
+            <div class="popup__icon" style="display: flex; justify-content: center;"><img src="img/icons/spinner.svg" alt=""></div>
+            <div class="popup__text" style="margin-bottom: 0; margin-top: 2rem;">Відправляємо</div>
+         </div>
+      </div>
+   </div>
    <!-- 
    <div class="popup" id='popup-application'>
       <div class="popup__bg-layer">
@@ -1204,12 +1213,13 @@
    <!-- submit subscription -->
    <script>
       async function submitConsultation() {
-         console.log('senddata started');
+         console.log('sending application');
          let data = new FormData(document.querySelector('#consultation .form'))
-         console.log(data.get('name'));
-         console.log(data.get('phone'));
 
-         let response = await fetch('http://91.219.61.167:3000/apply', {
+         // let url = 'http://91.219.61.167:3000/apply'
+         let url = 'http://127.0.0.1:3000/apply'
+         $('#popup.popup--loading').addClass('is-visible');
+         let response = await fetch(url, {
             method: 'POST',
             body: data
          })
@@ -1224,9 +1234,13 @@
                // setTimeout(function () {
                //    $('#popup').fadeOut()
                // }, 3000)
-               $('#popup').addClass('is-visible');
+               $('#popup.popup--loading').removeClass('is-visible');
+               $('#popup.popup--message').addClass('is-visible');
                setTimeout(function () {
-                  $('#popup').removeClass('is-visible')
+                  $('#popup.popup--message').removeClass('is-visible')
+                  $('#consultation .form .has-value').each((index, elem)=>{
+                     $(elem).val("");
+                  })
                }, 3000)
             })
 

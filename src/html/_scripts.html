@@ -19,7 +19,10 @@
          console.log('sending application');
          let data = new FormData(document.querySelector('#consultation .form'))
 
-         let response = await fetch('http://91.219.61.167:3000/apply', {
+         // let url = 'http://91.219.61.167:3000/apply'
+         let url = 'http://127.0.0.1:3000/apply'
+         $('#popup.popup--loading').addClass('is-visible');
+         let response = await fetch(url, {
             method: 'POST',
             body: data
          })
@@ -34,9 +37,13 @@
                // setTimeout(function () {
                //    $('#popup').fadeOut()
                // }, 3000)
-               $('#popup').addClass('is-visible');
+               $('#popup.popup--loading').removeClass('is-visible');
+               $('#popup.popup--message').addClass('is-visible');
                setTimeout(function () {
-                  $('#popup').removeClass('is-visible')
+                  $('#popup.popup--message').removeClass('is-visible')
+                  $('#consultation .form .has-value').each((index, elem)=>{
+                     $(elem).val("");
+                  })
                }, 3000)
             })
 

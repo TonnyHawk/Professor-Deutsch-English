@@ -94,6 +94,7 @@
             max-width: 27rem;
             text-align: center;
             line-height: 3rem;
+            margin-bottom: 0!important;
          }
 
          &__body {
@@ -110,6 +111,9 @@
             z-index: 2;
          }
       }
+   }
+   &--loading{
+      @extend .popup--message;
    }
 
 
