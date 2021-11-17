@@ -39,20 +39,20 @@ class ZoomedGal extends Component {
 
       return (
          <div class={"zoomed " + addClass}>
-         <div class="zoomed__inner">
-            <div class="zoomed__hd">
-               <div class="zoomed__action-icon zoomed__action-icon--close" onClick={()=>{funcs.toggleGallery('zoom', false)}}>
-                  <i class="bi bi-x"></i>
+            <div class="zoomed__bg"></div>
+            <div class="zoomed__inner">
+               <div class="zoomed__hd">
+                  <div class="zoomed__action-icon zoomed__action-icon--close" onClick={()=>{funcs.toggleGallery('zoom', false)}}>
+                     <i class="bi bi-x"></i>
+                  </div>
                </div>
-            </div>
-            <div class="zoomed__bd">
-               <div class="zoomed__main-content">
-                  {content}
+               <div class="zoomed__bd">
+                  <div class="zoomed__main-content">
+                     {content}
+                  </div>
                </div>
             </div>
          </div>
-         <div class="zoomed__bg"></div>
-      </div>
       )
    }
 }

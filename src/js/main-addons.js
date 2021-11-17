@@ -5,4 +5,4 @@ import smoothScroll from './vendors/smoothScroll';
 $(document).ready(smoothScroll)
 
 // phone mask
-require('./settings/masks');
+// require('./settings/masks');

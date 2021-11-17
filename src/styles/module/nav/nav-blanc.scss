@@ -227,7 +227,7 @@
    &.nav_is-open {
       background-color: rgb(17, 42, 133);
       .nav__main {
-         top: 7.2rem;
+         top: 7rem;
          opacity: 1;
          @include media-breakpoint-up(md){
             top: 7.75rem;

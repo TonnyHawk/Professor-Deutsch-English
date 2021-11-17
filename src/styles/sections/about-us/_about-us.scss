@@ -73,5 +73,12 @@
             // border: 0.5rem solid rgba(32, 74, 225, 0.73);
          }
       }
+
+      &__text-col{
+         padding: 0 5rem;
+         @include media-breakpoint-down(xl){
+            padding: 0 1.4rem;
+         }
+      }
    }
 }

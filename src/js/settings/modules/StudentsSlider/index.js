@@ -93,7 +93,7 @@ class StudentsSlider extends Component {
          return elem.professor === this.props.lang
       })
       if(typeof video !== 'undefined'){
-         result = <Video student={student} src={video.link}/>
+         result = <Video src={video.link}/>
       }else{
          result = (
             <div className="sl__photo multilayer">

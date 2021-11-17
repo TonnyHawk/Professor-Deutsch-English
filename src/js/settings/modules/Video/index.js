@@ -27,7 +27,7 @@ class Video extends Component {
       }
    }
    render() {
-      let {student, src} = this.props
+      let {src} = this.props
       return (
          <div className="multilayer video" ref={c => this.videoBlock = c}>
          <div className="video__inner">
@@ -49,8 +49,8 @@ class Video extends Component {
                </div>
             </div>
             <div className="video__bd">
-               <video className="video__player" ref={c => this.video = c}>
-                  <source src={src}/>
+               <video className="video__player" preload="auto" ref={c => this.video = c}>
+                  <source src={src+'#t=0.001'} type="video/mp4"/>
                 Your browser does not support the video tag.
                 </video>
             </div>

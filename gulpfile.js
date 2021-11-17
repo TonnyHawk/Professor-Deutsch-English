@@ -99,7 +99,7 @@ function watchAll(){
    watch(path.projFold + path.html + "/*.html").on('change', html);
 }
 
-exports.default = series(html, css);
+exports.default = series(html);
 exports.dev = series(css, html, server);
 exports.css = series(css, html, watchCss);
 exports.buildCss = series(css);
