@@ -19,8 +19,8 @@
          console.log('sending application');
          let data = new FormData(document.querySelector('#consultation .form'))
 
-         // let url = 'http://91.219.61.167:3000/apply'
-         let url = 'http://127.0.0.1:3000/apply'
+         let url = 'http://91.219.61.167:3000/apply'
+         // let url = 'http://127.0.0.1:3000/apply'
          $('#popup.popup--loading').addClass('is-visible');
          let response = await fetch(url, {
             method: 'POST',

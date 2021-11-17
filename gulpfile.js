@@ -58,7 +58,10 @@ function css() {
       pipeline.pipe(scss(config.thirdParty.sassOptions))
       .pipe(gmq())
       .pipe(cleanCSS())
-      .pipe(autoprefixer())
+      .pipe(autoprefixer({
+         overrideBrowserslist: ['last 99 versions'],
+         cascade: false
+      }))
 
       if(mode !== 'build'){
          pipeline = pipeline.pipe(sourcemaps.write())
@@ -96,7 +99,7 @@ function watchAll(){
    watch(path.projFold + path.html + "/*.html").on('change', html);
 }
 
-exports.default = series(html);
+exports.default = series(html, css);
 exports.dev = series(css, html, server);
 exports.css = series(css, html, watchCss);
 exports.buildCss = series(css);
