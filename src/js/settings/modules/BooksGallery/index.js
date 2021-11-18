@@ -94,13 +94,13 @@ class BooksGallery extends Component {
             <div class="page__bd">
                <div class={'gall '+ galleryClass}>
                   <div class="gall__inner">
-                     <div class="gall__hd">
-                        {/* <div class="gall__filters">
+                     {/* <div class="gall__hd">
+                        <div class="gall__filters">
                            <p class="gall__filter is-active bg-active-main">Всі</p>
-                           <p class="gall__filter bg-active-eng">English</p>
-                           <p class="gall__filter bg-active-deu">Deutsch</p>
-                        </div> */}
-                     </div>
+                           <p class="gall__filter bg-active-eng">Випускники</p>
+                           <p class="gall__filter bg-active-deu">Актуальні</p>
+                        </div>
+                     </div> */}
                      <div class="gall__bd">
                         {galItems}
                      </div>
