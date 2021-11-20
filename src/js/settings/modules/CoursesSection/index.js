@@ -168,7 +168,7 @@ class CoursesSection extends Component {
                      <div className="tab__main">
                         <div className="tab__col">
                            <div className="tab__info-block info-block">
-                              <p className="info-block__title">Розмовні теми / Konversation:</p>
+                              <p className="info-block__title">Розмовні теми:</p>
                               <div className="info-block__body has-readmore">
                                  {speakingThemes}
                               </div>
@@ -176,7 +176,7 @@ class CoursesSection extends Component {
                         </div>
                         <div className="tab__col">
                            <div className="tab__info-block info-block">
-                              <p className="info-block__title">Граматичні теми / Grammatik:</p>
+                              <p className="info-block__title">Граматичні теми:</p>
                               <div className="info-block__body has-readmore">
                                  {grammarThemes}
                               </div>
