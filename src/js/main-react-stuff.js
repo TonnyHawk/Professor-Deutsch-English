@@ -6,6 +6,7 @@ import TeachersSlider from './settings/modules/TeachersSlider';
 import StudentsSlider from './settings/modules/StudentsSlider/index';
 import CertificatesSection from './settings/modules/CertificatesSection';
 import globals from './my/globals'
+import {sortArr} from './functions'
 
 import { createStore } from "redux"
 import { createSlice } from '@reduxjs/toolkit';
@@ -21,13 +22,20 @@ async function loadItems(collName){
 }
 
 function langFilter(items, store){
-   return items.filter(elem=>{
+   let arr = items.filter(elem=>{
       let permission = false
       elem.professor.forEach(element => {
          if(element === store.getState().lang) permission = true
       });
       return permission
    })
+
+   // sort array by 'order'
+   if(typeof arr[0].order !== 'undefined'){
+      arr = sortArr(arr, store.getState().lang)
+   }
+
+   return arr
 }
 
 // redux setup
