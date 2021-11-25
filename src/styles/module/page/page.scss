@@ -28,7 +28,7 @@
       position: relative;
       align-items: center;
       justify-content: center;
-      margin-bottom: 5rem;
+      margin: 5rem 0;
 
       @include media-breakpoint-up(md) {
          // margin-bottom: 6rem;
