@@ -59,10 +59,10 @@ class IntroSection extends Component {
              <p class="logo__last-line">Deutsch & English</p>
            </div>
            <div class="intro__half-screen intro__half-screen--first">
-             <p class="intro__action" onClick={()=>this.handleClick('English')}>Німецька</p>
+             <p class="intro__action" onClick={()=>this.handleClick('Deutsch')}>Німецька</p>
            </div>
            <div class="intro__half-screen intro__half-screen--seccond">
-             <p class="intro__action" onClick={()=>this.handleClick('Deutsch')}>Англійська</p>
+             <p class="intro__action" onClick={()=>this.handleClick('English')}>Англійська</p>
            </div>
          </div>
          <div class="intro__bg ibg"><img src="img/intro/img.jfif" alt=""/></div>

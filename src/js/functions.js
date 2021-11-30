@@ -6,7 +6,9 @@ export function sortArr(arr, filter){ // sorting arr items by 'order' property a
    //    newArr.push(arr[foundIndex])
    // }
    newArr = arr.sort((a, b)=>{
-      return a.order[filter] - b.order[filter]
+      if(typeof a.order[filter] !== 'undefined'){
+         return a.order[filter] - b.order[filter]
+      }else return false;
    })
 
    return newArr
