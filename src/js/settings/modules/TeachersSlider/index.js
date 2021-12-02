@@ -3,10 +3,11 @@ import "slick-carousel/slick/slick.css";
 import React, { Component } from "react";
 import Slider from "react-slick";
 
-import BooksGallery from '../BooksGallery';
-import PhotosSlide from './modules/PhotosSlide';
+// import PhotosSlide from './modules/PhotosSlide';
+
 import TextsSlide from './modules/TextsSlide';
 import {ibg} from '../../../my/globals';
+import {linkTo} from '../../../functions';
 
 function SampleNextArrow(props) {
    const { className, style, onClick } = props;
@@ -44,42 +45,6 @@ class TeachersSlider extends Component {
       ibg();
    }
 
-   toggleGallery(name, state, ...props){
-      // preparation
-      if(name === 'cert' || name === 'stud' || name === 'cert-personal'){
-         if(state){ // open a modul win
-            document.documentElement.style = 'overflow: hidden';
-         } else{ // close module win
-            document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
-         }
-      }
-      // --------------
-
-      switch (name) {
-         case 'cert-personal':
-            this.setState({showBooks: state, booksGalMode: name})
-            break;
-         case 'cert':
-            this.setState({showBooks: state, booksGalMode: name})
-            break;
-         case 'stud':
-            this.setState({showBooks: state, booksGalMode: name})
-            break;
-         case 'zoom':
-            if(!state){ // close
-               this.setState({showZoomed: state, zoomedItem: ''})
-            } else{ // open
-               this.setState({showZoomed: state, zoomedItem: props[0]})
-            }
-            break;
-      }
-   }
-
-   showCertificates(student){
-      this.toggleGallery('cert-personal', true)
-      this.setState({selectedStudent: student})
-   }
-
    generatePocket(student){
       // adding lang badges
       let langBadges = [];
@@ -99,7 +64,7 @@ class TeachersSlider extends Component {
       let actionBtn = '';
       if(student.certificates.length > 0){
          actionBtn = (
-            <p className="slide__action btn" data-id={student.id} onClick={()=>{this.showCertificates(student)}}>Сертифікати</p>
+            <p className="slide__action btn" data-id={student.id} onClick={()=>linkTo(`gall/?what=cert-personal&id=${student._id}`)}>Сертифікати</p>
          )
       }
 
@@ -158,14 +123,13 @@ class TeachersSlider extends Component {
       }]
     }
 
-    let {showBooks, selectedStudent, booksGalMode, showZoomed, zoomedItem, humans} = this.state;
+    let {humans} = this.state;
 
     
    //  let mainSlides = humans.map(elem=>{
    //    return <CustomSlide student={elem} funcs={this} key={elem.id}/>
    //  })
 
-    let booksGal = showBooks ? <BooksGallery students={humans} student={selectedStudent} mode={booksGalMode} funcs={this}/> : '';
     
     let photoSlides = humans.map(elem=>{
       return (
@@ -184,8 +148,6 @@ class TeachersSlider extends Component {
     })
     return (
        <>
-         {booksGal}
-         
 
 
    <h1 className="section__title">З вами працюватимуть професіонали</h1>

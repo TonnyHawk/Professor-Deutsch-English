@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ZoomedGal from '../ZoomedGal/index';
-import {linkTo} from '../../functions';
 
 class BooksGallery extends Component {
    render() {
@@ -88,8 +87,7 @@ class BooksGallery extends Component {
          <div class={"page__inner"}>
             <div class="page__hd">
                <p class="page__title">{winTitle}</p>
-               {/* <div class="page__icon page__icon--left page__close-icon" onClick={()=>{funcs.toggleGallery('cert', false)}}> */}
-               <div class="page__icon page__icon--left page__close-icon" onClick={()=>linkTo('')}>
+               <div class="page__icon page__icon--left page__close-icon" onClick={()=>{funcs.toggleGallery('cert', false)}}>
                   <i class="bi bi-arrow-left"></i>
                </div>
             </div>

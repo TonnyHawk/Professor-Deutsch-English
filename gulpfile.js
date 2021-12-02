@@ -49,7 +49,8 @@ function watchCss(){
 
 function css() {
    let tasks = configs.map(config=>{
-      let pipeline = src(config.css.sourcePaths)
+      // let pipeline = src(config.css.sourcePaths)
+      let pipeline = src('src/styles/main-pages.scss')
 
       if(mode !== 'build'){
          pipeline = pipeline.pipe(sourcemaps.init())
@@ -99,7 +100,7 @@ function watchAll(){
    watch(path.projFold + path.html + "/*.html").on('change', html);
 }
 
-exports.default = series(css, watchCss);
+exports.default = series(css);
 exports.dev = series(css, html, server);
 exports.css = series(css, html, watchCss);
 exports.buildCss = series(css);

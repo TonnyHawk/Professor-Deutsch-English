@@ -3,10 +3,10 @@ import "slick-carousel/slick/slick.css";
 import React, { Component } from "react";
 import Slider from "react-slick";
 
-// import CustomPreviewSlide from '../CustomPreviewSlide/index.js';
+import BooksGallery from '../BooksGallery';
+import CustomPreviewSlide from '../CustomPreviewSlide/index.js';
 import CustomMainSlide from '../CustomMainSlide/index.js';
 import Video from '../Video';
-import {linkTo} from '../../../functions';
 
 
 function SampleNextArrow(props) {
@@ -53,6 +53,39 @@ class StudentsSlider extends Component {
          students: props.students
       };
     }
+
+   toggleGallery(name, state, ...props){
+      // preparation
+      if(name === 'cert' || name === 'stud'){
+         if(state){ // open a modul win
+            document.documentElement.style = 'overflow: hidden';
+         } else{ // close module win
+            document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
+         }
+      }
+      // --------------
+
+      switch (name) {
+         case 'cert':
+            this.setState({showBooks: state, booksGalMode: name})
+            break;
+         case 'stud':
+            this.setState({showBooks: state, booksGalMode: name})
+            break;
+         case 'zoom':
+            if(!state){ // close
+               this.setState({showZoomed: state, zoomedItem: ''})
+            } else{ // open
+               this.setState({showZoomed: state, zoomedItem: props[0]})
+            }
+            break;
+      }
+   }
+
+   showCertificates(student){
+      this.toggleGallery('cert', true)
+      this.setState({selectedStudent: student})
+   }
 
    generateMedia(student){
       let result = '';
@@ -130,7 +163,7 @@ class StudentsSlider extends Component {
           }]
     };
 
-    let {students} = this.state;
+    let {showBooks, selectedStudent, booksGalMode, students} = this.state;
 
     // consider to show only students
     students = students.filter(elem=>{
@@ -141,15 +174,18 @@ class StudentsSlider extends Component {
     let mainSlides = students.map(elem=>{
        return <CustomMainSlide student={elem} funcs={this} key={elem.id}/>
     })
+    let booksGal = showBooks ? <BooksGallery students={students} student={selectedStudent} mode={booksGalMode} funcs={this}/> : '';
     
     return (
        <>
+         {booksGal}
          
 
          <div className="container">
             <div className="section__header">
                <h1 className="section__title">Наші учні</h1>
-               <div className="section__expand-btn feature hover-circled" onClick={()=>linkTo('gall/?what=humans&prof=Deutsch&role=student')}>
+               {/* <div className="section__expand-btn feature hover-circled" onClick={()=>linkTo()}> */}
+               <div className="section__expand-btn feature hover-circled" onClick={()=>this.toggleGallery('stud', true)}>
                   <div className="feature__icon hover-circled__icon"><i className="bi bi-collection"></i></div>
                   <p className="feature__text">Більше</p>
                </div>

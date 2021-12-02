@@ -66,18 +66,3 @@ export function makeReqObj(){
       return {}
    }
 }
-
-export function linkTo(url=''){
-   let reqString = document.location.href.split('#')[0]
-   // console.log(reqString);
-   let protocoll = reqString.split('//')[0] + '//';
-   // console.log(protocoll);
-   let domain = reqString.split('//')[1].split('/')[0] + '/'
-   // console.log(domain);
-
-   let newUrl = protocoll + domain + url
-
-   // console.log(newUrl);
-
-   document.location.href = newUrl
-}

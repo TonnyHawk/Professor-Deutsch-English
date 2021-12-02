@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import BooksGallery from '../BooksGallery';
 import smoothScroll from '../../../vendors/smoothScroll';
+import {linkTo} from '../../../functions';
 
 class CoursesSection extends Component {
    constructor(props){
@@ -47,39 +47,11 @@ class CoursesSection extends Component {
    componentDidUpdate(prevProps, prevState) {
       $(this.tab.current).readmore({num: 3})
    }
-
-   toggleGallery(name, state, ...props){
-      // preparation
-      if(name === 'cert' || name === 'stud' || name === 'books'){
-         if(state){ // open a modul win
-            document.documentElement.style = 'overflow: hidden';
-         } else{ // close module win
-            document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
-         }
-      }
-      // --------------
-
-      switch (name) {
-         //cert, stud, books
-         case 'zoom':
-            if(!state){ // close
-               this.setState({showZoomed: state, zoomedItem: ''})
-            } else{ // open
-               this.setState({showZoomed: state, zoomedItem: props[0]})
-            }
-            break;
-         default:
-            this.setState({showBooks: state, booksGalMode: name})
-            break;
-      }
-   }
    
 
    render() {
       let {data} = this.props
       let {currentTab} = this.state
-      let {showBooks, selectedStudent, booksGalMode, students, currentBooks} = this.state;
-      let booksGal = showBooks ? <BooksGallery books={currentBooks} students={students} student={selectedStudent} mode={booksGalMode} funcs={this}/> : '';
 
 
       let names = data.map((elem, index)=>{
@@ -113,7 +85,7 @@ class CoursesSection extends Component {
             <div className="tab__feature">
                <div className="feature">
                   <div className="feature__icon"><img src="img/icons/book.svg" alt=""/></div>
-                  <a className="feature__text_link" data-action="see-books" onClick={()=>this.toggleGallery('books', true)}>Навчальні підручники</a>
+                  <a className="feature__text_link" data-action="see-books" onClick={()=>linkTo('gall/?what=course-books&id=617e97089a7baeba42741556')}>Навчальні підручники</a>
                </div>
             </div>
          </div>
@@ -188,7 +160,6 @@ class CoursesSection extends Component {
                   </div>
                   </div>
                   </div>
-                  {booksGal}
                   </>
       );
    }
