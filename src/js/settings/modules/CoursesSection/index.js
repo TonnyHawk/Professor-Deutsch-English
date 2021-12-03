@@ -8,7 +8,6 @@ class CoursesSection extends Component {
       this.state = {
          data: props.data, // courses info here
          currentTab: props.data[0],
-         books: props.books, // all books
          currentBooks: [],
          showBooks: false,
          selectedStudent: [],
@@ -18,29 +17,15 @@ class CoursesSection extends Component {
       this.tab = React.createRef()
    }
 
-   getCurrentBooks(state, index){
-      return state.data[index].books.map(elem=>{
-         let index = state.books.findIndex(book=>{
-            return book._id === elem
-         })
-         return state.books[index]
-      })
-   }
-
    changeTab(index){
       this.setState(state=>{
          state.currentTab = state.data[index]
-         state.currentBooks = this.getCurrentBooks(state, index)
          return state
       })
    }
 
    componentDidMount() {
       $(this.tab.current).readmore({num: 3})
-      this.setState(state=>{
-         state.currentBooks = this.getCurrentBooks(state, 0)
-         return state
-      })
       smoothScroll(this.tab.current);
    }
 
@@ -85,7 +70,7 @@ class CoursesSection extends Component {
             <div className="tab__feature">
                <div className="feature">
                   <div className="feature__icon"><img src="img/icons/book.svg" alt=""/></div>
-                  <a className="feature__text_link" data-action="see-books" onClick={()=>linkTo('gall/?what=course-books&id=617e97089a7baeba42741556')}>Навчальні підручники</a>
+                  <a className="feature__text_link" data-action="see-books" onClick={()=>linkTo(`gall/?what=course-books&id=${currentTab._id}`)}>Навчальні підручники</a>
                </div>
             </div>
          </div>

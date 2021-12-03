@@ -1,6 +1,16 @@
+@import 'basic/reset';
+html{
+   font-size: 62.5%;
+}
+
 @import 'basic/mixins';
 @import 'module/spinner/spinner';
 @import 'module/loader/loader';
+
+@import '../../node_modules/bootstrap/scss/bootstrap-utilities.scss';
+
+@import 'module/ibg/ibg';
+@import 'sections/intro/intro';
 
 // .spinner, .loader{display: none;}
 

@@ -6,99 +6,47 @@ import TeachersSlider from './settings/modules/TeachersSlider';
 import StudentsSlider from './settings/modules/StudentsSlider/index';
 import CertificatesSection from './settings/modules/CertificatesSection';
 import globals from './my/globals'
-import {sortArr} from './functions'
-
-import { createStore } from "redux"
-import { createSlice } from '@reduxjs/toolkit';
-
-async function loadItems(collName){
-   let response = await fetch(globals.serverUrl+'/'+collName);
-   if (response.ok) { // если HTTP-статус в диапазоне 200-299
-      return response.json();
-   } else {
-      alert(`Ошибка подгрузки ${collName} (HTTP): ` + response.status);
-      return []
-   }
-}
-
-function langFilter(items, store){
-   let arr = items.filter(elem=>{
-      let permission = false
-      elem.professor.forEach(element => {
-         if(element === store.getState().lang) permission = true
-      });
-      return permission
-   })
-
-   // sort array by 'order'
-   if(typeof arr[0].order !== 'undefined'){
-      arr = sortArr(arr, store.getState().lang)
-   }
-
-   return arr
-}
-
-// redux setup
-let initialState = {
-   lang: ''
-}
-
-let langSlice = createSlice({
-   name: 'lang',
-   initialState,
-   reducers:{
-      setLang: (state, action)=>{
-         state.lang = action.payload
-      }
-   }
-})
-
-let {setLang} = langSlice.actions
-let reducer = langSlice.reducer
-
-const store = createStore(reducer)
+import {langFilter, loadItems} from './functions'
 
 
-ReactDOM.render(
-   <IntroSection dispatch={store.dispatch} setLang={setLang}/>,
- document.querySelector('#intro')
-);
+// ReactDOM.render(
+//    <IntroSection dispatch={store.dispatch} setLang={setLang}/>,
+//  document.querySelector('#intro')
+// );
+
+let schoolName = 'Deutsch'
+document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
 
 
-async function update(){
+   let courses = await loadItems('courses', globals.serverUrl);
+   courses = langFilter(courses, schoolName)
 
-   let courses = await loadItems('courses');
-   courses = langFilter(courses, store)
-
-   let books = await loadItems('books')
    // courses
    ReactDOM.render(
-      <CoursesSection data={courses} books={books}/>,
+      <CoursesSection data={courses}/>,
       document.querySelector('#courses #tab')
    );
 
-   let humans = await loadItems('humans')
-   humans = langFilter(humans, store)
+   let humans = await loadItems('humans', globals.serverUrl)
+   humans = langFilter(humans, schoolName, 'sort')
 
    // teachers
    ReactDOM.render(
       <TeachersSlider humans={humans}/>,
-    document.getElementById('teachers')
+      document.getElementById('teachers')
    );
 
    // students
    ReactDOM.render(
-      <StudentsSlider students={humans} lang={store.getState().lang}/>,
+      <StudentsSlider students={humans} lang={schoolName}/>,
       document.getElementById('students')
    );
 
-}
 
-store.subscribe(update)
+   let certs = await loadItems('certificates', globals.serverUrl)
+   certs = langFilter(certs, schoolName, 'sort')
 
-let certs = await loadItems('certificates')
-
-ReactDOM.render(
-   <CertificatesSection humans={certs} certificates={certs}/>,
- document.getElementById('certificates')
-);
+   ReactDOM.render(
+      <CertificatesSection humans={certs} certificates={certs}/>,
+   document.getElementById('certificates')
+   );

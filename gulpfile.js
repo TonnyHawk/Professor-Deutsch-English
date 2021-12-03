@@ -50,7 +50,7 @@ function watchCss(){
 function css() {
    let tasks = configs.map(config=>{
       // let pipeline = src(config.css.sourcePaths)
-      let pipeline = src('src/styles/main-pages.scss')
+      let pipeline = src('src/styles/first-loaded.scss')
 
       if(mode !== 'build'){
          pipeline = pipeline.pipe(sourcemaps.init())
