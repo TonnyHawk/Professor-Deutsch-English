@@ -34,21 +34,25 @@ export async function loadItems(collName, serverUrl, optionalQuery=''){
 }
 
 export function langFilter(items, filter, sorting=null){
-   let arr = items.filter(elem=>{
-      let permission = false
-      elem.professor.forEach(element => {
-         if(element === filter) permission = true
-      });
-      return permission
-   })
+   let arr = items
+   if(items.length > 0){
+      arr = items.filter(elem=>{
+         let permission = false
+         elem.professor.forEach(element => {
+            if(element === filter) permission = true
+         });
+         return permission
+      })
 
-   if(sorting === 'sort'){
-      // sort array by 'order'
-      if(typeof arr[0].order !== 'undefined'){
-         arr = sortArr(arr, filter)
+      if(sorting === 'sort'){
+         // sort array by 'order'
+         try{ // if some elements do not have 'order' property
+            if(typeof arr[0].order !== 'undefined'){ // or it`s value is not set
+               arr = sortArr(arr, filter)
+            }
+         }catch{console.log("some elements do not have 'order' property")}
       }
    }
-
    return arr
 }
 

@@ -39,7 +39,7 @@ class CertificatesSection extends Component {
             <div className="col-12 col-lg-5">
                <div className="certificates__info">
                   <p className="certificates__title">Наш спільний успіх підтверджено низкою сертифікатів</p>
-                  <p className="certificates__my-btn" onClick={()=>linkTo('gall/?what=cert&prof=Deutsch')}>Переглянути всі</p>
+                  <p className="certificates__my-btn" onClick={()=>linkTo(`gall/?what=cert&prof=${this.props.prof}`)}>Переглянути всі</p>
                </div>
             </div>
          </div>
