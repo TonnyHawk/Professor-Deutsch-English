@@ -101,11 +101,6 @@ module.exports = [(env) => {
     experiments: {
       topLevelAwait: true,
     },
-    plugins: [
-      new webpack.ProvidePlugin({
-        globals: path.resolve(path.join(__dirname, projFold+'/js/my/globals')),
-      })
-    ]
 },
 ]
 

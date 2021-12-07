@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
-import globals from './globals'
+import globals from '../../js/globals'
 import {loadItems, langFilter, makeReqObj, linkTo} from '../../js/functions'
 import BooksGallery from './modules/BooksGallery'
 

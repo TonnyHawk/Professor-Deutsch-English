@@ -6,7 +6,7 @@ import Slider from "react-slick";
 // import PhotosSlide from './modules/PhotosSlide';
 
 import TextsSlide from './modules/TextsSlide';
-import {ibg} from '../../../my/globals';
+import {ibg} from '../../../../../js/globals'
 import {linkTo} from '../../../../../js/functions'
 
 function SampleNextArrow(props) {

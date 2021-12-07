@@ -4,7 +4,7 @@ import CoursesSection from './settings/modules/CoursesSection';
 import TeachersSlider from './settings/modules/TeachersSlider';
 import StudentsSlider from './settings/modules/StudentsSlider/index';
 import CertificatesSection from './settings/modules/CertificatesSection';
-import globals from './my/globals'
+import globals from '../../js/globals'
 import {langFilter, loadItems, makeReqObj, linkTo} from '../../js/functions'
 
 

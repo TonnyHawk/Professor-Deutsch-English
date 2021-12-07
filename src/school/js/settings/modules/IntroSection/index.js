@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ibg} from '../../../my/globals';
+import {ibg} from '../../../../../js/globals'
 
 class IntroSection extends Component {
    rootElem = React.createRef()
