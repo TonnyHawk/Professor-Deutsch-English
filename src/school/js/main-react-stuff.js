@@ -5,7 +5,7 @@ import TeachersSlider from './settings/modules/TeachersSlider';
 import StudentsSlider from './settings/modules/StudentsSlider/index';
 import CertificatesSection from './settings/modules/CertificatesSection';
 import globals from './my/globals'
-import {langFilter, loadItems, makeReqObj, linkTo} from './functions'
+import {langFilter, loadItems, makeReqObj, linkTo} from '../../js/functions'
 
 
 let reqObj = makeReqObj()

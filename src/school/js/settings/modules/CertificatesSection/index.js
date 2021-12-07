@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {linkTo} from '../../../functions';
+import {linkTo} from '../../../../../js/functions'
 
 class CertificatesSection extends Component {
    constructor(props) {

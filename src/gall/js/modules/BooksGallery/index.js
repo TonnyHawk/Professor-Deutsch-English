@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ZoomedGal from '../ZoomedGal/index';
-import {linkTo} from '../../functions';
+import {linkTo} from '../../../../js/functions'
 
 class BooksGallery extends Component {
    render() {

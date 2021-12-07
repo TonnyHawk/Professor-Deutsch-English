@@ -7,7 +7,7 @@ import Slider from "react-slick";
 
 import TextsSlide from './modules/TextsSlide';
 import {ibg} from '../../../my/globals';
-import {linkTo} from '../../../functions';
+import {linkTo} from '../../../../../js/functions'
 
 function SampleNextArrow(props) {
    const { className, style, onClick } = props;

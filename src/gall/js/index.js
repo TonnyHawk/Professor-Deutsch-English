@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
 import globals from './globals'
-import {loadItems, langFilter, makeReqObj, linkTo} from './functions'
+import {loadItems, langFilter, makeReqObj, linkTo} from '../../js/functions'
 import BooksGallery from './modules/BooksGallery'
 
 class App extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import smoothScroll from '../../../vendors/smoothScroll';
-import {linkTo} from '../../../functions';
+import {linkTo} from '../../../../../js/functions'
 
 class CoursesSection extends Component {
    constructor(props){
