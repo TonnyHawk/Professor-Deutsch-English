@@ -1,5 +1,5 @@
 .btn {
-
+   display: block!important;
    font-family: Gilroy;
    font-style: normal;
    font-weight: 600;
@@ -22,6 +22,7 @@
 }
 
 .btn--big {
+   @extend .btn;
    font-size: 2rem;
    font-weight: 900;
    width: 100%;

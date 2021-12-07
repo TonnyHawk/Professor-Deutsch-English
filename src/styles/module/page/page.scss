@@ -1,7 +1,7 @@
 .page {
    @include layer;
    position: fixed;
-   z-index: 2000;
+   z-index: 1; // 2000
    background: #F5F4F7;
    // background: white;
    overflow-y: auto;

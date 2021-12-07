@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
 import globals from './globals'
-import {loadItems, langFilter, makeReqObj} from './functions'
+import {loadItems, langFilter, makeReqObj, linkTo} from './functions'
 import BooksGallery from './modules/BooksGallery'
 
 class App extends Component {
@@ -48,16 +48,16 @@ class App extends Component {
    render() {
       let {booksGalMode, items} = this.state
       return (
-         <BooksGallery items={items} mode={booksGalMode} funcs={this}/>
+         <BooksGallery items={items} mode={booksGalMode} funcs={this} prof={this.props.prof}/>
       );
    }
 }
 
 let reqObj = makeReqObj()
-console.log(reqObj.what);
 
 let items;
-let mode = ''
+let mode = '';
+let prof = reqObj.prof || '';
 
 function getCurrentBooks(state, index){
    return state.data[index].books.map(elem=>{
@@ -67,45 +67,67 @@ function getCurrentBooks(state, index){
       return state.books[index]
    })
 }
-
-switch(reqObj.what){
-   case 'humans':
-      items = await loadItems('humans', globals.serverUrl);
-      items = langFilter(items, reqObj.prof, 'sort');
-      items = items.filter(elem=>{
-         if(elem.role === reqObj.role) return elem
-      })
-      mode = 'stud'
-      break;
+if(reqObj !== {}){// some props given
+   switch(reqObj.what){
+      case 'humans':
+         if(typeof reqObj.prof !== 'undefined'){
+            items = await loadItems('humans', globals.serverUrl);
+            items = langFilter(items, reqObj.prof, 'sort');
+            items = items.filter(elem=>{
+               if(elem.role === reqObj.role) return elem
+            })
+            mode = 'stud'
+         }else{
+            linkTo('')
+         }
+         break;
       case 'cert-personal':
-      items = await loadItems('item', globals.serverUrl, `/humans/${reqObj.id}`);
-      items = items.certificates;
-      mode = 'cert-personal'
-      break;
-   case 'cert':
-      items = await loadItems('certificates', globals.serverUrl);
-      items = langFilter(items, reqObj.prof, 'sort');
-      mode = 'cert'
-      break;
-   case 'course-books':
-      let books = await loadItems('books', globals.serverUrl);
-      let course = await loadItems('item', globals.serverUrl, `/courses/${reqObj.id}`);
+         if(typeof reqObj.id !== 'undefined'){
+            items = await loadItems('item', globals.serverUrl, `/humans/${reqObj.id}`);
+            items = items.certificates;
+   
+            mode = 'cert-personal'
+         }else{
+            linkTo('')
+         }
+         break;
+      case 'cert':
+         if(typeof reqObj.prof !== 'undefined'){
+            items = await loadItems('certificates', globals.serverUrl);
+            items = langFilter(items, reqObj.prof, 'sort');
+            mode = 'cert'
+         }else{
+            linkTo('')
+         }
+         break;
+      case 'course-books':
+         if(typeof reqObj.id !== 'undefined'){
+            let books = await loadItems('books', globals.serverUrl);
+            let course = await loadItems('item', globals.serverUrl, `/courses/${reqObj.id}`);
+   
+            let dataObj = {
+               data: [course],
+               books
+            }
+   
+            items = getCurrentBooks(dataObj, 0)
+            mode = 'books'
+         }else{
+            linkTo('')
+         }
+         break;
+      default:
+         console.log('no props given');
+         linkTo('')
+   }
 
-      let dataObj = {
-         data: [course],
-         books
-      }
+   ReactDOM.render(
+      <App items={items} mode={mode} prof={prof}/>,
+      document.getElementById('root')
+   );
 
-      items = getCurrentBooks(dataObj, 0)
-      mode = 'cert-personal'
-      break;
-   default:
-      items = await loadItems('humans', globals.serverUrl);
-      items = langFilter(items, reqObj.prof, 'sort');
+
+}else{ // no properties given
+   console.log('no props given');
+   linkTo('')
 }
-
-
-ReactDOM.render(
-   <App items={items} mode={mode}/>,
-   document.getElementById('root')
-);

@@ -83,13 +83,54 @@ class BooksGallery extends Component {
       }
 
       let zoomedGal = funcs.state.showZoomed ? <ZoomedGal item={funcs.state.zoomedItem} funcs={funcs}/> : '';
+      let linkToBack = '';
+      this.props.prof === '' ? linkToBack = '' : linkToBack = `school/?prof=${this.props.prof}`
+
+      let content = (
+         <div class="gall__bd">
+            {galItems}
+         </div>
+      )
+
+      if(items.length === 0){
+
+         let thatWord = ''
+         switch(mode){
+            case 'cert':
+               thatWord = 'сертифікату'
+               break;
+            case 'cert-personal':
+               thatWord = 'сертифікату';
+               break;
+            case 'stud':
+               thatWord = 'студента';
+               break;
+            case 'books':
+               thatWord = 'підручника';
+               break;
+         }
+         
+         content = (
+            <div className='gall__message'>
+               <div className="gall__message-inner">
+                  <p className='gall__message-text'>Жодного {thatWord} поки що не додано</p>
+                  <a className='gall__message-link' onClick={()=>linkTo(linkToBack)}>На головну</a>
+               </div>
+            </div>
+         )
+      }
+
+
+
+
+
       return (
          <div class="page" id="page-books">
          <div class={"page__inner"}>
             <div class="page__hd">
                <p class="page__title">{winTitle}</p>
                {/* <div class="page__icon page__icon--left page__close-icon" onClick={()=>{funcs.toggleGallery('cert', false)}}> */}
-               <div class="page__icon page__icon--left page__close-icon" onClick={()=>linkTo('')}>
+               <div class="page__icon page__icon--left page__close-icon" onClick={()=>linkTo(linkToBack)}>
                   <i class="bi bi-arrow-left"></i>
                </div>
             </div>
@@ -103,9 +144,7 @@ class BooksGallery extends Component {
                            <p class="gall__filter bg-active-deu">Актуальні</p>
                         </div>
                      </div> */}
-                     <div class="gall__bd">
-                        {galItems}
-                     </div>
+                     {content}
                   </div>
                </div>
             </div>

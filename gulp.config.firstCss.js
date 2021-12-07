@@ -1,6 +1,6 @@
 let appName = 'first css';
 let path = {
-   projFold: './src',
+   projFold: './src/school',
    distFold: './dist',
    styles: '/styles',
    css: '/css',

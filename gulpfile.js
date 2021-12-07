@@ -50,7 +50,7 @@ function watchCss(){
 function css() {
    let tasks = configs.map(config=>{
       // let pipeline = src(config.css.sourcePaths)
-      let pipeline = src('src/styles/first-loaded.scss')
+      let pipeline = src('src/school/styles/main.scss')
 
       if(mode !== 'build'){
          pipeline = pipeline.pipe(sourcemaps.init())
@@ -68,7 +68,7 @@ function css() {
          pipeline = pipeline.pipe(sourcemaps.write())
       }
 
-      pipeline.pipe(dest('dist/css/'))
+      pipeline.pipe(dest('dist/school/css/'))
 
       pipeline = pipeline.pipe(browserSync.stream())
 
@@ -82,7 +82,7 @@ function html() {
    let pipeline = src(path.projFold + path.html + '/index.html')
       .pipe(fileInclude())
       // .pipe(dest(mode === 'dev' ? './src/' : './dist/'))
-      .pipe(dest('./dist/'))
+      .pipe(dest('./dist/school'))
 
       if(mode == 'dev'){
          pipeline = pipeline.pipe(browserSync.reload())
