@@ -193,8 +193,6 @@
       .gall-item {
          padding: 1.5rem;
          background-color: #E1E1E1;
-         // background-color: white;
-         // border: 1px solid #E1E1E1;
          border-radius: 1rem;
          width: 100%;
          cursor: pointer;
@@ -213,12 +211,14 @@
 
          &__photo {
             width: 100%;
+
          }
 
          // .gall-item__img
 
          &__img {
             width: 100%;
+            object-fit: cover;
          }
 
          &__title,
@@ -248,23 +248,32 @@
          // .gall__bd
 
          &__bd {
+            display: flex;
+            flex-wrap: wrap;
             gap: 2rem;
-            @include media-breakpoint-up(md) {
-               gap: 5rem;
-            }
-            @include media-breakpoint-up(lg) {
-               gap: 5rem;
-            }
+            // @include media-breakpoint-up(md) {
+            //    gap: 5rem;
+            // }
+            // @include media-breakpoint-up(lg) {
+            //    gap: 5rem;
+            // }
          }
 
          // .gall__item
 
          &__item {
-            flex: 1;
          }
       }
 
       .gall-item {
+         height: 40vh;
+         flex-grow: 1;
+         @media (max-aspect-ratio: 1/1){
+            height: 30vh;
+         }
+         @media (max-height: 480px){
+            height: 80vh;
+         }
 
          // .gall-item__photo
 
@@ -274,8 +283,15 @@
 
          &__img {
             border-radius: 0.5rem;
+            max-height: 100%;
+            height: 100%;
+            min-width: 100%;
             max-width: 100%;
+            object-fit: cover;
+            vertical-align: bottom;
          }
       }
    }
 }
+
+

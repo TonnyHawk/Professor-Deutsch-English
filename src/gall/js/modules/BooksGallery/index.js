@@ -52,15 +52,21 @@ class BooksGallery extends Component {
             let title = elem.name;
             let professor = elem.professor;
             let photo = elem.photo;
+            // return (
+            // <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
+            //    <div class="gall-item__photo">
+            //       <img src={photo} srcset={photo} alt="" class="gall-item__img lazyload" data-srcset={photo}/>
+            //    </div>
+            //    <p class="gall-item__title">{title}</p>
+            //    <p class="gall-item__descr">Professor {professor.join(" & ")}</p>
+            // </div>
+            // )
             return (
-            <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
-               <div class="gall-item__photo">
-                  <img src={photo} srcset={photo} alt="" class="gall-item__img lazyload" data-srcset={photo}/>
+               <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
+                     <img src={photo} srcset={photo} alt="" class="gall-item__img lazyload" data-srcset={photo}/>
                </div>
-               <p class="gall-item__title">{title}</p>
-               <p class="gall-item__descr">Professor {professor.join(" & ")}</p>
-            </div>
-            )
+               )
+
          })
       } else if(mode === 'books'){
          winTitle = 'Навчальні матеріали'
