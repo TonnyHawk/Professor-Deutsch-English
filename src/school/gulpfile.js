@@ -21,16 +21,7 @@ let {
       css: '/css',
       scssEntry: '/main.scss',
       html: '/html',
-      globals: '../'
-   }
-
-   function server() {
-      browserSync.init({
-         server: path.distFold
-      });
-   
-      watch(path.globals + path.styles + "/**/*.scss", { ignoreInitial: false }, css);
-      watch(path.projFold + path.html + "/*.html").on('change', series(html, browserSync.reload));
+      globals: '..'
    }
 
    function css() {
@@ -53,6 +44,15 @@ let {
          .pipe(fileInclude())
          .pipe(dest(path.distFold))
          // .pipe(browserSync.reload())
+   }
+
+   async function server() {
+      browserSync.init({
+         server: path.distFold
+      });
+   
+      watch(path.globals + path.styles + "/**/*.scss", { ignoreInitial: false }, css);
+      watch(path.projFold + path.html + "/*.html").on('change', series(html, browserSync.reload));
    }
 
 exports.default = series(css, html)

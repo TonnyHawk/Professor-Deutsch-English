@@ -1,0 +1,13 @@
+.photo-sloth{
+   width: 100%;
+   min-width: 100%;
+   height: 25em;
+   border-radius: 0.9rem;
+   object-fit: cover;
+   &--fluid{
+      height: 50rem;
+      @include media-breakpoint-up(md){
+         height: 100%;
+      }
+   }
+} 

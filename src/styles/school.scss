@@ -248,6 +248,7 @@ a[href^=mailto] {
 // @import 'module/gall/gall';
 // @import 'module/zoomed/zoomed';
 @import 'module/video/video';
+@import 'module/photo-sloth/photo-sloth';
 
 
 @import 'sections/section/section';
@@ -259,7 +260,8 @@ a[href^=mailto] {
 @import 'sections/students/students';
 @import 'sections/teachers/teachers';
 @import 'sections/intro/intro';
-@import 'sections/certificates/certificates.scss';
+@import 'sections/certificates/certificates';
+@import 'sections/gallery-showcase/gallery-showcase';
 
 
 @import 'sections/section/section';
