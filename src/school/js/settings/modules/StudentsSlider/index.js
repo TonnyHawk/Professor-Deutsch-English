@@ -57,7 +57,7 @@ class StudentsSlider extends Component {
    generateMedia(student){
       let result = '';
       let video = student.video.find(elem=>{
-         return elem.professor === this.props.lang
+         return elem.professor === this.props.prof
       })
       if(typeof video !== 'undefined'){
          result = <Video src={video.link}/>

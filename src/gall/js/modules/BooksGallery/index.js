@@ -86,6 +86,43 @@ class BooksGallery extends Component {
             </div>
             )
          })
+      } else if(mode === 'gallery'){
+         winTitle = 'Галерея';
+         galleryClass = 'gall--photos';
+
+         galItems = items.map(elem=>{
+
+            let mediaThing = ''
+
+            switch(elem.media.type){
+               case 'image':
+                  mediaThing = (<img src={elem.media.link} srcset={elem.media.link} alt="" class="gall-item__img lazyload" data-srcset={elem.media.link}/>)
+                  break;
+               case 'video':
+                  mediaThing = (
+                     <>
+                     <video class="gall-item__img" preload="metadata">
+                        <source src={elem.media.link} type="video/mp4"/>
+                        Your browser does not support the video tag.
+                     </video>
+                     <div className="play-layer">
+                           <div className="play-layer__bg"></div>
+                           <div className="play-layer__btn play-layer__btn--play">
+                              <i className="bi bi-play-fill"></i>
+                           </div>
+                        </div>
+                     </>
+                  )
+                  break;
+            }
+
+            return (
+               <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
+                     {mediaThing}
+               </div>
+            )
+
+         })
       }
 
       let zoomedGal = funcs.state.showZoomed ? <ZoomedGal item={funcs.state.zoomedItem} funcs={funcs}/> : '';

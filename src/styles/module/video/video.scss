@@ -88,43 +88,6 @@ $duration: 0.3s;
 
    &__action--volume {}
 
-   // .video__play
-
-   &__play {
-      @include layer;
-      z-index: 2;
-      @include perfect-center;
-      opacity: 0;
-      transition: 0.3s;
-      cursor: pointer;
-   }
-
-   // .video__play-bg
-
-   &__play-bg {
-      background: rgba(0, 0, 0, 0.28);
-      @include layer;
-      z-index: 1;
-   }
-
-   // .video__play-btn
-
-   &__play-btn {
-      z-index: 2;
-      font-size: 6rem;
-      color: white;
-      @include media-breakpoint-up(md){
-         font-size: 12rem;
-      }
-      @include media-breakpoint-up(lg){
-         font-size: 7rem;
-      }
-   }
-
-   // .video__play-btn--play
-
-   &__play-btn--play {}
-
    // .video__bd
 
    &__bd {

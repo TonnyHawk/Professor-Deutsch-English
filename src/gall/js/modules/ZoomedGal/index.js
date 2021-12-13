@@ -17,10 +17,28 @@ class ZoomedGal extends Component {
          )
       } else{ // if we passed an ogject
          addClass = 'zoomed--gallery-photo';
+         let mediaThing = ''
+         if(typeof item.media === 'undefined'){
+            mediaThing = (<img src={item.photo} alt="" class="multilayer__main"/>)
+         }else{
+            switch(item.media.type){
+               case 'video':
+                  mediaThing = (
+                     <video class="multilayer__main" preload="metadata" controls>
+                        <source src={item.media.link} type="video/mp4"/>
+                        Your browser does not support the video tag.
+                     </video>
+                  )
+                  break;
+               case 'image':
+                  mediaThing = (<img src={item.media.link} alt="" class="multilayer__main"/>)
+                  break;
+            }
+         }
          content = (
             <>
             <div class="zoomed__main-photo multilayer">
-               <img src={item.photo} alt="" class="multilayer__main"/>
+               {mediaThing}
             </div>
             <div class="zoomed__main-info talk-buble">
                <div class="talk-buble__header">

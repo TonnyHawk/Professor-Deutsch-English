@@ -55,9 +55,8 @@ class App extends Component {
 
 let reqObj = makeReqObj()
 
-// reqObj.what = 'humans';
-// reqObj.prof = 'Deutsch';
-// reqObj.role = 'student'
+reqObj.what = 'gallery';
+reqObj.prof = 'Deutsch';
 
 let items;
 let mode = '';
@@ -116,6 +115,15 @@ if(reqObj !== {}){// some props given
    
             items = getCurrentBooks(dataObj, 0)
             mode = 'books'
+         }else{
+            linkTo('')
+         }
+         break;
+      case 'gallery':
+         if(typeof reqObj.prof !== 'undefined'){
+            items = await loadItems('gallery', globals.serverUrl);
+            items = langFilter(items, reqObj.prof, 'sort');
+            mode = 'gallery'
          }else{
             linkTo('')
          }

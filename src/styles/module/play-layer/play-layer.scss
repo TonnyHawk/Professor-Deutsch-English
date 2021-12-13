@@ -1,0 +1,28 @@
+.play-layer{
+   @include layer;
+   z-index: 2;
+   @include perfect-center;
+   // opacity: 0;
+   transition: 0.3s;
+   cursor: pointer;
+
+   &__bg{
+      background: rgba(0, 0, 0, 0.28);
+      @include layer;
+      z-index: 1;
+   }
+
+   &__btn{
+      z-index: 2;
+      font-size: 6rem;
+      color: white;
+      @include media-breakpoint-up(md){
+         font-size: 12rem;
+      }
+      @include media-breakpoint-up(lg){
+         font-size: 8rem;
+      }
+
+      &--play{}
+   }
+}

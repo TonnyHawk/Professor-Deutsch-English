@@ -26,6 +26,11 @@ try{ // if there is no properties seted up in the request string
    schoolName = 'Deutsch'
 }
 
+// document.querySelector('#gallery-showcase .linkTo').addEventListener('click', function(){
+//    alert()
+//    linkTo(`gall/?what=humans&prof=${schoolName}&role=student`)
+// });
+
    document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
 
 

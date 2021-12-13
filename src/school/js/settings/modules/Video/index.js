@@ -42,9 +42,9 @@ class Video extends Component {
                   </div>
                </div>
             </div>
-            <div className="video__play" onClick={()=>this.vidToggle()}>
-               <div className="video__play-bg"></div>
-               <div className="video__play-btn video__play-btn--play">
+            <div className="video__play play-layer" onClick={()=>this.vidToggle()}>
+               <div className="play-layer__bg"></div>
+               <div className="play-layer__btn play-layer__btn--play">
                   <i className="bi bi-play-fill"></i>
                </div>
             </div>
