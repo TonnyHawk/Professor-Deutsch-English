@@ -106,11 +106,11 @@ class BooksGallery extends Component {
                         Your browser does not support the video tag.
                      </video>
                      <div className="play-layer">
-                           <div className="play-layer__bg"></div>
-                           <div className="play-layer__btn play-layer__btn--play">
-                              <i className="bi bi-play-fill"></i>
-                           </div>
+                        <div className="play-layer__bg"></div>
+                        <div className="play-layer__btn play-layer__btn--play">
+                           <i className="bi bi-play-fill"></i>
                         </div>
+                     </div>
                      </>
                   )
                   break;

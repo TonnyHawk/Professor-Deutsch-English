@@ -49,7 +49,7 @@ class Video extends Component {
                </div>
             </div>
             <div className="video__bd">
-               <video className="video__player" preload="auto" ref={c => this.video = c}>
+               <video className="video__player" preload="metadata" ref={c => this.video = c}>
                   <source src={src+'#t=0.001'} type="video/mp4"/>
                 Your browser does not support the video tag.
                 </video>

@@ -22,14 +22,12 @@ try{ // if there is no properties seted up in the request string
          linkTo('');
    }
 }catch{
-   // linkTo('')
-   schoolName = 'Deutsch'
+   linkTo('')
 }
 
-// document.querySelector('#gallery-showcase .linkTo').addEventListener('click', function(){
-//    alert()
-//    linkTo(`gall/?what=humans&prof=${schoolName}&role=student`)
-// });
+   document.querySelector('#gallery-showcase .linkTo').addEventListener('click', function(){
+      linkTo(`gall/?what=gallery&prof=${schoolName}`);
+   });
 
    document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
 

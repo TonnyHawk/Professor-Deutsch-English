@@ -35,22 +35,46 @@ class ZoomedGal extends Component {
                   break;
             }
          }
-         content = (
-            <>
-            <div class="zoomed__main-photo multilayer">
-               {mediaThing}
-            </div>
-            <div class="zoomed__main-info talk-buble">
-               <div class="talk-buble__header">
+
+         // rendering title and description
+         let description = item.about !== '' ? (<p class="talk-buble__descr">{item.about}</p>) : '';
+
+         // talk-buble__header should have 'margin-bottom: 0' when description is absent
+         let headerStyles = {}
+         if(description === '') headerStyles.marginBottom = 0
+
+         // title
+         let bubleHeader = ''
+         if(item.name !== ''){
+            bubleHeader = (
+               <div class="talk-buble__header" style={headerStyles}>
                   <p class="talk-buble__title">{item.name}</p>
                   {/* <div class="talk-buble__under-title">
                      <p class="talk-buble__under-title-label">By</p>
                      <p class="talk-buble__under-title-main">Raymond Murphy</p>
                   </div> */}
                </div>
+            )
+         }
+
+         let info = (
+            <div class="zoomed__main-info talk-buble">
+               {bubleHeader}
                {pocket}
-               <p class="talk-buble__descr">{item.about}</p>
+               {description}
             </div>
+         )
+         // display no info part when we don't have information in it
+         if(bubleHeader === '' && description === ''){
+            info = ''
+         }
+
+         content = (
+            <>
+            <div class="zoomed__main-photo multilayer">
+               {mediaThing}
+            </div>
+            {info}
             </>
          )
       }

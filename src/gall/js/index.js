@@ -55,8 +55,8 @@ class App extends Component {
 
 let reqObj = makeReqObj()
 
-reqObj.what = 'gallery';
-reqObj.prof = 'Deutsch';
+// reqObj.what = 'gallery';
+// reqObj.prof = 'Deutsch';
 
 let items;
 let mode = '';
