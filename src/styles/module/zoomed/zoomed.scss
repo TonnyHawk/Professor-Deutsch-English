@@ -131,13 +131,15 @@
          margin-top: 9rem;
 
          &:after {
-            top: -3.7rem;
+            top: -2.7rem;
             left: calc(50% - 5rem);
+            border-bottom: 3rem solid #fff!important;
+            border-left: 4rem solid transparent!important;
+            border-right: 4rem solid transparent!important;
 
             @include media-breakpoint-up(lg) {
-               // top: calc(20% + 2rem);
-               top: calc(50% - 2.5rem);
-               left: -6.8rem;
+               top: calc(50% - 1.7rem);
+               left: -5.3rem;
                transform: rotate(-90deg);
             }
          }
