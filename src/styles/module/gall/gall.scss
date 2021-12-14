@@ -251,7 +251,9 @@
          &__bd {
             display: flex;
             flex-wrap: wrap;
-            gap: 2rem;
+            // gap: 2rem;
+            margin-left: -1rem;
+            margin-right: -1rem;
             // @include media-breakpoint-up(md) {
             //    gap: 5rem;
             // }
@@ -269,6 +271,7 @@
       .gall-item {
          height: 40vh;
          flex-grow: 1;
+         margin: 1rem;
          @media (max-aspect-ratio: 1/1){
             height: 30vh;
          }

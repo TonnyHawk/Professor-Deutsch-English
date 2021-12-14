@@ -81,7 +81,7 @@ class ZoomedGal extends Component {
 
       return (
          <div class={"zoomed " + addClass}>
-            <div class="zoomed__bg"></div>
+            <div class="zoomed__bg" onClick={()=>{funcs.toggleGallery('zoom', false)}}></div>
             <div class="zoomed__inner">
                <div class="zoomed__hd">
                   <div class="zoomed__action-icon zoomed__action-icon--close" onClick={()=>{funcs.toggleGallery('zoom', false)}}>
