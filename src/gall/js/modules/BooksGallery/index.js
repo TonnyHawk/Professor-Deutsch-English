@@ -1,8 +1,66 @@
 import React, { Component } from 'react';
 import ZoomedGal from '../ZoomedGal/index';
-import {linkTo} from '../../../../js/functions'
+import {linkTo, makeReqObj} from '../../../../js/functions'
+
+function generateMediaThing(elem){
+   let reqObj = makeReqObj()
+   let mediaThing = ''
+
+   let link, elemType, mediaType = '';
+
+   // do we have a gallery photo or some student`s profile?
+   if(typeof elem.media === 'undefined'){
+      elemType = 'student-media';
+   }else elemType = 'gallery-media'
+
+   // defining wether we have a photo or video
+   switch(elemType){
+      case 'student-media':
+         if(elem.video.length === 0){
+            mediaType = 'image';
+            link = elem.photo;
+         }else {
+            mediaType = 'video';
+            link = elem.video.filter(item=>{
+               return item.professor === reqObj.prof
+            })[0].link;
+         }
+         break;
+      case 'gallery-media':
+         mediaType = elem.media.type
+         link = elem.media.link
+         break;
+   }
+
+   // getting a link to media file
+
+   switch(mediaType){
+      case 'image':
+         mediaThing = (<img src={link} srcset={link} alt="" class="gall-item__img lazyload" data-srcset={link}/>)
+         break;
+      case 'video':
+         mediaThing = (
+            <>
+            <video class="gall-item__img" preload="metadata">
+               <source src={link} type="video/mp4"/>
+               Your browser does not support the video tag.
+            </video>
+            <div className="play-layer">
+               <div className="play-layer__bg"></div>
+               <div className="play-layer__btn play-layer__btn--play">
+                  <i className="bi bi-play-fill"></i>
+               </div>
+            </div>
+            </>
+         )
+         break;
+   }
+
+   return mediaThing
+}
 
 class BooksGallery extends Component {
+
    render() {
       const { mode, funcs, items, ...props } = this.props;
 
@@ -61,9 +119,11 @@ class BooksGallery extends Component {
             //    <p class="gall-item__descr">Professor {professor.join(" & ")}</p>
             // </div>
             // )
+
+            let mediaThing = generateMediaThing(elem)
             return (
                <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
-                     <img src={photo} srcset={photo} alt="" class="gall-item__img lazyload" data-srcset={photo}/>
+                     {mediaThing}
                </div>
                )
 
@@ -92,29 +152,7 @@ class BooksGallery extends Component {
 
          galItems = items.map(elem=>{
 
-            let mediaThing = ''
-
-            switch(elem.media.type){
-               case 'image':
-                  mediaThing = (<img src={elem.media.link} srcset={elem.media.link} alt="" class="gall-item__img lazyload" data-srcset={elem.media.link}/>)
-                  break;
-               case 'video':
-                  mediaThing = (
-                     <>
-                     <video class="gall-item__img" preload="metadata">
-                        <source src={elem.media.link} type="video/mp4"/>
-                        Your browser does not support the video tag.
-                     </video>
-                     <div className="play-layer">
-                        <div className="play-layer__bg"></div>
-                        <div className="play-layer__btn play-layer__btn--play">
-                           <i className="bi bi-play-fill"></i>
-                        </div>
-                     </div>
-                     </>
-                  )
-                  break;
-            }
+            let mediaThing = generateMediaThing(elem)
 
             return (
                <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>

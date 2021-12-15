@@ -40,6 +40,12 @@ module.exports = {
     experiments: {
       topLevelAwait: true,
     },
+    devServer: {
+      static: {
+        directory: path.join(__dirname, 'dist/gall'),
+      },
+      compress: true,
+    },
    //  plugins: [new HtmlWebpackPlugin({
    //     template: 'html/index.html'
    //  })],
