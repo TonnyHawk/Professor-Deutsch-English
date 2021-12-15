@@ -115,9 +115,9 @@ class StudentsSlider extends Component {
   render() {
     const main = {
           adaptiveHeight: true,
+          infinite: true,
           variableWidth: false,
           centerMode: true,
-          infinite: false,
           speed: 500,
           nextArrow: <SampleNextArrow />,
           prevArrow: <SamplePrevArrow />,
@@ -148,7 +148,7 @@ class StudentsSlider extends Component {
 
          <div className="container">
             <div className="section__header">
-               <h1 className="section__title">Наші учні</h1>
+               <h1 className="section__title">Наші випускники</h1>
                <div className="section__expand-btn feature hover-circled" onClick={()=>linkTo(`gall/?what=humans&prof=${this.props.prof}&role=student`)}>
                   <div className="feature__icon hover-circled__icon"><i className="bi bi-collection"></i></div>
                   <p className="feature__text">Більше</p>

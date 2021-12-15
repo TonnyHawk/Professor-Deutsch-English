@@ -1,4 +1,15 @@
 .gallery-showcase{
+   background: #f5f4f7;
+
+   .section{
+      &__header{
+         @include media-breakpoint-up(lg){
+            margin-bottom: 6rem;
+         }
+      }
+   }
+
+
    &__main{
       margin: 0 #{-$spacer * .5} 0 #{-$spacer * .5};
    }

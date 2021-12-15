@@ -22,7 +22,8 @@ try{ // if there is no properties seted up in the request string
          linkTo('');
    }
 }catch{
-   linkTo('')
+   // linkTo('')
+   schoolName = 'Deutsch'
 }
 
    document.querySelector('#gallery-showcase .linkTo').addEventListener('click', function(){
