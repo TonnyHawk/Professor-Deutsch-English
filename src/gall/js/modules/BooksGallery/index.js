@@ -41,9 +41,14 @@ function generateMediaThing(elem, videoGenerator, imageGenerator){
             link = elem.photo;
          }else {
             mediaType = 'video';
+            // filter videos by school
             link = elem.video.filter(item=>{
                return item.professor === reqObj.prof
-            })[0].link;
+            })
+            if(link.length === 0){ // if no video matches current school name
+               mediaType = 'image';
+               link = elem.photo;
+            }else {link = link[0].link} // if there is some videos from this school then show first of them
          }
          break;
       case 'gallery-media':
