@@ -202,13 +202,16 @@ class BooksGallery extends Component {
             case 'books':
                thatWord = 'підручника';
                break;
+            case 'gallery':
+               thatWord = 'фото';
+               break;
          }
          
          content = (
             <div className='gall__message'>
                <div className="gall__message-inner">
                   <p className='gall__message-text'>Жодного {thatWord} поки що не додано</p>
-                  <a className='gall__message-link' onClick={()=>linkTo(linkToBack)}>На головну</a>
+                  <p className='gall__message-link' onClick={()=>linkTo(linkToBack)}>На головну</p>
                </div>
             </div>
          )
