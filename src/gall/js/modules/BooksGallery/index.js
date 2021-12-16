@@ -2,18 +2,38 @@ import React, { Component } from 'react';
 import ZoomedGal from '../ZoomedGal/index';
 import {linkTo, makeReqObj} from '../../../../js/functions'
 
-function generateMediaThing(elem){
+function videoGen(link){
+   return (
+      <>
+      <video class="gall-item__img" preload="metadata">
+         <source src={link} type="video/mp4"/>
+         Your browser does not support the video tag.
+      </video>
+      <div className="play-layer">
+         <div className="play-layer__bg"></div>
+         <div className="play-layer__btn play-layer__btn--play">
+            <i className="bi bi-play-fill"></i>
+         </div>
+      </div>
+      </>
+   )
+}
+
+function imageGen(link){
+   return (<img src={link} srcset={link} alt="" class="gall-item__img lazyload" data-srcset={link}/>)
+}
+
+function generateMediaThing(elem, videoGenerator, imageGenerator){
    let reqObj = makeReqObj()
-   let mediaThing = ''
 
    let link, elemType, mediaType = '';
 
    // do we have a gallery photo or some student`s profile?
    if(typeof elem.media === 'undefined'){
       elemType = 'student-media';
-   }else elemType = 'gallery-media'
+   }else elemType = 'gallery-media';
 
-   // defining wether we have a photo or video
+   // defining type and getting a link
    switch(elemType){
       case 'student-media':
          if(elem.video.length === 0){
@@ -32,27 +52,16 @@ function generateMediaThing(elem){
          break;
    }
 
-   // getting a link to media file
+   // generating image/video code
 
+   let mediaThing = '';
+   
    switch(mediaType){
       case 'image':
-         mediaThing = (<img src={link} srcset={link} alt="" class="gall-item__img lazyload" data-srcset={link}/>)
+         mediaThing = imageGenerator(link)
          break;
       case 'video':
-         mediaThing = (
-            <>
-            <video class="gall-item__img" preload="metadata">
-               <source src={link} type="video/mp4"/>
-               Your browser does not support the video tag.
-            </video>
-            <div className="play-layer">
-               <div className="play-layer__bg"></div>
-               <div className="play-layer__btn play-layer__btn--play">
-                  <i className="bi bi-play-fill"></i>
-               </div>
-            </div>
-            </>
-         )
+         mediaThing = videoGenerator(link)
          break;
    }
 
@@ -102,32 +111,6 @@ class BooksGallery extends Component {
             </div>
             )
          })
-      }else if(mode === 'stud'){
-         winTitle = 'Галерея'
-         galleryClass = 'gall--photos'
-         // innerClass = 'page__inner--photos'
-         galItems = items.map(elem=>{
-            let title = elem.name;
-            let professor = elem.professor;
-            let photo = elem.photo;
-            // return (
-            // <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
-            //    <div class="gall-item__photo">
-            //       <img src={photo} srcset={photo} alt="" class="gall-item__img lazyload" data-srcset={photo}/>
-            //    </div>
-            //    <p class="gall-item__title">{title}</p>
-            //    <p class="gall-item__descr">Professor {professor.join(" & ")}</p>
-            // </div>
-            // )
-
-            let mediaThing = generateMediaThing(elem)
-            return (
-               <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
-                     {mediaThing}
-               </div>
-               )
-
-         })
       } else if(mode === 'books'){
          winTitle = 'Навчальні матеріали'
          galleryClass = 'gall--books'
@@ -152,13 +135,38 @@ class BooksGallery extends Component {
 
          galItems = items.map(elem=>{
 
-            let mediaThing = generateMediaThing(elem)
+            let mediaThing = generateMediaThing(elem, videoGen, imageGen)
 
             return (
                <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
                      {mediaThing}
                </div>
             )
+
+         })
+      }else if(mode === 'stud'){
+         winTitle = 'Галерея'
+         galleryClass = 'gall--photos'
+         // innerClass = 'page__inner--photos'
+         galItems = items.map(elem=>{
+            let title = elem.name;
+            let professor = elem.professor;
+            let photo = elem.photo;
+            // return (
+            // <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
+            //    <div class="gall-item__photo">
+            //       <img src={photo} srcset={photo} alt="" class="gall-item__img lazyload" data-srcset={photo}/>
+            //    </div>
+            //    <p class="gall-item__title">{title}</p>
+            //    <p class="gall-item__descr">Professor {professor.join(" & ")}</p>
+            // </div>
+            // )
+            let mediaThing = generateMediaThing(elem, videoGen, imageGen)
+            return (
+               <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
+                     {mediaThing}
+               </div>
+               )
 
          })
       }

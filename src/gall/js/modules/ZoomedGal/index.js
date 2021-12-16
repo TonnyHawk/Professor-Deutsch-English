@@ -1,4 +1,66 @@
 import React, { Component } from 'react';
+import {makeReqObj} from '../../../../js/functions';
+
+function videoGenerator(link){
+   return (
+      <>
+         <video class="multilayer__main" preload="metadata" controls>
+            <source src={link} type="video/mp4"/>
+            Your browser does not support the video tag.
+         </video>
+      </>
+   )
+}
+
+function imageGenerator(link){
+   // return (<img src={link} srcset={link} alt="" class="gall-item__img lazyload" data-srcset={link}/>)
+   return (<img src={link} alt="" class="multilayer__main"/>)
+}
+
+function generateMediaThing(elem, videoGenerator, imageGenerator){
+   let reqObj = makeReqObj()
+
+   let link, elemType, mediaType = '';
+
+   // do we have a gallery photo or some student`s profile?
+   if(typeof elem.media === 'undefined'){
+      elemType = 'student-media';
+   }else elemType = 'gallery-media';
+
+   // defining type and getting a link
+   switch(elemType){
+      case 'student-media':
+         if(elem.video.length === 0){
+            mediaType = 'image';
+            link = elem.photo;
+         }else {
+            mediaType = 'video';
+            link = elem.video.filter(item=>{
+               return item.professor === reqObj.prof
+            })[0].link;
+         }
+         break;
+      case 'gallery-media':
+         mediaType = elem.media.type
+         link = elem.media.link
+         break;
+   }
+
+   // generating image/video code
+
+   let mediaThing = ''
+
+   switch(mediaType){
+      case 'image':
+         mediaThing = imageGenerator(link)
+         break;
+      case 'video':
+         mediaThing = videoGenerator(link)
+         break;
+   }
+
+   return mediaThing
+}
 
 class ZoomedGal extends Component {
    render() {
@@ -15,26 +77,10 @@ class ZoomedGal extends Component {
                <img src={item} alt="" class="multilayer__main"/>
             </div>
          )
-      } else{ // if we passed an ogject
+      } else{ // if we passed an object
          addClass = 'zoomed--gallery-photo';
-         let mediaThing = ''
-         if(typeof item.media === 'undefined'){
-            mediaThing = (<img src={item.photo} alt="" class="multilayer__main"/>)
-         }else{
-            switch(item.media.type){
-               case 'video':
-                  mediaThing = (
-                     <video class="multilayer__main" preload="metadata" controls>
-                        <source src={item.media.link} type="video/mp4"/>
-                        Your browser does not support the video tag.
-                     </video>
-                  )
-                  break;
-               case 'image':
-                  mediaThing = (<img src={item.media.link} alt="" class="multilayer__main"/>)
-                  break;
-            }
-         }
+
+         let mediaThing = generateMediaThing(item, videoGenerator, imageGenerator);
 
          // rendering title and description
          let description = item.about !== '' ? (<p class="talk-buble__descr">{item.about}</p>) : '';
