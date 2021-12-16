@@ -119,7 +119,7 @@ class CoursesSection extends Component {
                         </div>
                         {booksLink}
                         <div className="tab__aside-item">
-                           <p data-action='open-popup' className="btn btn--big" data-target="#consultation">Записатись</p>
+                           <p data-action='open-popup' className="btn btn--big btn--accented" data-target="#consultation">Записатись</p>
                         </div>
                      </div>
                      <div className="tab__main">

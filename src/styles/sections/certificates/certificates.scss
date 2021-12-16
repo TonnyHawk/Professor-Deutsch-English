@@ -136,10 +136,6 @@
          border-radius: 0.9rem;
          transition: 0.4s;
 
-         &:hover{
-            background: #f08f00;
-         }
-
          @include media-breakpoint-up(md) {
             font-size: 2.3rem;
             line-height: 3rem;

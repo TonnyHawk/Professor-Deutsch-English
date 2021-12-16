@@ -14,7 +14,6 @@
    background: $yellow;
    border-radius: 0.9rem;
    background: $yellow;
-   box-shadow: 0 0.4rem 1.6rem rgba(147, 94, 15, 0.53);
    transition: 0.2s;
    @include media-breakpoint-up(md){
       width: max-content;
@@ -41,4 +40,12 @@
    color: white;
    border: 1px solid #FFFFFF;
    box-shadow: none;
+}
+
+.btn--accented{
+   box-shadow: 0 0.4rem 1.6rem rgb(147 94 15 / 53%);
+   transition: 0.4s;
+   &:hover{
+      // box-shadow: unset;
+   }
 }
