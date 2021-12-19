@@ -42,14 +42,14 @@ class Video extends Component {
                   </div>
                </div>
             </div>
-            <div className="video__play play-layer" onClick={()=>this.vidToggle()}>
+            <div className="video__play play-layer multilayer__main" onClick={()=>this.vidToggle()}>
                <div className="play-layer__bg"></div>
                <div className="play-layer__btn play-layer__btn--play">
                   <i className="bi bi-play-fill"></i>
                </div>
             </div>
             <div className="video__bd">
-               <video className="video__player" preload="metadata" ref={c => this.video = c}>
+               <video className="video__player multilayer__main" preload="metadata" ref={c => this.video = c}>
                   <source src={src+'#t=0.001'} type="video/mp4"/>
                 Your browser does not support the video tag.
                 </video>

@@ -2,6 +2,7 @@ $duration: 0.3s;
 .video {
    position: relative;
    transition: $duration;
+   border-radius: 0.9rem;
    @extend .sl__photo;
    @include media-breakpoint-up(lg){
       height: auto;
@@ -98,6 +99,8 @@ $duration: 0.3s;
 
    &__player {
       @include square(100%);
+      object-fit: cover;
+      border-radius: 0.9rem;
    }
 
    // .video__ft
