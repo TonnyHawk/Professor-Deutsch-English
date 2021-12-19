@@ -22,8 +22,8 @@ try{ // if there is no properties seted up in the request string
          linkTo('');
    }
 }catch{
-   linkTo('')
-   // schoolName = 'Deutsch'
+   // linkTo('')
+   schoolName = 'Deutsch'
 }
 
    document.querySelector('#gallery-showcase .linkTo').addEventListener('click', function(){
@@ -33,6 +33,10 @@ try{ // if there is no properties seted up in the request string
    document.querySelector('.nav__logo').addEventListener('click', ()=>{
       linkTo('');
    })
+   document.querySelector('.nav__lang-toggler').addEventListener('click', ()=>{
+      linkTo('');
+   })
+   
 
    document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
 

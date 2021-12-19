@@ -47,23 +47,6 @@
 
    &__mob-visible {}
 
-   // .nav__logo
-
-   &__logo {
-      @extend .col-1;
-      margin-right: 5.5rem;
-
-      @include media-breakpoint-down(lg) {
-         margin: 0;
-         order: 1;
-         width: max-content;
-      }
-
-      img {
-         height: 5rem;
-      }
-   }
-
    // .nav__btn
 
    &__btn {
@@ -123,36 +106,13 @@
    // .nav__link
 
    &__link {
-      font-family: Roboto;
+      font-family: Gilroy;
       font-style: normal;
-      font-weight: normal;
-      font-size: 1.5rem;
-      line-height: 1.8rem;
-      cursor: pointer;
-
+      font-weight: 600;
+      font-size: 1.7rem;
+      line-height: 2rem;
       color: white;
-
-      // &:after{
-      //    position: absolute;
-      //    content: '';
-      //    transition-property: width, opacity;
-      //    transition-duration: 0.3s;
-      //    width: 0;
-      //    opacity: 0;
-      //    left: 0;
-      //    height: 2px;
-      //    background: white;
-      //    top: calc(100% + 5px);
-      // }
-      // &.is-active{
-      //    .nav__link{
-      //       color: white;
-      //       // &:after{
-      //       //    width: 100%;
-      //       //    opacity: 1;
-      //       // }
-      //    }
-      // }
+      cursor: pointer;
    }
 
 
@@ -206,11 +166,21 @@
       right: 0;
       z-index: 1;
       @include perfect-center;
+      display: flex;
 
       @include media-breakpoint-down(lg) {
          width: max-content;
          position: static;
          order: 2;
+         display: none;
+      }
+   }
+
+   // .nav__lang-toggler
+
+   &__lang-toggler{
+      @include media-breakpoint-up(lg){
+         margin-right: 1.2rem;
       }
    }
 
@@ -277,7 +247,7 @@
       &__txt {
          font-family: Gilroy;
          font-style: normal;
-         font-weight: 600;
+         font-weight: 700;
          font-size: 1.6rem;
          line-height: 1.9rem;
          order: 1;
