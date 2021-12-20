@@ -33,7 +33,7 @@
       text-align: center;
       text-transform: uppercase;
       width: max-content;
-      @include media-breakpoint-up(lg){
+      @include media-breakpoint-up(xl){
          text-align: left;
       }
    }
@@ -47,7 +47,7 @@
       font-size: 1.2rem;
       line-height: 1.4rem;
       text-align: center;
-      @include media-breakpoint-up(lg){
+      @include media-breakpoint-up(xl){
          text-align: left;
       }
    }

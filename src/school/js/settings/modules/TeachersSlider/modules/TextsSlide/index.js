@@ -6,10 +6,27 @@ class TextsSlide extends Component {
       this.readmore = React.createRef()
    }
    componentDidMount() {
-      $(this.readmore.current).readmore({
+      let readmoreElem = this.readmore.current
+      
+      $(readmoreElem).readmore({
          num: 4
       });
+
+      $(window).on('resize', ()=>{
+         setTimeout(()=>{
+            $(readmoreElem).readmore({
+               num: 4
+            });
+         }, 250)
+      })
    }
+
+   // componentDidUpdate(prevProps, prevState) {
+   //    $(this.readmore.current).readmore({
+   //       num: 4
+   //    });
+   // }
+   
    
    render() {
    const { student, funcs, ...props } = this.props;

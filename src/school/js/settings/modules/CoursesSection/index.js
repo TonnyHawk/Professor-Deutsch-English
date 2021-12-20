@@ -25,12 +25,15 @@ class CoursesSection extends Component {
    }
 
    componentDidMount() {
-      $(this.tab.current).readmore({num: 3})
-      smoothScroll(this.tab.current);
-   }
+      let elmnt = this.tab.current
+      $(elmnt).readmore({num: 3})
+      smoothScroll(elmnt);
 
-   componentDidUpdate(prevProps, prevState) {
-      $(this.tab.current).readmore({num: 3})
+      $(window).on('resize', ()=>{
+         setTimeout(()=>{
+            $(elmnt).readmore({num: 3})
+         }, 250)
+      })
    }
    
 

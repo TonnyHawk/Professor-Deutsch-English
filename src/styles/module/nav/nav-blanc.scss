@@ -10,7 +10,7 @@
    transition: 0.7s;
 
    // display: none;
-   @include media-breakpoint-down(lg) {
+   @include media-breakpoint-down(xl) {
       @include perfect-center;
    }
 
@@ -21,7 +21,7 @@
       align-items: center;
       padding: 0 1.5rem;
 
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-down(xl) {
          width: 100%;
          position: relative;
          justify-content: space-between;
@@ -38,7 +38,7 @@
       min-height: 7.1rem;
       transition: background-color 0.5s;
 
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-down(xl) {
          width: 100%;
       }
    }
@@ -50,7 +50,7 @@
    // .nav__btn
 
    &__btn {
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-down(xl) {
          order: 3;
          // width: 5.7rem;
          display: flex;
@@ -65,7 +65,7 @@
    // .nav__main
 
    &__main {
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-down(xl) {
          position: fixed;
          width: 100%;
          left: 0;
@@ -82,7 +82,7 @@
       position: relative;
       z-index: 2;
 
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-down(xl) {
          padding: 3rem 0;
          background-color: #112a85bf;
       }
@@ -97,7 +97,7 @@
          margin-left: 0;
       }
 
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-down(xl) {
          margin: 2rem 0;
          background: transparent;
       }
@@ -168,7 +168,7 @@
       @include perfect-center;
       display: flex;
 
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-down(xl) {
          width: max-content;
          position: static;
          order: 2;
@@ -179,8 +179,16 @@
    // .nav__lang-toggler
 
    &__lang-toggler{
-      @include media-breakpoint-up(lg){
+      @include media-breakpoint-up(xl){
          margin-right: 1.2rem;
+      }
+   }
+
+   // .nav__logo
+
+   &__logo {
+      @include media-breakpoint-up(xl){
+         margin-right: 8vw;
       }
    }
 
@@ -189,7 +197,7 @@
    &__aside-item {
       @extend .col-md-7;
 
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-down(xl) {
          width: max-content;
       }
    }
@@ -200,7 +208,7 @@
          top: 7rem;
          opacity: 1;
          @include media-breakpoint-up(md){
-            top: 7.75rem;
+            top: 7.1rem;
          }
       }
 
