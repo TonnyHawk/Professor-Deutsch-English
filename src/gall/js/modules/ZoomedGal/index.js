@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import {makeReqObj} from '../../../../js/functions';
 
 function videoGenerator(link){
+   let styles = {
+      width: '100%',
+      borderRadius: '0.9rem'
+   }
    return (
       <>
-         <video class="multilayer__main" preload="metadata" controls>
+         <video class="multilayer__main" preload="metadata" style={styles} controls>
             <source src={link} type="video/mp4"/>
             Your browser does not support the video tag.
          </video>
@@ -18,7 +22,7 @@ function imageGenerator(link){
 }
 
 function generateMediaThing(elem, videoGenerator, imageGenerator){
-   let reqObj = makeReqObj()
+   let reqObj = makeReqObj();
 
    let link, elemType, mediaType = '';
 

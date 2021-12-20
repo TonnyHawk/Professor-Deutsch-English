@@ -55,9 +55,9 @@ class App extends Component {
 
 let reqObj = makeReqObj()
 
-// reqObj.what = 'humans';
-// reqObj.prof = 'Deutsch';
-// reqObj.role = 'student';
+reqObj.what = 'humans';
+reqObj.prof = 'Deutsch';
+reqObj.role = 'student';
 
 let items;
 let mode = '';
