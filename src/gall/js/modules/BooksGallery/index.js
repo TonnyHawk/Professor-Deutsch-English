@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ZoomedGal from '../ZoomedGal/index';
-import {linkTo, makeReqObj} from '../../../../js/functions'
+import {linkTo, makeReqObj, setPageTitle} from '../../../../js/functions'
 
 function videoGen(link){
    return (
@@ -79,10 +79,13 @@ class BooksGallery extends Component {
       const { mode, funcs, items, ...props } = this.props;
 
       let galItems, winTitle, galleryClass;
+      let reqObj = makeReqObj();
 
       if(mode === 'cert'){
          winTitle = 'Сертифікати'
          galleryClass = 'gall--books'
+         // page title
+         setPageTitle('Сертифікати | Professor '+reqObj.prof)
          // innerClass = 'page__inner--books'
          galItems = items.map(elem=>{
             let title = elem.name;
@@ -101,6 +104,8 @@ class BooksGallery extends Component {
       }else if(mode === 'cert-personal'){
          winTitle = 'Сертифікати'
          galleryClass = 'gall--books'
+         // page title
+         setPageTitle(`Сертифікати | Professor `+reqObj.prof)
          // innerClass = 'page__inner--books'
          galItems = items.map(elem=>{
             let title = elem.name;
@@ -119,6 +124,8 @@ class BooksGallery extends Component {
       } else if(mode === 'books'){
          winTitle = 'Навчальні матеріали'
          galleryClass = 'gall--books'
+         // page title
+         setPageTitle(`Навчальні матеріали | Professor `+reqObj.prof)
          // innerClass = 'page__inner--books'
          galItems = items.map(elem=>{
             let title = elem.name;
@@ -137,7 +144,8 @@ class BooksGallery extends Component {
       } else if(mode === 'gallery'){
          winTitle = 'Галерея';
          galleryClass = 'gall--photos';
-
+         // page title
+         setPageTitle(`Галерея | Professor `+reqObj.prof)
          galItems = items.map(elem=>{
 
             let mediaThing = generateMediaThing(elem, videoGen, imageGen)
@@ -150,8 +158,10 @@ class BooksGallery extends Component {
 
          })
       }else if(mode === 'stud'){
-         winTitle = 'Галерея'
+         winTitle = 'Наші учні'
          galleryClass = 'gall--photos'
+         // page title
+         setPageTitle(`Наші учні | Professor `+reqObj.prof)
          // innerClass = 'page__inner--photos'
          galItems = items.map(elem=>{
             let title = elem.name;

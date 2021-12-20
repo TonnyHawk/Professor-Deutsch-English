@@ -85,3 +85,16 @@ export function linkTo(url=''){
 
    document.location.href = newUrl
 }
+
+export function setPageTitle(str, mode=null){
+   let title = document.title;
+   switch(mode){
+      case 'add':
+         title = document.title + ' ' + str;
+         break;
+      default:
+         title = str;
+   }
+
+   document.title = title;
+}
