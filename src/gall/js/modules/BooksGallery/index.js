@@ -20,7 +20,7 @@ function videoGen(link){
 }
 
 function imageGen(link){
-   return (<img src={link} srcset={link} alt="" class="gall-item__img lazyload" data-srcset={link}/>)
+   return (<img src={link+'/min'} alt="" class="gall-item__img lazyload" data-src={link}/>)
 }
 
 function generateMediaThing(elem, videoGenerator, imageGenerator){

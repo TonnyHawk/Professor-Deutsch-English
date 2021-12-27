@@ -121,6 +121,7 @@ class StudentsSlider extends Component {
           speed: 500,
           nextArrow: <SampleNextArrow />,
           prevArrow: <SamplePrevArrow />,
+          touchThreshold: 4,
           responsive: [{
              breakpoint: 992,
              settings: {

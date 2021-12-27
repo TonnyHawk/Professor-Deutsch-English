@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {makeReqObj} from '../../../../js/functions';
 
 function videoGenerator(link){
+   console.log(link);
    let styles = {
       width: '100%',
       borderRadius: '0.9rem'
@@ -18,7 +19,7 @@ function videoGenerator(link){
 
 function imageGenerator(link){
    // return (<img src={link} srcset={link} alt="" class="gall-item__img lazyload" data-srcset={link}/>)
-   return (<img src={link} alt="" class="multilayer__main"/>)
+   return (<img src={link+'/min'} alt="" class="multilayer__main lazyload" data-src={link}/>)
 }
 
 function generateMediaThing(elem, videoGenerator, imageGenerator){
@@ -39,9 +40,14 @@ function generateMediaThing(elem, videoGenerator, imageGenerator){
             link = elem.photo;
          }else {
             mediaType = 'video';
+            // filter videos by school
             link = elem.video.filter(item=>{
                return item.professor === reqObj.prof
-            })[0].link;
+            })
+            if(link.length === 0){ // if no video matches current school name
+               mediaType = 'image';
+               link = elem.photo;
+            }else {link = link[0].link} // if there is some videos from this school then show first of them
          }
          break;
       case 'gallery-media':

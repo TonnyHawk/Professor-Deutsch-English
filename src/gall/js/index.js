@@ -1,8 +1,10 @@
+import 'lazysizes';
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
 import globals from '../../js/globals'
 import {loadItems, langFilter, makeReqObj, linkTo, setPageTitle} from '../../js/functions'
-import BooksGallery from './modules/BooksGallery'
+import BooksGallery from './modules/BooksGallery';
+
 
 class App extends Component {
    constructor(props){
