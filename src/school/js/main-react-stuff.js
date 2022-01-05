@@ -62,7 +62,7 @@ setPageTitle(title);
    );
 
    let humans = await loadItems('humans', globals.serverUrl)
-   humans = langFilter(humans, schoolName, 'sort')
+   humans = langFilter(humans, schoolName)
 
    // teachers
    ReactDOM.render(
@@ -78,7 +78,7 @@ setPageTitle(title);
 
 
    let certs = await loadItems('certificates', globals.serverUrl)
-   certs = langFilter(certs, schoolName, 'sort')
+   certs = langFilter(certs, schoolName)
 
    ReactDOM.render(
       <CertificatesSection certificates={certs} prof={schoolName}/>,

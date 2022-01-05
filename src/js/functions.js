@@ -3,22 +3,33 @@ export function sortArr(arr, filter){ // sorting arr items by 'order' property a
    let ordered = []
    let unordered = []
 
-   //splitting array on two types to avoid fails with undefined order property later
+   // separating ordered and unordered items
    arr.forEach(elem=>{
-      if(Object.keys(elem).length > 0){
-         ordered.push(elem)
-      }else{
-         unordered.push(elem)
-      }
+         // if(Object.keys(elem).length > 0){
+         if(typeof elem.order !== 'undefined'){
+            ordered.push(elem)
+         }else{
+            unordered.push(elem)
+         }
    })
 
-      ordered = ordered.sort((a, b)=>{
+   if(ordered.length > 0){
+      // sorting an ordered list
+      newArr = ordered.sort((a, b)=>{
          if(typeof a.order[filter] !== 'undefined'){
             return a.order[filter] - b.order[filter]
          }else return false;
       })
+   }
 
-   newArr = [...ordered, ...unordered]
+   if(unordered.length > 0){
+      unordered = unordered.map(elem=>{
+         elem.order = {}
+         return elem
+      })
+   }
+
+   newArr = [...newArr, ...unordered]
 
    return newArr
 }
@@ -33,7 +44,7 @@ export async function loadItems(collName, serverUrl, optionalQuery=''){
    }
 }
 
-export function langFilter(items, filter, sorting=null){
+export function langFilter(items, filter){
    let arr = items
    if(items.length > 0){
       arr = items.filter(elem=>{
@@ -44,14 +55,7 @@ export function langFilter(items, filter, sorting=null){
          return permission
       })
 
-      if(sorting === 'sort'){
-         // sort array by 'order'
-         try{ // if some elements do not have 'order' property
-            if(typeof arr[0].order !== 'undefined'){ // or it`s value is not set
-               arr = sortArr(arr, filter)
-            }
-         }catch{console.log("some elements do not have 'order' property")}
-      }
+      arr = sortArr(arr, filter)
    }
    return arr
 }
