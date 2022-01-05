@@ -80,6 +80,15 @@ class CoursesSection extends Component {
          )
       }
 
+      let features = currentTab.features.map(elem=>{
+         return (
+         <div className="feature">
+            <div className="feature__icon"><img src={elem.photo} alt=""/></div>
+            <p className="feature__text">{elem.text}</p>
+         </div>
+         )
+      })
+
       return (
          <>
       <div className="tab" ref={this.tab}>
@@ -101,14 +110,7 @@ class CoursesSection extends Component {
                         </div>
                         <div className="tab__aside-item">
                            <div className="tab__feature">
-                              <div className="feature">
-                                 <div className="feature__icon"><img src="img/icons/bricks.svg" alt=""/></div>
-                                 <p className="feature__text">12 основних блоків</p>
-                              </div>
-                              <div className="feature">
-                                 <div className="feature__icon"><img src="img/icons/clock.svg" alt=""/></div>
-                                 <p className="feature__text">80 академічних годин</p>
-                              </div>
+                              {features}
                            </div>
                         </div>
                         <div className="tab__aside-item">
