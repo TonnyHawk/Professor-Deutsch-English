@@ -2,7 +2,8 @@ import ReactDOM from 'react-dom';
 import React from "react";
 import CoursesSection from './settings/modules/CoursesSection';
 import TeachersSlider from './settings/modules/TeachersSlider';
-import StudentsSlider from './settings/modules/StudentsSlider/index';
+import StudentsSlider from './settings/modules/StudentsSlider/';
+import GalleryShowcase from './settings/modules/GalleryShowcase/';
 import globals from '../../js/globals'
 import {langFilter, loadItems, makeReqObj, linkTo, setPageTitle} from '../../js/functions'
 
@@ -28,9 +29,9 @@ import {langFilter, loadItems, makeReqObj, linkTo, setPageTitle} from '../../js/
 
    //-- document manipulations
    // click events
-   document.querySelector('#gallery-showcase .linkTo').addEventListener('click', function(){
-      linkTo(`gall/?what=gallery&prof=${schoolName}`);
-   });
+   // document.querySelector('#gallery-showcase .linkTo').addEventListener('click', function(){
+   //    linkTo(`gall/?what=gallery&prof=${schoolName}`);
+   // });
 
    document.querySelector('.nav__logo').addEventListener('click', ()=>{
       linkTo('');
@@ -78,4 +79,10 @@ import {langFilter, loadItems, makeReqObj, linkTo, setPageTitle} from '../../js/
    ReactDOM.render(
       <StudentsSlider students={humans} prof={schoolName}/>,
       document.getElementById('students')
+   );
+
+   // gallery showcase
+   ReactDOM.render(
+      <GalleryShowcase prof={schoolName}/>,
+      document.getElementById('gallery-showcase')
    );
