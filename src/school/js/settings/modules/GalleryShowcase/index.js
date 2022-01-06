@@ -1,6 +1,26 @@
 import React, { Component } from 'react';
-import {linkTo} from '../../../../../js/functions';
+import {linkTo, generateMediaThing} from '../../../../../js/functions';
 import ZoomedGal from '../../../../../gall/js/modules/ZoomedGal';
+
+function videoGenerator(link){
+   console.log(link);
+   let styles = {
+      width: '100%',
+      borderRadius: '0.9rem'
+   }
+   return (
+      <>
+         <video class="photo-sloth__image" preload="metadata" style={styles}>
+            <source src={link} type="video/mp4"/>
+            Your browser does not support the video tag.
+         </video>
+      </>
+   )
+}
+
+function imageGenerator(link){
+   return (<img src={link} class="photo-sloth__image lazyload" alt=""/>)
+}
 
 class GalleryShowcase extends Component {
    constructor(props){
@@ -9,26 +29,72 @@ class GalleryShowcase extends Component {
          showZoomed: false,
          zoomedItem: '',
       }
+      this.data = [
+         // 0
+         {
+            name: '',
+            about: '',
+            photo: 'img/gallery-showcase/1.jpg',
+         },
+         // 1
+         {
+            name: '',
+            about: '',
+            photo: 'img/gallery-showcase/2.jpg',
+         },
+         // 2
+         {
+            name: '',
+            about: '',
+            photo: 'img/gallery-showcase/3.jpg',
+         },
+         // 3
+         {
+            name: '',
+            about: '',
+            photo: 'img/gallery-showcase/4.jpg',
+         },
+         // 4
+         {
+            name: '',
+            about: '',
+            photo: 'img/gallery-showcase/5.jpg',
+         },
+         // 5
+         {
+            name: '',
+            about: '',
+            photo: 'img/gallery-showcase/6.jpg',
+         },
+         // 6
+         {
+            name: '',
+            about: '',
+            photo: 'img/gallery-showcase/7.jpg',
+         },
+         // 7
+         {
+            name: 'heelo boyes',
+            about: 'its me and my homies boyy gangsta shit broee',
+            photo: 'img/gallery-showcase/8.jpg',
+            media: {
+               link: 'img/gallery-showcase/1.mp4',
+               type: 'video'
+            }
+         }
+      ]
    }
 
    toggleGallery(name, state, ...props){
       // preparation
-      // if(name === 'cert' || name === 'stud'){
          if(state){ // open a modul win
             document.documentElement.style = 'overflow: hidden';
          } else{ // close module win
             document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
          }
-      // }
       // --------------
 
       switch (name) {
-         case 'cert':
-            this.setState({showBooks: state, booksGalMode: name})
-            break;
-         case 'stud':
-            this.setState({showBooks: state, booksGalMode: name})
-            break;
          case 'zoom':
             if(!state){ // close
                this.setState({showZoomed: state, zoomedItem: ''})
@@ -41,6 +107,44 @@ class GalleryShowcase extends Component {
 
    render() {
       let zoomedGal = this.state.showZoomed ? <ZoomedGal item={this.state.zoomedItem} funcs={this}/> : '';
+      let {data} = this;
+
+      let sloths = data.map((elem, index)=>{
+         let clssName = ''
+         if(index === 3){
+            clssName += 'photo-sloth--fluid'
+         }
+
+         let mediaThing = generateMediaThing(elem, videoGenerator, imageGenerator)
+
+         let videoLayer = '';
+         if(typeof elem.media !== 'undefined'){
+            if(elem.media.type === 'video'){
+               videoLayer = (
+                  <div className="play-layer">
+                     <div className="play-layer__bg"></div>
+                     <div className="play-layer__btn play-layer__btn--play">
+                        <i className="bi bi-play-fill"></i>
+                     </div>
+                  </div>
+               )
+            }
+         }
+         return (
+         <div class={`photo-sloth ${clssName}`} onClick={()=>{this.toggleGallery('zoom', true, elem)}}>
+            {mediaThing}
+            {videoLayer}
+            <div class="photo-sloth__layer">
+               <div class="photo-sloth__layer-bg"></div>
+               <div class="photo-sloth__layer-text-wrap">
+                  <p class="photo-sloth__layer-title">{elem.name}</p>
+                  <p class="photo-sloth__layer-descr">{elem.about}</p>
+               </div>
+            </div>
+         </div>
+         )
+      })
+
       return (
          <>
    <div class="container">
@@ -56,116 +160,36 @@ class GalleryShowcase extends Component {
          <div class="col-12 col-md-6 col-xl-4">
             <div class="row g-0">
                <div class="col-12 p-2">
-                  <div class="photo-sloth" onClick={()=>{this.toggleGallery('zoom', true, {name: 'hello', photo: "img/gallery-showcase/8.jpg", about: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita dicta odio natus vel tempora voluptate, soluta ipsam quod necessitatibus corrupti nostrum obcaecati architecto voluptas ducimus quis ab sequi molestias enim.'})}}>
-                     <img class="photo-sloth__image lazyload" src="img/gallery-showcase/8.jpg" alt=""/>
-                     <div class="photo-sloth__layer">
-                        <div class="photo-sloth__layer-bg"></div>
-                        <div class="photo-sloth__layer-text-wrap">
-                           <p class="photo-sloth__layer-title">Title boy</p>
-                           <p class="photo-sloth__layer-descr">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                              Illo ducimus, quae, mollitia dolore in aperiam iste doloremque</p>
-                        </div>
-                     </div>
-                  </div>
+                  {sloths[7]}
                </div>
             </div>
             <div class="row g-0">
                <div class="col p-2">
-                  <div class="photo-sloth">
-                     <img class="photo-sloth__image lazyload" src="img/gallery-showcase/2.jpg" alt=""/>
-                     <div class="photo-sloth__layer">
-                        <div class="photo-sloth__layer-bg"></div>
-                        <div class="photo-sloth__layer-text-wrap">
-                           <p class="photo-sloth__layer-title">Title boy</p>
-                           <p class="photo-sloth__layer-descr">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                              Illo ducimus, quae, mollitia dolore in aperiam iste doloremque</p>
-                        </div>
-                     </div>
-                  </div>
+                  {sloths[1]}
                </div>
                <div class="col p-2">
-                  <div class="photo-sloth">
-                     <img class="photo-sloth__image lazyload" src="img/gallery-showcase/3.jpg" alt=""/>
-                     <div class="photo-sloth__layer">
-                        <div class="photo-sloth__layer-bg"></div>
-                        <div class="photo-sloth__layer-text-wrap">
-                           <p class="photo-sloth__layer-title">Title boy</p>
-                           <p class="photo-sloth__layer-descr">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                              Illo ducimus, quae, mollitia dolore in aperiam iste doloremque</p>
-                        </div>
-                     </div>
-                  </div>
+                  {sloths[2]}
                </div>
             </div>
          </div>
          <div class="col-12 col-md-6 col-xl-3 p-2">
-            <div class="photo-sloth photo-sloth--fluid">
-               <img class="photo-sloth__image lazyload" src="img/gallery-showcase/4.jpg" alt=""/>
-               <div class="photo-sloth__layer">
-                  <div class="photo-sloth__layer-bg"></div>
-                  <div class="photo-sloth__layer-text-wrap">
-                     <p class="photo-sloth__layer-title">Title boy</p>
-                     <p class="photo-sloth__layer-descr">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        Illo ducimus, quae, mollitia dolore in aperiam iste doloremque</p>
-                  </div>
-               </div>
-            </div>
+            {sloths[3]}
          </div>
          <div class="col-12 col-md-12 col-xl-5 d-none d-md-block">
             <div class="row g-0">
                <div class="col-12 col-md-6 col-xl-5 p-2">
-                  <div class="photo-sloth">
-                     <img class="photo-sloth__image lazyload" src="img/gallery-showcase/5.jpg" alt=""/>
-                     <div class="photo-sloth__layer">
-                        <div class="photo-sloth__layer-bg"></div>
-                        <div class="photo-sloth__layer-text-wrap">
-                           <p class="photo-sloth__layer-title">Title boy</p>
-                           <p class="photo-sloth__layer-descr">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                              Illo ducimus, quae, mollitia dolore in aperiam iste doloremque</p>
-                        </div>
-                     </div>
-                  </div>
+                  {sloths[4]}
                </div>
                <div class="col-12 col-md-6 col-xl-7 p-2">
-                  <div class="photo-sloth">
-                     <img class="photo-sloth__image lazyload" src="img/gallery-showcase/6.jpg" alt=""/>
-                     <div class="photo-sloth__layer">
-                        <div class="photo-sloth__layer-bg"></div>
-                        <div class="photo-sloth__layer-text-wrap">
-                           <p class="photo-sloth__layer-title">Title boy</p>
-                           <p class="photo-sloth__layer-descr">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                              Illo ducimus, quae, mollitia dolore in aperiam iste doloremque</p>
-                        </div>
-                     </div>
-                  </div>
+                  {sloths[5]}
                </div>
             </div>
             <div class="row g-0 d-none d-xl-flex">
                <div class="col-12 col-md-6 p-2">
-                  <div class="photo-sloth">
-                     <img class="photo-sloth__image lazyload" src="img/gallery-showcase/7.jpg" alt=""/>
-                     <div class="photo-sloth__layer">
-                        <div class="photo-sloth__layer-bg"></div>
-                        <div class="photo-sloth__layer-text-wrap">
-                           <p class="photo-sloth__layer-title">Title boy</p>
-                           <p class="photo-sloth__layer-descr">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                              Illo ducimus, quae, mollitia dolore in aperiam iste doloremque</p>
-                        </div>
-                     </div>
-                  </div>
+                  {sloths[6]}
                </div>
                <div class="col-12 col-md-6 p-2">
-                  <div class="photo-sloth">
-                     <img class="photo-sloth__image lazyload" src="img/gallery-showcase/1.jpg" alt=""/>
-                     <div class="photo-sloth__layer">
-                        <div class="photo-sloth__layer-bg"></div>
-                        <div class="photo-sloth__layer-text-wrap">
-                           <p class="photo-sloth__layer-title">Title boy</p>
-                           <p class="photo-sloth__layer-descr">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                              Illo ducimus, quae, mollitia dolore in aperiam iste doloremque</p>
-                        </div>
-                     </div>
-                  </div>
+                  {sloths[0]}
                </div>
             </div>
          </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {makeReqObj} from '../../../../js/functions';
+import {generateMediaThing} from '../../../../js/functions';
 
 function videoGenerator(link){
    console.log(link);
@@ -20,61 +20,6 @@ function videoGenerator(link){
 function imageGenerator(link){
    // return (<img src={link} srcset={link} alt="" class="gall-item__img lazyload" data-srcset={link}/>)
    return (<img src={link+'/min'} alt="" class="multilayer__main lazyload" data-src={link}/>)
-}
-
-function generateMediaThing(elem, videoGenerator, imageGenerator){
-   let reqObj = makeReqObj();
-
-   let link, elemType, mediaType = '';
-
-   // do we have a gallery photo or some student`s profile?
-   if(typeof elem.media === 'undefined'){
-      elemType = 'other-media';
-   }else elemType = 'gallery-media';
-
-   // defining type and getting a link
-   switch(elemType){
-      case 'other-media':
-         if(typeof elem.video === 'undefined'){ // we got a certificat
-            mediaType = 'image';
-            link = elem.photo;
-         }else{ // we got a student or gallery item
-            if(elem.video.length === 0){
-               mediaType = 'image';
-               link = elem.photo;
-            }else {
-               mediaType = 'video';
-               // filter videos by school
-               link = elem.video.filter(item=>{
-                  return item.professor === reqObj.prof
-               })
-               if(link.length === 0){ // if no video matches current school name
-                  mediaType = 'image';
-                  link = elem.photo;
-               }else {link = link[0].link} // if there is some videos from this school then show first of them
-            }
-         }
-         break;
-      case 'gallery-media':
-         mediaType = elem.media.type
-         link = elem.media.link
-         break;
-   }
-
-   // generating image/video code
-
-   let mediaThing = ''
-
-   switch(mediaType){
-      case 'image':
-         mediaThing = imageGenerator(link)
-         break;
-      case 'video':
-         mediaThing = videoGenerator(link)
-         break;
-   }
-
-   return mediaThing
 }
 
 class ZoomedGal extends Component {
