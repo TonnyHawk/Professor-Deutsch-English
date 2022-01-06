@@ -55,7 +55,13 @@ let {
       watch(path.projFold + path.html + "/*.html").on('change', series(html, browserSync.reload));
    }
 
-exports.default = series(css, html)
+   async function watchAll(cb){
+      watch(path.globals + path.styles + "/**/*.scss", { ignoreInitial: false }, css);
+      watch(path.projFold + path.html + "/*.html").on('change', series(html, browserSync.reload));
+      cb()
+   }
+
+exports.default = series(css, html, watchAll)
 exports.css = css
 exports.html = html
 exports.serve = server

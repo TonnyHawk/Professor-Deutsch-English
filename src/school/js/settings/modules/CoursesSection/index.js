@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import smoothScroll from '../../../vendors/smoothScroll';
-import {linkTo} from '../../../../../js/functions'
+import {linkTo} from '../../../../../js/functions';
+
+function readmore(elmnt){
+   setTimeout(()=>{
+      $(elmnt).readmore({num: 3})
+   }, 200)
+}
 
 class CoursesSection extends Component {
    constructor(props){
@@ -18,22 +24,19 @@ class CoursesSection extends Component {
    }
 
    changeTab(index){
+      let elmnt = this.tab.current
       this.setState(state=>{
          state.currentTab = state.data[index]
          return state
-      })
+      }, ()=>readmore(elmnt))
    }
 
    componentDidMount() {
       let elmnt = this.tab.current
-      $(elmnt).readmore({num: 3})
+      readmore(elmnt)
       smoothScroll(elmnt);
 
-      $(window).on('resize', ()=>{
-         setTimeout(()=>{
-            $(elmnt).readmore({num: 3})
-         }, 250)
-      })
+      $(window).on('resize', ()=>readmore(elmnt))
    }
    
 
