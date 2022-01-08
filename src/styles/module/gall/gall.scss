@@ -4,7 +4,12 @@
 
    // .gal__item
 
-   &__item{cursor: pointer;}
+   &__item{
+      cursor: pointer;
+      &:hover{
+         .photo-sloth__layer{opacity:1;}
+      }
+   }
    // .gall__inner
 
    &__inner {}

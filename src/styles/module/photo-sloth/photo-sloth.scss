@@ -65,6 +65,9 @@
       font-style: normal;
       font-weight: bold;
       font-size: 1.7rem;
+      line-height: 143.18%;
+      max-height: 10rem;
+      overflow: hidden;
    }
 
    // .photo-sloth__layer-descr
@@ -78,6 +81,7 @@
       max-height: 9rem;
       text-overflow: ellipsis;
       overflow: hidden;
+      margin-top: 0.8rem;
    }
 
    &:hover{

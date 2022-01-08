@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ZoomedGal from '../ZoomedGal/index';
-import {linkTo, makeReqObj, setPageTitle} from '../../../../js/functions'
+import {linkTo, makeReqObj, setPageTitle, textElipsizer} from '../../../../js/functions'
 
 function videoGen(link){
    return (
@@ -110,7 +110,6 @@ class BooksGallery extends Component {
          galItems = items.map(elem=>{
             let title = elem.name;
             let photo = elem.photo;
-            // let owner = elem.owner;
             return (
             <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, photo)}}>
                <div class="gall-item__photo">
@@ -126,11 +125,9 @@ class BooksGallery extends Component {
          galleryClass = 'gall--books'
          // page title
          setPageTitle(`Навчальні матеріали | Professor `+reqObj.prof)
-         // innerClass = 'page__inner--books'
          galItems = items.map(elem=>{
             let title = elem.name;
             let photo = elem.photo;
-            // let owner = elem.owner;
             return (
             <div class="gall__item gall-item" key={elem._id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
                <div class="gall-item__photo">
@@ -152,7 +149,14 @@ class BooksGallery extends Component {
 
             return (
                <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
-                     {mediaThing}
+                  {mediaThing}
+                  <div class="photo-sloth__layer">
+                     <div class="photo-sloth__layer-bg"></div>
+                     <div class="photo-sloth__layer-text-wrap">
+                        <p class="photo-sloth__layer-title">{textElipsizer(elem.name, 68)}</p>
+                        <p class="photo-sloth__layer-descr">{textElipsizer(elem.about, 170)}</p>
+                     </div>
+                  </div>
                </div>
             )
 
@@ -162,24 +166,18 @@ class BooksGallery extends Component {
          galleryClass = 'gall--photos'
          // page title
          setPageTitle(`Наші учні | Professor `+reqObj.prof)
-         // innerClass = 'page__inner--photos'
          galItems = items.map(elem=>{
-            let title = elem.name;
-            let professor = elem.professor;
-            let photo = elem.photo;
-            // return (
-            // <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
-            //    <div class="gall-item__photo">
-            //       <img src={photo} srcset={photo} alt="" class="gall-item__img lazyload" data-srcset={photo}/>
-            //    </div>
-            //    <p class="gall-item__title">{title}</p>
-            //    <p class="gall-item__descr">Professor {professor.join(" & ")}</p>
-            // </div>
-            // )
             let mediaThing = generateMediaThing(elem, videoGen, imageGen)
             return (
                <div class="gall__item gall-item" key={elem.id} onClick={()=>{funcs.toggleGallery('zoom', true, elem)}}>
-                     {mediaThing}
+                  {mediaThing}
+                  <div class="photo-sloth__layer">
+                     <div class="photo-sloth__layer-bg"></div>
+                     <div class="photo-sloth__layer-text-wrap">
+                        <p class="photo-sloth__layer-title">{textElipsizer(elem.name, 68)}</p>
+                        <p class="photo-sloth__layer-descr">{textElipsizer(elem.about, 170)}</p>
+                     </div>
+                  </div>
                </div>
                )
 

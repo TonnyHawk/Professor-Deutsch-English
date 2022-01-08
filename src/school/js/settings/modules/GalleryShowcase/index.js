@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import {linkTo, generateMediaThing} from '../../../../../js/functions';
+import {linkTo, generateMediaThing, textElipsizer} from '../../../../../js/functions';
 import ZoomedGal from '../../../../../gall/js/modules/ZoomedGal';
 
+function sort(arr){
+   return arr.sort()
+}
+
 function videoGenerator(link){
-   console.log(link);
    let styles = {
       width: '100%',
       borderRadius: '0.9rem'
@@ -29,60 +32,18 @@ class GalleryShowcase extends Component {
          showZoomed: false,
          zoomedItem: '',
       }
-      this.data = [
-         // 0
-         {
-            name: '',
-            about: '',
-            photo: 'img/gallery-showcase/1.jpg',
-         },
-         // 1
-         {
-            name: '',
-            about: '',
-            photo: 'img/gallery-showcase/2.jpg',
-         },
-         // 2
-         {
-            name: '',
-            about: '',
-            photo: 'img/gallery-showcase/3.jpg',
-         },
-         // 3
-         {
-            name: '',
-            about: '',
-            photo: 'img/gallery-showcase/4.jpg',
-         },
-         // 4
-         {
-            name: '',
-            about: '',
-            photo: 'img/gallery-showcase/5.jpg',
-         },
-         // 5
-         {
-            name: '',
-            about: '',
-            photo: 'img/gallery-showcase/6.jpg',
-         },
-         // 6
-         {
-            name: '',
-            about: '',
-            photo: 'img/gallery-showcase/7.jpg',
-         },
-         // 7
-         {
-            name: 'heelo boyes',
-            about: 'its me and my homies boyy gangsta shit broee',
-            photo: 'img/gallery-showcase/8.jpg',
-            media: {
-               link: 'img/gallery-showcase/1.mp4',
-               type: 'video'
-            }
-         }
-      ]
+      // processing the data
+      let slotExample = {
+         name: 'Це місце вільне',
+         about: 'Тут може бути показаний пост з галереї',
+         photo: 'img/gallery-showcase/empty.jpg',
+      };
+      this.data = []
+      for(let i = 0; i < 8; i++){
+         let elem = props.data.find(elem=>elem.showcase == i)
+         if(typeof elem !== 'undefined') this.data.push(elem)
+         else this.data.push(slotExample)
+      }
    }
 
    toggleGallery(name, state, ...props){
@@ -137,8 +98,8 @@ class GalleryShowcase extends Component {
             <div class="photo-sloth__layer">
                <div class="photo-sloth__layer-bg"></div>
                <div class="photo-sloth__layer-text-wrap">
-                  <p class="photo-sloth__layer-title">{elem.name}</p>
-                  <p class="photo-sloth__layer-descr">{elem.about}</p>
+                  <p class="photo-sloth__layer-title">{textElipsizer(elem.name, 68)}</p>
+                  <p class="photo-sloth__layer-descr">{textElipsizer(elem.about, 170)}</p>
                </div>
             </div>
          </div>
@@ -150,9 +111,9 @@ class GalleryShowcase extends Component {
    <div class="container">
       <div class="section__header">
          <h1 class="section__title">Галерея</h1>
-         <div class="section__expand-btn feature hover-circled btn--accented linkTo">
+         <div class="section__expand-btn feature hover-circled btn--accented linkTo" onClick={()=>linkTo(`gall/?what=gallery&prof=${this.props.prof}`)}>
             <div class="feature__icon hover-circled__icon"><i class="bi bi-collection"></i></div>
-            <p class="feature__text" onClick={()=>linkTo(`gall/?what=gallery&prof=${this.props.prof}`)}>Більше</p>
+            <p class="feature__text">Більше</p>
          </div>
       </div>
 

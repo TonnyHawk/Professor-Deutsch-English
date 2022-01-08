@@ -81,8 +81,14 @@ import {langFilter, loadItems, makeReqObj, linkTo, setPageTitle} from '../../js/
       document.getElementById('students')
    );
 
+   let gallerySloths = await loadItems('gallery', globals.serverUrl)
+   gallerySloths = langFilter(gallerySloths, schoolName)
+   gallerySloths = gallerySloths.filter(elem=>{
+      return elem.showcase !== 'null'
+   })
+
    // gallery showcase
    ReactDOM.render(
-      <GalleryShowcase prof={schoolName}/>,
+      <GalleryShowcase data={gallerySloths} prof={schoolName}/>,
       document.getElementById('gallery-showcase')
    );
