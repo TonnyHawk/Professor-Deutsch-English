@@ -9,7 +9,8 @@ let distFold = '../../dist'
 let projFold = '.'
 module.exports = [(env) => {
    return {
-      mode: 'development',
+      // mode: 'production',
+      mode: 'production',
       entry: {
          index: projFold+'/js/main.js'
       },
@@ -56,7 +57,8 @@ module.exports = [(env) => {
    }
 },
 {
-  mode: 'development',
+//   mode: 'development',
+   mode: 'production',
    entry: projFold+'/js/main-addons.js',
    output: {
       path: path.resolve(__dirname, distFold+"/school"),
@@ -67,7 +69,8 @@ module.exports = [(env) => {
    },
 },
 {
-   mode: 'development',
+   // mode: 'development',
+   mode: 'production',
    entry: projFold+'/js/main-react-stuff.js',
    output: {
       path: path.resolve(__dirname, distFold+"/school"),

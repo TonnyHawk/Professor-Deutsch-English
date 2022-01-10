@@ -61,7 +61,7 @@ let {
       cb()
    }
 
-exports.default = series(css, html, watchAll)
+exports.default = series(css, html)
 exports.css = css
 exports.html = html
 exports.serve = server

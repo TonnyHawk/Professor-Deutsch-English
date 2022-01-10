@@ -6,7 +6,8 @@ let projFold = '.'
 let distFold = '../../dist'
 
 module.exports = {
-   mode: 'development',
+  //  mode: 'development',
+    mode: 'production',
    entry: projFold+'/js/index.js',
    output: {
       path: path.resolve(__dirname, distFold+"/gall"),
