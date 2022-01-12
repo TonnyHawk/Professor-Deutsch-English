@@ -35,12 +35,16 @@ class GalleryShowcase extends Component {
       // processing the data
       let slotExample = {
          name: 'Це місце вільне',
-         about: 'Тут може бути показаний пост з галереї',
+         about: 'Тут можна закріпити пост з галереї',
          photo: 'img/gallery-showcase/empty.jpg',
       };
-      this.data = []
+      this.data = [];
+      console.log(props.data);
       for(let i = 0; i < 8; i++){
-         let elem = props.data.find(elem=>elem.showcase == i)
+         let elem = props.data.find(({showcase})=>{
+            let item = showcase.find(elem=>elem.prof === props.prof)
+            return item.place == i
+         })
          if(typeof elem !== 'undefined') this.data.push(elem)
          else this.data.push(slotExample)
       }
@@ -121,7 +125,7 @@ class GalleryShowcase extends Component {
          <div class="col-12 col-md-6 col-xl-4">
             <div class="row g-0">
                <div class="col-12 p-2">
-                  {sloths[7]}
+                  {sloths[0]}
                </div>
             </div>
             <div class="row g-0">
@@ -150,7 +154,7 @@ class GalleryShowcase extends Component {
                   {sloths[6]}
                </div>
                <div class="col-12 col-md-6 p-2">
-                  {sloths[0]}
+                  {sloths[7]}
                </div>
             </div>
          </div>
