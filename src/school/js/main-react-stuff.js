@@ -83,7 +83,9 @@ import {langFilter, loadItems, makeReqObj, linkTo, setPageTitle} from '../../js/
 
    let gallerySloths = await loadItems('gallery', globals.serverUrl)
    gallerySloths = langFilter(gallerySloths, schoolName)
+   console.log(gallerySloths);
    gallerySloths = gallerySloths.filter(({showcase})=>{
+      console.log(showcase);
       let item = showcase.find(elem=>elem.prof === schoolName)
       if(typeof item !== 'undefined') return item.place !== 'null';
    })

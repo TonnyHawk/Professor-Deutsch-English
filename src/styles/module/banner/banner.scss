@@ -1,0 +1,206 @@
+.banner {
+   padding: 4.5rem 0 0;
+   overflow: hidden;
+   color: white;
+   background: linear-gradient(146.12deg, #4872DD 13.53%, #F94F4F 88.9%, #B418AF 99.67%);
+   @include media-breakpoint-up(md){
+      background: linear-gradient(114.93deg, #4872DD 34.13%, #F94F4F 108.22%, #B418AF 118.81%);
+      padding: 6rem 0 0;
+   }
+   @include media-breakpoint-up(lg){
+      padding: 4.5rem 0;
+   }
+
+   &__text-block{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include media-breakpoint-up(lg){
+         align-items: flex-start;
+      }
+   }
+
+   // .banner__title
+
+   &__title {
+   }
+
+   // .banner__title-text
+
+   &__title-text {
+      font-family: Gilroy;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 2.4rem;
+      line-height: 150%;
+      /* or 36px */
+      
+      text-align: center;
+      @include media-breakpoint-up(md){
+         font-size: 2.5rem;
+         line-height: 150%;
+      }
+      @include media-breakpoint-up(lg){
+         text-align: left;
+      }
+   }
+
+   // .banner__title-text--big
+
+   &__title-text--big {
+      font-family: Gilroy;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 4.8rem;
+      line-height: 6rem;
+      @include media-breakpoint-up(lg){
+         margin-left: 1rem;
+      }
+   }
+
+   // .banner__list
+
+   &__list {
+      margin: 5.3rem 0;
+   }
+
+   // .banner__list-item
+
+   &__list-item {
+      font-family: Gilroy;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 2.1rem;
+      line-height: 136%;
+
+      &:before{
+         content: "-";
+         margin-right: 0.7rem;
+      }
+
+      text-align: center;
+      margin: 0 0 1.6rem;
+      @include media-breakpoint-up(md){
+         font-size: 2.3rem;
+         line-height: 136%;
+      }
+      @include media-breakpoint-up(lg){
+         // margin-bottom: 1.6rem;
+         line-height: 2.8rem;
+         font-size: 2.2rem;
+         text-align: left;
+      }
+   }
+
+   // .banner__action
+
+   &__action {
+      width: max-content;
+      font-size: 2rem;
+      font-weight: 800;
+      &:hover{
+         color: white;
+      }
+   }
+
+
+   // .banner__image-block
+
+   &__image-block {
+      img{display: block}
+      position: relative;
+      height: 49rem;
+      display: flex;
+      justify-content: center;
+      @include media-breakpoint-up(md){
+         height: 63.5rem;
+      }
+      @include media-breakpoint-up(lg){
+         height: 100%;
+      }
+   }
+
+   // .banner__image-main
+
+   &__image-main {
+      position: relative;
+      z-index: 2;
+      width: 27rem;
+      margin: 0 auto;
+      top: 14rem;
+      @include media-breakpoint-up(md){
+         width: 37rem;
+      }
+      @include media-breakpoint-up(lg){
+         position: absolute;
+         width: 38rem;
+         right: -4.8rem;
+         top: 7rem;
+         height: 100%;
+      }
+      @include media-breakpoint-up(xl){
+         width: 41.4rem;
+         right: 0;
+         top: 4rem;
+      }
+   }
+
+   // .banner__image-screen
+
+   &__image-screen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      display: block;
+      box-shadow: 6px 16px 48px 8px rgba(27, 8, 17, 0.7);
+   }
+
+   // .banner__image-insta-logo
+
+   &__image-insta-logo {
+      position: absolute;
+      top: -1.3rem;
+      right: -1.5rem;
+      z-index: 2;
+      width: 4.5rem;
+      @include media-breakpoint-up(md){
+         width: 6.2rem;
+         top: -1.9rem;
+         right: -2.1rem;
+      }
+      @include media-breakpoint-up(lg){
+         top: -1.7rem;
+         right: -1.7rem;
+      }
+      @include media-breakpoint-up(xl){
+         top: -1.4rem;
+         right: -1.7rem;
+      }
+   }
+
+   // .banner__image-circles
+
+   &__image-circles {
+      position: absolute;
+      top: 4.2rem;
+      // left: 0;
+      z-index: 1;
+      width: 60.6rem;
+      @include media-breakpoint-up(md){
+         width: 82.2rem;
+      }
+      @include media-breakpoint-up(lg){
+         top: -9rem;
+         left: -1.8rem;
+         width: 60.2rem;
+      }
+      @include media-breakpoint-up(xl){
+         top: -19rem;
+         left: -3.8rem;
+         width: 84.2rem;
+      }
+   }
+
+}
