@@ -141,6 +141,9 @@
             line-height: 3rem;
             padding: 3rem 8.5rem;
          }
+         @include media-breakpoint-up(lg){
+            padding: 3rem 5rem; 
+         }
       }
    }
 }

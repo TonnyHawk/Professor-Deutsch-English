@@ -133,7 +133,7 @@ class BooksGallery extends Component {
                <div class="gall-item__photo">
                   <img src={photo+"/min"} alt="" class="gall-item__img lazyload" data-src={photo}/>
                </div>
-               <p class="gall-item__title">{title}</p>
+               <p class="gall-item__title">{textElipsizer(title, 70)}</p>
                {/* <p class="gall-item__descr">{owner}</p> */}
             </div>
             )
@@ -235,7 +235,7 @@ class BooksGallery extends Component {
             <div class="page__hd">
                <p class="page__title">{winTitle}</p>
                {/* <div class="page__icon page__icon--left page__close-icon" onClick={()=>{funcs.toggleGallery('cert', false)}}> */}
-               <div class="page__icon page__icon--left page__close-icon" onClick={()=>linkTo(linkToBack)}>
+               <div class="page__icon page__icon--left page__close-icon" onClick={()=>{history.back()}}> 
                   <i class="bi bi-arrow-left"></i>
                </div>
             </div>

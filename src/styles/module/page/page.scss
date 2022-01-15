@@ -70,9 +70,11 @@
       position: absolute;
       font-size: 3rem;
       cursor: pointer;
+      display: none;
 
       @include media-breakpoint-up(md) {
          font-size: 3.5rem;
+         display: block;
       }
 
       @include media-breakpoint-up(lg) {
