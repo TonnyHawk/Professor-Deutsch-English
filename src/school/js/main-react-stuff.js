@@ -78,7 +78,7 @@ import {langFilter, loadItems, makeReqObj, linkTo, setPageTitle} from '../../js/
    // students
    ReactDOM.render(
       <StudentsSlider students={humans} prof={schoolName}/>,
-      document.getElementById('students')
+      document.querySelector('#students .sl')
    );
 
    let gallerySloths = await loadItems('gallery', globals.serverUrl)

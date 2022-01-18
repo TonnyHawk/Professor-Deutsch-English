@@ -147,7 +147,7 @@ class StudentsSlider extends Component {
        <>
          
 
-         <div className="container">
+         {/* <div className="container">
             <div className="section__header">
                <h1 className="section__title">Наші випускники</h1>
                <div className="section__expand-btn feature hover-circled btn--accented" onClick={()=>linkTo(`gall/?what=humans&prof=${this.props.prof}&role=student`)}>
@@ -155,9 +155,9 @@ class StudentsSlider extends Component {
                   <p className="feature__text">Більше</p>
                </div>
             </div>
-         </div>
+         </div> */}
 
-         <div className="sl">
+         {/* <div className="sl"> */}
             <Slider 
                className="sl__main" {...main}
                asNavFor={this.state.nav2}>
@@ -165,7 +165,7 @@ class StudentsSlider extends Component {
                {mainSlides}
 
             </Slider>
-         </div>
+         {/* </div> */}
 
    </>
     );
