@@ -21,13 +21,6 @@ module.exports = [(env) => {
       externals: {
          jquery: 'jQuery',
       },
-      // plugins: [
-      //    new HtmlWebpackPlugin({
-      //      template: path.join(__dirname, "src", "index.html"),
-      //      inject: 'body',
-      //      scriptLoading: 'blocking',
-      //    }),
-      //  ],
        module: {
          rules: [
            {
