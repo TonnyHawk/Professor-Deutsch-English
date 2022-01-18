@@ -112,14 +112,14 @@ class GalleryShowcase extends Component {
 
       return (
          <>
-   <div class="container">
+   {/* <div class="container">
       <div class="section__header">
          <h1 class="section__title">Галерея</h1>
          <div class="section__expand-btn feature hover-circled btn--accented linkTo" onClick={()=>linkTo(`gall/?what=gallery&prof=${this.props.prof}`)}>
             <div class="feature__icon hover-circled__icon"><i class="bi bi-collection"></i></div>
             <p class="feature__text">Більше</p>
          </div>
-      </div>
+      </div> */}
 
       <div class="row g-0 gallery-showcase__main">
          <div class="col-12 col-md-6 col-xl-4">
@@ -159,7 +159,7 @@ class GalleryShowcase extends Component {
             </div>
          </div>
       </div>
-   </div>
+   {/* </div> */}
    {zoomedGal}
       </>
       );

@@ -150,8 +150,8 @@ class TeachersSlider extends Component {
        <>
 
 
-   <h1 className="section__title">З вами працюватимуть професіонали</h1>
-   <div className="slider">
+   {/* <h1 className="section__title">З вами працюватимуть професіонали</h1>
+   <div className="slider"> */}
       <div className="slider__slide slide">
          <Slider className='slide__photos-slider' {...settingsPhotos} asNavFor={this.state.nav2} ref={slider => (this.slider1 = slider)}>
                {photoSlides}
@@ -160,7 +160,7 @@ class TeachersSlider extends Component {
             {textSlides}
          </Slider>
       </div>
-   </div>
+   {/* </div> */}
 
    </>
     );

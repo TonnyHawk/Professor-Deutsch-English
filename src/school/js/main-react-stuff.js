@@ -72,7 +72,7 @@ import {langFilter, loadItems, makeReqObj, linkTo, setPageTitle} from '../../js/
    // teachers
    ReactDOM.render(
       <TeachersSlider humans={humans} prof={schoolName}/>,
-      document.getElementById('teachers')
+      document.querySelector('#teachers .slider')
    );
 
    // students
@@ -93,5 +93,5 @@ import {langFilter, loadItems, makeReqObj, linkTo, setPageTitle} from '../../js/
    // gallery showcase
    ReactDOM.render(
       <GalleryShowcase data={gallerySloths} prof={schoolName}/>,
-      document.getElementById('gallery-showcase')
+      document.querySelector('#gallery-showcase .gallery-showcase__content')
    );
