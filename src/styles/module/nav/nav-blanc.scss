@@ -65,7 +65,9 @@
    // .nav__main
 
    &__main {
+      padding-left: 8vw;
       @include media-breakpoint-down(xl) {
+         padding: 0;
          position: fixed;
          width: 100%;
          left: 0;
@@ -187,9 +189,9 @@
    // .nav__logo
 
    &__logo {
-      @include media-breakpoint-up(xl){
-         margin-right: 8vw;
-      }
+      // @include media-breakpoint-up(xl){
+      //    margin-right: 8vw;
+      // }
    }
 
    // .nav__aside-item
@@ -277,5 +279,29 @@
          }
       }
 
+   }
+
+   &.scroll-modified{
+      .nav{
+         // .nav__aside
+
+         &__aside {
+            @include media-breakpoint-up(xl){
+               position: static;
+               width: auto;
+            }
+         }
+         &__aside-item{
+            width: auto!important;
+         }
+         &__main{
+            @include media-breakpoint-up(xl){
+               flex-grow: 1;
+               padding: 0 1rem;
+               display: flex;
+               justify-content: center;
+            }
+         }
+      }
    }
 }

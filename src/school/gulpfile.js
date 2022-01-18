@@ -65,3 +65,4 @@ exports.default = series(css, html)
 exports.css = css
 exports.html = html
 exports.serve = server
+exports.watcher = watchAll

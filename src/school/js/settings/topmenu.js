@@ -1,5 +1,3 @@
-const MenuSpy = require('menuspy');
-
 let prevScrollPos = window.pageYOffset;
 window.addEventListener('scroll', function () {
    // hiding menu on scroll down
@@ -13,6 +11,9 @@ window.addEventListener('scroll', function () {
    prevScrollPos = currentScrollPos;
    // end
 
+   let headerBottomPos = document.querySelector('#header').getBoundingClientRect().bottom
+   let topmenuHeight = document.querySelector('#topmenu').getBoundingClientRect().height
+
    if (window.pageYOffset > 0) {
       $('.nav').addClass('is-sticked')
    } else {
@@ -20,28 +21,12 @@ window.addEventListener('scroll', function () {
          $('.nav').removeClass('is-sticked')
       }
    }
-})
-let elm = document.getElementById('topmenu');
-setTimeout(()=>{
-   new MenuSpy(elm,{
 
-      // menu selector
-      menuItemSelector: 'p[data-target]',
-   
-      // CSS class for active item
-      activeClass   : 'is-active',
-   
-      // amount of space between your menu and the next section to be activated.
-      threshold     : 15,
-   
-      // enable or disable browser's hash location change.
-      enableLocationHash: true,
-   
-      // timeout to apply browser's hash location.
-      hashTimeout   : 100,
-   
-      // called every time a new menu item activates.
-      callback      : null
-      
-   });
-}, 150)
+   if(headerBottomPos < topmenuHeight){
+      $('.nav').addClass('scroll-modified')
+   }else{
+      if ($('.nav').hasClass('scroll-modified')) {
+         $('.nav').removeClass('scroll-modified')
+      }
+   }
+})
