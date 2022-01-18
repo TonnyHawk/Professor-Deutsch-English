@@ -29,9 +29,13 @@ import {langFilter, loadItems, makeReqObj, linkTo, setPageTitle} from '../../js/
 
    //-- document manipulations
    // click events
-   // document.querySelector('#gallery-showcase .linkTo').addEventListener('click', function(){
-   //    linkTo(`gall/?what=gallery&prof=${schoolName}`);
-   // });
+   document.querySelector('#gallery-showcase .section__expand-btn').addEventListener('click', function(){
+      linkTo(`gall/?what=gallery&prof=${schoolName}`);
+   });
+
+   document.querySelector('#students .section__expand-btn').addEventListener('click', function(){
+      linkTo(`gall/?what=humans&prof=${schoolName}&role=student`);
+   });
 
    document.querySelector('.nav__logo').addEventListener('click', ()=>{
       linkTo('');
