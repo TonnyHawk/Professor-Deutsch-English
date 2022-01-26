@@ -11,4 +11,9 @@ It was important to present separate teachers, students and their awards for eac
 + Gallery (dynamic) - shows all media content like school gallery, student portfolios, awards and certificates [(dist/gall/index.html)](https://github.com/TonnyHawk/Professor-Deutsch-English/tree/main/dist/gall)  
 
 ### How it works
-The Main and gallery page make fetch requests to the server and react generates some sections. Server requests are based on props that page gets from browser`s query string so such url as <http://repetitor.rv.ua/school/?prof=Deutsch> will direct us to the main page of the german learning school and the link <http://repetitor.rv.ua/school/?prof=English> to the english learning school. If some props of a query string contain type errors or are incorrect user redirects to the intro page. Errors in props on the gallery page redirects to the 404 page.
+The Main and gallery page make fetch requests to the server and react generates some sections. Server requests are based on props that page gets from browser`s query string so such url as <http://repetitor.rv.ua/school/?prof=Deutsch> will direct us to the main page of the german learning school and the link <http://repetitor.rv.ua/school/?prof=English> to the english learning school. If some props of a query string contain type errors or are incorrect user redirects to the intro page. Errors in props on the gallery page redirects to the 404 page.  
+
+## Special feature
+Site is very customizable. Each content can be edited through the one of two controll pannels
++ Textolite - open source conroll pannel for managing the static content
++ [Pannel build by me](https://github.com/TonnyHawk/profde-pannel) - to manage content in the dynamically generated sections
