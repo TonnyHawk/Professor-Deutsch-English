@@ -15,5 +15,5 @@ The Main and gallery page make fetch requests to the server and react generates 
 
 ## Special feature
 Site is very customizable. Each content can be edited through the one of two controll pannels
-+ Textolite - open source conroll pannel for managing the static content
++ [Textolite](https://textolite.ru/) - open source conroll pannel for managing the static content
 + [Pannel build by me](https://github.com/TonnyHawk/profde-pannel) - to manage content in the dynamically generated sections
