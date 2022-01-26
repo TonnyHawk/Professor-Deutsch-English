@@ -8,7 +8,7 @@ Site was ordered by the language school "Professor Deutsch & English". The task 
 It was important to present separate teachers, students and their awards for each independent school department. The owner also wanted to have ability to change the site`s content in the future by himself, so it was decided to combine the static content (common for both schools) with dynamically generated one. According to that idea i made a project structure that looks like this  
   
 ### Project structure
-+ Intro (static) - user can choose the school [(dist/index.html)](https://github.com/TonnyHawk/Professor-Deutsch-English/tree/main/dist)
++ Intro (static) - user can choose the school [(dist/index.html)](../../dist/index.html)
 + Main page (static / dynamic) (dist/school/index.html)
 + Gallery (dynamic) - shows all media content like school gallery, student portfolios, awards and certificates (dist/gall/index.html)
 
