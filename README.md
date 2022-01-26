@@ -1,5 +1,5 @@
 # Professor Deutsch & English  
-A highly customizable website for the language learning school professor Deutsch & English
+A highly customizable website for the language learning school "Professor Deutsch & English"
 ## Readme structure
 1. [Project description](#project-description)  
 2. [Project realization](#project-description)
