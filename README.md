@@ -1,5 +1,11 @@
 ## Readme structure
-[Project description](#project-description)
+[Project description](#project-description)  
+[Project realization](#project-description)
++ [Main idea](#main-idea)
++ [Project structure](#project-structure)
++ [How it works](#how-it-works)  
+
+[Special feature](#special-feature)
 
 ## Project description  
 Site was ordered by the language school "Professor Deutsch & English". The task was to present the school in general and each of it`s department separately (German and english). The owners and main teachers here are a married couple that shares the same ideas and approaches to the learning process so it was decided to use the same design and main page structure for both and mix common content (main school ideas, history, description) with a specific to each separate department (students, awards, teachers..)  
