@@ -9,7 +9,7 @@ It was important to present separate teachers, students and their awards for eac
   
 ### Project structure
 + Intro (static) - user can choose the school [(dist/index.html)](https://github.com/TonnyHawk/Professor-Deutsch-English/tree/main/dist)
-+ Main page (static / dynamic) [(dist/school/index.html)](https://github.com/TonnyHawk/Professor-Deutsch-English/tree/main/dist/school)
++ Main page (static / dynamic) - main school and selected department info [(dist/school/index.html)](https://github.com/TonnyHawk/Professor-Deutsch-English/tree/main/dist/school)
 + Gallery (dynamic) - shows all media content like school gallery, student portfolios, awards and certificates [(dist/gall/index.html)](https://github.com/TonnyHawk/Professor-Deutsch-English/tree/main/dist/gall)
 
 
