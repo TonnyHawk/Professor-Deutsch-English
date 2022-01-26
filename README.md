@@ -6,6 +6,6 @@ Site was ordered by the language school "Professor Deutsch & English". The task 
 ## Task realization  
 It was important to present separate teachers, students and their awwards for each independent school department. The owner also wanted to have ability to change the site`s content in the future by himself, so it was decided to combine the static content (common for both schools) with dynamically generated one. According to that idea i made a project structure that looks like this  
 **project structure**  
-+Intro (static) - user can choose the school
-+Main page (static / dynamic)
-+Gallery (dynamic) - shows all media content like school gallery, student portfolios, awwards and certificates
++ Intro (static) - user can choose the school
++ Main page (static / dynamic)
++ Gallery (dynamic) - shows all media content like school gallery, student portfolios, awwards and certificates
