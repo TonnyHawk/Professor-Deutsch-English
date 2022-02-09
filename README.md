@@ -1,5 +1,6 @@
 # Professor Deutsch & English  
-A highly customizable website for the language learning school "Professor Deutsch & English". Owner can edit every content on the page without any coding skills. Built with no CMS from self made design
+A highly customizable website for the language learning school "Professor Deutsch & English". Owner can edit every content on the page without any coding skills. Built with no CMS from self made design  
+  
 ![alt text](https://lh3.googleusercontent.com/zwGWF0_NbBljf5OLLWzZeyxF0P9vCpb0L6OD4Lsnmyxg9OP-daaAp8msfI7BnGAgwg-MaS_D9UfPbQ8kQD0ryy88PQ5wTkEUAHBW4G6ovqS-H3E0nz-0fzaaZysVBUKyFDJPDHvbA8iCARihGGiAlLF8t853LiLanFxzgU4RSBRRY75zAQMLa5PkyQhyH9C-DDCmfKyBLMM1UehafSQ3YNT6B2HJu9uqheLXDu4H-PozimP6Ggo4_nMqYfoDXDrG0Xx7CtUx8y-50svJMERuEpNV343Q2q3r2WKoGUYIYD1C-AuZqvbI-WK0ZJMAEKH_LkMPoUxiWV4XoRh7SIs2MPxi6x6oVrYGdBiEAJgUtsEfaDUEJVO-ATupt9qbNWVF9R_zPGRpjCOrVsP4t65uB95X1gKiW1yLXM9_F35Hypp4Z7snJhPUpmr-nPY9J1jmbLbSnZI-ThK9P7swaYscS0M7fxClrZ6qLIYt4XqBVpS9F0MnkVIv2dTqvMS4IVJURy_JQRcR_61f5-0AiUOMp0E-KSEJialF8vFBFfMddIjWdF6ZwpSSDpce-ZiITHGnvElcFcl3Fq79OSnQltsPmka1jVzXT7Dc41EdeVOaQ1w2xVtcwM5KrVWWy5tgBRyIM3tfhlpfDviuifOhyz7G1zScyBOfN8TaLHbqenB-I_RX290UzkdBk6GRkfvwSB3Vn_goTEzFQAB6Ey4dUvzxr1s=w678-h903-no?authuser=0)
 ## Readme structure
 1. [Project description](#project-description)  
