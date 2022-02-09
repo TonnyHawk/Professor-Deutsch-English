@@ -1,5 +1,5 @@
 # Professor Deutsch & English  
-A highly customizable website for the language learning school "Professor Deutsch & English"
+A highly customizable website for the language learning school "Professor Deutsch & English". Owner can edit every content on the page without any coding skills. Built with no CMS from own design
 ## Readme structure
 1. [Project description](#project-description)  
 2. [Project realization](#project-description)
