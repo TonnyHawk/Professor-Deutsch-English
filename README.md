@@ -1,6 +1,6 @@
 # Professor Deutsch & English  
 A highly customizable website for the language learning school "Professor Deutsch & English". Owner can edit every content on the page without any coding skills. Built with no CMS from self made design
-![alt text](https://images.app.goo.gl/nkxEj8QjyK9bbxnA9)
+![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Photos_icon_%282020%29.svg/768px-Google_Photos_icon_%282020%29.svg.png)
 ## Readme structure
 1. [Project description](#project-description)  
 2. [Project realization](#project-description)
