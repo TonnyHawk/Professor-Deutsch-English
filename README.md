@@ -4,7 +4,7 @@ Owner can edit every content on the page without any coding skills.
 Built with no CMS from self made design  
   
 ## Special feature
-Site is very customizable. Each content can be edited through the one of two controll pannels
+Site is very customizable. Each piece of content can be edited through the one of two controll pannels
 + [Textolite](https://textolite.ru/) - open source conroll pannel for managing the static content
 + [Pannel build by me](https://github.com/TonnyHawk/profde-pannel) - to manage content in the dynamically generated sections
 
