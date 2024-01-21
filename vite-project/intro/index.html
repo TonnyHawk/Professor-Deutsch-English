@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="format-detection" content="telephone=no">
+
+   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="styles/intro.scss">
+   <title>Школа вивчення іноземних мов Professor Deutsch & English</title>
+</head>
+<body>
+
+   <div class="loader" id="loader">
+      <div class="loader__bg"></div>
+      <div class="loader__content">
+         <div class="loader__spinner spinner loadingio-spinner-rolling-c55z9beacq">
+            <div class="ldio-tam1aegang">
+               <div></div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <section class="intro">
+      <div class="intro__inner">
+        <div class="intro__logo logo">
+          <p class="logo__first-line">Школа вивчення іноземних мов</p>
+          <p class="logo__main-text">Professor</p>
+          <p class="logo__last-line">Deutsch & English</p>
+        </div>
+        <div class="intro__half-screen intro__half-screen--first">
+         <p class="intro__action" onclick="linkTo('school/?prof=English')">Англійська</p>
+        </div>
+        <div class="intro__half-screen intro__half-screen--seccond">
+          <p class="intro__action" onclick="linkTo('school/?prof=Deutsch')">Німецька</p>
+        </div>
+      </div>
+      <div class="intro__bg ibg"><img src="img/intro/img.jfif" alt=""/></div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+       // functions
+      function linkTo(url=''){
+         let reqString = document.location.href.split('#')[0]
+         // console.log(reqString);
+         let protocoll = reqString.split('//')[0] + '//';
+         // console.log(protocoll);
+         let domain = reqString.split('//')[1].split('/')[0] + '/'
+         // console.log(domain);
+
+         let newUrl = protocoll + domain + url
+
+         // console.log(newUrl);
+
+         document.location.href = newUrl
+      }
+
+      function ibg(){
+         $.each($('.ibg'), function(index, val) {
+            if($(this).find('img').length>0){
+               $(this).css('background-image','url("'+$(this).find('img').attr('src')+'")');
+            }
+         });
+      }
+    </script>
+
+<script>
+   $(document).ready(()=>{
+      ibg();
+
+
+      setTimeout(function(){
+      document.querySelector("#loader").style.display = "none";
+      // document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
+     }, 2000);
+   })
+</script>
+</body>
+</html>

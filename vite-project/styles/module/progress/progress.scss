@@ -1,0 +1,36 @@
+.progress {
+
+   // .progress__head
+
+   &__head {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   // .progress__title
+
+   &__title {}
+
+   // .progress__nums
+
+   &__nums {}
+
+   // .progress__body
+
+   &__body {position: relative;}
+
+   // .progress__bg-line
+
+   &__bg-line {
+      width: 100%;
+   }
+
+   // .progress__main-line
+
+   &__main-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+   }
+}

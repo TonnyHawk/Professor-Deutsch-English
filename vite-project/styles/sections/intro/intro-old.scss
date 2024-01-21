@@ -1,0 +1,196 @@
+.intro {
+   @include layer;
+   z-index: 1001;
+   position: fixed;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   transition: 0.3s;
+   @include media-breakpoint-up(lg){
+      flex-direction: row;
+   }
+
+   // .intro__title
+
+   &__title {}
+
+   &__layer{
+      @include layer;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.15);
+   }
+
+   // .intro__screen
+
+   &__screen {
+      z-index: 1;
+      position: absolute;
+      height: 50vh;
+      width: 100vw;
+      left: 0;
+      background-color: #484dd3;
+      @include media-breakpoint-up(lg){
+         width: 50vw;
+         height: 100vh;
+      }
+
+      &--left {
+         top: 0;
+      }
+
+      &--right {
+         top: 50vh;
+
+         @include media-breakpoint-up(lg) {
+            top: 0;
+            left: 50vw;
+         }
+      }
+
+      &--fluid{
+         top: 0;
+         left: 0;
+         width: 100vw!important;
+         height: 100vh!important;
+      }
+
+      &.is-active{
+         width: 100vw;
+         height: 100vh;
+      }
+   }
+
+   // .intro__info
+
+   &__info {
+      position: absolute;
+      z-index: 3;
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &--first{
+         top: calc(25vh - 9.8rem);
+         @include media-breakpoint-up(md){
+            top: calc(25vh - 13rem);
+         }
+         @include media-breakpoint-up(lg){
+            top: calc(50vh - 13em);
+            left: calc(25vw - 18vw);
+         }
+         @include media-breakpoint-up(xl){
+            top: calc(50vh - 13em);
+            left: calc(25vw - 23rem);
+         }
+      }
+      &--seccond{
+         top: calc(75vh - 9.8rem);
+         @include media-breakpoint-up(md){
+            top: calc(75vh - 13rem);
+         }
+         @include media-breakpoint-up(lg){
+            top: calc(50vh - 13rem);
+            left: calc(75vw - 18vw);
+         }
+         @include media-breakpoint-up(xl){
+            top: calc(50vh - 13rem);
+            left: calc(75vw - 19.1rem);
+         }
+      }
+
+      &.is-active{
+         .info{
+            &__pretitle, &__action{
+               opacity: 0;
+            }
+         }
+      }
+   }
+
+   // .intro__info-pretitle
+
+   &__info-pretitle {
+      text-align: center;
+      font-family: Gilroy;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.9rem;
+      // line-height: 2.4rem;
+
+      @include media-breakpoint-up(md) {
+         font-size: 3.3vw;
+         // line-height: 3.6rem;
+      }
+
+      @include media-breakpoint-up(lg) {
+         font-size: 3rem;
+         line-height: 4.3rem;
+      }
+   }
+
+   // .intro__info-title
+
+   &__info-title {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 3.8rem;
+      line-height: 4.5rem;
+      /* identical to box height */
+
+      letter-spacing: 0.09rem;
+      text-transform: uppercase;
+      margin: 2.1rem 0 3rem;
+
+      @include media-breakpoint-up(md) {
+         font-size: 8vw;
+         line-height: 6.7rem;
+         margin: 2.5vw 5vw;
+      }
+
+      @include media-breakpoint-up(lg) {
+         font-size: 6vw;
+         line-height: 8.2rem;
+         margin: 3rem 0 5rem;
+      }
+      @include media-breakpoint-up(xl){
+         font-size: 7rem;
+      }
+   }
+
+   // .intro__action
+
+   &__action {
+      font-family: Gilroy;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1.5rem;
+      line-height: 2.2rem;
+      text-align: center;
+      width: max-content;
+      cursor: pointer;
+
+      padding: 1.4rem 2.3rem;
+      background: #F09815;
+      border: 0.3rem solid #F09815;
+      box-sizing: border-box;
+      border-radius: 0.9rem;
+
+      @include media-breakpoint-up(md) {
+         font-size: 2rem;
+         line-height: 2.8rem;
+         padding: 1.9rem 4rem;
+      }
+
+      @include media-breakpoint-up(lg) {
+         padding: 2.2rem 5rem;
+      }
+   }
+
+   &.is-hidden{
+      opacity: 0;
+      visibility: hidden;
+   }
+
+}

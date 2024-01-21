@@ -1,0 +1,36 @@
+.more-btn {
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   transition: 0.2s;
+   border-radius: 0.9rem;
+   padding: 0.5rem 1rem;
+
+   &:hover {
+      background: $gray;
+   }
+
+   &__text {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 168.18%;
+      order: 1;
+
+      @include media-breakpoint-up(lg) {
+         font-size: 1.5rem;
+      }
+   }
+
+   &__image {
+      order: 2;
+      height: 1rem;
+      margin-left: 0.6rem;
+
+      @include media-breakpoint-up(lg) {
+         height: 2rem;
+         margin-left: 2rem;
+      }
+   }
+}

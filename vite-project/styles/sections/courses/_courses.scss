@@ -1,0 +1,326 @@
+#courses {
+   padding-bottom: 0;
+   padding-top: 6em;
+   @include media-breakpoint-up(lg){
+      padding-top: 8rem;
+   }
+   .section{
+      &__title {
+         margin-bottom: 3rem;
+         @include media-breakpoint-up(md){
+            margin-bottom: 2rem;
+         }
+         @include media-breakpoint-up(lg) {
+            margin-bottom: 5rem;
+         }
+      }
+   }
+
+   .highlight {
+      background: linear-gradient(131.61deg, #6A89FB 24.64%, #B418AF 72.99%, #F94F4F 113.91%);
+      padding: 4rem 0 7rem;
+      $color: white !important;
+      margin-top: 6.5rem;
+
+      @include media-breakpoint-up(md){
+         padding-top: 5rem;
+      }
+
+      @include media-breakpoint-up(xl) {
+         padding: {
+            top: 5.5rem;
+            bottom: 6.4rem;
+         }
+         margin-top: 8.5rem;
+      }
+
+      // .highlight__title
+
+      &__title {
+         color: $color;
+         text-align: left;
+         margin-bottom: 3.5rem;
+         @include media-breakpoint-up(md){
+            margin-bottom: 4rem;
+         }
+      }
+
+      // .highlight__features
+
+      &__features {
+         margin-bottom: 3.5rem;
+      }
+
+      // .highlight__feature
+
+      &__feature {
+         margin: 1.5rem 0;
+
+         .flag {
+            display: flex;
+
+            @include media-breakpoint-up(md) {
+               flex-direction: column;
+               text-align: center;
+            }
+
+            @include media-breakpoint-up(xl) {
+               flex-direction: row;
+               text-align: left;
+               align-items: flex-start;
+            }
+
+            // .flag__img
+
+            &__img {
+               img {
+                  width: 4rem;
+               }
+
+               margin-right: 2rem;
+
+               @include media-breakpoint-up(md) {
+                  margin: 1.5rem 0;
+               }
+
+               @include media-breakpoint-up(xl) {
+                  margin: 0 2rem 0 0;
+               }
+            }
+
+            // .flag__text-block
+
+            &__text-block {
+               max-width: 20rem;
+
+               @include media-breakpoint-up(md) {
+                  margin: 0 auto;
+               }
+
+            }
+
+            // .flag__text
+
+            &__text {
+               color: $color;
+               font-family: Gilroy;
+               font-style: normal;
+               font-weight: bold;
+               font-size: 1.5rem;
+               line-height: 152.5%;
+            }
+         }
+      }
+
+      // .highlight__text
+
+      &__text {
+         color: $color;
+         margin-bottom: 4.5rem;
+
+         @include media-breakpoint-up(md) {
+            line-height: 190% !important;
+         }
+
+         @include media-breakpoint-up(lx) {
+            line-height: 168.18% !important;
+         }
+      }
+
+      // .highlight__button
+
+      &__button {}
+
+      // .highlight__info
+
+      &__info {
+         @include media-breakpoint-up(xl) {
+            padding-right: 2rem;
+         }
+      }
+
+      &__photo {
+         margin-bottom: 3rem;
+         width: 100%;
+         border-radius: 0.9rem;
+         // border: 0.5rem solid rgba(32, 74, 225, 0.73);
+      }
+   }
+
+   // .slider {
+
+   //    // .slider__header
+
+   //    &__header {
+   //       display: flex;
+   //       align-items: center;
+   //       justify-content: space-between;
+
+   //       .section__more-btn {
+   //          display: none;
+
+   //          @include media-breakpoint-up(lg) {
+   //             display: flex;
+   //          }
+   //       }
+   //    }
+
+   //    // .slider__filters
+
+   //    &__filters {}
+
+   //    // .slider__filter
+
+   //    &__filter {
+   //       margin-right: 6.3rem;
+   //    }
+
+   //    // .slider__body
+
+   //    &__body {}
+   // }
+
+
+   // .card {
+   //    $inter-item-margin: 4rem;
+   //    border-radius: 9px;
+   //    padding: 4rem 3rem;
+   //    width: max-content;
+
+   //    // .card__title
+
+   //    &__title {
+   //       font-family: Gilroy;
+   //       font-weight: bold;
+   //       font-size: 2rem;
+   //       line-height: 159.68%;
+   //       margin-bottom: $inter-item-margin;
+   //    }
+
+   //    // .card__item
+
+   //    &__item {
+   //       margin-bottom: $inter-item-margin;
+   //    }
+
+   //    // .card__feature
+
+   //    &__feature {
+
+   //       .feature {
+
+   //          &__icon {
+   //             margin-right: 1.5rem;
+   //          }
+
+   //          &__text {}
+   //       }
+   //    }
+
+   //    // .card__description
+
+   //    &__description {
+   //       font-family: Roboto;
+   //       font-size: 1.2rem;
+   //       line-height: 159.68%;
+   //       margin-top: 1.1rem;
+   //    }
+
+   //    // .card__progress
+
+   //    &__progress {
+   //       .progress {
+
+   //          // .progress__head
+
+   //          &__head {
+   //             margin-bottom: 1.1rem;
+   //          }
+
+   //          // .progress__title
+
+   //          &__title {
+   //             font-family: Roboto;
+   //             font-size: 1.3rem;
+   //             line-height: 159.68%;
+   //          }
+
+   //          // .progress__nums
+
+   //          &__nums {
+   //             font-family: Roboto;
+
+   //             .double-num {
+
+   //                // .double-num__current
+
+   //                &__current {
+   //                   font-size: 1.4rem;
+   //                   line-height: 159.68%;
+   //                   margin-right: 0;
+   //                }
+
+   //                // .double-num__dash
+
+   //                &__dash {
+   //                   font-size: 1.4rem;
+   //                   line-height: 159.68%;
+   //                   margin: 0 0.2rem;
+   //                }
+
+   //                // .double-num__all
+
+   //                &__all {
+   //                   font-size: 1.1rem;
+   //                   line-height: 159.68%;
+   //                }
+   //             }
+   //          }
+
+   //          // .progress__body
+
+   //          &__body {
+   //             width: 100%;
+   //          }
+
+   //          // .progress__bg-line
+
+   //          &__bg-line {
+   //             height: 2.7rem;
+   //             background: #CACCD1;
+   //          }
+
+   //          // .progress__main-line
+
+   //          &__main-line {
+   //             background: #262626;
+   //             width: 60%;
+   //          }
+   //       }
+   //    }
+
+   //    // .card__price
+
+   //    &__price {
+   //       font-family: Roboto;
+   //       font-size: 1.5rem;
+   //       line-height: 159.68%;
+   //    }
+
+   //    // .card__button
+
+   //    &__button {
+   //       margin-top: $inter-item-margin;
+   //    }
+   // }
+
+   // .swiper-slide {
+   //    width: max-content;
+   //    padding-right: 3.5rem;
+
+   //    @include media-breakpoint-up(md) {
+   //       width: auto;
+   //       padding-right: 0;
+   //    }
+   // }
+}

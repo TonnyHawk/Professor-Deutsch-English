@@ -1,0 +1,100 @@
+.section {
+   padding-top: 5rem;
+   padding-bottom: 5rem;
+   overflow: hidden;
+
+   @include media-breakpoint-up(md){
+      padding-top: 7rem;
+      padding-bottom: 9rem;
+   }
+
+   @include media-breakpoint-up(lg) {
+      padding-top: 8.5em;
+      padding-bottom: 8.5rem;
+   }
+
+   &__title {
+      margin-bottom: 5rem;
+      color: rgb(100, 106, 246);
+
+      @include media-breakpoint-up(lg) {
+         margin: 0 0 12rem;
+      }
+   }
+
+   &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+
+      .section__title {
+         margin-bottom: 0;
+      }
+
+      margin-bottom: 5rem;
+
+      @include media-breakpoint-up(lg) {
+         margin: 0 0 7.5rem;
+      }
+   }
+
+   &__expand-btn {
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      background: $yellow;
+      color: white;
+      border-radius: 0.9rem;
+      padding: 1.5rem;
+      transition: 0.4s;
+      @include media-breakpoint-up(md){
+         flex-direction: row;
+         padding: 1.8rem;
+      }
+
+      .feature {
+         &__icon {
+            font-size: 3.3rem;
+            margin-bottom: 0.6rem;
+            position: relative;
+            @include media-breakpoint-up(md){
+               margin-bottom: 0;
+               order: 2;
+            }
+            &:after{
+               content: '';
+               position: absolute;
+               top: -0.8rem;
+               left: -0.8rem;
+               @include square(145%);
+               border-radius: 100%;
+               z-index: -1;
+               transition: 0.4s;
+            }
+         }
+
+         &__text {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.4rem;
+            line-height: 168.18%;
+            @include media-breakpoint-up(md){
+               margin-right: 2.5rem;
+               font-size: 1.6rem;
+            }
+         }
+      }
+
+      &:hover{
+         .feature {
+            &__icon {
+               &:after{background: #DEDEDE;}
+            }
+         }
+      }
+   }
+
+   &__text-block {}
+}

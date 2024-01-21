@@ -1,0 +1,36 @@
+.badge {
+   display: flex;
+   align-items: stretch;
+   border: 0.1rem solid #000000;
+   border-radius: 0.9rem;
+   padding: 0.7rem 1.2rem;
+   justify-content: space-between;
+   // gap: 1.5rem;
+   max-width: 33rem;
+   width: max-content;
+
+   // .badge__main-text
+
+   &__main-text {
+      font-family: Gilroy;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 2.1rem;
+      font-size: 1.7rem;
+      margin-right: 1rem;
+   }
+
+   // .badge__aside-text
+
+   &__aside-text {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 2.1rem;
+      @include perfect-center;
+      font-size: 1.7rem;
+      @include media-breakpoint-up(lg){
+         font-size: 1.5rem;
+      }
+   }
+}

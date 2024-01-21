@@ -1,0 +1,20 @@
+.stat {
+   font-family: gilroy;
+   font-weight: 700;
+   color: black;
+
+   // .stat__num
+
+   &__num {
+      font-weight: bold;
+   }
+
+   // .stat__title
+
+   &__title {
+      font-weight: bold;
+      &:first-letter{
+         text-transform: uppercase;
+      }
+   }
+}

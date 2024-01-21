@@ -1,0 +1,52 @@
+.card {
+   position: relative;
+   background: #F2F5FF;
+   border-radius: 2.4rem;
+   padding: 5rem 3rem;
+   border: 1px solid gainsboro;
+
+   // .card__img
+
+   &__img {}
+
+   // .card__title
+
+   &__title {}
+
+   // .card__text
+
+   &__text {}
+
+   // .card__top-icon
+
+   &__top-icon {
+      $elem-width: 6rem;
+      $border-width: 0.1rem;
+      $border-radius: 100%;
+      $icon-top: $elem-width * 0.5 * -1;
+
+      position: absolute;
+      top: $icon-top;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      @include media-breakpoint-up(md) {
+         $elem-width: 7rem;
+      }
+
+      @include colorfull-border($elem-width, $border-width, $border-radius, 2);
+
+      .colorfull-border {
+         &__content {
+            img {
+               @include media-breakpoint-up(md) {
+                  width: 2.3rem;
+               }
+            }
+         }
+      }
+   }
+
+}

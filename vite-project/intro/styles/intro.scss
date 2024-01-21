@@ -1,0 +1,22 @@
+@import '../../styles/basic/reset.scss';
+@import '/fonts/roboto/stylesheet.css';
+@import '/fonts/gilroy/stylesheet.css';
+html{
+   font-size: 62.5%;
+}
+
+@import '../../styles/basic/mixins';
+@import '../../styles/module/spinner/spinner.scss';
+@import '../../styles/module/loader/loader.scss';
+
+@import '../../node_modules/bootstrap/scss/bootstrap-utilities.scss';
+
+@import '../../styles/module/ibg/ibg';
+@import '../../styles/sections/intro/intro';
+
+// .spinner, .loader{display: none;}
+
+// html{
+//    overflow: hidden;
+// }
+
