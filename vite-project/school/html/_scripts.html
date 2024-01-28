@@ -1,0 +1,54 @@
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script>
+      $(document).ready(()=>{
+         setTimeout(function(){
+         document.querySelector("#loader").style.display = "none";
+         // document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
+        }, 2000);
+      })
+   </script>
+
+   <script src="./js/main.js"></script>
+   <script src="./js/main-react-stuff.js"></script>
+   <script src="./js/main-addons.js"></script>
+
+   <!-- submit subscription -->
+   <script>
+      async function submitConsultation() {
+         console.log('sending application');
+         let data = new FormData(document.querySelector('#consultation .form'))
+
+         let url = 'http://91.219.61.167:3000/apply'
+         // let url = 'http://127.0.0.1:3000/apply'
+         $('#popup.popup--loading').addClass('is-visible');
+         let response = await fetch(url, {
+            method: 'POST',
+            body: data
+         })
+
+         if (response.ok) { // если HTTP-статус в диапазоне 200-299
+         // получаем тело ответа (см. про этот метод ниже)
+            let json = await response.json();
+            console.log(json);
+            $(document).ready(function(){
+               // showing the popup
+               // $('#popup').fadeIn();
+               // setTimeout(function () {
+               //    $('#popup').fadeOut()
+               // }, 3000)
+               $('#popup.popup--loading').removeClass('is-visible');
+               $('#popup.popup--message').addClass('is-visible');
+               setTimeout(function () {
+                  $('#popup.popup--message').removeClass('is-visible')
+                  $('#consultation .form .has-value').each((index, elem)=>{
+                     $(elem).val("");
+                  })
+               }, 3000)
+            })
+
+         } else {
+            alert("Ошибка отправки заявки: " + response.status);
+         }
+      }
+   </script>
