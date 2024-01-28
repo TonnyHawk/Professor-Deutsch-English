@@ -2,12 +2,12 @@ import ReactDOM from 'react-dom';
 import React from "react";
 import CoursesSection from './settings/modules/CoursesSection';
 import TeachersSlider from './settings/modules/TeachersSlider';
-import StudentsSlider from './settings/modules/StudentsSlider/';
-import GalleryShowcase from './settings/modules/GalleryShowcase/';
+import StudentsSlider from './settings/modules/StudentsSlider';
+import GalleryShowcase from './settings/modules/GalleryShowcase';
 import globals from '../../js/globals'
 import {langFilter, loadItems, makeReqObj, linkTo, setPageTitle} from '../../js/functions'
 
-
+console.log(globals)
    let reqObj = makeReqObj()
    let schoolName = ''
    try{ // if there is no properties seted up in the request string

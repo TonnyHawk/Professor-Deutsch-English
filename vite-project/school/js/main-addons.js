@@ -7,7 +7,7 @@ $(document).ready(smoothScroll)
 // phone mask
 // require('./settings/masks');
 
-const MenuSpy = require('menuspy');
+import MenuSpy from 'menuspy';
 let elm = document.getElementById('topmenu');
 setTimeout(()=>{
    new MenuSpy(elm,{

@@ -4,9 +4,9 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 
 // import CustomPreviewSlide from '../CustomPreviewSlide/index.js';
-import CustomMainSlide from '../CustomMainSlide/index.js';
-import Video from '../Video';
-import {linkTo} from '../../../../../js/functions'
+import CustomMainSlide from '../CustomMainSlide/';
+import Video from '../Video/';
+import {linkTo} from '../../../../../js/functions.js'
 
 
 function SampleNextArrow(props) {
