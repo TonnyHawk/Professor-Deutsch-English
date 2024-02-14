@@ -1,67 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- @@include('_head.html') -->
+  <load src="./html/_head.html" />
 
-<!-- @@include('_head.html') -->
-<load src="./html/_head.html"/>
-
-<body>
-   <div class="loader" id="loader">
+  <body>
+    <div class="loader" id="loader">
       <div class="loader__bg"></div>
       <div class="loader__content">
-         <div class="loader__spinner spinner loadingio-spinner-rolling-c55z9beacq">
-            <div class="ldio-tam1aegang">
-               <div></div>
-            </div>
-         </div>
+        <div
+          class="loader__spinner spinner loadingio-spinner-rolling-c55z9beacq"
+        >
+          <div class="ldio-tam1aegang">
+            <div></div>
+          </div>
+        </div>
       </div>
-   </div>
+    </div>
 
-<!-- <div id="main-content"> -->
+    <!-- <div id="main-content"> -->
 
-   <load src="./html/_topmenu.html"/>
-   <load src="./html/_header.html"/>
-   <load src="./html/_about-us.html"/>
-   <load src="./html/_why-we.html"/>
-   <load src="./html/_students.html"/>
-   <load src="./html/_certificates.html"/>
-   <load src="./html/_courses.html"/>
-   <load src="./html/_teachers.html"/>
-   <load src="./html/_gallery-showcase.html"/>
-   <load src="./html/_insta-banner.html"/>
-   <load src="./html/_consultation.html"/>
-   <!-- @@include('_news.html') -->
-   <load src="./html/_footer.html"/>
+    <load src="./html/_topmenu.html" />
+    <load src="./html/_header.html" />
+    <load src="./html/_about-us.html" />
+    <load src="./html/_why-we.html" />
+    <load src="./html/_students.html" />
+    <load src="./html/_certificates.html" />
+    <load src="./html/_courses.html" />
+    <load src="./html/_teachers.html" />
+    <load src="./html/_gallery-showcase.html" />
+    <load src="./html/_insta-banner.html" />
+    <load src="./html/_consultation.html" />
+    <!-- @@include('_news.html') -->
+    <load src="./html/_footer.html" />
 
-<!-- </div> -->
+    <!-- </div> -->
 
+    <section id="intro"></section>
 
-<section id='intro'></section>
-
-
-
-   <div class="popup popup--message" id="popup">
+    <div class="popup popup--message" id="popup">
       <div class="popup__container">
-         <div class="popup__body">
-            <div class="popup__icon"><img src="img/icons/success.svg" alt=""></div>
-            <div class="popup__text">Дякую, ми зателефонуємо вам якнайшвидше!</div>
-         </div>
+        <div class="popup__body">
+          <div class="popup__icon">
+            <img src="/img/icons/success.svg" alt="" />
+          </div>
+          <div class="popup__text">
+            Дякую, ми зателефонуємо вам якнайшвидше!
+          </div>
+        </div>
       </div>
-   </div>
+    </div>
 
-   <div class="popup popup--loading" id="popup">
+    <div class="popup popup--loading" id="popup">
       <div class="popup__container">
-         <div class="popup__body">
-            <div class="popup__icon" style="display: flex; justify-content: center;"><img src="img/icons/spinner.svg" alt=""></div>
-            <div class="popup__text" style="margin-bottom: 0; margin-top: 2rem;">Відправляємо</div>
-         </div>
+        <div class="popup__body">
+          <div
+            class="popup__icon"
+            style="display: flex; justify-content: center"
+          >
+            <img src="/img/icons/spinner.svg" alt="" />
+          </div>
+          <div class="popup__text" style="margin-bottom: 0; margin-top: 2rem">
+            Відправляємо
+          </div>
+        </div>
       </div>
-   </div>
-   <!-- 
+    </div>
+    <!-- 
    <div class="popup" id='popup-application'>
       <div class="popup__bg-layer">
          <form class="popup__body" action='php/mail.php' method="POST">
             <div class="popup__close-btn" data-action='close-popup'>
-               <img src="img/icons/x.svg" alt="">
+               <img src="/img/icons/x.svg" alt="">
             </div>
             <div class="popup__container">
                <div class="popup__row">
@@ -93,61 +102,58 @@
       </div>
    </div> -->
 
-
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-   <script>
-      $(document).ready(()=>{
-         setTimeout(function(){
-         document.querySelector("#loader").style.display = "none";
-         // document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        setTimeout(function () {
+          document.querySelector('#loader').style.display = 'none';
+          // document.documentElement.style = 'overflow-X: hidden; overflow-Y: visible;';
         }, 2000);
-      })
-   </script>
+      });
+    </script>
 
-   <script type="module" src="./js/main.js"></script>
-   <script type="module" src="./js/main-react-stuff.jsx"></script>
-   <script type="module" src="./js/main-addons.js"></script>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/main-react-stuff.jsx"></script>
+    <script type="module" src="./js/main-addons.js"></script>
 
-   <!-- submit subscription -->
-   <script>
+    <!-- submit subscription -->
+    <script>
       async function submitConsultation() {
-         console.log('sending application');
-         let data = new FormData(document.querySelector('#consultation .form'))
+        console.log('sending application');
+        let data = new FormData(document.querySelector('#consultation .form'));
 
-         let url = 'http://91.219.61.167:3000/apply'
-         // let url = 'http://127.0.0.1:3000/apply'
-         $('#popup.popup--loading').addClass('is-visible');
-         let response = await fetch(url, {
-            method: 'POST',
-            body: data
-         })
+        let url = 'http://91.219.61.167:3000/apply';
+        // let url = 'http://127.0.0.1:3000/apply'
+        $('#popup.popup--loading').addClass('is-visible');
+        let response = await fetch(url, {
+          method: 'POST',
+          body: data,
+        });
 
-         if (response.ok) { // если HTTP-статус в диапазоне 200-299
-         // получаем тело ответа (см. про этот метод ниже)
-            let json = await response.json();
-            console.log(json);
-            $(document).ready(function(){
-               // showing the popup
-               // $('#popup').fadeIn();
-               // setTimeout(function () {
-               //    $('#popup').fadeOut()
-               // }, 3000)
-               $('#popup.popup--loading').removeClass('is-visible');
-               $('#popup.popup--message').addClass('is-visible');
-               setTimeout(function () {
-                  $('#popup.popup--message').removeClass('is-visible')
-                  $('#consultation .form .has-value').each((index, elem)=>{
-                     $(elem).val("");
-                  })
-               }, 3000)
-            })
-
-         } else {
-            alert("Ошибка отправки заявки: " + response.status);
-         }
+        if (response.ok) {
+          // если HTTP-статус в диапазоне 200-299
+          // получаем тело ответа (см. про этот метод ниже)
+          let json = await response.json();
+          console.log(json);
+          $(document).ready(function () {
+            // showing the popup
+            // $('#popup').fadeIn();
+            // setTimeout(function () {
+            //    $('#popup').fadeOut()
+            // }, 3000)
+            $('#popup.popup--loading').removeClass('is-visible');
+            $('#popup.popup--message').addClass('is-visible');
+            setTimeout(function () {
+              $('#popup.popup--message').removeClass('is-visible');
+              $('#consultation .form .has-value').each((index, elem) => {
+                $(elem).val('');
+              });
+            }, 3000);
+          });
+        } else {
+          alert('Ошибка отправки заявки: ' + response.status);
+        }
       }
-   </script>
-
-</body>
-
+    </script>
+  </body>
 </html>
