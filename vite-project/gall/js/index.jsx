@@ -72,9 +72,9 @@ class App extends Component {
 
 let reqObj = makeReqObj();
 
-reqObj.what = 'cert';
-reqObj.prof = 'Deutsch';
-reqObj.role = 'student';
+// reqObj.what = 'cert';
+// reqObj.prof = 'Deutsch';
+// reqObj.role = 'student';
 
 let items;
 let mode = '';
