@@ -1,24 +1,19 @@
-import "slick-carousel/slick/slick.css"; 
+import 'slick-carousel/slick/slick.css';
 
-import React, { Component } from "react";
-import Slider from "react-slick";
+import React, { Component } from 'react';
+import Slider from 'react-slick';
 
 // import CustomPreviewSlide from '../CustomPreviewSlide/index.js';
 import CustomMainSlide from '../CustomMainSlide/';
 import Video from '../Video/';
-import {linkTo} from '../../../../../js/functions.js'
-
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <div
-      className={'sl__controll sl__controll--next'}
-      onClick={onClick}
-    >
+    <div className={'sl__controll sl__controll--next'} onClick={onClick}>
       <div className="sl__controll-circle"></div>
       <div className="sl__controll-icon">
-      <img src="img/icons/sl__controll--next.svg" alt="" />
+        <img src="/img/icons/sl__controll--next.svg" alt="" />
       </div>
     </div>
   );
@@ -27,127 +22,126 @@ function SampleNextArrow(props) {
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <div
-      className={'sl__controll sl__controll--prev'}
-      onClick={onClick}
-    >
+    <div className={'sl__controll sl__controll--prev'} onClick={onClick}>
       <div className="sl__controll-circle"></div>
       <div className="sl__controll-icon">
-         <img src="img/icons/sl__controll--prev.svg" alt="" />
+        <img src="/img/icons/sl__controll--prev.svg" alt="" />
       </div>
     </div>
   );
 }
 
 class StudentsSlider extends Component {
-   constructor(props) {
-      super(props);
-      this.state = {
-         nav1: null,
-         nav2: null,
-         showBooks: false,
-         selectedStudent: [],
-         booksGalMode: '',
-         showZoomed: false,
-         zoomedItem: '',
-         students: props.students
-      };
+  constructor(props) {
+    super(props);
+    this.state = {
+      nav1: null,
+      nav2: null,
+      showBooks: false,
+      selectedStudent: [],
+      booksGalMode: '',
+      showZoomed: false,
+      zoomedItem: '',
+      students: props.students,
+    };
+  }
+
+  generateMedia(student) {
+    let result = '';
+    let video = student.video.find((elem) => {
+      return elem.professor === this.props.prof;
+    });
+    if (typeof video !== 'undefined') {
+      result = <Video src={video.link} />;
+    } else {
+      result = (
+        <div className="sl__photo multilayer">
+          <img
+            src={student.photo}
+            srcSet={student.photo}
+            alt=""
+            className="multilayer__main lazyload"
+            data-srcset={student.photo}
+          />
+        </div>
+      );
     }
 
-   generateMedia(student){
-      let result = '';
-      let video = student.video.find(elem=>{
-         return elem.professor === this.props.prof
-      })
-      if(typeof video !== 'undefined'){
-         result = <Video src={video.link}/>
-      }else{
-         result = (
-            <div className="sl__photo multilayer">
-               <img src={student.photo} srcSet={student.photo} alt="" className="multilayer__main lazyload" data-srcset={student.photo}/>
-            </div>
-         )
-      }
+    return result;
+  }
 
-      return result;
-   }
+  generatePocket(student) {
+    // adding lang badges
+    let langBadges = [];
+    if (student.languages) {
+      student.languages.forEach((elem) => {
+        langBadges.push(
+          <div className="talk-buble__badge badge" key={student.id}>
+            <p className="badge__main-text">{elem.name}</p>
+            <p className="badge__aside-text">{elem.lvl}</p>
+          </div>
+        );
+      });
+    }
 
-   generatePocket(student){
-      // adding lang badges
-      let langBadges = [];
-      if(student.languages){
+    // adding certificates btn
+    let actionBtn = '';
+    // if(student.certificates.length > 0){
+    //    actionBtn = (
+    //       <p className="talk-buble__action btn" data-id={student.id} onClick={()=>{this.showCertificates(student)}}>Сертифікати</p>
+    //    )
+    // }
 
-         student.languages.forEach(elem=>{
-            langBadges.push( (
-                  <div className="talk-buble__badge badge" key={student.id}>
-                     <p className="badge__main-text">{elem.name}</p>
-                     <p className="badge__aside-text">{elem.lvl}</p>
-                  </div>
-               ))
-         })
-      }
+    // forming pocket
+    let pocket = '';
+    if (langBadges.length > 0) {
+      pocket = (
+        <div className="talk-buble__pocket">
+          <div className="talk-buble__badges">{langBadges}</div>
+          {actionBtn}
+        </div>
+      );
+    }
 
-      // adding certificates btn
-      let actionBtn = '';
-      // if(student.certificates.length > 0){
-      //    actionBtn = (
-      //       <p className="talk-buble__action btn" data-id={student.id} onClick={()=>{this.showCertificates(student)}}>Сертифікати</p>
-      //    )
-      // }
-
-      // forming pocket
-      let pocket = '';
-      if(langBadges.length > 0){
-         pocket = (
-            <div className="talk-buble__pocket">
-               <div className="talk-buble__badges">
-                  {langBadges}
-               </div>
-               {actionBtn}
-            </div>
-         )
-      }
-
-      return pocket;
-   }
-
+    return pocket;
+  }
 
   render() {
     const main = {
-          adaptiveHeight: true,
-          infinite: true,
-          variableWidth: false,
-          centerMode: true,
-          speed: 500,
-          nextArrow: <SampleNextArrow />,
-          prevArrow: <SamplePrevArrow />,
-          touchThreshold: 4,
-          responsive: [{
-             breakpoint: 992,
-             settings: {
-                adaptiveHeight: true,
-                variableWidth: true,
-             }
-          }]
+      adaptiveHeight: true,
+      infinite: true,
+      variableWidth: false,
+      centerMode: true,
+      speed: 500,
+      nextArrow: <SampleNextArrow />,
+      prevArrow: <SamplePrevArrow />,
+      touchThreshold: 4,
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            adaptiveHeight: true,
+            variableWidth: true,
+          },
+        },
+      ],
     };
 
-    let {students} = this.state;
+    let { students } = this.state;
 
     // consider to show only students
-    students = students.filter(elem=>{
-      if(elem.role === 'student') return elem
-    })
-    
-    // generating slides
-    let mainSlides = students.map(elem=>{
-       return <CustomMainSlide student={elem} funcs={this} key={elem.id}/>
-    })
-    
-    return (
-       <>
-         
+    students = students.filter((elem) => {
+      if (elem.role === 'student') return elem;
+    });
 
-         {/* <div className="container">
+    // generating slides
+    let mainSlides = students.map((elem) => {
+      return <CustomMainSlide student={elem} funcs={this} key={elem.id} />;
+    });
+
+    return (
+      <>
+        {/* <div className="container">
             <div className="section__header">
                <h1 className="section__title">Наші випускники</h1>
                <div className="section__expand-btn feature hover-circled btn--accented" onClick={()=>linkTo(`gall/?what=humans&prof=${this.props.prof}&role=student`)}>
@@ -157,17 +151,12 @@ class StudentsSlider extends Component {
             </div>
          </div> */}
 
-         {/* <div className="sl"> */}
-            <Slider 
-               className="sl__main" {...main}
-               asNavFor={this.state.nav2}>
-
-               {mainSlides}
-
-            </Slider>
-         {/* </div> */}
-
-   </>
+        {/* <div className="sl"> */}
+        <Slider className="sl__main" {...main} asNavFor={this.state.nav2}>
+          {mainSlides}
+        </Slider>
+        {/* </div> */}
+      </>
     );
   }
 }
